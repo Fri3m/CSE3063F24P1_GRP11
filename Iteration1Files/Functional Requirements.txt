@@ -22,7 +22,7 @@ Functional Requirements
 -Compliance with the conditions and potential of the publications need to be checked.
 
 
-five.Waitlist Management
+5.Waitlist Management
 -A ready listing need to be created for publications which can be complete of potential.
 -Students at the ready listing need to be mechanically enrolled withinside the direction whilst there's an opening withinside the direction potential.
 -Students need to be notified approximately the ready listing status.
