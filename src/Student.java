@@ -14,6 +14,17 @@ public class Student extends User {
         //
     }
 
+    public Transcript getTranscript() {    //getter
+        return _transcript;
+    }
+
+    public Department getDepartment() {    //getter
+        return _department;
+    }
+    public int getCurrentClass() {    //getter
+        return _current_class;
+    }
+
     public boolean takeCourse() {
         return false;
     }

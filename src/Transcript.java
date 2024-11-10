@@ -7,8 +7,11 @@ public class Transcript {
     private ArrayList<TakenCourse> _taken_courses;
     private float _GPA;
 
+    public ArrayList<TakenCourse> getTakenCourses() {
+        return _taken_courses;
+    }
     Transcript(Student student){
-
+        _student = student;
     }
 
     public boolean addTakenCourse(TakenCourse tc) {
