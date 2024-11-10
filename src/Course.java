@@ -34,7 +34,6 @@ class TakenCourse{
     }
 
     private void calculateCourseScore(){
-
     }
 
 }
@@ -50,22 +49,12 @@ enum Score{
     FF;
 }
 
-class CourseRequirements implements DepartmentOnlyCourse, UnitOnlyCourse{
+class CourseRequirements implements FacultyOnlyCourse, DepartmentOnlyCourse {
     private ArrayList<Course> _prerequisite_courses;
     private int _minimum_current_class;
 
     public boolean isStudentQualified(Student student){
         return true;
-    }
-
-    @Override
-    public boolean isUnitOnly() {
-        return false;
-    }
-
-    @Override
-    public boolean checkUnit(Student student) {
-        return false;
     }
 
     @Override
@@ -75,6 +64,16 @@ class CourseRequirements implements DepartmentOnlyCourse, UnitOnlyCourse{
 
     @Override
     public boolean checkDepartment(Student student) {
+        return false;
+    }
+
+    @Override
+    public boolean isFacultyOnly() {
+        return false;
+    }
+
+    @Override
+    public boolean checkFaculty(Student student) {
         return false;
     }
 }
@@ -90,13 +89,13 @@ class CourseSection{
     }
 }
 
-interface UnitOnlyCourse{
-    Unit unit = null;
-    boolean isUnitOnly();
-    boolean checkUnit(Student student);
-}
-interface DepartmentOnlyCourse{
-    Department department = null;
+interface DepartmentOnlyCourse {
+    Department DEPARTMENT = null;
     boolean isDepartmentOnly();
     boolean checkDepartment(Student student);
+}
+interface FacultyOnlyCourse {
+    Faculty FACULTY = null;
+    boolean isFacultyOnly();
+    boolean checkFaculty(Student student);
 }
