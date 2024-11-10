@@ -8,7 +8,7 @@ public abstract class User {
     }
 }
 
-class Staff extends User {
+abstract class Staff extends User {
 
     private StaffID _staffID;
 
