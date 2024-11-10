@@ -29,5 +29,5 @@ public class UserInformation {
         return true;
     }
 
-    //needed getters and setters
+    //needed getters
 }
