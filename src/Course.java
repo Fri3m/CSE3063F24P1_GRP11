@@ -34,6 +34,14 @@ public class Course {
             return false;
         }
     }
+
+    public String getCourseName() {
+        return courseName;
+    }
+
+    public CourseRequirements getCourseRequirements() {
+        return courseRequirements;
+    }
 }
 
 class TakenCourse {
@@ -105,7 +113,9 @@ class CourseRequirements {
     }
 
     public boolean checkPrerequisiteCourse(Student student) {// check prerequisite courses method
-
+        if (_prerequisite_courses == null) {
+            return true;
+        }
         for (Course course : _prerequisite_courses) {
             boolean check = false;
             for (TakenCourse takenCourse : student.getTranscript().getTakenCourses()) {
@@ -120,6 +130,7 @@ class CourseRequirements {
         }
         return true;
     }
+
 
 }
 

@@ -1,5 +1,6 @@
 package src;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 
@@ -12,6 +13,8 @@ public abstract class User {
     public UserInformation getUserInformation() {
         return user_information;
     }
+
+
 }
 
 abstract class Staff extends User {
@@ -54,30 +57,34 @@ class Advisor extends Lecturer{
         return true;
     }
 
-    public boolean checkRegistration(Student student, Course course) {
-        // 1. Check if the student is assigned to the advisor
-        if (!_advisor_students.contains(student)) {
-            System.out.println("The student does not belong to this advisor.");
-            return false;
+    public boolean checkRegistration(CourseRegistrationService courseRegistrationService) {
+        ArrayList<CourseRequest> courseRequests= courseRegistrationService.checkAccesiableRequests(this);
+        for(CourseRequest courseRequest: courseRequests){
+           System.out.println(courseRequest.get_student().getUserInformation().get_FIRST_NAME() + " wants to take " + courseRequest.get_course().getCourseName());
+           boolean x = checkCourseRequest(courseRequest);
+              if(x){
+                System.out.println("The request is accepted");
+                return true;
+              }
+              else{
+                System.out.println("The request is rejected");
+                return false;
+              }
         }
 
-        if (!course.checkStudentQualification(student)) {
-            System.out.println("The student does not meet the course requirements.");
-            return false;
-        }
 
-        System.out.println("Registration completed successfully.");
-        return true;
+        System.out.println("There is no request");
+       return false;
+    }
+    public boolean equals(Advisor advisor){
+        return this.getUserInformation().get_email().equals(advisor.getUserInformation().get_email());
     }
 
 
-
-
-
     private boolean checkCourseRequest(CourseRequest courseRequest){
+        CourseRequirements pre = courseRequest.get_course().getCourseRequirements();
+        return pre.isStudentQualified(courseRequest.get_student());
 
-
-        return true;
     }
 }
 

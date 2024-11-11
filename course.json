@@ -1,0 +1,261 @@
+[
+  {
+    "courseName": "Data Structures and Algorithms",
+    "courseCode": "CSE201",
+    "courseDescription": "Fundamental concepts of data structures and algorithms using C++.",
+    "courseRequirements": {
+      "prerequisiteCourses": [
+
+      ],
+      "minimumCurrentClass": 2,
+      "department": "Computer Science",
+      "faculty": "Engineering"
+    },
+    "courseSections": [
+      {
+        "day": "Tuesday",
+        "sectionTime": "First",
+        "lecturer": {
+          "name": "Hulya Kocak",
+          "department": "Computer Science"
+        }
+      },
+      {
+        "day": "Thursday",
+        "sectionTime": "Second",
+        "lecturer": {
+          "name": "Hulya Kocak",
+          "department": "Computer Science"
+        }
+      }
+    ]
+  },
+  {
+    "courseName": "Introduction to Psychology",
+    "courseCode": "PSY101",
+    "courseDescription": "A basic introduction to psychological concepts and theories.",
+    "courseRequirements": {
+      "minimumCurrentClass": 1,
+      "department": "Psychology",
+      "faculty": "Social Sciences"
+    },
+    "courseSections": [
+      {
+        "day": "Monday",
+        "sectionTime": "First",
+        "lecturer": {
+          "name": "Ceyda Polat",
+          "department": "Psychology"
+        }
+      }
+    ]
+  },
+  {
+    "courseName": "Linear Algebra",
+    "courseCode": "MATH201",
+    "courseDescription": "Covers vector spaces, matrices, and linear transformations.",
+    "courseRequirements": {
+      "prerequisiteCourses": [
+
+      ],
+      "minimumCurrentClass": 1,
+      "department": "Mathematics",
+      "faculty": "Science"
+    },
+    "courseSections": [
+      {
+        "day": "Wednesday",
+        "sectionTime": "Second",
+        "lecturer": {
+          "name": "Tugce Ozturk",
+          "department": "Mathematics"
+        }
+      }
+    ]
+  },
+  {
+    "courseName": "History of Art",
+    "courseCode": "ART101",
+    "courseDescription": "Explores the evolution of art from ancient to modern times.",
+    "courseRequirements": {
+      "minimumCurrentClass": 1,
+      "department": "Art History",
+      "faculty": "Humanities"
+    },
+    "courseSections": [
+      {
+        "day": "Friday",
+        "sectionTime": "Second",
+        "lecturer": {
+          "name": "Ceyda Polat",
+          "department": "Art History"
+        }
+      }
+    ]
+  },
+  {
+    "courseName": "Machine Learning",
+    "courseCode": "CSE401",
+    "courseDescription": "Advanced course in machine learning covering supervised and unsupervised learning.",
+    "courseRequirements": {
+      "prerequisiteCourses": [
+        {
+          "courseName": "Data Structures and Algorithms",
+          "courseCode": "CSE201"
+        }
+      ],
+      "minimumCurrentClass": 3,
+      "department": "Computer Science",
+      "faculty": "Engineering"
+    },
+    "courseSections": [
+      {
+        "day": "Tuesday",
+        "sectionTime": "First",
+        "lecturer": {
+          "name": "Tugce Ozturk",
+          "department": "Computer Science"
+        }
+      },
+      {
+        "day": "Thursday",
+        "sectionTime": "Second",
+        "lecturer": {
+          "name": "Tugce Ozturk",
+          "department": "Computer Science"
+        }
+      }
+    ]
+  },
+  {
+    "courseName": "Software Engineering",
+    "courseCode": "CSE301",
+    "courseDescription": "Introduction to software engineering principles and methodologies.",
+    "courseRequirements": {
+      "prerequisiteCourses": [
+        {
+          "courseName": "Data Structures and Algorithms",
+          "courseCode": "CSE201"
+        }
+      ],
+      "minimumCurrentClass": 2,
+      "department": "Computer Science",
+      "faculty": "Engineering"
+    },
+    "courseSections": [
+      {
+        "day": "Monday",
+        "sectionTime": "First",
+        "lecturer": {
+          "name": "Hulya Kocak",
+          "department": "Computer Science"
+        }
+      },
+      {
+        "day": "Wednesday",
+        "sectionTime": "Second",
+        "lecturer": {
+          "name": "Hulya Kocak",
+          "department": "Computer Science"
+        }
+      }
+    ]
+  },
+  {
+    "courseName": "Philosophy of Science",
+    "courseCode": "PHL102",
+    "courseDescription": "Explores the philosophical foundations and implications of scientific inquiry.",
+    "courseRequirements": {
+      "minimumCurrentClass": 1,
+      "department": "Philosophy",
+      "faculty": "Humanities"
+    },
+    "courseSections": [
+      {
+        "day": "Tuesday",
+        "sectionTime": "First",
+        "lecturer": {
+          "name": "Ceyda Polat",
+          "department": "Philosophy"
+        }
+      }
+    ]
+  },
+  {
+  "courseName": "Statistics for Engineers",
+  "courseCode": "ENG302",
+  "courseDescription": "Introduces statistical methods and applications in engineering problems.",
+  "courseRequirements": {
+    "prerequisiteCourses": [
+    ],
+    "minimumCurrentClass": 2,
+    "department": "Engineering",
+    "faculty": "Engineering"
+  },
+  "courseSections": [
+    {
+      "day": "Wednesday",
+      "sectionTime": "Second",
+      "lecturer": {
+        "name": "Tugce Ozturk",
+        "department": "Engineering"
+      }
+    }
+  ]
+},
+  {
+    "courseName": "Introduction to Economics",
+    "courseCode": "ECO101",
+    "courseDescription": "An introduction to basic economic principles and concepts.",
+    "courseRequirements": {
+      "minimumCurrentClass": 1,
+      "department": "Economics",
+      "faculty": "Social Sciences"
+    },
+    "courseSections": [
+      {
+        "day": "Monday",
+        "sectionTime": "First",
+        "lecturer": {
+          "name": "Ceyda Polat",
+          "department": "Economics"
+        }
+      }
+    ]
+  },
+  {
+    "courseName": "Artificial Intelligence",
+    "courseCode": "CSE402",
+    "courseDescription": "Introduction to AI concepts, including machine learning, search algorithms, and knowledge representation.",
+    "courseRequirements": {
+      "prerequisiteCourses": [
+        {
+          "courseName": "Data Structures and Algorithms",
+          "courseCode": "CSE201"
+        }
+      ],
+      "minimumCurrentClass": 3,
+      "department": "Computer Science",
+      "faculty": "Engineering"
+    },
+    "courseSections": [
+      {
+        "day": "Tuesday",
+        "sectionTime": "First",
+        "lecturer": {
+          "name": "Hulya Kocak",
+          "department": "Computer Science"
+        }
+      },
+      {
+        "day": "Thursday",
+        "sectionTime": "Second",
+        "lecturer": {
+          "name": "Hulya Kocak",
+          "department": "Computer Science"
+        }
+      }
+    ]
+  }
+
+]

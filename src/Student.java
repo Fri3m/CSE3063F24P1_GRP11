@@ -33,8 +33,7 @@ public class Student extends User {
         _taken_courses_for_transcript = taken_courses;
     }
 
-    public boolean takeCourse(Course course) {
-        CourseRegistrationService courseRegistrationService = new CourseRegistrationService(); // !!!!!!!!! change this later !!!!!!!!
+    public boolean takeCourse(Course course, CourseRegistrationService courseRegistrationService) {
         courseRegistrationService.createCourseRequest(this, course);
         return true;
     }

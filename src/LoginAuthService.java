@@ -20,13 +20,13 @@ import java.io.IOException;
 
 public class LoginAuthService {
 
-    private ArrayList<User> _users = new ArrayList<>();
+   public ArrayList<User> _users = new ArrayList<>();
     public LoginAuthService() {
     }
     private String encoded_password;
 
 
-    public boolean login() {
+    public User login() {
 
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter your university email: ");
@@ -38,17 +38,15 @@ public class LoginAuthService {
         for (User user : _users) {
             if (user.getUserInformation().get_UNIVERSITY_EMAIL().equals(email)) {
                 if (user.getUserInformation().get_encoded_password().equals(password)) {
-                    System.out.println("Login successful");
-                    return true;
+                    return user;
                 }
                 else {
-                    System.out.println("Please check your information and try again.");
-                    return false;
+                    return null;
                 }
             }
         }
 
-        return true;
+        return null;
     }
 
     public boolean register() {
@@ -157,6 +155,19 @@ public class LoginAuthService {
 
         try (FileReader reader = new FileReader(filePath)) {
             return gson.fromJson(reader, studentListType);  // Read existing list of students
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+    public ArrayList<Course> loadCourseFromFile() { // read all students from the file
+        String filePath = "course.json";
+        Gson gson = new Gson();
+        Type courseListType = new TypeToken<ArrayList<Course>>() {
+        }.getType();
+
+        try (FileReader reader = new FileReader(filePath)) {
+            return gson.fromJson(reader, courseListType);  // Read existing list of students
         } catch (IOException e) {
             e.printStackTrace();
         }
