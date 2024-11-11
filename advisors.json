@@ -1,0 +1,79 @@
+[
+  {
+    "user_information": {
+      "_FIRST_NAME": "Mustafa",
+      "_LAST_NAME": "Demir",
+      "_encoded_password": "cdcc2e173dbdd4cf29ce21c50f08b13f42cfce882c82016f87c33614ffe34201",
+      "_UNIVERSITY_EMAIL": "mustafademir@marun.edu.tr",
+      "_email": "mustafademir@gmail.com",
+      "_address": "Kocaeli",
+      "_phone_number": "+90 505 647 92 00"
+    }
+  },
+  {
+    "user_information": {
+      "_FIRST_NAME": "Tugce",
+      "_LAST_NAME": "Ozturk",
+      "_encoded_password": "fa5d9dbebaf5c34989c831926fe15ec261f947171d6489236ed6e2081461603e",
+      "_UNIVERSITY_EMAIL": "tugceozturk@marun.edu.tr",
+      "_email": "tugceozturk@gmail.com",
+      "_address": "Antalya",
+      "_phone_number": "+90 592 453 12 42"
+    }
+  },
+  {
+    "user_information": {
+      "_FIRST_NAME": "Zeynep",
+      "_LAST_NAME": "Aydin",
+      "_encoded_password": "47a85c70e93d4646773a4dc455f7bc621aee697fe5f6c62484fa997904e3ed07",
+      "_UNIVERSITY_EMAIL": "zeynepaydin@marun.edu.tr",
+      "_email": "zeynepaydin@gmail.com",
+      "_address": "Adana",
+      "_phone_number": "+90 588 106 89 64"
+    }
+  },
+  {
+    "user_information": {
+      "_FIRST_NAME": "Sinem",
+      "_LAST_NAME": "Soylu",
+      "_encoded_password": "9c78add9e20ec28302c79dba854b69999a103e7fec7364ca97f1c543136a6b8e",
+      "_UNIVERSITY_EMAIL": "sinemsoylu@marun.edu.tr",
+      "_email": "sinemsoylu@gmail.com",
+      "_address": "Adana",
+      "_phone_number": "+90 557 121 59 23"
+    }
+  },
+  {
+    "user_information": {
+      "_FIRST_NAME": "Fatma",
+      "_LAST_NAME": "Kurt",
+      "_encoded_password": "b5e946cf1812e2c07cd085faff987ebc11a33c39f1881bf5c22ca45dcf7374c3",
+      "_UNIVERSITY_EMAIL": "fatmakurt@marun.edu.tr",
+      "_email": "fatmakurt@gmail.com",
+      "_address": "Mersin",
+      "_phone_number": "+90 598 013 56 62"
+    }
+  },
+  {
+    "user_information": {
+      "_FIRST_NAME": "Kemal",
+      "_LAST_NAME": "Yuksel",
+      "_encoded_password": "6c8d0b6f20b8330ee4728f17cc1953826cdf716bbacc664c563f7b76da3c22b8",
+      "_UNIVERSITY_EMAIL": "kemalyuksel@marun.edu.tr",
+      "_email": "kemalyuksel@gmail.com",
+      "_address": "Adana",
+      "_phone_number": "+90 500 780 84 36"
+    }
+  },
+  {
+    "user_information": {
+      "_FIRST_NAME": "Fatma",
+      "_LAST_NAME": "Tan",
+      "_encoded_password": "b400d56356bc27d7bb39d989de589051b68068f4dd9f48a5c0b4bc631ea60a07",
+      "_UNIVERSITY_EMAIL": "fatmatan@marun.edu.tr",
+      "_email": "fatmatan@gmail.com",
+      "_address": "Malatya",
+      "_phone_number": "+90 508 868 88 83"
+    }
+  }
+]

@@ -1,0 +1,35 @@
+[
+  {
+    "user_information": {
+      "_FIRST_NAME": "Tugce",
+      "_LAST_NAME": "Ozturk",
+      "_encoded_password": "07c323a0ce4eb9dff7d8e70bea904c45f66f3c9d01ae6ea1db5fcfa7cd70befb",
+      "_UNIVERSITY_EMAIL": "tugceozturk@marun.edu.tr",
+      "_email": "tugceozturk@gmail.com",
+      "_address": "Sakarya",
+      "_phone_number": "+90 574 500 32 91"
+    }
+  },
+  {
+    "user_information": {
+      "_FIRST_NAME": "Hulya",
+      "_LAST_NAME": "Kocak",
+      "_encoded_password": "00bfc531946063956ceba38e46f9935ce9091d909e771ca1e2d39b47d6140f22",
+      "_UNIVERSITY_EMAIL": "hulyakocak@marun.edu.tr",
+      "_email": "hulyakocak@gmail.com",
+      "_address": "Ordu",
+      "_phone_number": "+90 504 856 58 18"
+    }
+  },
+  {
+    "user_information": {
+      "_FIRST_NAME": "Ceyda",
+      "_LAST_NAME": "Polat",
+      "_encoded_password": "3bc213cee571eddf3dc832e7432ef8a7d0c80975485692b963182b8746980d96",
+      "_UNIVERSITY_EMAIL": "ceydapolat@marun.edu.tr",
+      "_email": "ceydapolat@gmail.com",
+      "_address": "Adana",
+      "_phone_number": "+90 539 718 76 41"
+    }
+  }
+]
