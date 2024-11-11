@@ -6,7 +6,6 @@ public class Student extends User {
     private int _current_class;
     private StudentID _studentID;
     private Transcript _transcript;
-    private Department _department;
     private Advisor _advisor;
     private ArrayList<Course> _current_courses;
     private ArrayList<TakenCourse> _taken_courses_for_transcript; // this variable is for the transcript creation for the student who has already taken courses never add anything to this variable
@@ -44,13 +43,12 @@ public class Student extends User {
         CourseRegistrationService courseRegistrationService = new CourseRegistrationService(); // !!!!!!!!! change this later !!!!!!!!
         courseRegistrationService.createCourseRequest(this, course);
         return true;
+    }
+
     public Transcript getTranscript() {    //getter
         return _transcript;
     }
 
-    public Department getDepartment() {    //getter
-        return _department;
-    }
     public int getCurrentClass() {    //getter
         return _current_class;
     }
@@ -59,7 +57,7 @@ public class Student extends User {
         return false;
     }
 
-    //getters
+//getters
 
     public int get_current_class() {
         return _current_class;
@@ -82,6 +80,7 @@ public class Student extends User {
     }
 }
 
+
 class StudentID {
     private final Faculty _faculty;
     private final Department _department;
@@ -98,7 +97,7 @@ class StudentID {
     }
 
     private String createStudentID() {
-        String first_part = _department.getDepartmentID().get_departmentID() + ""; // assumes that departmentID is unique and 3 characters
+        String first_part = _department.getDepartmentID().getDepartmentID() + ""; // assumes that departmentID is unique and 3 characters
         String second_part = _entrance_date + "";
         second_part = second_part.substring(1); // assumes the _entrance_date is format of YYYY and get the last 3 digits of the year. ex: 2024->024
         StringBuilder third_part = new StringBuilder(_entrance_rank + "");
