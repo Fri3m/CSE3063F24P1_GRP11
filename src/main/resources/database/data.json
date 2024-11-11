@@ -1,0 +1,11 @@
+[ {
+  "userInformation" : {
+    "_FIRST_NAME" : "Ömer",
+    "_LAST_NAME" : "Yıldırım",
+    "_encoded_password" : "96cae35ce8a9b0244178bf28e4966c2ce1b8385723a96a6b838858cdd6ca0a1e",
+    "_UNIVERSITY_EMAIL" : "omer@marun.edu.tr",
+    "_email" : "omer@gmail.com",
+    "_address" : "asd",
+    "_phone_number" : "123123123"
+  }
+} ]
