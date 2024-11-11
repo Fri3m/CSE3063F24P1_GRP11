@@ -7,6 +7,7 @@ public class Student extends User {
     private StudentID _studentID;
     private Transcript _transcript;
     private Department _department;
+    private Advisor _advisor;
     private ArrayList<Course> _current_courses;
     private ArrayList<TakenCourse> _taken_courses_for_transcript; // this variable is for the transcript creation for the student who has already taken courses never add anything to this variable
 
