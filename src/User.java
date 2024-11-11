@@ -6,6 +6,10 @@ public abstract class User {
     private UserInformation user_information;
     public User(UserInformation user_information) {
     }
+
+    public UserInformation getUserInformation() {
+        return user_information;
+    }
 }
 
 abstract class Staff extends User {
