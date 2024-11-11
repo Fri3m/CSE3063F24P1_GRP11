@@ -1,1 +1,11 @@
-[{"userInformation":{"_encoded_password":"a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3","_UNIVERSITY_EMAIL":"omer@marun.edu.tr","address":"asdasdasd","email":"omer@gmail.com","phoneNumber":"123123123"}},{"userInformation":{"_encoded_password":"96cae35ce8a9b0244178bf28e4966c2ce1b8385723a96a6b838858cdd6ca0a1e","_UNIVERSITY_EMAIL":"can@marun.edu.tr","address":"asdasssssssssssssssssssssssss","email":"can@gmail.com","phoneNumber":"3131313131"}}]
+[ {
+  "userInformation" : {
+    "_FIRST_NAME" : "Ömer",
+    "_LAST_NAME" : "Yıldırım",
+    "_encoded_password" : "96cae35ce8a9b0244178bf28e4966c2ce1b8385723a96a6b838858cdd6ca0a1e",
+    "_UNIVERSITY_EMAIL" : "omer@marun.edu.tr",
+    "_email" : "omer@gmail.com",
+    "_address" : "asd",
+    "_phone_number" : "123123123"
+  }
+} ]

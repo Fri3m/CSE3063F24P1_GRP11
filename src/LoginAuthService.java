@@ -179,7 +179,8 @@ public class LoginAuthService {
         ObjectMapper objectMapper = new ObjectMapper();
         try {
             File file = new File("src/main/resources/database/data.json");
-            objectMapper.writeValue(file, _users);
+            objectMapper.writerWithDefaultPrettyPrinter().writeValue(file, _users);
+
             System.out.println("User data saved to data.json.");
         } catch (IOException e) {
             System.err.println("An error occurred while saving user data: " + e.getMessage());

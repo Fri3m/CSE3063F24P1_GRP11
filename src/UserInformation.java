@@ -72,7 +72,7 @@ public class UserInformation {
                 String newEmail = scanner.nextLine();
 
                 if (user.changeEmail(LoginAuthService.hashPassword(currentPassword), newEmail)) {
-                    System.out.println("Email updated successfully to " + user.getEmail());
+                    System.out.println("Email updated successfully to " + user.get_email());
                 } else {
                     System.out.println("Incorrect password. Email not updated.");
                 }
@@ -84,7 +84,7 @@ public class UserInformation {
                 String newAddress = scanner.nextLine();
 
                 if (user.changeAddress(LoginAuthService.hashPassword(currentPassword), newAddress)) {
-                    System.out.println("Address updated successfully to " + user.getAddress());
+                    System.out.println("Address updated successfully to " + user.get_address());
                 } else {
                     System.out.println("Incorrect password. Address not updated.");
                 }
@@ -96,7 +96,7 @@ public class UserInformation {
                 String newPhoneNumber = scanner.nextLine();
 
                 if (user.changePhoneNumber(LoginAuthService.hashPassword(currentPassword), newPhoneNumber)) {
-                    System.out.println("Phone number updated successfully to " + user.getPhoneNumber());
+                    System.out.println("Phone number updated successfully to " + user.get_phone_number());
                 } else {
                     System.out.println("Incorrect password. Phone number not updated.");
                 }
@@ -151,6 +151,13 @@ public class UserInformation {
         return false;
     }
 
+    public String get_FIRST_NAME() {
+        return _FIRST_NAME;
+    }
+
+    public String get_LAST_NAME() {
+        return _LAST_NAME;
+    }
 
     public String get_UNIVERSITY_EMAIL() {
         return _UNIVERSITY_EMAIL;
@@ -160,15 +167,17 @@ public class UserInformation {
         return _encoded_password;
     }
 
-    public String getEmail() {
+    public String get_email() {
         return _email;
     }
 
-    public String getAddress() {
+    public String get_address() {
         return _address;
     }
 
-    public String getPhoneNumber() {
+    public String get_phone_number() {
         return _phone_number;
     }
+
+
 }
