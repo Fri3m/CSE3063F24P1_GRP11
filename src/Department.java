@@ -11,19 +11,21 @@ public class Department { // change as department
 
     public Department(DepartmentID departmentID) {
         _departmentID = departmentID;
+        _students = new ArrayList<Student>();
     }
 
     public boolean addLecturer(Lecturer lecturer,User user) {
         return true;
     }
     public boolean addStudent(Student student,User user) {
+        _students.add(student);
         return true;
     }
     public boolean addCourse(Course course,User user) {
         return true;
     }
     public DepartmentID getDepartmentID() {
-        return null;
+        return _departmentID;
     }
     public boolean removeLecturer(Lecturer lecturer,User user) {
         return true;
@@ -37,6 +39,11 @@ public class Department { // change as department
 
     public Faculty getFaculty() {
         return _faculty;
+    }
+    //getters
+
+    public ArrayList<Student> get_students() {
+        return _students;
     }
 }
 class DepartmentID {
