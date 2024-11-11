@@ -36,7 +36,7 @@ class Lecturer extends Staff {
     }
 }
 
-class Advisor extends Lecturer {
+class Advisor extends Lecturer{
     private ArrayList<Student> _advisor_students;
     public Advisor(UserInformation user_information) {
         super(user_information);
