@@ -1,4 +1,8 @@
 package src;
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+import java.io.File;
 import java.util.Scanner;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -7,38 +11,35 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.io.FileWriter;
 import java.io.IOException;
-//import com.google.gson.Gson;
-//import com.google.gson.GsonBuilder;
+
 
 public class LoginAuthService {
+
     private ArrayList<User> _users;
-    public LoginAuthService() {}
+    public LoginAuthService() {
+        _users = new ArrayList<>();
+    }
     private String encoded_password;
+
 
     public static void main(String[] args) {
         LoginAuthService authService = new LoginAuthService();
 
         // Initialize the user list
         authService._users = new ArrayList<>();
-
-        // Register a user
-        System.out.println("Registering a new user:");
-        boolean registrationSuccess = authService.register("john.doe", "password123");
-        if (registrationSuccess) {
-            System.out.println("Registration successful.\n");
-        } else {
-            System.out.println("Registration failed.\n");
-            return;
+        while(true) {
+            System.out.println("1. Register\n2. Login\n3. Exit");
+            Scanner scanner = new Scanner(System.in);
+            int choice = scanner.nextInt();
+            if (choice == 1) {
+                authService.register("john.doe", "password123");
+            } else if (choice == 2) {
+                authService.login("john.doe@marun.edu.tr", "password123");
+            } else if (choice == 3) {
+                break;
+            }
         }
 
-        // Attempt to log in with the registered user
-        System.out.println("Attempting to log in:");
-        boolean loginSuccess = authService.login("john.doe@marun.edu.tr", "password123");
-        if (loginSuccess) {
-            System.out.println("Login successful.");
-        } else {
-            System.out.println("Login failed.");
-        }
     }
     public boolean login(String university_email, String password) {
 
@@ -50,11 +51,17 @@ public class LoginAuthService {
         System.out.println("Enter your password: ");
         password = scanner.nextLine();
 
+        password = hashPassword(password);
+
         for (User user : _users) {
             if (user.getUserInformation().get_UNIVERSITY_EMAIL().equals(university_email)) {
-                if (user.getUserInformation().get_encoded_password().equals(encoded_password)) {
+                if (user.getUserInformation().get_encoded_password().equals(password)) {
                     System.out.println("Login successful");
                     return true;
+                }
+                else {
+                    System.out.println("Please check your information and try again.");
+                    return false;
                 }
             }
         }
@@ -63,7 +70,6 @@ public class LoginAuthService {
     }
 
     public boolean register(String university_email, String password) {
-
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Enter your first name: ");
@@ -89,8 +95,12 @@ public class LoginAuthService {
         System.out.println("Enter your university email (Please enter until the part before the @ sign): ");
         university_email = scanner.nextLine();
 
-        while (university_email.contains("@")) {
-            System.out.println("Please enter until the part before the @ sign.");
+        while (university_email.contains("@")|| isEmailRegistered(university_email + "@marun.edu.tr")) {
+            if (university_email.contains("@")) {
+                System.out.println("Please enter until the part before the @ sign.");
+            } else {
+                System.out.println("This email is already registered. Please enter a different university email.");
+            }
             university_email = scanner.nextLine();
         }
 
@@ -105,20 +115,23 @@ public class LoginAuthService {
 
         encoded_password = hashPassword(password);
 
-        if(role == 1){
-            Student student = new Student(new UserInformation(first_name, last_name, university_email, email, address, phone_number, password),new StudentID( new Department(new DepartmentID(2)), 2021, 1));
-        }
-        else if(role == 2){
-            Lecturer lecturer = new Lecturer(new UserInformation(first_name, last_name, university_email, email, address, phone_number, encoded_password));
-        }
-        else if(role == 3){
-            Advisor advisor = new Advisor(new UserInformation(first_name, last_name, university_email, email, address, phone_number, encoded_password));
-        }
-        else{
+
+        User user;
+
+        if (role == 1) {
+            user = new Student(new UserInformation(first_name, last_name, university_email, email, address, phone_number, encoded_password), new StudentID(new Department(new DepartmentID(2)), 2021, 1));
+        } else if (role == 2) {
+            user = new Lecturer(new UserInformation(first_name, last_name, university_email, email, address, phone_number, encoded_password));
+        } else if (role == 3) {
+            user = new Advisor(new UserInformation(first_name, last_name, university_email, email, address, phone_number, encoded_password));
+        } else {
             System.out.println("Invalid role");
+            return false;
         }
 
+        _users.add(user);
 
+        saveUsersToJson();
 
         return true;
     }
@@ -151,17 +164,28 @@ public class LoginAuthService {
         Matcher matcher = pattern.matcher(email);
         return matcher.matches();
     }
-  /*  private void saveUsersToJson() {
-        Gson gson = new GsonBuilder().setPrettyPrinting().create();
 
-        try (FileWriter writer = new FileWriter("users.json")) {
-            gson.toJson(_users, writer);
-            System.out.println("User data saved to users.json.");
+    private boolean isEmailRegistered(String university_email) {
+        for (User user : _users) {
+            if (user.getUserInformation().get_UNIVERSITY_EMAIL().equals(university_email)) {
+                return true; // Email is already registered
+            }
+        }
+        return false; // Email is not registered
+    }
+
+
+    private void saveUsersToJson() {
+        ObjectMapper objectMapper = new ObjectMapper();
+        try {
+            File file = new File("src/main/resources/database/data.json");
+            objectMapper.writeValue(file, _users);
+            System.out.println("User data saved to data.json.");
         } catch (IOException e) {
             System.err.println("An error occurred while saving user data: " + e.getMessage());
         }
     }
-*/
+
 //    private void getFromFile(){
 //
 //    }

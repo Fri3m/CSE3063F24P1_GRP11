@@ -1,6 +1,8 @@
 package src;
+import java.util.Scanner;
 
 public class UserInformation {
+
     private final String _FIRST_NAME;
     private final String _LAST_NAME;
     private String _encoded_password; // use sha256
@@ -15,7 +17,7 @@ public class UserInformation {
         this._UNIVERSITY_EMAIL = university_email;
     }
 
-    //new constructor
+    // New constructor
     public UserInformation(String first_name, String last_name, String university_email, String email, String address, String phone_number, String encoded_password) {
         this._FIRST_NAME = first_name;
         this._LAST_NAME = last_name;
@@ -25,23 +27,130 @@ public class UserInformation {
         this._phone_number = phone_number;
         this._encoded_password = encoded_password;
     }
-    //new constructors can be created
 
-    boolean changePassword(String encoded_password, String new_encoded_password) {
+    public static void main(String[] args) {
+        // Example password encoding for initial password setup
+        String initialPassword = "password123";
+        String encodedPassword = LoginAuthService.hashPassword(initialPassword);
 
-        return true;
+        // Create a sample user with some initial data
+        UserInformation user = new UserInformation(
+                "John", "Doe", "john.doe@marun.edu.tr",
+                "john.doe@example.com", "123 Main St", "555-1234", encodedPassword
+        );
+
+        Scanner scanner = new Scanner(System.in);
+
+        while (true) {
+            System.out.println("\n--- User Information System ---");
+            System.out.println("1. Change Password");
+            System.out.println("2. Change Email");
+            System.out.println("3. Change Address");
+            System.out.println("4. Change Phone Number");
+            System.out.println("5. Exit");
+            System.out.print("Choose an option: ");
+            int choice = scanner.nextInt();
+            scanner.nextLine(); // Consume newline
+
+            if (choice == 1) {
+                System.out.print("Enter current password: ");
+                String currentPassword = scanner.nextLine();
+                System.out.print("Enter new password: ");
+                String newPassword = scanner.nextLine();
+                String encodedNewPassword = LoginAuthService.hashPassword(newPassword);
+
+                if (user.changePassword(LoginAuthService.hashPassword(currentPassword), encodedNewPassword)) {
+                    System.out.println("Password updated successfully.");
+                } else {
+                    System.out.println("Incorrect password. Password not updated.");
+                }
+
+            } else if (choice == 2) {
+                System.out.print("Enter current password: ");
+                String currentPassword = scanner.nextLine();
+                System.out.print("Enter new email: ");
+                String newEmail = scanner.nextLine();
+
+                if (user.changeEmail(LoginAuthService.hashPassword(currentPassword), newEmail)) {
+                    System.out.println("Email updated successfully to " + user.getEmail());
+                } else {
+                    System.out.println("Incorrect password. Email not updated.");
+                }
+
+            } else if (choice == 3) {
+                System.out.print("Enter current password: ");
+                String currentPassword = scanner.nextLine();
+                System.out.print("Enter new address: ");
+                String newAddress = scanner.nextLine();
+
+                if (user.changeAddress(LoginAuthService.hashPassword(currentPassword), newAddress)) {
+                    System.out.println("Address updated successfully to " + user.getAddress());
+                } else {
+                    System.out.println("Incorrect password. Address not updated.");
+                }
+
+            } else if (choice == 4) {
+                System.out.print("Enter current password: ");
+                String currentPassword = scanner.nextLine();
+                System.out.print("Enter new phone number: ");
+                String newPhoneNumber = scanner.nextLine();
+
+                if (user.changePhoneNumber(LoginAuthService.hashPassword(currentPassword), newPhoneNumber)) {
+                    System.out.println("Phone number updated successfully to " + user.getPhoneNumber());
+                } else {
+                    System.out.println("Incorrect password. Phone number not updated.");
+                }
+
+            } else if (choice == 5) {
+                System.out.println("Exiting the program.");
+                break;
+            } else {
+                System.out.println("Invalid option. Please try again.");
+            }
+        }
+
+        scanner.close();
     }
-    boolean changeEmail(String encoded_password,String email) {
-        return true;
-    }
-    boolean changeAddress(String encoded_password,String address) {
-        return true;
-    }
-    boolean changePhoneNumber(String encoded_password,String phone_number) {
-        return true;
+    private boolean verifyPassword(String encoded_password) {
+        return this._encoded_password.equals(encoded_password);
     }
 
-    //needed getters and setters
+
+    public boolean changePassword(String current_encoded_password, String new_encoded_password) {
+        if (verifyPassword(current_encoded_password)) {
+            this._encoded_password = new_encoded_password;
+            return true;
+        }
+        return false;
+    }
+
+
+    public boolean changeEmail(String current_encoded_password, String new_email) {
+        if (verifyPassword(current_encoded_password)) {
+            this._email = new_email;
+            return true;
+        }
+        return false;
+    }
+
+
+    public boolean changeAddress(String current_encoded_password, String new_address) {
+        if (verifyPassword(current_encoded_password)) {
+            this._address = new_address;
+            return true;
+        }
+        return false;
+    }
+
+
+    public boolean changePhoneNumber(String current_encoded_password, String new_phone_number) {
+        if (verifyPassword(current_encoded_password)) {
+            this._phone_number = new_phone_number;
+            return true;
+        }
+        return false;
+    }
+
 
     public String get_UNIVERSITY_EMAIL() {
         return _UNIVERSITY_EMAIL;
@@ -49,5 +158,17 @@ public class UserInformation {
 
     public String get_encoded_password() {
         return _encoded_password;
+    }
+
+    public String getEmail() {
+        return _email;
+    }
+
+    public String getAddress() {
+        return _address;
+    }
+
+    public String getPhoneNumber() {
+        return _phone_number;
     }
 }

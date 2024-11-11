@@ -2,9 +2,11 @@ package src;
 
 import java.util.ArrayList;
 
+
 public abstract class User {
     private UserInformation user_information;
     public User(UserInformation user_information) {
+        this.user_information = user_information;
     }
 
     public UserInformation getUserInformation() {
