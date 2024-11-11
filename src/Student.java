@@ -2,11 +2,11 @@ package src;
 
 import java.util.ArrayList;
 
-public class Student extends User { // When you initialize a student, you should also initialize a transcript!!!!
+public class Student extends User {
     private int _current_class;
     private StudentID _studentID;
     private Transcript _transcript;
-    private Advisor _advisor;
+    private Department _department;
     private ArrayList<Course> _current_courses;
     private ArrayList<TakenCourse> _taken_courses_for_transcript; // this variable is for the transcript creation for the student who has already taken courses never add anything to this variable
 
@@ -43,6 +43,19 @@ public class Student extends User { // When you initialize a student, you should
         CourseRegistrationService courseRegistrationService = new CourseRegistrationService(); // !!!!!!!!! change this later !!!!!!!!
         courseRegistrationService.createCourseRequest(this, course);
         return true;
+    public Transcript getTranscript() {    //getter
+        return _transcript;
+    }
+
+    public Department getDepartment() {    //getter
+        return _department;
+    }
+    public int getCurrentClass() {    //getter
+        return _current_class;
+    }
+
+    public boolean takeCourse() {
+        return false;
     }
 
     //getters
