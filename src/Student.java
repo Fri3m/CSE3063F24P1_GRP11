@@ -8,6 +8,17 @@ public class Student extends User {
     private Transcript _transcript;
     private Department _department;
     private ArrayList<Course> _current_courses;
+    private Advisor _advisor; // Mevcut danışman
+
+    // Mevcut danışmanı alır
+    public Advisor get_advisor() {
+        return _advisor;
+    }
+
+    // Mevcut danışmanı ayarlar
+    public void set_advisor(Advisor advisor) {
+        this._advisor = advisor;
+    }
 
     public Student(UserInformation userInformation, StudentID studentID) {
         super(userInformation);
@@ -41,4 +52,5 @@ class StudentID{
     }
 
     //getters
+
 }
