@@ -122,7 +122,7 @@ class CourseRequirements implements FacultyOnlyCourse, DepartmentOnlyCourse {
     }
     @Override
     public Department checkDepartment(Student student) {                      // check department method
-        return student.getDepartment();
+        return student.get_studentID().get_department();
     }
     public boolean isDepartmentOnly() {                                     // is department only method
         return isDepartmentOnly;
@@ -133,7 +133,7 @@ class CourseRequirements implements FacultyOnlyCourse, DepartmentOnlyCourse {
 
     @Override
     public Faculty checkFaculty(Student student) {                          // check faculty method
-        return student.getDepartment().getFaculty();
+        return student.get_studentID().get_faculty();
     }
     public boolean isFacultyOnly() {                                        // is faculty only method
         return isFacultyOnly;
