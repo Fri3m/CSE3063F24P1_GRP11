@@ -8,6 +8,11 @@ public class Student extends User {
     private Transcript _transcript;
     private Advisor _advisor;
     private ArrayList<Course> _current_courses;
+
+    // Mevcut danışmanı ayarlar
+    public void set_advisor(Advisor advisor) {
+        this._advisor = advisor;
+    }
     private ArrayList<TakenCourse> _taken_courses_for_transcript; // this variable is for the transcript creation for the student who has already taken courses never add anything to this variable
 
     public Student(UserInformation userInformation, StudentID studentID) {
@@ -136,3 +141,4 @@ class StudentID {
         return _ID;
     }
 }
+
