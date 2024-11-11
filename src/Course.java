@@ -34,8 +34,13 @@ class TakenCourse{
     }
 
     private void calculateCourseScore(){
+
     }
 
+
+    public Score get_course_score() {
+        return _course_score;
+    }
 }
 
 enum Score{
