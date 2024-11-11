@@ -1,8 +1,8 @@
 package src;
-import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.ObjectMapper;
+
 
 import java.io.File;
+import java.util.List;
 import java.util.Scanner;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -15,46 +15,23 @@ import java.io.IOException;
 
 public class LoginAuthService {
 
-    private ArrayList<User> _users;
+    private ArrayList<User> _users = new ArrayList<>();
     public LoginAuthService() {
-        _users = new ArrayList<>();
     }
     private String encoded_password;
 
 
-    public static void main(String[] args) {
-        LoginAuthService authService = new LoginAuthService();
-
-        // Initialize the user list
-        authService._users = new ArrayList<>();
-        while(true) {
-            System.out.println("1. Register\n2. Login\n3. Exit");
-            Scanner scanner = new Scanner(System.in);
-            int choice = scanner.nextInt();
-            if (choice == 1) {
-                authService.register("john.doe", "password123");
-            } else if (choice == 2) {
-                authService.login("john.doe@marun.edu.tr", "password123");
-            } else if (choice == 3) {
-                break;
-            }
-        }
-
-    }
-    public boolean login(String university_email, String password) {
+    public boolean login() {
 
         Scanner scanner = new Scanner(System.in);
-
         System.out.println("Enter your university email: ");
-        university_email = scanner.nextLine();
-
+        String email = scanner.nextLine();
         System.out.println("Enter your password: ");
-        password = scanner.nextLine();
-
+        String password = scanner.nextLine();
         password = hashPassword(password);
 
         for (User user : _users) {
-            if (user.getUserInformation().get_UNIVERSITY_EMAIL().equals(university_email)) {
+            if (user.getUserInformation().get_UNIVERSITY_EMAIL().equals(email)) {
                 if (user.getUserInformation().get_encoded_password().equals(password)) {
                     System.out.println("Login successful");
                     return true;
@@ -69,31 +46,27 @@ public class LoginAuthService {
         return true;
     }
 
-    public boolean register(String university_email, String password) {
-        Scanner scanner = new Scanner(System.in);
+    public boolean register() {
 
+        Scanner scanner = new Scanner(System.in);
         System.out.println("Enter your first name: ");
         String first_name = scanner.nextLine();
-
         System.out.println("Enter your last name: ");
         String last_name = scanner.nextLine();
-
+        System.out.println("Enter your address: ");
+        String address = scanner.nextLine();
         System.out.println("Enter your phone number: ");
         String phone_number = scanner.nextLine();
 
-        System.out.println("Enter your address: ");
-        String address = scanner.nextLine();
-
         System.out.println("Enter your email: ");
         String email = scanner.nextLine();
-
         while (!validateEmail(email)) {
             System.out.println("Invalid email. Please enter a valid email");
             email = scanner.nextLine();
         }
 
-        System.out.println("Enter your university email (Please enter until the part before the @ sign): ");
-        university_email = scanner.nextLine();
+        System.out.println("Enter your university email. (Please enter until before the @ sign): ");
+        String university_email = scanner.nextLine();
 
         while (university_email.contains("@")|| isEmailRegistered(university_email + "@marun.edu.tr")) {
             if (university_email.contains("@")) {
@@ -103,18 +76,16 @@ public class LoginAuthService {
             }
             university_email = scanner.nextLine();
         }
-
         university_email += "@marun.edu.tr";
 
         System.out.println("Enter your password: ");
-        password = scanner.nextLine();
+        String password = scanner.nextLine();
 
         System.out.println("Choose your role: ");
         System.out.println("1. Student" + "\n" + "2. Lecturer" + "\n" + "3. Advisor");
         int role = scanner.nextInt();
 
         encoded_password = hashPassword(password);
-
 
         User user;
 
@@ -131,7 +102,7 @@ public class LoginAuthService {
 
         _users.add(user);
 
-        saveUsersToJson();
+        //saveUsersToJson();
 
         return true;
     }
@@ -168,25 +139,37 @@ public class LoginAuthService {
     private boolean isEmailRegistered(String university_email) {
         for (User user : _users) {
             if (user.getUserInformation().get_UNIVERSITY_EMAIL().equals(university_email)) {
-                return true; // Email is already registered
+                return true;
             }
         }
-        return false; // Email is not registered
+        return false;
     }
 
-
+/*
     private void saveUsersToJson() {
         ObjectMapper objectMapper = new ObjectMapper();
         try {
             File file = new File("src/main/resources/database/data.json");
-            objectMapper.writerWithDefaultPrettyPrinter().writeValue(file, _users);
+            ArrayList<User> existingUsers = new ArrayList<>();
 
+            // Check if the file exists and is not empty
+            if (file.exists() && file.length() != 0) {
+
+                JavaType type = objectMapper.getTypeFactory().constructCollectionType(ArrayList.class, User.class);
+                existingUsers = objectMapper.readValue(file, type);
+
+            }
+
+            // Add new users to the existing users list
+            existingUsers.addAll(_users);
+
+            // Write the updated users list back to the file
+            objectMapper.writerWithDefaultPrettyPrinter().writeValue(file, existingUsers);
             System.out.println("User data saved to data.json.");
         } catch (IOException e) {
             System.err.println("An error occurred while saving user data: " + e.getMessage());
         }
-    }
-
+    }*/
 //    private void getFromFile(){
 //
 //    }

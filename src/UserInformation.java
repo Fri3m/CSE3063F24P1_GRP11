@@ -27,6 +27,7 @@ public class UserInformation {
         this._encoded_password = encoded_password;
     }
 
+/*
     public static void main(String[] args) {
         // Example password encoding for initial password setup
         String initialPassword = "password123";
@@ -109,7 +110,7 @@ public class UserInformation {
         }
 
         scanner.close();
-    }
+    }*/
     private boolean verifyPassword(String encoded_password) {
         return this._encoded_password.equals(encoded_password);
     }
