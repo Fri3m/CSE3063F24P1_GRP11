@@ -1,7 +1,12 @@
 package src;
 
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+
 import java.io.File;
+import java.io.FileReader;
+import java.lang.reflect.Type;
 import java.util.List;
 import java.util.Scanner;
 import java.security.MessageDigest;
@@ -90,7 +95,7 @@ public class LoginAuthService {
         User user;
 
         if (role == 1) {
-            user = new Student(new UserInformation(first_name, last_name, university_email, email, address, phone_number, encoded_password), new StudentID(new Department(new DepartmentID(2)), 2021, 1));
+            user = new Student(new UserInformation(first_name, last_name, university_email, email, address, phone_number, encoded_password), new StudentID(new DepartmentID(100), 2024, 1));
         } else if (role == 2) {
             user = new Lecturer(new UserInformation(first_name, last_name, university_email, email, address, phone_number, encoded_password));
         } else if (role == 3) {
@@ -143,6 +148,71 @@ public class LoginAuthService {
             }
         }
         return false;
+    }
+    public ArrayList<Student> loadStudentsFromFile() { // read all students from the file
+        String filePath = "students.json";
+        Gson gson = new Gson();
+        Type studentListType = new TypeToken<ArrayList<Student>>() {
+        }.getType();
+
+        try (FileReader reader = new FileReader(filePath)) {
+            return gson.fromJson(reader, studentListType);  // Read existing list of students
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+    public ArrayList<Lecturer> loadLecturersFromFile() { // read all lecturers from the file
+        String filePath = "lecturers.json";
+        Gson gson = new Gson();
+        Type lecturerListType = new TypeToken<ArrayList<Lecturer>>() {
+        }.getType();
+
+        try (FileReader reader = new FileReader(filePath)) {
+            return gson.fromJson(reader, lecturerListType);  // Read existing list of lecturers
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+    public ArrayList<Advisor> loadAdvisorsFromFile() { // read all advisors from the file
+        String filePath = "advisors.json";
+        Gson gson = new Gson();
+        Type advisorListType = new TypeToken<ArrayList<Advisor>>() {
+        }.getType();
+
+        try (FileReader reader = new FileReader(filePath)) {
+            return gson.fromJson(reader, advisorListType);  // Read existing list of advisors
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+    public ArrayList<Department> loadDepartmentsFromFile() { // read all departments from the file
+        String filePath = "departments.json";
+        Gson gson = new Gson();
+        Type departmentListType = new TypeToken<ArrayList<Department>>() {
+        }.getType();
+
+        try (FileReader reader = new FileReader(filePath)) {
+            return gson.fromJson(reader, departmentListType);  // Read existing list of departments
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+    public ArrayList<Faculty> loadFacultiesFromFile() { // read all faculties from the file
+        String filePath = "faculties.json";
+        Gson gson = new Gson();
+        Type facultyListType = new TypeToken<ArrayList<Faculty>>() {
+        }.getType();
+
+        try (FileReader reader = new FileReader(filePath)) {
+            return gson.fromJson(reader, facultyListType);  // Read existing list of faculties
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
 /*

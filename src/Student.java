@@ -33,17 +33,6 @@ public class Student extends User {
         _taken_courses_for_transcript = taken_courses;
     }
 
-    public boolean initialize() {
-        if (_transcript == null) { // if the student doesn't have a transcript, create a new one
-            _transcript = new Transcript(this);
-            for (TakenCourse course : _taken_courses_for_transcript) { // add the courses that the student has already taken to the transcript
-                _transcript.addTakenCourse(course);
-            }
-        }
-        _studentID.get_department().addStudent(this, this); // add the student to the department
-        return true;
-    }
-
     public boolean takeCourse(Course course) {
         CourseRegistrationService courseRegistrationService = new CourseRegistrationService(); // !!!!!!!!! change this later !!!!!!!!
         courseRegistrationService.createCourseRequest(this, course);
@@ -87,22 +76,20 @@ public class Student extends User {
 
 
 class StudentID {
-    private final Faculty _faculty;
-    private final Department _department;
+    private final DepartmentID _departmentID;
     private final int _entrance_date; // in format of YYYY
     private final int _entrance_rank; // the rank of the student in the entrance exam
     private final String _ID;
 
-    StudentID(Department department, int entrance_date, int entrance_rank) {
-        _faculty = department.getFaculty();
-        _department = department;
+    StudentID(DepartmentID departmentID, int entrance_date, int entrance_rank) {
+        _departmentID = departmentID;
         _entrance_date = entrance_date;
         _entrance_rank = entrance_rank;
         _ID = createStudentID();
     }
 
     private String createStudentID() {
-        String first_part = _department.getDepartmentID().getDepartmentID() + ""; // assumes that departmentID is unique and 3 characters
+        String first_part = _departmentID.getDepartmentID() + ""; // assumes that departmentID is unique and 3 characters
         String second_part = _entrance_date + "";
         second_part = second_part.substring(1); // assumes the _entrance_date is format of YYYY and get the last 3 digits of the year. ex: 2024->024
         StringBuilder third_part = new StringBuilder(_entrance_rank + "");
@@ -121,12 +108,9 @@ class StudentID {
 
     //getters
 
-    public Faculty get_faculty() {
-        return _faculty;
-    }
 
-    public Department get_department() {
-        return _department;
+    public DepartmentID get_departmentID() {
+        return _departmentID;
     }
 
     public int get_entrance_date() {
@@ -141,4 +125,3 @@ class StudentID {
         return _ID;
     }
 }
-

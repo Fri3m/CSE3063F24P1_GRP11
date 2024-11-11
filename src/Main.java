@@ -1,11 +1,15 @@
 package src;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
     private LoginAuthService _login_auth_service;
     private CourseRegistrationService _course_registration_service;
     private UserInformation _user_information;
+    private ArrayList<Faculty> _faculties;
+    private ArrayList<Department> _departments;
+    private ArrayList<Student> _students;
 
     public static void main(String[] args) {
         Main main = new Main();
@@ -14,6 +18,16 @@ public class Main {
     private Main() {
         _login_auth_service = new LoginAuthService();
         _course_registration_service = new CourseRegistrationService();
+        _faculties = _login_auth_service.loadFacultiesFromFile();
+        _departments = _login_auth_service.loadDepartmentsFromFile();
+        _students = _login_auth_service.loadStudentsFromFile();
+        for (Student student : _students) {
+            for(Department department : _departments) {
+                if (student.get_studentID().get_departmentID().getDepartmentID() == department.getDepartmentID().getDepartmentID()) {
+                   department.get_students().add(student);
+                }
+            }
+        }
     }
 
     private void startMenu() {
@@ -36,7 +50,7 @@ public class Main {
             case "Register":
             case "register":
             case "REGISTER":
-                register();
+               // register();
                 break;
             case "3":
             case "exit":
