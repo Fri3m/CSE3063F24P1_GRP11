@@ -2,7 +2,7 @@ package src;
 
 import java.util.ArrayList;
 
-public class Course {                                                   // Course class
+public class Course {                                         // Course class
     private String courseName;
     private String courseCode;
     private String courseDescription;
@@ -23,6 +23,13 @@ public class Course {                                                   // Cours
         courseSections.remove(courseSection);
         return true;
     }
+    public boolean equals(Course course) {
+        if(this.courseName == course.courseName && this.courseCode == course.courseCode){
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
 
 class TakenCourse{
@@ -34,6 +41,11 @@ class TakenCourse{
     TakenCourse(Course course, int midtermScore, int finalScore){
 
     }
+
+    public Course getCourse() {
+        return _course;
+    }
+
 
     private void calculateCourseScore(){
         double total = _midterm_score * 0.6 + _final_score * 0.4;
@@ -88,16 +100,17 @@ class CourseRequirements implements FacultyOnlyCourse, DepartmentOnlyCourse {
         } return checkPrerequisiteCourse(student);                                  // check prerequisite courses
 
     }
-    public boolean checkPrerequisiteCourse(Student student){                        // check prerequisite courses method
+    public boolean checkPrerequisiteCourse(Student student){// check prerequisite courses method
+
         for(Course course : _prerequisite_courses){
-            boolean isTaken = false;
-            for(TakenCourse takenCourse : student.getTranscript().getTakenCourses()){
-                if(takenCourse.equals(course)){
-                    isTaken = true;
+            boolean check = false;
+            for(TakenCourse takenCourse : student.getTranscript().getTakenCourses()) {
+                if (takenCourse.getCourse().equals(course)) { //branchleri birlşetirirken takenCourse getterının ismini aynı yap
+                    check = true;
                     break;
                 }
             }
-            if(!isTaken){
+            if (!check) {
                 return false;
             }
         }
