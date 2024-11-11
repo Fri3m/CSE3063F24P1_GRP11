@@ -2,9 +2,15 @@ package src;
 
 import java.util.ArrayList;
 
+
 public abstract class User {
     private UserInformation user_information;
     public User(UserInformation user_information) {
+        this.user_information = user_information;
+    }
+
+    public UserInformation getUserInformation() {
+        return user_information;
     }
 }
 
@@ -30,7 +36,7 @@ class Lecturer extends Staff {
     }
 }
 
-class Advisor extends Lecturer {
+class Advisor extends Lecturer{
     private ArrayList<Student> _advisor_students;
     public Advisor(UserInformation user_information) {
         super(user_information);
