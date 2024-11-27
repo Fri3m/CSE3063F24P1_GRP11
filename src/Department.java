@@ -6,11 +6,11 @@ public class Department {    // Department class
     private final DepartmentID _departmentID;
     private ArrayList<Lecturer> _lecturers;
     private ArrayList<Student> _students;
-    private ArrayList<Course> _courses;
-    private Faculty _faculty;
+    private FacultyID _facultyID;
 
-    public Department(DepartmentID departmentID) {                      // constructor
+    public Department(DepartmentID departmentID, FacultyID facultyID) {                      // constructor
         _departmentID = departmentID;
+        _facultyID = facultyID;
         _students = new ArrayList<Student>();
     }
 
@@ -20,10 +20,6 @@ public class Department {    // Department class
     }
     public boolean addStudent(Student student,User user) {              // add student method
         _students.add(student);
-        return true;
-    }
-    public boolean addCourse(Course course,User user) {                 // add course method
-        _courses.add(course);
         return true;
     }
     public DepartmentID getDepartmentID() {                             // get department ID method
@@ -37,15 +33,10 @@ public class Department {    // Department class
         _students.remove(student);
         return true;
     }
-    public boolean removeCourse(Course course,User user) {          // remove course method
-        _courses.remove(course);
-        return true;
-    }
 
-    public Faculty getFaculty() {                       // get faculty method
-        return _faculty;
+    public FacultyID get_facultyID() {
+        return _facultyID;
     }
-    //getters
 
     public ArrayList<Student> get_students() {
         return _students;
@@ -53,10 +44,14 @@ public class Department {    // Department class
 }
 class DepartmentID {                                    // DepartmentID class
     private final int _departmentID;
-    public DepartmentID(int departmentID) {
+    private final String _departmentName;
+    public DepartmentID(int departmentID, String departmentName) {    // constructor
         _departmentID = departmentID;
+        _departmentName = departmentName;
     }
-
+    public String getDepartmentName() {                     //department name getter
+        return _departmentName;
+    }
     public int getDepartmentID() {                     //department ID getter
         return _departmentID;
     }

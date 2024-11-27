@@ -6,31 +6,17 @@ public class Student extends User {
     private int _current_class;
     private StudentID _studentID;
     private Transcript _transcript;
-    private Advisor _advisor;
+    private StaffId _advisorID;
     private ArrayList<Course> _current_courses;
 
-    // Mevcut danışmanı ayarlar
-    public void set_advisor(Advisor advisor) {
-        this._advisor = advisor;
-    }
-    private ArrayList<TakenCourse> _taken_courses_for_transcript; // this variable is for the transcript creation for the student who has already taken courses never add anything to this variable
 
-    public Student(UserInformation userInformation, StudentID studentID) {
-        this(userInformation, studentID, 1, new ArrayList<Course>());
-    }
-
-    public Student(UserInformation userInformation, StudentID studentID, int current_class, ArrayList<Course> current_courses) {
+    public Student(UserInformation userInformation, StudentID studentID, Transcript transcript, StaffId advisorID, int current_class) {
         super(userInformation);
         _studentID = studentID;
+        _transcript = transcript;
+        _advisorID = advisorID;
         _current_class = current_class;
-        _advisor = new Advisor(new UserInformation("test", "test", "test")); // get the advisor of the department
-        _current_courses = current_courses;
-        _taken_courses_for_transcript = new ArrayList<TakenCourse>();
-    }
-
-    public Student(UserInformation userInformation, StudentID studentID, int current_class, ArrayList<Course> current_courses, ArrayList<TakenCourse> taken_courses) {
-        this(userInformation, studentID, current_class, current_courses);
-        _taken_courses_for_transcript = taken_courses;
+        _current_courses = new ArrayList<Course>();
     }
 
     public boolean takeCourse(Course course, CourseRegistrationService courseRegistrationService) {
@@ -46,12 +32,6 @@ public class Student extends User {
         return _current_class;
     }
 
-    public boolean takeCourse() {
-        return false;
-    }
-
-//getters
-
     public int get_current_class() {
         return _current_class;
     }
@@ -60,8 +40,8 @@ public class Student extends User {
         return _studentID;
     }
 
-    public Advisor get_advisor() {
-        return _advisor;
+    public StaffId get_advisorID() {
+        return _advisorID;
     }
 
     public Transcript get_transcript() {
@@ -76,14 +56,16 @@ public class Student extends User {
 
 class StudentID {
     private final DepartmentID _departmentID;
+    private final FacultyID _facultyID;
     private final int _entrance_date; // in format of YYYY
     private final int _entrance_rank; // the rank of the student in the entrance exam
     private final String _ID;
 
-    StudentID(DepartmentID departmentID, int entrance_date, int entrance_rank) {
+    StudentID(DepartmentID departmentID, int entrance_date, int entrance_rank, FacultyID facultyID) {
         _departmentID = departmentID;
         _entrance_date = entrance_date;
         _entrance_rank = entrance_rank;
+        _facultyID = facultyID;
         _ID = createStudentID();
     }
 
@@ -110,6 +92,10 @@ class StudentID {
 
     public DepartmentID get_departmentID() {
         return _departmentID;
+    }
+
+    public FacultyID get_facultyID() {
+        return _facultyID;
     }
 
     public int get_entrance_date() {

@@ -6,34 +6,35 @@ public class CourseRegistrationService {
     private ArrayList<CourseRequest> _courseRequests = new ArrayList<CourseRequest>();
 
     public void createCourseRequest(Student student, Course course) {
-        _courseRequests.add(new CourseRequest(student, course, student.get_advisor()));
+        _courseRequests.add(new CourseRequest(student, course, student.get_advisorID()));
 
     }
+
     public ArrayList<CourseRequest> checkAccesiableRequests(Advisor advisor) {
         System.out.println(_courseRequests.size());
-        ArrayList<CourseRequest> accesiableRequests = new ArrayList<CourseRequest>();
+        ArrayList<CourseRequest> accessibleRequests = new ArrayList<CourseRequest>();
 
         for (CourseRequest courseRequest : _courseRequests) {
-            System.out.println("FORUN İÇİNDEYİM");
-            if (courseRequest.get_advisor().equals(advisor)) {
-                System.out.println("IF İÇİNDEYİM");
-                accesiableRequests.add(courseRequest);
+//            System.out.println("FORUN İÇİNDEYİM");
+            if (courseRequest.get_advisorID().equals(advisor.get_staffId())) {
+//                System.out.println("IF İÇİNDEYİM");
+                accessibleRequests.add(courseRequest);
             }
         }
 
-        return accesiableRequests;
+        return accessibleRequests;
     }
 }
 
-class CourseRequest{
-    private Student _student;
-    private Course _course;
-    private Advisor _advisor;
+class CourseRequest {
+    private final Student _student;
+    private final Course _course;
+    private final StaffId _advisorID;
 
-    public CourseRequest(Student student, Course course, Advisor advisor){
+    public CourseRequest(Student student, Course course, StaffId advisorID) {
         _student = student;
         _course = course;
-        _advisor = advisor;
+        _advisorID = advisorID;
     }
 
     public Student get_student() {
@@ -44,7 +45,7 @@ class CourseRequest{
         return _course;
     }
 
-    public Advisor get_advisor() {
-        return _advisor;
+    public StaffId get_advisorID() {
+        return _advisorID;
     }
 }

@@ -1,12 +1,12 @@
 package src;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Objects;
 
 
-public abstract class User {
+public class User {
     private UserInformation user_information;
-    public User(UserInformation user_information) {
+    User(UserInformation user_information) {
         this.user_information = user_information;
     }
 
@@ -14,47 +14,63 @@ public abstract class User {
         return user_information;
     }
 
-
 }
 
-abstract class Staff extends User {
-    private StaffID _staffID;
+class Staff extends User {
+    private StaffId _staffId;
 
-    public Staff(UserInformation user_information) {
+    Staff(UserInformation user_information) {
         super(user_information);
+        _staffId = new StaffId();
+    }
+
+    public StaffId get_staffId() {
+        return _staffId;
+    }
+}
+
+class StaffId{
+    private final int _staffId;
+    private static int _staffIdCounter = 0;
+
+    public StaffId() {
+        _staffId = generateStaffId();
+    }
+
+    private static int generateStaffId() {
+        return _staffIdCounter++;
+    }
+
+    public int get_staffId() {
+        return _staffId;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        StaffId staffId = (StaffId) o;
+        return _staffId == staffId._staffId;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(_staffId);
     }
 }
 
 class Lecturer extends Staff {
-    private ArrayList<Course> _courses;
-    private Department _department;
+    private DepartmentID _departmentID;
+    private FacultyID _facultyID;
+
     public Lecturer(UserInformation user_information) {
         super(user_information);
-    }
-    public boolean addCourse(Course course) {
-        return true;
-    }
-    public boolean removeCourse(Course course) {
-        return true;
     }
 }
 
 class Advisor extends Lecturer{
-    private ArrayList<Student> _advisor_students;
+    private ArrayList<StudentID> _advisor_students;
     public Advisor(UserInformation user_information) {
         super(user_information);
-    }
-
-    public boolean addStudentToAdvisor(Student student) {
-        if (student.get_advisor() != null) {
-            System.out.println("The student already has an advisor.");
-            return false;
-        }
-        return true;
-    }
-
-    public boolean removeStudentToAdvisor(Student student) {
-        return true;
     }
 
     public boolean checkRegistration(CourseRegistrationService courseRegistrationService) {
@@ -76,9 +92,6 @@ class Advisor extends Lecturer{
         System.out.println("There is no request");
        return false;
     }
-    public boolean equals(Advisor advisor){
-        return this.getUserInformation().get_email().equals(advisor.getUserInformation().get_email());
-    }
 
 
     private boolean checkCourseRequest(CourseRequest courseRequest){
@@ -88,15 +101,5 @@ class Advisor extends Lecturer{
     }
 }
 
-class StaffID{ // check this class logic again
-    private static int lastID = 0;
-    private final int _id;
-    public StaffID() {
-        this._id = StaffID.generateNewUniqueID();
-    }
-    private static int generateNewUniqueID(){
-        return ++lastID;
-    }
-}
 
 

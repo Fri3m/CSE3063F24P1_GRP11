@@ -10,12 +10,6 @@ public class UserInformation {
     private String _address;
     private String _phone_number;
 
-    public UserInformation(String first_name, String last_name, String university_email) {
-        this._FIRST_NAME = first_name;
-        this._LAST_NAME = last_name;
-        this._UNIVERSITY_EMAIL = university_email;
-    }
-
     // New constructor
     public UserInformation(String first_name, String last_name, String university_email, String email, String address, String phone_number, String encoded_password) {
         this._FIRST_NAME = first_name;

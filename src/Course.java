@@ -1,42 +1,31 @@
 package src;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class Course {
     private String courseName;
     private String courseCode;
-    private String courseDescription;
+    private CourseInformation courseInformation;
     private CourseRequirements courseRequirements;
     private ArrayList<CourseSection> courseSections;
+
+    public Course(CourseInformation courseInformation, CourseRequirements courseRequirements, ArrayList<CourseSection> courseSections) {
+        this.courseInformation = courseInformation;
+        this.courseRequirements = courseRequirements;
+        this.courseSections = courseSections;
+    }
 
     public boolean checkStudentQualification(Student student) {             // check student qualification method
         return courseRequirements.isStudentQualified(student);
     }
 
-    public boolean changeLecturerOfCourseSection(CourseSection courseSection, Lecturer lecturer) {
-        return courseSection.changeLecturer(lecturer);
-    }
-
-    public boolean addCourseSection(CourseSection courseSection) {
-        courseSections.add(courseSection);
-        return true;
-    }
-
-    public boolean removeCourseSection(CourseSection courseSection) {
-        courseSections.remove(courseSection);
-        return true;
-    }
-
-    public boolean equals(Course course) {
-        if (this.courseName == course.courseName && this.courseCode == course.courseCode) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-
-    public String getCourseName() {
+    public String getCourseName() { // do not use this. Instead of use getter for courseInformation
         return courseName;
+    }
+
+    public CourseInformation getCourseInformation() {
+        return courseInformation;
     }
 
     public CourseRequirements getCourseRequirements() {
@@ -44,39 +33,72 @@ public class Course {
     }
 }
 
+class CourseInformation {
+    private final String courseName;
+    private final String courseCode;
+
+    CourseInformation(String courseName, String courseCode) {
+        this.courseName = courseName;
+        this.courseCode = courseCode;
+    }
+
+    public String getCourseCode() {
+        return courseCode;
+    }
+
+    public String getCourseName() {
+        return courseName;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        CourseInformation that = (CourseInformation) o;
+        return Objects.equals(courseName, that.courseName) && Objects.equals(courseCode, that.courseCode);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(courseName, courseCode);
+    }
+}
+
 class TakenCourse {
-    private Course _course;
-    private int _midterm_score;
-    private int _final_score;
-    private Score _course_score;
+    private CourseInformation _courseInformation;
+    private final int _midterm_score;
+    private final int _final_score;
+    private final Score _course_score;
 
-    TakenCourse(Course course, int midtermScore, int finalScore) {
-
+    TakenCourse(CourseInformation courseInformation, int midtermScore, int finalScore) {
+        _courseInformation = courseInformation;
+        _midterm_score = midtermScore;
+        _final_score = finalScore;
+        _course_score = calculateCourseScore();
     }
 
-    public Course getCourse() {
-        return _course;
+    public CourseInformation get_courseInformation() {
+        return _courseInformation;
     }
 
 
-    private void calculateCourseScore() {
+    private Score calculateCourseScore() {
         double total = _midterm_score * 0.6 + _final_score * 0.4;
         if (total >= 90) {
-            _course_score = Score.AA;
+            return Score.AA;
         } else if (total >= 85) {
-            _course_score = Score.BA;
+            return Score.BA;
         } else if (total >= 80) {
-            _course_score = Score.BB;
+            return Score.BB;
         } else if (total >= 75) {
-            _course_score = Score.CB;
+            return Score.CB;
         } else if (total >= 65) {
-            _course_score = Score.CC;
+            return Score.CC;
         } else if (total >= 58) {
-            _course_score = Score.DC;
+            return Score.DC;
         } else if (total >= 50) {
-            _course_score = Score.DD;
+            return Score.DD;
         } else {
-            _course_score = Score.FF;
+            return Score.FF;
         }
     }
 
@@ -98,28 +120,41 @@ enum Score {
 }
 
 class CourseRequirements {
-    private ArrayList<Course> _prerequisite_courses;
-    private int _minimum_current_class;
-    private Department _department;
-    private Faculty _faculty;
+    private ArrayList<CourseInformation> _prerequisite_courses;
+    private final int _minimum_current_class;
+    private final DepartmentID _departmentID;
+    private final FacultyID _facultyID;
 
+    public CourseRequirements(ArrayList<CourseInformation> prerequisiteCourses, int minimumCurrentClass, FacultyID faculty, DepartmentID department) { // constructor
+        _prerequisite_courses = prerequisiteCourses;
+        _minimum_current_class = minimumCurrentClass;
+        _departmentID = department;
+        _facultyID = faculty;
+    }
 
     public boolean isStudentQualified(Student student) {
         if (student.getCurrentClass() < _minimum_current_class) {                     // check current class
             return false;
         }
-        return checkPrerequisiteCourse(student);                                  // check prerequisite courses
+        if (_departmentID != null || _departmentID.getDepartmentID() != student.get_studentID().get_departmentID().getDepartmentID()) {    // check department
+            return false;
+        }
 
+        if (_facultyID != null || _facultyID.getFacultyID() != student.get_studentID().get_facultyID().getFacultyID()) {    // check faculty
+            return false;
+        }
+
+        return checkPrerequisiteCourse(student);                                  // check prerequisite courses
     }
 
-    public boolean checkPrerequisiteCourse(Student student) {// check prerequisite courses method
-        if (_prerequisite_courses == null) {
+    private boolean checkPrerequisiteCourse(Student student) {// check prerequisite courses method
+        if (_prerequisite_courses == null || _prerequisite_courses.isEmpty()) {
             return true;
         }
-        for (Course course : _prerequisite_courses) {
+        for (CourseInformation courseInformation : _prerequisite_courses) {
             boolean check = false;
             for (TakenCourse takenCourse : student.getTranscript().getTakenCourses()) {
-                if (takenCourse.getCourse().equals(course)) { //branchleri birlşetirirken takenCourse getterının ismini aynı yap
+                if (takenCourse.get_courseInformation().equals(courseInformation)) { //branchleri birlşetirirken takenCourse getterının ismini aynı yap
                     check = true;
                     break;
                 }
@@ -130,8 +165,6 @@ class CourseRequirements {
         }
         return true;
     }
-
-
 }
 
 class CourseSection {                                                        // CourseSection class
