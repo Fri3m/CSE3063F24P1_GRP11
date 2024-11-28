@@ -67,6 +67,34 @@ class Lecturer extends Staff {
     }
 }
 
+class Admin extends Staff { // Admin is a staff that can add or remove students from system
+    public Admin(UserInformation user_information) {
+        super(user_information);
+    }
+
+    public Student addStudent(UserInformation userInformation,Department department, int entrance_date, int entrance_rank, StaffId advisorID, ArrayList<Student> students){
+
+        Student s = new DataManagement().generateNonRandomStudent(userInformation,department,entrance_date,entrance_rank,advisorID);
+        if (s == null){
+            return null;
+        }
+        students.add(s);
+        return s;
+    }
+    public boolean removeStudent(ArrayList<Student> students, String universityMail){
+        for (Student student: students){
+            if(student.getUserInformation().get_UNIVERSITY_EMAIL().equals(universityMail)){
+                students.remove(student);
+                return true;
+            }
+        }
+        return false;
+    }
+
+
+
+}
+
 class Advisor extends Lecturer{
     private ArrayList<StudentID> _advisor_students;
     public Advisor(UserInformation user_information) {

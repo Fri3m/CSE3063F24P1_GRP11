@@ -20,9 +20,19 @@ public class DataManagement {
 
     public static void main(String[] args) {
         DataManagement dataManagement = new DataManagement();
-        Department d = dataManagement.generateDepartment(150,"ComputerEngineering",dataManagement.generateFaculty(1,"Engineering"));
-        Student s = dataManagement.generateRandomStudent(d,2019,1,new StaffId());
-        dataManagement.createOrChangeStudent(s);
+
+        Faculty engineering = dataManagement.generateFaculty(1, "Engineering");
+        dataManagement.createOrChangeFaculty(engineering);
+
+        Department computerEngineering = dataManagement.generateDepartment(150, "ComputerEngineering", engineering);
+
+        Department electricalEngineering = dataManagement.generateDepartment(151, "ElectricalEngineering", engineering);
+
+//        dataManagement.createOrChangeStudent(dataManagement.generateRandomStudent(computerEngineering, 2020, 1, new StaffId()));
+        dataManagement.removeStudent(dataManagement.getStudent("huseyinsari@marun.edu.tr"));
+        dataManagement.removeDepartment(computerEngineering);
+        dataManagement.removeFaculty(engineering);
+
     }
 
 
@@ -63,6 +73,25 @@ public class DataManagement {
         return null;
     }
 
+    public boolean removeStudent(Student student) {
+        if (student == null) {
+            return false;
+        }
+        String filePath = STUDENTS_FILE_PATH + student.getUserInformation().get_UNIVERSITY_EMAIL() + ".json";
+        try {
+            java.io.File file = new java.io.File(filePath);
+            if (file.exists()) {
+                file.delete();
+                return true;
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
+
+        return false;
+    }
+
     public ArrayList<Lecturer> getAllLecturers() {
         // Read all lecturers from the files
         ArrayList<Lecturer> lecturers = new ArrayList<>();
@@ -95,6 +124,17 @@ public class DataManagement {
             e.printStackTrace();
         }
         return null;
+    }
+
+    public boolean removeLecturer(Lecturer lecturer) {
+        String filePath = LECTURERS_FILE_PATH + lecturer.getUserInformation().get_UNIVERSITY_EMAIL() + ".json";
+        java.io.File file = new java.io.File(filePath);
+        if (file.exists()) {
+            file.delete();
+            return true;
+        }
+
+        return false;
     }
 
     public ArrayList<Course> getAllCourses() {
@@ -133,6 +173,16 @@ public class DataManagement {
         return null;
     }
 
+    public boolean removeCourse(Course course) {
+        String filePath = COURSES_FILE_PATH + course.getCourseInformation().getCourseName() + ".json";
+        java.io.File file = new java.io.File(filePath);
+        if (file.exists()) {
+            file.delete();
+            return true;
+        }
+        return false;
+    }
+
     public ArrayList<Advisor> getAllAdvisors() {
         // Read all advisors from the files
         ArrayList<Advisor> advisors = new ArrayList<>();
@@ -167,6 +217,17 @@ public class DataManagement {
             e.printStackTrace();
         }
         return null;
+    }
+
+    public boolean removeAdvisor(Advisor advisor) {
+        String filePath = ADVISORS_FILE_PATH + advisor.getUserInformation().get_UNIVERSITY_EMAIL() + ".json";
+        java.io.File file = new java.io.File(filePath);
+        if (file.exists()) {
+            file.delete();
+            return true;
+        }
+
+        return false;
     }
 
     public ArrayList<Faculty> getAllFaculties() {
@@ -205,6 +266,17 @@ public class DataManagement {
         return null;
     }
 
+    public boolean removeFaculty(Faculty faculty) {
+        String filePath = FACULTIES_FILE_PATH + faculty.getFacultyID().getFacultyName() + ".json";
+        java.io.File file = new java.io.File(filePath);
+        if (file.exists()) {
+            file.delete();
+            return true;
+        }
+
+        return false;
+    }
+
     public ArrayList<Department> getAllDepartments() {
         // Read all departments from the files
         ArrayList<Department> departments = new ArrayList<>();
@@ -239,6 +311,17 @@ public class DataManagement {
             e.printStackTrace();
         }
         return null;
+    }
+
+    public boolean removeDepartment(Department department) {
+        String filePath = DEPARTMENTS_FILE_PATH + department.getDepartmentID().getDepartmentName() + ".json";
+        java.io.File file = new java.io.File(filePath);
+        if (file.exists()) {
+            file.delete();
+            return true;
+        }
+
+        return false;
     }
 
     //helper methods and variables for generating random objects
@@ -290,7 +373,7 @@ public class DataManagement {
         String city = generateRandomCity();
         String phoneNumber = generatePhoneNumber();
         String password = generatePassword(firstName, city, phoneNumber);
-        return new UserInformation(firstName, lastName, generateRandomUniversityEmail(firstName,lastName), generateEmail(firstName,lastName), city, phoneNumber, password);
+        return new UserInformation(firstName, lastName, generateRandomUniversityEmail(firstName, lastName), generateEmail(firstName, lastName), city, phoneNumber, password);
     }
 
     private Faculty generateFaculty(int FacultyID, String FacultyName) {
@@ -315,6 +398,12 @@ public class DataManagement {
 
     private Student generateRandomStudent(Department department, int entrance_date, int entrance_rank, StaffId advisorID) {
         UserInformation userInformation = generateRandomUserInformation();
+        StudentID studentID = new StudentID(department.getDepartmentID(), entrance_date, entrance_rank, department.get_facultyID());
+        Transcript transcript = new Transcript(studentID);
+        return new Student(userInformation, studentID, transcript, advisorID, 2024 - entrance_date + 1);
+    }
+
+    public Student generateNonRandomStudent(UserInformation userInformation, Department department, int entrance_date, int entrance_rank, StaffId advisorID) {
         StudentID studentID = new StudentID(department.getDepartmentID(), entrance_date, entrance_rank, department.get_facultyID());
         Transcript transcript = new Transcript(studentID);
         return new Student(userInformation, studentID, transcript, advisorID, 2024 - entrance_date + 1);
