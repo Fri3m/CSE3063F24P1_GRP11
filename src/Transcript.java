@@ -15,10 +15,13 @@ public class Transcript {
 
     public boolean addTakenCourses(ArrayList<TakenCourse> takenCourses) {
         _taken_courses.addAll(takenCourses);
+        calculateGPA();
         return true;
     }
 
     public boolean addTakenCourse(TakenCourse tc) {
+        _taken_courses.add(tc);
+        calculateGPA();
         return true;
     }
 

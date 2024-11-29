@@ -25,13 +25,67 @@ public class DataManagement {
         dataManagement.createOrChangeFaculty(engineering);
 
         Department computerEngineering = dataManagement.generateDepartment(150, "ComputerEngineering", engineering);
+        dataManagement.createOrChangeDepartment(computerEngineering);
+
 
         Department electricalEngineering = dataManagement.generateDepartment(151, "ElectricalEngineering", engineering);
+        dataManagement.createOrChangeDepartment(electricalEngineering);
 
-//        dataManagement.createOrChangeStudent(dataManagement.generateRandomStudent(computerEngineering, 2020, 1, new StaffId()));
-        dataManagement.removeStudent(dataManagement.getStudent("huseyinsari@marun.edu.tr"));
-        dataManagement.removeDepartment(computerEngineering);
-        dataManagement.removeFaculty(engineering);
+        Advisor advisor = dataManagement.generateRandomAdvisor(computerEngineering);
+        Lecturer lecturer = dataManagement.generateRandomLecturer(computerEngineering);
+        Lecturer lecturer3 = dataManagement.generateRandomLecturer(computerEngineering);
+        dataManagement.createOrChangeAdvisor(advisor);
+        dataManagement.createOrChangeLecturer(lecturer);
+        dataManagement.createOrChangeLecturer(lecturer3);
+
+        ArrayList<Lecturer> lecturersForSections = new ArrayList<>();
+        lecturersForSections.add(lecturer);
+        lecturersForSections.add(lecturer);
+        lecturersForSections.add(lecturer);
+        ArrayList<Day> days = new ArrayList<>();
+        days.add(Day.Monday);
+        days.add(Day.Monday);
+        days.add(Day.Thursday);
+        ArrayList<SectionTime> sectionTimes = new ArrayList<>();
+        sectionTimes.add(SectionTime.Fifth);
+        sectionTimes.add(SectionTime.Sixth);
+        sectionTimes.add(SectionTime.Fifth);
+        Course course = dataManagement.generateCourse(lecturersForSections,days,sectionTimes,"Introduction to Computer Science", "CS101", new ArrayList<>(),1, computerEngineering.get_facultyID(),computerEngineering.getDepartmentID());
+        dataManagement.createOrChangeCourse(course);
+
+        lecturersForSections.clear();
+        lecturersForSections.add(lecturer);
+        lecturersForSections.add(lecturer3);
+        lecturersForSections.add(lecturer3);
+        days.clear();
+        days.add(Day.Tuesday);
+        days.add(Day.Wednesday);
+        days.add(Day.Thursday);
+        sectionTimes.clear();
+        sectionTimes.add(SectionTime.Fifth);
+        sectionTimes.add(SectionTime.First);
+        sectionTimes.add(SectionTime.Fifth);
+
+        Course course1 = dataManagement.generateCourse(lecturersForSections,days,sectionTimes,"Random", "XX001", new ArrayList<>(),1, computerEngineering.get_facultyID(),computerEngineering.getDepartmentID());
+        dataManagement.createOrChangeCourse(course1);
+
+
+
+        Advisor advisor2 = dataManagement.generateRandomAdvisor(electricalEngineering);
+        Lecturer lecturer2 = dataManagement.generateRandomLecturer(electricalEngineering);
+        dataManagement.createOrChangeAdvisor(advisor2);
+        dataManagement.createOrChangeLecturer(lecturer2);
+
+        Student student1 = dataManagement.generateRandomStudent(computerEngineering, 2018, 5, advisor.get_staffId());
+        Student student2 = dataManagement.generateRandomStudent(computerEngineering, 2018, 5, advisor.get_staffId());
+        Student student3 = dataManagement.generateRandomStudent(computerEngineering, 2018, 5, advisor.get_staffId());
+
+        TakenCourse takenCourse = new TakenCourse(course1.getCourseInformation(),90,54);
+        student1.getTranscript().addTakenCourse(takenCourse);
+        dataManagement.createOrChangeStudent(student1);
+        dataManagement.createOrChangeStudent(student2);
+        dataManagement.createOrChangeStudent(student3);
+
 
     }
 
@@ -154,7 +208,7 @@ public class DataManagement {
 
     public void createOrChangeCourse(Course course) {
         // Save course to the file
-        String filePath = COURSES_FILE_PATH + course.getCourseName() + ".json";
+        String filePath = COURSES_FILE_PATH + course.getCourseInformation().getCourseName() + ".json";
         try (FileWriter writer = new FileWriter(filePath)) {
             gson.toJson(course, writer);
         } catch (IOException e) {
@@ -345,7 +399,7 @@ public class DataManagement {
         return name.toLowerCase() + surname.toLowerCase() + (int) (Math.random() * 1000) + "@gmail.com";
     }
 
-    private String generateRandomUniversityEmail(String name, String surname) {
+    public String generateUniversityEmail(String name, String surname) {
         return name.toLowerCase() + surname.toLowerCase() + "@marun.edu.tr";
     }
 
@@ -373,7 +427,7 @@ public class DataManagement {
         String city = generateRandomCity();
         String phoneNumber = generatePhoneNumber();
         String password = generatePassword(firstName, city, phoneNumber);
-        return new UserInformation(firstName, lastName, generateRandomUniversityEmail(firstName, lastName), generateEmail(firstName, lastName), city, phoneNumber, password);
+        return new UserInformation(firstName, lastName, generateUniversityEmail(firstName, lastName), generateEmail(firstName, lastName), city, phoneNumber, LoginAuthService.hashPassword(password));
     }
 
     private Faculty generateFaculty(int FacultyID, String FacultyName) {
@@ -396,7 +450,7 @@ public class DataManagement {
         return new Advisor(userInformation);
     }
 
-    private Student generateRandomStudent(Department department, int entrance_date, int entrance_rank, StaffId advisorID) {
+    public Student generateRandomStudent(Department department, int entrance_date, int entrance_rank, StaffId advisorID) {
         UserInformation userInformation = generateRandomUserInformation();
         StudentID studentID = new StudentID(department.getDepartmentID(), entrance_date, entrance_rank, department.get_facultyID());
         Transcript transcript = new Transcript(studentID);
@@ -417,7 +471,7 @@ public class DataManagement {
         return new CourseRequirements(prerequisiteCourses, minimumCurrentClass, facultyID, departmentID);
     }
 
-    private Course generateCourse(ArrayList<Lecturer> lecturersForSections, ArrayList<Day> days, ArrayList<SectionTime> sectionTimes, String courseName, String courseCode, ArrayList<CourseInformation> prerequisiteCourses, int minimumCurrentClass, FacultyID facultyID, DepartmentID departmentID) {
+    public Course generateCourse(ArrayList<Lecturer> lecturersForSections, ArrayList<Day> days, ArrayList<SectionTime> sectionTimes, String courseName, String courseCode, ArrayList<CourseInformation> prerequisiteCourses, int minimumCurrentClass, FacultyID facultyID, DepartmentID departmentID) {
         CourseInformation courseInformation = generateCourseInformation(courseName, courseCode);
         CourseRequirements courseRequirements = generateCourseRequirements(prerequisiteCourses, minimumCurrentClass, facultyID, departmentID);
         ArrayList<CourseSection> courseSections = new ArrayList<>();

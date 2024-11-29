@@ -6,6 +6,7 @@ import java.util.Objects;
 
 public class User {
     private UserInformation user_information;
+
     User(UserInformation user_information) {
         this.user_information = user_information;
     }
@@ -29,7 +30,7 @@ class Staff extends User {
     }
 }
 
-class StaffId{
+class StaffId {
     private final int _staffId;
     private static int _staffIdCounter = 0;
 
@@ -65,69 +66,115 @@ class Lecturer extends Staff {
     public Lecturer(UserInformation user_information) {
         super(user_information);
     }
+
+    public DepartmentID get_departmentID() {
+        return _departmentID;
+    }
 }
+
+
+class Advisor extends Lecturer {
+
+    public Advisor(UserInformation user_information) {
+        super(user_information);
+    }
+
+    public boolean checkRegistration(CourseRegistrationService courseRegistrationService) {
+        ArrayList<CourseRequest> courseRequests = courseRegistrationService.checkAccesiableRequests(this);
+        for (CourseRequest courseRequest : courseRequests) {
+            System.out.println(courseRequest.get_student().getUserInformation().get_FIRST_NAME() + " wants to take " + courseRequest.get_course().getCourseName());
+            boolean x = checkCourseRequest(courseRequest);
+            if (x) {
+                System.out.println("The request is accepted");
+                return true;
+            } else {
+                System.out.println("The request is rejected");
+                return false;
+            }
+        }
+
+
+        System.out.println("There is no request");
+        return false;
+    }
+
+
+    private boolean checkCourseRequest(CourseRequest courseRequest) {
+        CourseRequirements pre = courseRequest.get_course().getCourseRequirements();
+        return pre.isStudentQualified(courseRequest.get_student());
+
+    }
+}
+
 
 class Admin extends Staff { // Admin is a staff that can add or remove students from system
     public Admin(UserInformation user_information) {
         super(user_information);
     }
 
-    public Student addStudent(UserInformation userInformation,Department department, int entrance_date, int entrance_rank, StaffId advisorID, ArrayList<Student> students){
-
-        Student s = new DataManagement().generateNonRandomStudent(userInformation,department,entrance_date,entrance_rank,advisorID);
-        if (s == null){
-            return null;
-        }
-        students.add(s);
-        return s;
-    }
-    public boolean removeStudent(ArrayList<Student> students, String universityMail){
-        for (Student student: students){
-            if(student.getUserInformation().get_UNIVERSITY_EMAIL().equals(universityMail)){
-                students.remove(student);
-                return true;
-            }
-        }
-        return false;
-    }
-
-
-
 }
 
-class Advisor extends Lecturer{
-    private ArrayList<StudentID> _advisor_students;
-    public Advisor(UserInformation user_information) {
+class DepartmentScheduler extends Staff {
+
+    DepartmentScheduler(UserInformation user_information) {
         super(user_information);
     }
 
-    public boolean checkRegistration(CourseRegistrationService courseRegistrationService) {
-        ArrayList<CourseRequest> courseRequests= courseRegistrationService.checkAccesiableRequests(this);
-        for(CourseRequest courseRequest: courseRequests){
-           System.out.println(courseRequest.get_student().getUserInformation().get_FIRST_NAME() + " wants to take " + courseRequest.get_course().getCourseName());
-           boolean x = checkCourseRequest(courseRequest);
-              if(x){
-                System.out.println("The request is accepted");
-                return true;
-              }
-              else{
-                System.out.println("The request is rejected");
-                return false;
-              }
+    public ArrayList<Course> returnCoursesForDepartment(ArrayList<Course> courses, Department department) {
+        ArrayList<Course> departmentCourses = new ArrayList<Course>();
+        for (Course course : courses) {
+            if (course.getCourseRequirements().get_departmentID().getDepartmentName() == department.getDepartmentID().getDepartmentName()) {
+                departmentCourses.add(course);
+            }
         }
-
-
-        System.out.println("There is no request");
-       return false;
+        return departmentCourses;
     }
 
+    public void changeCourseSectionDayAndTime(CourseSection courseSection, Day day, SectionTime time) {
+        courseSection._day = day;
+        courseSection._sectionTime = time;
+    }
 
-    private boolean checkCourseRequest(CourseRequest courseRequest){
-        CourseRequirements pre = courseRequest.get_course().getCourseRequirements();
-        return pre.isStudentQualified(courseRequest.get_student());
+}
 
+class StudentsAffairs extends Staff {
+    StudentsAffairs(UserInformation user_information) {
+        super(user_information);
+    }
+
+    public boolean addCourse(Course course, ArrayList<Course> courses) {
+        courses.add(course);
+        return true;
+    }
+
+    public boolean removeCourse(Course course, ArrayList<Course> courses) {
+        courses.remove(course);
+        return true;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

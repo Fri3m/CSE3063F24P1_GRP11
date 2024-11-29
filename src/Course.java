@@ -21,7 +21,7 @@ public class Course {
     }
 
     public String getCourseName() { // do not use this. Instead of use getter for courseInformation
-        return courseName;
+        return getCourseInformation().getCourseName();
     }
 
     public CourseInformation getCourseInformation() {
@@ -30,6 +30,10 @@ public class Course {
 
     public CourseRequirements getCourseRequirements() {
         return courseRequirements;
+    }
+
+    public ArrayList<CourseSection> getCourseSections() {
+        return courseSections;
     }
 }
 
@@ -165,11 +169,19 @@ class CourseRequirements {
         }
         return true;
     }
+
+    public DepartmentID get_departmentID() {
+        return _departmentID;
+    }
+
+    public FacultyID get_facultyID() {
+        return _facultyID;
+    }
 }
 
 class CourseSection {                                                        // CourseSection class
-    private Day _day;
-    private SectionTime _sectionTime;
+    public Day _day;
+    public SectionTime _sectionTime;
     private Lecturer _lecturer;
 
     public CourseSection(Day day, SectionTime sectionTime, Lecturer lecturer) { // constructor

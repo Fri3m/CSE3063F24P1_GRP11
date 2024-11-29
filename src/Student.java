@@ -32,9 +32,6 @@ public class Student extends User {
         return _current_class;
     }
 
-    public int get_current_class() {
-        return _current_class;
-    }
 
     public StudentID get_studentID() {
         return _studentID;
@@ -44,9 +41,6 @@ public class Student extends User {
         return _advisorID;
     }
 
-    public Transcript get_transcript() {
-        return _transcript;
-    }
 
     public ArrayList<Course> get_current_courses() {
         return _current_courses;
