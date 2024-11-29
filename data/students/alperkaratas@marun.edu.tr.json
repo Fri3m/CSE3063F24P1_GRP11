@@ -1,0 +1,46 @@
+{
+  "_current_class": 1,
+  "_studentID": {
+    "_departmentID": {
+      "_departmentID": 150,
+      "_departmentName": "ComputerEngineering"
+    },
+    "_facultyID": {
+      "_FacultyID": 1,
+      "_FacultyName": "Engineering"
+    },
+    "_entrance_date": 2024,
+    "_entrance_rank": 5,
+    "_ID": "150024005"
+  },
+  "_transcript": {
+    "_studentId": {
+      "_departmentID": {
+        "_departmentID": 150,
+        "_departmentName": "ComputerEngineering"
+      },
+      "_facultyID": {
+        "_FacultyID": 1,
+        "_FacultyName": "Engineering"
+      },
+      "_entrance_date": 2024,
+      "_entrance_rank": 5,
+      "_ID": "150024005"
+    },
+    "_taken_courses": [],
+    "_GPA": 0.0
+  },
+  "_advisorID": {
+    "_staffId": 0
+  },
+  "_current_courses": [],
+  "user_information": {
+    "_FIRST_NAME": "Alper",
+    "_LAST_NAME": "Karatas",
+    "_encoded_password": "cb6d6853235bd3161051739a1773f5974b0eef814eb17e795baef7eb54f8d552",
+    "_UNIVERSITY_EMAIL": "alperkaratas@marun.edu.tr",
+    "_email": "alperkaratas88@gmail.com",
+    "_address": "Bingol",
+    "_phone_number": "+90 571 731 99 25"
+  }
+}

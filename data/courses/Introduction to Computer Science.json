@@ -1,0 +1,74 @@
+{
+  "courseInformation": {
+    "courseName": "Introduction to Computer Science",
+    "courseCode": "CS101"
+  },
+  "courseRequirements": {
+    "_prerequisite_courses": [],
+    "_minimum_current_class": 1,
+    "_departmentID": {
+      "_departmentID": 150,
+      "_departmentName": "ComputerEngineering"
+    },
+    "_facultyID": {
+      "_FacultyID": 1,
+      "_FacultyName": "Engineering"
+    }
+  },
+  "courseSections": [
+    {
+      "_day": "Monday",
+      "_sectionTime": "Fifth",
+      "_lecturer": {
+        "_staffId": {
+          "_staffId": 1
+        },
+        "user_information": {
+          "_FIRST_NAME": "Caner",
+          "_LAST_NAME": "Oztan",
+          "_encoded_password": "9b88d307ac5c3f327ef19bd04d52ebacc463473fbae59d159ae39d4577b85cd7",
+          "_UNIVERSITY_EMAIL": "caneroztan@marun.edu.tr",
+          "_email": "caneroztan298@gmail.com",
+          "_address": "Erzurum",
+          "_phone_number": "+90 529 116 90 80"
+        }
+      }
+    },
+    {
+      "_day": "Monday",
+      "_sectionTime": "Sixth",
+      "_lecturer": {
+        "_staffId": {
+          "_staffId": 1
+        },
+        "user_information": {
+          "_FIRST_NAME": "Caner",
+          "_LAST_NAME": "Oztan",
+          "_encoded_password": "9b88d307ac5c3f327ef19bd04d52ebacc463473fbae59d159ae39d4577b85cd7",
+          "_UNIVERSITY_EMAIL": "caneroztan@marun.edu.tr",
+          "_email": "caneroztan298@gmail.com",
+          "_address": "Erzurum",
+          "_phone_number": "+90 529 116 90 80"
+        }
+      }
+    },
+    {
+      "_day": "Thursday",
+      "_sectionTime": "Fifth",
+      "_lecturer": {
+        "_staffId": {
+          "_staffId": 1
+        },
+        "user_information": {
+          "_FIRST_NAME": "Caner",
+          "_LAST_NAME": "Oztan",
+          "_encoded_password": "9b88d307ac5c3f327ef19bd04d52ebacc463473fbae59d159ae39d4577b85cd7",
+          "_UNIVERSITY_EMAIL": "caneroztan@marun.edu.tr",
+          "_email": "caneroztan298@gmail.com",
+          "_address": "Erzurum",
+          "_phone_number": "+90 529 116 90 80"
+        }
+      }
+    }
+  ]
+}

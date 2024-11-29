@@ -1,0 +1,79 @@
+{
+  "courseInformation": {
+    "courseName": "Random",
+    "courseCode": "XX001"
+  },
+  "courseRequirements": {
+    "_prerequisite_courses": [
+      {
+        "courseName": "Introduction to Computer Science",
+        "courseCode": "CS101"
+      }
+    ],
+    "_minimum_current_class": 1,
+    "_departmentID": {
+      "_departmentID": 150,
+      "_departmentName": "ComputerEngineering"
+    },
+    "_facultyID": {
+      "_FacultyID": 1,
+      "_FacultyName": "Engineering"
+    }
+  },
+  "courseSections": [
+    {
+      "_day": "Tuesday",
+      "_sectionTime": "Fifth",
+      "_lecturer": {
+        "_staffId": {
+          "_staffId": 1
+        },
+        "user_information": {
+          "_FIRST_NAME": "Caner",
+          "_LAST_NAME": "Oztan",
+          "_encoded_password": "9b88d307ac5c3f327ef19bd04d52ebacc463473fbae59d159ae39d4577b85cd7",
+          "_UNIVERSITY_EMAIL": "caneroztan@marun.edu.tr",
+          "_email": "caneroztan298@gmail.com",
+          "_address": "Erzurum",
+          "_phone_number": "+90 529 116 90 80"
+        }
+      }
+    },
+    {
+      "_day": "Wednesday",
+      "_sectionTime": "First",
+      "_lecturer": {
+        "_staffId": {
+          "_staffId": 2
+        },
+        "user_information": {
+          "_FIRST_NAME": "Cem",
+          "_LAST_NAME": "Altun",
+          "_encoded_password": "6d584eec2ffd672cb7264ab75b48f80b1b55a3481cabbc008677c671eaaa387f",
+          "_UNIVERSITY_EMAIL": "cemaltun@marun.edu.tr",
+          "_email": "cemaltun480@gmail.com",
+          "_address": "Tekirdag",
+          "_phone_number": "+90 531 019 84 93"
+        }
+      }
+    },
+    {
+      "_day": "Thursday",
+      "_sectionTime": "Fifth",
+      "_lecturer": {
+        "_staffId": {
+          "_staffId": 2
+        },
+        "user_information": {
+          "_FIRST_NAME": "Cem",
+          "_LAST_NAME": "Altun",
+          "_encoded_password": "6d584eec2ffd672cb7264ab75b48f80b1b55a3481cabbc008677c671eaaa387f",
+          "_UNIVERSITY_EMAIL": "cemaltun@marun.edu.tr",
+          "_email": "cemaltun480@gmail.com",
+          "_address": "Tekirdag",
+          "_phone_number": "+90 531 019 84 93"
+        }
+      }
+    }
+  ]
+}

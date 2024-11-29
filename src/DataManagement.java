@@ -28,12 +28,11 @@ public class DataManagement {
         dataManagement.createOrChangeDepartment(computerEngineering);
 
 
-        Department electricalEngineering = dataManagement.generateDepartment(151, "ElectricalEngineering", engineering);
-        dataManagement.createOrChangeDepartment(electricalEngineering);
-
         Advisor advisor = dataManagement.generateRandomAdvisor(computerEngineering);
+
         Lecturer lecturer = dataManagement.generateRandomLecturer(computerEngineering);
         Lecturer lecturer3 = dataManagement.generateRandomLecturer(computerEngineering);
+
         dataManagement.createOrChangeAdvisor(advisor);
         dataManagement.createOrChangeLecturer(lecturer);
         dataManagement.createOrChangeLecturer(lecturer3);
@@ -66,25 +65,27 @@ public class DataManagement {
         sectionTimes.add(SectionTime.First);
         sectionTimes.add(SectionTime.Fifth);
 
-        Course course1 = dataManagement.generateCourse(lecturersForSections,days,sectionTimes,"Random", "XX001", new ArrayList<>(),1, computerEngineering.get_facultyID(),computerEngineering.getDepartmentID());
+        ArrayList<CourseInformation> prerequisites = new ArrayList<>();
+        prerequisites.add(course.getCourseInformation());
+
+        Course course1 = dataManagement.generateCourse(lecturersForSections,days,sectionTimes,"Random", "XX001", prerequisites,1, computerEngineering.get_facultyID(),computerEngineering.getDepartmentID());
         dataManagement.createOrChangeCourse(course1);
 
 
 
-        Advisor advisor2 = dataManagement.generateRandomAdvisor(electricalEngineering);
-        Lecturer lecturer2 = dataManagement.generateRandomLecturer(electricalEngineering);
-        dataManagement.createOrChangeAdvisor(advisor2);
-        dataManagement.createOrChangeLecturer(lecturer2);
 
-        Student student1 = dataManagement.generateRandomStudent(computerEngineering, 2018, 5, advisor.get_staffId());
-        Student student2 = dataManagement.generateRandomStudent(computerEngineering, 2018, 5, advisor.get_staffId());
-        Student student3 = dataManagement.generateRandomStudent(computerEngineering, 2018, 5, advisor.get_staffId());
+        Student student1 = dataManagement.generateRandomStudent(computerEngineering, 2020, 5, advisor.get_staffId());
+        Student student2 = dataManagement.generateRandomStudent(computerEngineering, 2021, 5, advisor.get_staffId());
+        Student student3 = dataManagement.generateRandomStudent(computerEngineering, 2024, 5, advisor.get_staffId());
+
+        dataManagement.createOrChangeStudent(student1);
+        dataManagement.createOrChangeStudent(student1);
+        dataManagement.createOrChangeStudent(student2);
+        dataManagement.createOrChangeStudent(student3);
 
         TakenCourse takenCourse = new TakenCourse(course1.getCourseInformation(),90,54);
         student1.getTranscript().addTakenCourse(takenCourse);
         dataManagement.createOrChangeStudent(student1);
-        dataManagement.createOrChangeStudent(student2);
-        dataManagement.createOrChangeStudent(student3);
 
 
     }
