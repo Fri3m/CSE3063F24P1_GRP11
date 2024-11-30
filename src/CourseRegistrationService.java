@@ -11,13 +11,10 @@ public class CourseRegistrationService {
     }
 
     public ArrayList<CourseRequest> checkAccesiableRequests(Advisor advisor) {
-        System.out.println(_courseRequests.size());
-        ArrayList<CourseRequest> accessibleRequests = new ArrayList<CourseRequest>();
+        ArrayList<CourseRequest> accessibleRequests = new ArrayList<>();
 
         for (CourseRequest courseRequest : _courseRequests) {
-//            System.out.println("FORUN İÇİNDEYİM");
             if (courseRequest.get_advisorID().equals(advisor.get_staffId())) {
-//                System.out.println("IF İÇİNDEYİM");
                 accessibleRequests.add(courseRequest);
             }
         }

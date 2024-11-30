@@ -76,27 +76,58 @@ public class Main {
         Student student = (Student) user;
         System.out.println("Please choose an option:");
         System.out.println("1. Register for a course");
-        System.out.println("2. Update user information");
-        System.out.println("3. Show user information");
-        System.out.println("4. Logout");
+        System.out.println("2. Show current courses");
+        System.out.println("3. Show transcript");
+        System.out.println("4. Update user information");
+        System.out.println("5. Show user information");
+        System.out.println("6. Logout");
         Scanner scanner = new Scanner(System.in);
         String input = scanner.nextLine();
         switch (input) {
             case "1":
                 System.out.println("Please choose a course to register:");
+                ArrayList<Course> courseArrayList = new ArrayList<>();
                 for (Course course : _courses) {
+                    boolean isInIt = false;
+                    for (Course stCourse: student.get_current_courses()){
+                        if (stCourse.getCourseInformation().getCourseCode().equals(course.getCourseInformation().getCourseCode())){
+                            isInIt = true;
+                            break;
+                        }
+                    }
+                    if (!isInIt){
+                        courseArrayList.add(course);
+                    }
+                }
+                for (Course course : courseArrayList) {
                     System.out.println(course.getCourseName());
                 }
                 String course_name = scanner.nextLine();
-                for (Course course : _courses) {
+                for (Course course : courseArrayList) {
                     if (course.getCourseName().equals(course_name)) {
                         student.takeCourse(course, _course_registration_service);
                         break;
                     }
                 }
                 break;
-
             case "2":
+                System.out.println("Current courses:");
+                for (Course course : student.get_current_courses()) {
+                    System.out.println(course.getCourseInformation().getCourseCode() + ": " + course.getCourseName());
+                    for (CourseSection courseSection : course.getCourseSections()) {
+                        System.out.println("Day: " + courseSection._day.name() + " Time: " + courseSection._sectionTime.name());
+                    }
+                    System.out.println();
+                }
+                break;
+            case "3":
+                System.out.println("Transcript for student " + student.getUserInformation().get_FIRST_NAME() + " " + student.getUserInformation().get_LAST_NAME());
+                System.out.println("GPA: " + student.getTranscript().get_GPA());
+                for (TakenCourse tk : student.getTranscript().getTakenCourses()) {
+                    System.out.println(tk.get_courseInformation().getCourseCode() + ": " + tk.get_courseInformation().getCourseName() + ": " + tk.get_course_score().name());
+                }
+                break;
+            case "4":
                 System.out.println("Please choose an information for update:");
                 System.out.println("1. Change Password");
                 System.out.println("2. Change Email");
@@ -122,7 +153,7 @@ public class Main {
                         break;
                 }
                 break;
-            case "3":
+            case "5":
                 System.out.println("Name: " + student.getUserInformation().get_FIRST_NAME());
                 System.out.println("Surname: " + student.getUserInformation().get_LAST_NAME());
                 System.out.println("Email: " + student.getUserInformation().get_email());
@@ -130,7 +161,7 @@ public class Main {
                 System.out.println("Phone Number: " + student.getUserInformation().get_phone_number());
                 System.out.println("Student ID: " + student.get_studentID().get_ID());
                 break;
-            case "4":
+            case "6":
                 startMenu();
                 return;
             default:
@@ -203,7 +234,7 @@ public class Main {
         String input = scanner.nextLine();
         switch (input) {
             case "1":
-                advisor.checkRegistration(_course_registration_service);
+                checkRegistration(advisor, _course_registration_service);
                 break;
             case "2":
                 System.out.println("Name: " + user.getUserInformation().get_FIRST_NAME());
@@ -246,6 +277,34 @@ public class Main {
                 System.out.println("Invalid input");
         }
         advisorMainMenu();
+    }
+
+    private void checkRegistration(Advisor advisor, CourseRegistrationService courseRegistrationService) {
+        ArrayList<CourseRequest> courseRequests = courseRegistrationService.checkAccesiableRequests(advisor);
+        if (courseRequests.isEmpty()) {
+            System.out.println("There is no request");
+            return;
+        }
+        for (CourseRequest courseRequest : courseRequests) {
+            System.out.println(courseRequest.get_student().getUserInformation().get_FIRST_NAME() + " wants to take " + courseRequest.get_course().getCourseName());
+            boolean x = advisor.checkCourseRequest(courseRequest);
+            if (x) {
+                System.out.println("Student is qualified for this course.");
+            } else {
+                System.out.println("Student is not qualified for this course.");
+            }
+            System.out.println("Do you want to approve this request? Yes if approve: ");
+            String inp = new Scanner(System.in).nextLine();
+            if (inp.equalsIgnoreCase("yes")) {
+                advisor.approveCourseRequest(courseRequest);
+                _data_management.createOrChangeStudent(courseRequest.get_student());
+                System.out.println("Request approved successfully.");
+            } else {
+                System.out.println("Request not approved.");
+            }
+
+        }
+        System.out.println("All requests checked successfully");
     }
 
     private void adminMainMenu() {
@@ -377,7 +436,7 @@ public class Main {
             default:
                 System.out.println("Invalid input");
         }
-        advisorMainMenu();
+        adminMainMenu();
     }
 
     private UserInformation adminCreateUserInformation() {
@@ -612,16 +671,14 @@ public class Main {
                 String course_code = scanner.nextLine();
                 int min_current_class;
                 while (true) {
-                    boolean x = true;
                     System.out.println("Enter minimum current class requirement: ");
                     try {
                         min_current_class = Integer.parseInt(scanner.nextLine());
                     } catch (NumberFormatException e) {
-                        x = false;
                         System.out.println("Invalid input!");
                         continue;
                     }
-                    if (x) break;
+                    break;
                 }
                 System.out.println("If your course has a department requirement, enter the department name. If not, enter anything: ");
                 for (Department department : _departments) {
@@ -651,28 +708,26 @@ public class Main {
                             break;
                         }
                     }
-                } while (!inp.toLowerCase().equals("finished"));
+                } while (!inp.equalsIgnoreCase("finished"));
 
                 System.out.println("Enter the number of sections for this course: ");
                 int section_number;
                 while (true) {
-                    boolean x = true;
                     try {
                         section_number = Integer.parseInt(scanner.nextLine());
                     } catch (NumberFormatException e) {
-                        x = false;
                         System.out.println("Invalid input!");
                         continue;
                     }
-                    if (x) break;
+                    break;
                 }
                 ArrayList<Lecturer> lecturerArrayList = new ArrayList<>();
                 System.out.println("Select lecturers for this course: ");
                 for (Lecturer lecturer : _lecturers) {
                     System.out.println(lecturer.getUserInformation().get_FIRST_NAME() + " " + lecturer.getUserInformation().get_LAST_NAME());
                 }
-                for (int i = 0; i< section_number;i++){
-                    System.out.println("Enter lecturer name for section " + (i+1) + ": ");
+                for (int i = 0; i < section_number; i++) {
+                    System.out.println("Enter lecturer name for section " + (i + 1) + ": ");
                     String lecturer_name = scanner.nextLine();
                     for (Lecturer lecturer : _lecturers) {
                         if ((lecturer.getUserInformation().get_FIRST_NAME() + " " + lecturer.getUserInformation().get_LAST_NAME()).equals(lecturer_name)) {
@@ -685,8 +740,8 @@ public class Main {
                 ArrayList<Day> dayArrayList = new ArrayList<>();
                 ArrayList<SectionTime> sectionTimeArrayList = new ArrayList<>();
 
-                for (int i = 0; i< section_number;i++){
-                    System.out.println("Enter day for section " + (i+1) + ": ");
+                for (int i = 0; i < section_number; i++) {
+                    System.out.println("Enter day for section " + (i + 1) + ": ");
                     String day = scanner.nextLine();
                     switch (day.toLowerCase()) {
                         case "monday":
@@ -709,7 +764,7 @@ public class Main {
                             i--;
                             continue;
                     }
-                    System.out.println("Enter section time for section " + (i+1) + ": ");
+                    System.out.println("Enter section time for section " + (i + 1) + ": ");
                     String sectionTime = scanner.nextLine();
                     switch (sectionTime.toLowerCase()) {
                         case "first":
@@ -746,7 +801,7 @@ public class Main {
                     }
                 }
 
-                Course course = _data_management.generateCourse(lecturerArrayList, dayArrayList, sectionTimeArrayList,course_name,course_code,prerequisites,min_current_class, department.get_facultyID(), department.getDepartmentID());
+                Course course = _data_management.generateCourse(lecturerArrayList, dayArrayList, sectionTimeArrayList, course_name, course_code, prerequisites, min_current_class, department.get_facultyID(), department.getDepartmentID());
                 _data_management.createOrChangeCourse(course);
                 _courses.add(course);
                 break;
@@ -824,23 +879,23 @@ public class Main {
         user = _login_auth_service.login(email, password);
         if (user == null) user_type = "null";
 
-        switch (user_type) {
-            case "Student":
+        switch (user_type.toLowerCase()) {
+            case "student":
                 studentMainMenu();
                 break;
-            case "Advisor":
+            case "advisor":
                 advisorMainMenu();
                 break;
-            case "Lecturer":
+            case "lecturer":
                 lecturerMainMenu();
                 break;
-            case "Admin":
+            case "admin":
                 adminMainMenu();
                 break;
-            case "DepartmentScheduler":
+            case "departmentscheduler":
                 departmentSchedulerMainMenu();
                 break;
-            case "StudentAffair":
+            case "studentaffair":
                 studentsAffairMainMenu();
                 break;
             default:
@@ -854,24 +909,6 @@ public class Main {
         }
     }
 
-    /*
-    private void register() {
-        Scanner scanner = new Scanner(System.in);
-
-        if (_login_auth_service.register()) {
-            System.out.println("Registration successful. Please login to continue.");
-            startMenu();
-        } else {
-            System.out.println("Registration failed");
-            System.out.println("If you want to try again enter 1, for returning to the main menu enter any other key");
-            String input = scanner.nextLine();
-            if (input.equals("1")) {
-                register();
-            } else {
-                startMenu();
-            }
-        }
-    }*/
     private void changePassword() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter your current password: ");

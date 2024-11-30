@@ -79,30 +79,12 @@ class Advisor extends Lecturer {
         super(user_information);
     }
 
-    public boolean checkRegistration(CourseRegistrationService courseRegistrationService) {
-        ArrayList<CourseRequest> courseRequests = courseRegistrationService.checkAccesiableRequests(this);
-        for (CourseRequest courseRequest : courseRequests) {
-            System.out.println(courseRequest.get_student().getUserInformation().get_FIRST_NAME() + " wants to take " + courseRequest.get_course().getCourseName());
-            boolean x = checkCourseRequest(courseRequest);
-            if (x) {
-                System.out.println("The request is accepted");
-                return true;
-            } else {
-                System.out.println("The request is rejected");
-                return false;
-            }
-        }
-
-
-        System.out.println("There is no request");
-        return false;
-    }
-
-
-    private boolean checkCourseRequest(CourseRequest courseRequest) {
+    public boolean checkCourseRequest(CourseRequest courseRequest) {
         CourseRequirements pre = courseRequest.get_course().getCourseRequirements();
         return pre.isStudentQualified(courseRequest.get_student());
-
+    }
+    public void approveCourseRequest(CourseRequest courseRequest) {
+        courseRequest.get_student().get_current_courses().add(courseRequest.get_course());
     }
 }
 

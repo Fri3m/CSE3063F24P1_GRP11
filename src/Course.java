@@ -4,8 +4,6 @@ import java.util.ArrayList;
 import java.util.Objects;
 
 public class Course {
-    private String courseName;
-    private String courseCode;
     private CourseInformation courseInformation;
     private CourseRequirements courseRequirements;
     private ArrayList<CourseSection> courseSections;
@@ -109,6 +107,14 @@ class TakenCourse {
 
     public Score get_course_score() {
         return _course_score;
+    }
+
+    public int get_midterm_score() {
+        return _midterm_score;
+    }
+
+    public int get_final_score() {
+        return _final_score;
     }
 }
 
