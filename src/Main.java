@@ -12,6 +12,8 @@ public class Main {
     private ArrayList<Student> _students;
     private ArrayList<Advisor> _advisors;
     private ArrayList<Lecturer> _lecturers;
+    private ArrayList<DepartmentScheduler> _departmentSchedulers;
+    private ArrayList<StudentsAffairs> _studentsAffairs;
     private ArrayList<Course> _courses;
     private Admin _admin;
     User user;
@@ -32,7 +34,12 @@ public class Main {
         _students = _data_management.getAllStudents();
         _advisors = _data_management.getAllAdvisors();
         _lecturers = _data_management.getAllLecturers();
+        _departmentSchedulers = _data_management.getAllDepartmentSchedulers();
+        _studentsAffairs = _data_management.getAllStudentsAffairs();
         _courses = _data_management.getAllCourses();
+
+
+        changeStaticStaffID();
 
         _admin = new Admin(new UserInformation(("admin"), ("admin"), ("admin"), ("admin"), ("admin"), ("admin"), LoginAuthService.hashPassword("admin")));
 
@@ -40,6 +47,8 @@ public class Main {
         users.addAll(_students);
         users.addAll(_advisors);
         users.addAll(_lecturers);
+        users.addAll(_departmentSchedulers);
+        users.addAll(_studentsAffairs);
         users.add(_admin);
 
         _login_auth_service._users = users;
@@ -50,6 +59,31 @@ public class Main {
                 }
             }
         }
+    }
+
+    private void changeStaticStaffID() {
+        int maxID = 0;
+        for (Advisor a : _advisors) {
+            if (a.get_staffId().get_staffId() > maxID) {
+                maxID = a.get_staffId().get_staffId();
+            }
+        }
+        for (Lecturer l : _lecturers) {
+            if (l.get_staffId().get_staffId() > maxID) {
+                maxID = l.get_staffId().get_staffId();
+            }
+        }
+        for (DepartmentScheduler d : _departmentSchedulers) {
+            if (d.get_staffId().get_staffId() > maxID) {
+                maxID = d.get_staffId().get_staffId();
+            }
+        }
+        for (StudentsAffairs s : _studentsAffairs) {
+            if (s.get_staffId().get_staffId() > maxID) {
+                maxID = s.get_staffId().get_staffId();
+            }
+        }
+        StaffId.changeStaticCounter(maxID);
     }
 
     private void startMenu() {
@@ -72,6 +106,42 @@ public class Main {
         }
     }
 
+    private void showUserInformation() {
+        System.out.println("Name: " + user.getUserInformation().get_FIRST_NAME());
+        System.out.println("Surname: " + user.getUserInformation().get_LAST_NAME());
+        System.out.println("Email: " + user.getUserInformation().get_email());
+        System.out.println("Address: " + user.getUserInformation().get_address());
+        System.out.println("Phone Number: " + user.getUserInformation().get_phone_number());
+    }
+
+    private void updateUserInfo() {
+        System.out.println("Please choose an information for update:");
+        System.out.println("1. Change Password");
+        System.out.println("2. Change Email");
+        System.out.println("3. Change Address");
+        System.out.println("4. Change Phone Number");
+        System.out.println("5. Exit");
+        Scanner scanner = new Scanner(System.in);
+        String input_for_update = scanner.nextLine();
+        switch (input_for_update) {
+            case "1":
+                changePassword();
+                break;
+            case "2":
+                changeEmail();
+                break;
+            case "3":
+                changeAddress();
+                break;
+            case "4":
+                changePhoneNumber();
+                break;
+            case "5":
+                System.out.println("Returning to the main menu.");
+                break;
+        }
+    }
+
     private void studentMainMenu() {
         Student student = (Student) user;
         System.out.println("Please choose an option:");
@@ -89,13 +159,13 @@ public class Main {
                 ArrayList<Course> courseArrayList = new ArrayList<>();
                 for (Course course : _courses) {
                     boolean isInIt = false;
-                    for (Course stCourse: student.get_current_courses()){
-                        if (stCourse.getCourseInformation().getCourseCode().equals(course.getCourseInformation().getCourseCode())){
+                    for (Course stCourse : student.get_current_courses()) {
+                        if (stCourse.getCourseInformation().getCourseCode().equals(course.getCourseInformation().getCourseCode())) {
                             isInIt = true;
                             break;
                         }
                     }
-                    if (!isInIt){
+                    if (!isInIt) {
                         courseArrayList.add(course);
                     }
                 }
@@ -172,7 +242,6 @@ public class Main {
     }
 
     private void lecturerMainMenu() {
-        Lecturer lecturer = (Lecturer) user;
         System.out.println("Please choose an option:");
         System.out.println("1. Show user information");
         System.out.println("2. Update user information");
@@ -181,37 +250,10 @@ public class Main {
         String input = scanner.nextLine();
         switch (input) {
             case "1":
-                System.out.println("Name: " + lecturer.getUserInformation().get_FIRST_NAME());
-                System.out.println("Surname: " + lecturer.getUserInformation().get_LAST_NAME());
-                System.out.println("Email: " + lecturer.getUserInformation().get_email());
-                System.out.println("Address: " + lecturer.getUserInformation().get_address());
-                System.out.println("Phone Number: " + lecturer.getUserInformation().get_phone_number());
+                showUserInformation();
                 break;
             case "2":
-                System.out.println("Please choose an information for update:");
-                System.out.println("1. Change Password");
-                System.out.println("2. Change Email");
-                System.out.println("3. Change Address");
-                System.out.println("4. Change Phone Number");
-                System.out.println("5. Exit");
-                String input_for_update = scanner.nextLine();
-                switch (input_for_update) {
-                    case "1":
-                        changePassword();
-                        break;
-                    case "2":
-                        changeEmail();
-                        break;
-                    case "3":
-                        changeAddress();
-                        break;
-                    case "4":
-                        changePhoneNumber();
-                        break;
-                    case "5":
-                        System.out.println("Returning to the main menu.");
-                        break;
-                }
+                updateUserInfo();
                 break;
             case "3":
                 startMenu();
@@ -237,38 +279,10 @@ public class Main {
                 checkRegistration(advisor, _course_registration_service);
                 break;
             case "2":
-                System.out.println("Name: " + user.getUserInformation().get_FIRST_NAME());
-                System.out.println("Surname: " + user.getUserInformation().get_LAST_NAME());
-                System.out.println("Email: " + user.getUserInformation().get_email());
-                System.out.println("Address: " + user.getUserInformation().get_address());
-                System.out.println("Phone Number: " + user.getUserInformation().get_phone_number());
-
+                showUserInformation();
                 break;
             case "3":
-                System.out.println("Please choose an information for update:");
-                System.out.println("1. Change Password");
-                System.out.println("2. Change Email");
-                System.out.println("3. Change Address");
-                System.out.println("4. Change Phone Number");
-                System.out.println("5. Exit");
-                String input_for_update = scanner.nextLine();
-                switch (input_for_update) {
-                    case "1":
-                        changePassword();
-                        break;
-                    case "2":
-                        changeEmail();
-                        break;
-                    case "3":
-                        changeAddress();
-                        break;
-                    case "4":
-                        changePhoneNumber();
-                        break;
-                    case "5":
-                        System.out.println("Exiting the program.");
-                        break;
-                }
+                updateUserInfo();
                 break;
             case "4":
                 startMenu();
@@ -302,7 +316,7 @@ public class Main {
             } else {
                 System.out.println("Request not approved.");
             }
-
+            courseRegistrationService.removeCourseRequest(courseRequest);
         }
         System.out.println("All requests checked successfully");
     }
@@ -459,7 +473,6 @@ public class Main {
     }
 
     private void departmentSchedulerMainMenu() {
-        DepartmentScheduler departmentScheduler = (DepartmentScheduler) user;
         System.out.println("Please choose an option:");
         System.out.println("1. Change Course Section");
         System.out.println("2. Show user information");
@@ -509,7 +522,6 @@ public class Main {
                     }
                     if (found) break;
                 }
-                ;
                 if (course.getCourseSections().isEmpty()) {
                     System.out.println("There is no course section for this course!");
                     break;
@@ -611,37 +623,10 @@ public class Main {
 
                 break;
             case "2":
-                System.out.println("Name: " + departmentScheduler.getUserInformation().get_FIRST_NAME());
-                System.out.println("Surname: " + departmentScheduler.getUserInformation().get_LAST_NAME());
-                System.out.println("Email: " + departmentScheduler.getUserInformation().get_email());
-                System.out.println("Address: " + departmentScheduler.getUserInformation().get_address());
-                System.out.println("Phone Number: " + departmentScheduler.getUserInformation().get_phone_number());
+                showUserInformation();
                 break;
             case "3":
-                System.out.println("Please choose an information for update:");
-                System.out.println("1. Change Password");
-                System.out.println("2. Change Email");
-                System.out.println("3. Change Address");
-                System.out.println("4. Change Phone Number");
-                System.out.println("5. Exit");
-                String input_for_update = scanner.nextLine();
-                switch (input_for_update) {
-                    case "1":
-                        changePassword();
-                        break;
-                    case "2":
-                        changeEmail();
-                        break;
-                    case "3":
-                        changeAddress();
-                        break;
-                    case "4":
-                        changePhoneNumber();
-                        break;
-                    case "5":
-                        System.out.println("Returning to the main menu.");
-                        break;
-                }
+                updateUserInfo();
                 break;
             case "4":
                 startMenu();
@@ -654,7 +639,6 @@ public class Main {
     }
 
     private void studentsAffairMainMenu() {
-        StudentsAffairs studentsAffairs = (StudentsAffairs) user;
         System.out.println("Please choose an option:");
         System.out.println("1. Add new course");
         System.out.println("2. Remove course");
@@ -729,16 +713,33 @@ public class Main {
                 for (int i = 0; i < section_number; i++) {
                     System.out.println("Enter lecturer name for section " + (i + 1) + ": ");
                     String lecturer_name = scanner.nextLine();
+                    boolean lecturerExists = false;
                     for (Lecturer lecturer : _lecturers) {
                         if ((lecturer.getUserInformation().get_FIRST_NAME() + " " + lecturer.getUserInformation().get_LAST_NAME()).equals(lecturer_name)) {
+                            lecturerExists = true;
                             lecturerArrayList.add(lecturer);
                             break;
                         }
+                    }
+                    if (!lecturerExists) {
+                        System.out.println("Lecturer not found. Please try again.");
+                        i--;
                     }
                 }
 
                 ArrayList<Day> dayArrayList = new ArrayList<>();
                 ArrayList<SectionTime> sectionTimeArrayList = new ArrayList<>();
+                System.out.println("Days: ");
+                for (Day d: Day.values()) {
+                    System.out.print(d.name() + ", ");
+                }
+                System.out.println();
+
+                System.out.println("Section Times: ");
+                for (SectionTime st: SectionTime.values()) {
+                    System.out.print(st.name() + ", ");
+                }
+                System.out.println();
 
                 for (int i = 0; i < section_number; i++) {
                     System.out.println("Enter day for section " + (i + 1) + ": ");
@@ -797,7 +798,6 @@ public class Main {
                         default:
                             System.out.println("Invalid input!");
                             i--;
-                            continue;
                     }
                 }
 
@@ -823,37 +823,10 @@ public class Main {
                 }
                 break;
             case "3":
-                System.out.println("Name: " + studentsAffairs.getUserInformation().get_FIRST_NAME());
-                System.out.println("Surname: " + studentsAffairs.getUserInformation().get_LAST_NAME());
-                System.out.println("Email: " + studentsAffairs.getUserInformation().get_email());
-                System.out.println("Address: " + studentsAffairs.getUserInformation().get_address());
-                System.out.println("Phone Number: " + studentsAffairs.getUserInformation().get_phone_number());
+                showUserInformation();
                 break;
             case "4":
-                System.out.println("Please choose an information for update:");
-                System.out.println("1. Change Password");
-                System.out.println("2. Change Email");
-                System.out.println("3. Change Address");
-                System.out.println("4. Change Phone Number");
-                System.out.println("5. Exit");
-                String input_for_update = scanner.nextLine();
-                switch (input_for_update) {
-                    case "1":
-                        changePassword();
-                        break;
-                    case "2":
-                        changeEmail();
-                        break;
-                    case "3":
-                        changeAddress();
-                        break;
-                    case "4":
-                        changePhoneNumber();
-                        break;
-                    case "5":
-                        System.out.println("Returning to the main menu.");
-                        break;
-                }
+                updateUserInfo();
                 break;
             case "5":
                 startMenu();
@@ -864,7 +837,6 @@ public class Main {
         }
         studentsAffairMainMenu();
     }
-
 
     private void login() {
         Scanner scanner = new Scanner(System.in);
@@ -964,6 +936,5 @@ public class Main {
         }
 
     }
-
 
 }

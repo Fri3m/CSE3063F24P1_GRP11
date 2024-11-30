@@ -21,6 +21,10 @@ public class CourseRegistrationService {
 
         return accessibleRequests;
     }
+
+    public void removeCourseRequest(CourseRequest courseRequest) {
+        _courseRequests.remove(courseRequest);
+    }
 }
 
 class CourseRequest {

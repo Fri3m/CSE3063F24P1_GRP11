@@ -6,8 +6,6 @@ public enum Day {
     Wednesday,
     Thursday,
     Friday,
-    Saturday,
-    Sunday;
 }
 enum SectionTime{
     First,

@@ -32,7 +32,7 @@ class Staff extends User {
 
 class StaffId {
     private final int _staffId;
-    private static int _staffIdCounter = 0;
+    private static int _staffIdCounter = 1;
 
     public StaffId() {
         _staffId = generateStaffId();
@@ -44,6 +44,10 @@ class StaffId {
 
     public int get_staffId() {
         return _staffId;
+    }
+    public static void changeStaticCounter(int newCounter) {
+        if (newCounter > _staffIdCounter)
+            _staffIdCounter = newCounter;
     }
 
     @Override
@@ -83,6 +87,7 @@ class Advisor extends Lecturer {
         CourseRequirements pre = courseRequest.get_course().getCourseRequirements();
         return pre.isStudentQualified(courseRequest.get_student());
     }
+
     public void approveCourseRequest(CourseRequest courseRequest) {
         courseRequest.get_student().get_current_courses().add(courseRequest.get_course());
     }
@@ -93,7 +98,6 @@ class Admin extends Staff { // Admin is a staff that can add or remove students 
     public Admin(UserInformation user_information) {
         super(user_information);
     }
-
 }
 
 class DepartmentScheduler extends Staff {
@@ -105,7 +109,7 @@ class DepartmentScheduler extends Staff {
     public ArrayList<Course> returnCoursesForDepartment(ArrayList<Course> courses, Department department) {
         ArrayList<Course> departmentCourses = new ArrayList<Course>();
         for (Course course : courses) {
-            if (course.getCourseRequirements().get_departmentID().getDepartmentName() == department.getDepartmentID().getDepartmentName()) {
+            if (course.getCourseRequirements().get_departmentID().getDepartmentName().equalsIgnoreCase(department.getDepartmentID().getDepartmentName())) {
                 departmentCourses.add(course);
             }
         }
