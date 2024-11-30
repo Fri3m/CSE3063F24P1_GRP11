@@ -506,7 +506,7 @@ public class Main {
                 for (Course c : _courses) {
                     if (c.getCourseRequirements().get_departmentID().getDepartmentID() == 0 || c.getCourseRequirements().get_departmentID().getDepartmentID() == department.getDepartmentID().getDepartmentID()) {
                         coursesForThisDepartment.add(c);
-                        System.out.println(c.getCourseRequirements().get_departmentID().getDepartmentName());
+                        System.out.println(c.getCourseName());
                     }
                 }
                 Course course = null;
