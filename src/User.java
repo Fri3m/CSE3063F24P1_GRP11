@@ -83,7 +83,7 @@ class Advisor extends Lecturer {
         super(user_information);
     }
 
-    public boolean checkCourseRequest(CourseRequest courseRequest) {
+    public boolean[] checkCourseRequest(CourseRequest courseRequest) {
         CourseRequirements pre = courseRequest.get_course().getCourseRequirements();
         return pre.isStudentQualified(courseRequest.get_student());
     }

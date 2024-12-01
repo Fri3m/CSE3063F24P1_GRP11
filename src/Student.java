@@ -74,13 +74,6 @@ class StudentID {
         return first_part + second_part + third_part;
     }
 
-//    public static void main(String[] args) {
-//        Student student = new Student(new UserInformation("name", "surname", "email"), new StudentID(new Department(new DepartmentID(100)), 2024, 1));
-//        student.initialize();
-//        System.out.println(student.get_studentID().get_ID());
-//        System.out.println(student.get_studentID().get_department().get_students().get(0).get_studentID().get_ID());
-//    }
-
     //getters
 
 

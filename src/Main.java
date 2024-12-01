@@ -198,38 +198,11 @@ public class Main {
                 }
                 break;
             case "4":
-                System.out.println("Please choose an information for update:");
-                System.out.println("1. Change Password");
-                System.out.println("2. Change Email");
-                System.out.println("3. Change Address");
-                System.out.println("4. Change Phone Number");
-                System.out.println("5. Exit");
-                String input_for_update = scanner.nextLine();
-                switch (input_for_update) {
-                    case "1":
-                        changePassword();
-                        break;
-                    case "2":
-                        changeEmail();
-                        break;
-                    case "3":
-                        changeAddress();
-                        break;
-                    case "4":
-                        changePhoneNumber();
-                        break;
-                    case "5":
-                        System.out.println("Return to the main menu.");
-                        break;
-                }
+                updateUserInfo();
+                showStudentInfo();
                 break;
             case "5":
-                System.out.println("Name: " + student.getUserInformation().get_FIRST_NAME());
-                System.out.println("Surname: " + student.getUserInformation().get_LAST_NAME());
-                System.out.println("Email: " + student.getUserInformation().get_email());
-                System.out.println("Address: " + student.getUserInformation().get_address());
-                System.out.println("Phone Number: " + student.getUserInformation().get_phone_number());
-                System.out.println("Student ID: " + student.get_studentID().get_ID());
+                showUserInformation();
                 break;
             case "6":
                 startMenu();
@@ -239,6 +212,14 @@ public class Main {
 
         }
         studentMainMenu();
+    }
+
+    private void showStudentInfo(){
+        Student student = (Student) user;
+        System.out.println("In year: " + student.getCurrentClass());
+        System.out.println("StudentID: " + student.get_studentID());
+        System.out.println("Department Name: "+ student.get_studentID().get_departmentID().getDepartmentName());
+        System.out.println("Faculty Name: " + student.get_studentID().get_facultyID().getFacultyName());
     }
 
     private void lecturerMainMenu() {
@@ -301,11 +282,15 @@ public class Main {
         }
         for (CourseRequest courseRequest : courseRequests) {
             System.out.println(courseRequest.get_student().getUserInformation().get_FIRST_NAME() + " wants to take " + courseRequest.get_course().getCourseName());
-            boolean x = advisor.checkCourseRequest(courseRequest);
-            if (x) {
+            boolean[] x = advisor.checkCourseRequest(courseRequest);
+            if (x[0] && x[1] && x[2] && x[3] ){
                 System.out.println("Student is qualified for this course.");
-            } else {
-                System.out.println("Student is not qualified for this course.");
+            }else {
+                System.out.println("Student is not qualified for this course. Because of conditions: ");
+                if (!x[0]) System.out.println("Year condition");
+                if (!x[1]) System.out.println("Department condition");
+                if (!x[2]) System.out.println("Faculty condition");
+                if (!x[3]) System.out.println("Prerequisites condition");
             }
             System.out.println("Do you want to approve this request? Yes if approve: ");
             String inp = new Scanner(System.in).nextLine();

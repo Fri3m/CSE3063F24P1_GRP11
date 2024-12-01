@@ -14,10 +14,6 @@ public class Course {
         this.courseSections = courseSections;
     }
 
-    public boolean checkStudentQualification(Student student) {             // check student qualification method
-        return courseRequirements.isStudentQualified(student);
-    }
-
     public String getCourseName() { // do not use this. Instead of use getter for courseInformation
         return getCourseInformation().getCourseName();
     }
@@ -142,19 +138,13 @@ class CourseRequirements {
         _facultyID = faculty;
     }
 
-    public boolean isStudentQualified(Student student) {
-        if (student.getCurrentClass() < _minimum_current_class) {                     // check current class
-            return false;
-        }
-        if (_departmentID != null || _departmentID.getDepartmentID() != student.get_studentID().get_departmentID().getDepartmentID()) {    // check department
-            return false;
-        }
-
-        if (_facultyID != null || _facultyID.getFacultyID() != student.get_studentID().get_facultyID().getFacultyID()) {    // check faculty
-            return false;
-        }
-
-        return checkPrerequisiteCourse(student);                                  // check prerequisite courses
+    public boolean[] isStudentQualified(Student student) {
+        boolean[] ans = new boolean[4]; //Year, department, faculty, prerequisites
+        ans[0] = student.getCurrentClass() >= _minimum_current_class; // check current class
+        ans[1] = _departmentID == null || _departmentID.getDepartmentID() == student.get_studentID().get_departmentID().getDepartmentID(); // check department
+        ans[2] = _facultyID == null || _facultyID.getFacultyID() == student.get_studentID().get_facultyID().getFacultyID(); //check faculty
+        ans[3] = checkPrerequisiteCourse(student);                                  // check prerequisite courses
+        return ans;
     }
 
     private boolean checkPrerequisiteCourse(Student student) {// check prerequisite courses method
@@ -182,6 +172,10 @@ class CourseRequirements {
 
     public FacultyID get_facultyID() {
         return _facultyID;
+    }
+
+    public int get_minimum_current_class() {
+        return _minimum_current_class;
     }
 }
 
