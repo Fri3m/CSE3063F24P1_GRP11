@@ -1,1 +1,65 @@
-{"_current_class":3,"_studentID":{"_departmentID":{"_departmentID":201,"_departmentName":"Biology"},"_facultyID":{"_FacultyID":2,"_FacultyName":"Science"},"_entrance_date":2022,"_entrance_rank":53,"_ID":"201022053"},"_transcript":{"_studentId":{"_departmentID":{"_departmentID":201,"_departmentName":"Biology"},"_facultyID":{"_FacultyID":2,"_FacultyName":"Science"},"_entrance_date":2022,"_entrance_rank":53,"_ID":"201022053"},"_taken_courses":[{"_courseInformation":{"courseName":"General Biology","courseCode":"BYL1011"},"_midterm_score":88,"_final_score":72,"_course_score":"BB"},{"_courseInformation":{"courseName":"History of Biology","courseCode":"BYL2031"},"_midterm_score":65,"_final_score":85,"_course_score":"CC"}],"_GPA":2.5},"_advisorID":{"_staffId":19},"_current_courses":[],"user_information":{"_FIRST_NAME":"Hasan","_LAST_NAME":"Simsek","_encoded_password":"cc5f6328e04d5099a8b060c49924fc00023641406631d97a443c41c97a04255d","_UNIVERSITY_EMAIL":"hasansimsek@marun.edu.tr","_email":"hasansimsek14@gmail.com","_address":"Corum","_phone_number":"+90 582 989 34 18"}}
+{
+  "_current_class": 3,
+  "_studentID": {
+    "_departmentID": {
+      "_departmentID": 201,
+      "_departmentName": "Biology"
+    },
+    "_facultyID": {
+      "_FacultyID": 2,
+      "_FacultyName": "Science"
+    },
+    "_entrance_date": 2022,
+    "_entrance_rank": 53,
+    "_ID": "201022053"
+  },
+  "_transcript": {
+    "_studentId": {
+      "_departmentID": {
+        "_departmentID": 201,
+        "_departmentName": "Biology"
+      },
+      "_facultyID": {
+        "_FacultyID": 2,
+        "_FacultyName": "Science"
+      },
+      "_entrance_date": 2022,
+      "_entrance_rank": 53,
+      "_ID": "201022053"
+    },
+    "_taken_courses": [
+      {
+        "_courseInformation": {
+          "courseName": "General Biology",
+          "courseCode": "BYL1011"
+        },
+        "_midterm_score": 88,
+        "_final_score": 72,
+        "_course_score": "BB"
+      },
+      {
+        "_courseInformation": {
+          "courseName": "History of Biology",
+          "courseCode": "BYL2031"
+        },
+        "_midterm_score": 65,
+        "_final_score": 85,
+        "_course_score": "CC"
+      }
+    ],
+    "_GPA": 2.5
+  },
+  "_advisorID": {
+    "_staffId": 19
+  },
+  "_current_courses": [],
+  "user_information": {
+    "_FIRST_NAME": "Hasan",
+    "_LAST_NAME": "Simsek",
+    "_encoded_password": "cc5f6328e04d5099a8b060c49924fc00023641406631d97a443c41c97a04255d",
+    "_UNIVERSITY_EMAIL": "hasansimsek@marun.edu.tr",
+    "_email": "hasansimsek14@gmail.com",
+    "_address": "Corum",
+    "_phone_number": "+90 582 989 34 18"
+  }
+}

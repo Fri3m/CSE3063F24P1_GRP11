@@ -1,1 +1,14 @@
-{"_staffId":{"_staffId":15},"user_information":{"_FIRST_NAME":"Serdar","_LAST_NAME":"Karatas","_encoded_password":"7404656ab1186f319df70055c81676e9176265b876bf90f47e0382aa578a2cd3","_UNIVERSITY_EMAIL":"serdarkaratas@marun.edu.tr","_email":"serdarkaratas890@gmail.com","_address":"Sanliurfa","_phone_number":"+90 576 019 69 47"}}
+{
+  "_staffId": {
+    "_staffId": 15
+  },
+  "user_information": {
+    "_FIRST_NAME": "Serdar",
+    "_LAST_NAME": "Karatas",
+    "_encoded_password": "7404656ab1186f319df70055c81676e9176265b876bf90f47e0382aa578a2cd3",
+    "_UNIVERSITY_EMAIL": "serdarkaratas@marun.edu.tr",
+    "_email": "serdarkaratas890@gmail.com",
+    "_address": "Sanliurfa",
+    "_phone_number": "+90 576 019 69 47"
+  }
+}

@@ -164,7 +164,7 @@ class CourseRequirements {
             }
         }
         return true;
-    }
+    }//
 
     public DepartmentID get_departmentID() {
         return _departmentID;

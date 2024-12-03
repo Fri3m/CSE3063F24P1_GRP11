@@ -199,10 +199,11 @@ public class Main {
                 break;
             case "4":
                 updateUserInfo();
-                showStudentInfo();
                 break;
             case "5":
+                showStudentInfo();
                 showUserInformation();
+
                 break;
             case "6":
                 startMenu();
@@ -217,7 +218,7 @@ public class Main {
     private void showStudentInfo(){
         Student student = (Student) user;
         System.out.println("In year: " + student.getCurrentClass());
-        System.out.println("StudentID: " + student.get_studentID());
+        System.out.println("StudentID: " + student.get_studentID().get_ID());
         System.out.println("Department Name: "+ student.get_studentID().get_departmentID().getDepartmentName());
         System.out.println("Faculty Name: " + student.get_studentID().get_facultyID().getFacultyName());
     }
@@ -570,6 +571,7 @@ public class Main {
                             case "fourth":
                                 courseSection._sectionTime = SectionTime.Fourth;
                                 System.out.println("This section time changed to Fourth");
+                                break;
                             case "fifth":
                                 courseSection._sectionTime = SectionTime.Fifth;
                                 System.out.println("This section time changed to Fifth");

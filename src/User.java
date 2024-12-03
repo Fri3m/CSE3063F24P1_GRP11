@@ -18,7 +18,7 @@ public class User {
 }
 
 class Staff extends User {
-    private StaffId _staffId;
+    private final StaffId _staffId;
 
     Staff(UserInformation user_information) {
         super(user_information);
@@ -28,6 +28,8 @@ class Staff extends User {
     public StaffId get_staffId() {
         return _staffId;
     }
+
+
 }
 
 class StaffId {

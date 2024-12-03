@@ -1479,7 +1479,6 @@ public class DataManagement {
         // Save student to the file
         String filePath = STUDENTS_FILE_PATH + student.getUserInformation().get_UNIVERSITY_EMAIL() + ".json";
         try (FileWriter writer = new FileWriter(filePath)) {
-
             gson.toJson(student, writer);
         } catch (IOException e) {
             e.printStackTrace();
