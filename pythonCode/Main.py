@@ -5,11 +5,12 @@ from pythonCode.Student import Student
 from pythonCode.User import StaffId, Admin, User, Advisor
 from pythonCode.UserInformation import UserInformation
 
+import Course
+
 
 class Main:
 
-    #BURAYA BAK
-    #user = User()
+
     user_type = str()
 
     @staticmethod
@@ -19,6 +20,7 @@ class Main:
 
 
     def __init__(self, _login_auth_service, _data_management, _course_registration_service,_faculties,_departments,_students,_advisors,_lecturers,_departmentSchedulers,_studentsAffairs,_courses,_admin,user,user_type):
+        self.user = None
         self._login_auth_service = _login_auth_service
         self._data_management = _data_management
         self._course_registration_service = _course_registration_service
@@ -36,7 +38,7 @@ class Main:
 
         # BUNA SONRA BAK !!!!! (loginauthservice)
         _admin = Admin(UserInformation(("admin"), ("admin"), ("admin"), ("admin"), ("admin"), ("admin"),
-                                       _login_auth_service.hashPassword("admin")))
+                                       _login_auth_service.hash_password("admin")))
 
 
         self._users = []
@@ -124,7 +126,7 @@ class Main:
         self.updateUserInfo()
 
     def studentMainMenu(self):
-        user = Student()
+
         print("Please choose an option:")
         print("1. Register for a course")
         print("2. Show current courses")
@@ -139,7 +141,7 @@ class Main:
             courseList = []
             for course in self._courses:
                 isInIt = False
-                for currentCourse in user.get_current_courses():
+                for currentCourse in self.user.get_current_courses():
                     if currentCourse.getCourseInformation().getCourseCode().equals(course.getCourseInformation().getCourseCode()):
                         isInIt = True
                         break
@@ -154,23 +156,23 @@ class Main:
 
             for course in courseList:
                 if course.getCourseName() == courseName:
-                    user.take_course(course, self._course_registration_service)
+                    self.user.take_course(course, self._course_registration_service)
                     break
 
 
         elif choice == "2":
 
             print("Current courses:")
-            for course in user.get_current_courses():
+            for course in self.user.get_current_courses():
                 print(course.getCourseInformation().getCourseCode() + " " + course.getCourseName())
                 for courseSection in course.getCourseSections():
                     print("Day :" + courseSection._day.name() + " Time " + courseSection._sectionTime.name())
 
         elif choice == "3":
             # GetUserInformation çalışmıyor!!!  (studentten dolayı olabilir)
-            print ("Transcript for student " + user.getUserInformation().get_FIRST_NAME() + " " + user.getUserInformation().get_LAST_NAME())
-            print("GPA: " + user.get_transcript().get_gpa())
-            for takenCourse in user.get_transcript().get_taken_courses():
+            print ("Transcript for student " + self.user.getUserInformation().get_FIRST_NAME() + " " + self.user.getUserInformation().get_LAST_NAME())
+            print("GPA: " + self.user.get_transcript().get_gpa())
+            for takenCourse in self.user.get_transcript().get_taken_courses():
                 print(takenCourse.getCourseInformation().getCourseCode() + ": " + takenCourse.getCourseInformation().getCourseName()+ ": " + takenCourse.getCourseScore().name())
 
         elif choice == "4":
@@ -189,11 +191,11 @@ class Main:
         self.studentMainMenu()
 
     def showStudentInfo(self):
-        user = Student()
-        print("In year: " + user.get_current_class())
-        print("Student ID: " + user.get_student_id().get_id())
-        print("Department Name: " + user.get_student_id().get_department_id().getDepartmentId())
-        print("Faculty Name: " + user.get_student_id().get_faculty_id().getFacultyName())
+
+        print("In year: " + self.user.get_current_class())
+        print("Student ID: " + self.user.get_student_id().get_id())
+        print("Department Name: " + self.user.get_student_id().get_department_id().getDepartmentId())
+        print("Faculty Name: " + self.user.get_student_id().get_faculty_id().getFacultyName())
 
     def lecturerMainMenu(self):
         print("Please choose an option:")
@@ -214,7 +216,7 @@ class Main:
         self.lecturerMainMenu()
 
     def advisorMainMenu(self):
-        user = Advisor()
+
         print("Please choose an option:")
         print("1. Check request of course request")
         print("2. Show user information")
@@ -223,7 +225,7 @@ class Main:
         choice = input()
 
         if choice == "1":
-            self.checkRegistration(user, self._course_registration_service)
+            self.checkRegistration(self.user, self._course_registration_service)
         elif choice == "2":
             self.showUserInformation()
         elif choice == "3":
@@ -238,7 +240,7 @@ class Main:
 
     def checkRegistration (self, advisor, course_registration_service):
         courseRequests = course_registration_service.checkAccesiableRequests(advisor)
-       #BURAYA DA BAK!!!!!!!!!
+
         if courseRequests is None:
             print("There is no requests")
             return
@@ -303,14 +305,14 @@ class Main:
                     break
                 except ValueError:
                     print("Invalid entrance date. Please try again.")
-            #İKİ AYNI METHOD
-            print("Enter entrance date:")
+
+            print("Enter entrance rank:")
             while True:
                 try:
-                    entrance_date = int(input())
+                    entrance_rank = int(input())
                     break
                 except ValueError:
-                    print("Invalid entrance date. Please try again.")
+                    print("Invalid entrance rank. Please try again.")
 
             print("Select a advisor: ")
             for advisor in self._advisors:
@@ -574,11 +576,11 @@ class Main:
             while True:
                 inp = input()
                 for course in self._courses:
-                    if course.getCourseName() == inp:
+                    if course.getCourseName() is inp:
                         prerequisites.append(course.getCourseInformation())
                         break
-                    if inp == "finished":
-                        break
+                if inp is "finished":
+                    break
             #niye unreachable
             print("Enter the number of sections for this course: ")
 
@@ -697,8 +699,8 @@ class Main:
         print("Enter your password: ")
         password = input()
 
-        user = self._login_auth_service.login(email,password)
-        if user is None:
+        self.user = self._login_auth_service.login(email,password)
+        if self.user is None:
             user_type = None
 
         if user_type.lower() == "student":
@@ -726,9 +728,9 @@ class Main:
         current_password = input()
         print("Enter your new password: ")
         new_password = input()
-        #BURAYA DA BAK!!!
-        user = User()
-        if user.getUserInformation().changePassword(self._login_auth_service.hashPassword(current_password), self._login_auth_service.hashPassword(new_password)):
+
+
+        if self.user.getUserInformation().changePassword(self._login_auth_service.hashPassword(current_password), self._login_auth_service.hashPassword(new_password)):
             print("Password changed successfully.")
         else:
             print("Password update failed. Please try again.")
@@ -738,9 +740,8 @@ class Main:
         current_password = input()
         print("Enter your new email: ")
         new_email = input()
-        # BURAYA DA BAK!!!
-        user = User()
-        if user.getUserInformation().changeEmail(self._login_auth_service.hashPassword(current_password), new_email):
+
+        if self.user.getUserInformation().changeEmail(self._login_auth_service.hashPassword(current_password), new_email):
             print("Email changed successfully.")
         else:
             print("Email update failed. Please try again.")
@@ -750,9 +751,8 @@ class Main:
         current_password = input()
         print("Enter your new address: ")
         new_address = input()
-        # BURAYA DA BAK!!!
-        user = User()
-        if user.getUserInformation().changeAddress(self._login_auth_service.hashPassword(current_password), new_address):
+
+        if self.user.getUserInformation().changeAddress(self._login_auth_service.hashPassword(current_password), new_address):
             print("Address changed successfully.")
         else:
             print("Address update failed. Please try again.")
@@ -762,9 +762,8 @@ class Main:
         current_password = input()
         print("Enter your new phone number: ")
         new_phone_number = input()
-        # BURAYA DA BAK!!!
-        user = User()
-        if user.getUserInformation().changePhoneNumber(self._login_auth_service.hashPassword(current_password), new_phone_number):
+
+        if self.user.getUserInformation().changePhoneNumber(self._login_auth_service.hashPassword(current_password), new_phone_number):
             print("Phone number changed successfully.")
         else:
             print("Phone number update failed. Please try again.")
