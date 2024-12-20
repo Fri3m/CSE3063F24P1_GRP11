@@ -34,7 +34,7 @@ class StaffId():
         if newCounter > _staffIdCounter:
             _staffIdCounter = newCounter
 
-class Lecturer(staff):
+class Lecturer(Staff):
     def __init__(self, user_information):
         super().__init__(user_information)
         self._departmentId = DepartmentId
@@ -52,7 +52,7 @@ class Advisor(Lecturer):
     def approveCourseRequest(self, courseRequest):
         ccourseRequest.get_student().get_current_courses().add(courseRequest.get_course())
 
-class Admin(staff):
+class Admin(Staff):
     def __init__(self, user_information):
         super().__init__(user_information)
 

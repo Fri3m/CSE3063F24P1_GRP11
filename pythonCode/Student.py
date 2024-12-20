@@ -1,6 +1,9 @@
-class Student:
+from pythonCode.User import User
+
+
+class Student(User):
     def __init__(self, user_information, student_id, transcript, advisor_id, current_class):
-        self._user_information = user_information
+        super().__init__(user_information)
         self._student_id = student_id
         self._transcript = transcript
         self._advisor_id = advisor_id
@@ -36,7 +39,7 @@ class StudentID:
         self._id = self._create_student_id()
 
     def _create_student_id(self):
-        first_part = str(self._department_id.get_department_id())
+        first_part = str(self._department_id.getDepartmentID())
         second_part = str(self._entrance_date)[1:]  # Get the last 3 digits of the year (e.g., 2024 -> 024)
         third_part = str(self._entrance_rank).zfill(3)  # Ensure it's at least 3 digits long
         return first_part + second_part + third_part

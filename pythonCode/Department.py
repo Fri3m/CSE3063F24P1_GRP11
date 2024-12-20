@@ -9,10 +9,10 @@ class Department:
         return True
 
     def getDepartmentID(self):
-        return _departmentID
+        return self._departmentID
 
     def get_facultyID(self):
-        return _facultyID
+        return self._facultyID
 
 
 class DepartmentID:
