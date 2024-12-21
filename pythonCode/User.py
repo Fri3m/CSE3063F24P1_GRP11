@@ -126,12 +126,12 @@ class DepartmentHead(Staff):
         super().__init__(user_information)
 
 
-staffId = StaffId()
-staffId2 = StaffId()
-staffId3 = StaffId()
-staffId4 = StaffId()
-staffId5 = StaffId()
-staffId6 = StaffId()
-
-print(staffId.get_staff_id())
-print(staffId5.get_staff_id())
+# staffId = StaffId()
+# staffId2 = StaffId()
+# staffId3 = StaffId()
+# staffId4 = StaffId()
+# staffId5 = StaffId()
+# staffId6 = StaffId()
+#
+# print(staffId.get_staff_id())
+# print(staffId5.get_staff_id())
