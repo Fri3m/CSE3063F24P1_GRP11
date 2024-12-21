@@ -1,11 +1,18 @@
 from operator import truediv
+from venv import logger
 from warnings import catch_warnings
-import random
-from pythonCode.Student import Student
-from pythonCode.User import StaffId, Admin, User, Advisor
-from pythonCode.UserInformation import UserInformation
 
-import Course
+import random
+import logging
+
+#from pythonCode import mylib
+
+
+from pythonCode.Day import Day, SectionTime
+from pythonCode.Department import Department, DepartmentID
+from pythonCode.Faculty import FacultyID
+from pythonCode.User import StaffId, Admin
+from pythonCode.UserInformation import UserInformation
 
 
 class Main:
@@ -15,11 +22,20 @@ class Main:
 
     @staticmethod
     def main(self):
+
         main: Main
         main.startMenu()
 
 
     def __init__(self, _login_auth_service, _data_management, _course_registration_service,_faculties,_departments,_students,_advisors,_lecturers,_departmentSchedulers,_studentsAffairs,_courses,_admin,user,user_type):
+
+        logging.basicConfig(filename='myapp.log', level=logging.INFO)
+        logger.info('Started')
+
+        logger.info('Finished')
+
+
+
         self.user = None
         self._login_auth_service = _login_auth_service
         self._data_management = _data_management
@@ -579,7 +595,7 @@ class Main:
                     if course.getCourseName() is inp:
                         prerequisites.append(course.getCourseInformation())
                         break
-                if inp is "finished":
+                if inp == "finished":
                     break
             #niye unreachable
             print("Enter the number of sections for this course: ")
