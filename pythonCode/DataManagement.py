@@ -9,7 +9,7 @@ from Department import DepartmentID, Department
 from Faculty import FacultyID, Faculty
 from User import Lecturer, Advisor, DepartmentScheduler, StudentsAffairs
 
-logging.basicConfig(filename='../Logs/DataLogs.log', level=logging.DEBUG)
+logging.basicConfig(filename='../Logs/DataLogs.log', level=logging.INFO)
 
 from pythonCode.UserInformation import UserInformation
 from pythonCode.Student import StudentID, Student

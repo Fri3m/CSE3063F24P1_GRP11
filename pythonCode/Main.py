@@ -5,6 +5,9 @@ from warnings import catch_warnings
 import random
 import logging
 
+from CourseRegistrationService import CourseRegistrationService
+from DataManagement import DataManagement
+from LoginAuthService import LoginAuthService
 #from pythonCode import mylib
 
 
@@ -20,41 +23,38 @@ class Main:
 
     user_type = str()
 
-    @staticmethod
     def main(self):
 
-        main: Main
-        main.startMenu()
+        self.startMenu()
 
 
-    def __init__(self, _login_auth_service, _data_management, _course_registration_service,_faculties,_departments,_students,_advisors,_lecturers,_departmentSchedulers,_studentsAffairs,_courses,_admin,user,user_type):
+    def __init__(self):
 
+        self._user = None
         logging.basicConfig(filename='myapp.log', level=logging.INFO)
         logger.info('Started')
 
         logger.info('Finished')
-
-
+        self._data_management = DataManagement()
+        self._login_auth_service = LoginAuthService()
+        self._course_registration_service = CourseRegistrationService()
 
         self.user = None
-        self._login_auth_service = _login_auth_service
-        self._data_management = _data_management
-        self._course_registration_service = _course_registration_service
 
-        self._faculties = _data_management.getAllFaculties()
-        self._departments = _data_management.getAllDepartments()
-        self._students = _data_management.getAllStudents()
-        self._advisors = _data_management.getAllAdvisors()
-        self._lecturers = _data_management.getAllLecturers()
-        self._departmentSchedulers = _data_management.getAllDepartmentSchedulers()
-        self._studentsAffairs = _data_management.getAllStudentsAffairs()
-        self._courses = _data_management.getAllCourses()
+        self._faculties = self._data_management.getAllFaculties()
+        self._departments = self._data_management.getAllDepartments()
+        self._students = self._data_management.getAllStudents()
+        self._advisors = self._data_management.getAllAdvisors()
+        self._lecturers = self._data_management.getAllLecturers()
+        self._departmentSchedulers = self._data_management.getAllDepartmentSchedulers()
+        self._studentsAffairs = self._data_management.getAllStudentsAffairs()
+        self._courses = self._data_management.getAllCourses()
 
         self.changeStaticStaffID()
 
         # BUNA SONRA BAK !!!!! (loginauthservice)
         _admin = Admin(UserInformation(("admin"), ("admin"), ("admin"), ("admin"), ("admin"), ("admin"),
-                                       _login_auth_service.hash_password("admin")))
+                                       self._login_auth_service.hashPassword("admin")))
 
 
         self._users = []
@@ -65,7 +65,7 @@ class Main:
         self._users.extend(self._studentsAffairs)
         self._users.append(_admin)
 
-        _login_auth_service._user = self._user
+        self._login_auth_service._user = self._user
 
         for _departments in self._departments:
             for _lecturers in self._lecturers:
@@ -783,3 +783,8 @@ class Main:
             print("Phone number changed successfully.")
         else:
             print("Phone number update failed. Please try again.")
+
+
+if __name__ == '__main__':
+    main = Main()
+    main.main()

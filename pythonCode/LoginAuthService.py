@@ -26,7 +26,7 @@ class LoginAuthService:
         self._users = []
 
     def login(self, email, password):
-        password = self.hash_password(password)
+        password = self.hashPassword(password)
 
         # Check if the email and password match any user
         for user in self._users:
@@ -38,11 +38,11 @@ class LoginAuthService:
                     return None
         return None
 
-    def hash_password(password):
+    def hashPassword(self,password):
         hash_object = hashlib.sha256(password.encode())
         return hash_object.hexdigest()
 
-    def validate_email(email):
+    def validateEmail(self,email):
         # Validate email using a regex
         regex = r"^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$"
         return bool(re.match(regex, email))
