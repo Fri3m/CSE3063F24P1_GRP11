@@ -18,6 +18,10 @@ from pythonCode.Transcript import Transcript
 
 class DataManagement:
 
+    def __init__(self):
+        pass
+
+
     def saveToJson(self, obj):
         file_name = ""
         logging.info(f"Saving {type(obj).__name__} to JSON")

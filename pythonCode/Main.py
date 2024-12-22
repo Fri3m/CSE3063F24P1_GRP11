@@ -1,22 +1,17 @@
-from operator import truediv
-from venv import logger
-from warnings import catch_warnings
-
-import random
 import logging
+import random
+
 
 from CourseRegistrationService import CourseRegistrationService
-from DataManagement import DataManagement
 from LoginAuthService import LoginAuthService
-#from pythonCode import mylib
 
-
+from pythonCode.DataManagement import DataManagement
 from pythonCode.Day import Day, SectionTime
 from pythonCode.Department import Department, DepartmentID
 from pythonCode.Faculty import FacultyID
 from pythonCode.User import StaffId, Admin
 from pythonCode.UserInformation import UserInformation
-
+import DataManagement
 
 class Main:
 
@@ -31,11 +26,8 @@ class Main:
     def __init__(self):
 
         self._user = None
-        logging.basicConfig(filename='myapp.log', level=logging.INFO)
-        logger.info('Started')
 
-        logger.info('Finished')
-        self._data_management = DataManagement()
+        self._data_management = DataManagement.DataManagement()
         self._login_auth_service = LoginAuthService()
         self._course_registration_service = CourseRegistrationService()
 
@@ -346,15 +338,15 @@ class Main:
                     break
             print("Invalid advisor name. Please try again.")
 
-            student = self._data_management.generateNonRandomStudent(userInformation, department, entrance_date, advisorID)
+            student = DataManagement.generateNonRandomStudent(userInformation, department, entrance_date, entrance_rank, advisorID)
             self._data_management.createOrChangeStudent(student)
             self._students.append(student)
             self._login_auth_service._users.append(student)
             print("Student" + student.getUserInformation().get_FIRST_NAME() + " " + student.getUserInformation().get_LAST_NAME() + " added successfully.")
 
         elif choice == "2":
-            d = self._departments.get((int) (random.random() * len(self._departments)))
-            entranceRank = (int) (random.random() * 1000)
+            d = self._departments.get(int(random.random() * len(self._departments)))
+            entranceRank = int(random.random() * 1000)
 
             while True:
                 found = False
@@ -364,10 +356,10 @@ class Main:
                         break
                 if not found:
                     break
-                entranceRank = (int) (random.random() * 1000)
+                entranceRank = int(random.random() * 1000)
 
-            advisorID2 = self._advisors.get((int) (random.random() * len(self._advisors))).get_staffId()
-            student2 = self._data_management.generateRandomStudent(d, 2024, entranceRank, advisorID2)
+            advisorID2 = self._advisors.get(int(random.random() * len(self._advisors))).get_staffId()
+            student2 = DataManagement.generateRandomStudent(d, entranceRank, advisorID2)
             self._data_management.createOrChangeStudent(student2)
             self._students.append(student2)
             self._login_auth_service._users.append(student2)
@@ -399,7 +391,7 @@ class Main:
             self.startMenu()
             return
         else:
-            print("Invalid choice. Please try again.")
+           print("Invalid choice. Please try again.")
 
         self.adminMainMenu()
 
@@ -408,7 +400,7 @@ class Main:
         first_name = input()
         print("Enter last name: ")
         last_name = input()
-        university_email = self._data_management.generateUniversityEmail(first_name, last_name)
+        university_email = DataManagement.__generateUniversityEmail(first_name, last_name)
         print("Created university email: " + university_email)
         print("Enter email: ")
         email = input()
@@ -628,8 +620,9 @@ class Main:
             dayArrayList = []
             sectionTimeArrayList = []
             print("Days: ")
-            for d in Day.values():
-                print(d.name()+", ")
+            day_members = {key: value for key, value in vars(Day).items() if not key.startswith("__")}
+            for name, value in day_members.items():
+                print(f"{name}, ")
             print()
 
             print("Section Times: ")
@@ -678,7 +671,7 @@ class Main:
                     print("Invalid section time. Please try again.")
                     i -= 1
 
-            course = self._data_management.generateCourse(lecturerArrayList, dayArrayList, sectionTimeArrayList, course_name, course_code, prerequisites, min_current_class, department.get_facultyID(), department.getDepartmentID())
+            course = DataManagement.generateCourse(lecturerArrayList, dayArrayList, sectionTimeArrayList, course_name, course_code, prerequisites, min_current_class, department.get_facultyID(), department.getDepartmentID())
             self._data_management.createOrChangeCourse(course)
             self._courses.append(course)
 
@@ -783,6 +776,16 @@ class Main:
             print("Phone number changed successfully.")
         else:
             print("Phone number update failed. Please try again.")
+
+
+us = DataManagement.__generateRandomUserInformation()
+us1 = DataManagement.__generateRandomUserInformation()
+dep = Department(DepartmentID(0, "Computer Engineering"), FacultyID(0, "Engineering"))
+advisor = DataManagement.generateRandomAdvisor(dep)
+student = DataManagement.generateRandomStudent(dep, 2024, 100, advisor.get_staffId())
+DataManagement.DataManagement().createOrChangeStudent(student)
+DataManagement.DataManagement().createOrChangeAdvisor(advisor)
+DataManagement.DataManagement().createOrChangeDepartment(dep)
 
 
 if __name__ == '__main__':
