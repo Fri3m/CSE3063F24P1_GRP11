@@ -14,7 +14,7 @@ class Student(User):
         self._transcript = transcript
         self._advisor_id = advisor_id
         self._current_class = current_class
-        self._current_courses = []
+        self._current_courses = [] # course information
 
         logging.info(f"Student created with ID: {self._student_id.get_ID()}")
 
@@ -27,7 +27,7 @@ class Student(User):
         c_class = int(data["_current_class"])
         c_courses = list()
         for x in data["_current_courses"]:
-            c_courses.append(Course.Course.from_dict(x))
+            c_courses.append(Course.CourseInformation.from_dict(x))
 
         s = Student(ui,sid,trc,ad_id, c_class)
         s._current_courses = c_courses
@@ -55,7 +55,7 @@ class Student(User):
         logging.debug(f"Retrieving advisor ID for student {self._student_id.get_ID()}.")
         return self._advisor_id
 
-    def get_current_courses(self):
+    def get_current_courses(self): # course information
         logging.debug(f"Retrieving current courses for student {self._student_id.get_ID()}.")
         return self._current_courses
 

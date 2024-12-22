@@ -153,7 +153,7 @@ class Main:
             print("Please choose a course to register:")
             courseList = []
             for course in self._courses:
-                if course not in self.user.get_current_courses():
+                if course.courseInformation not in self.user.get_current_courses():
                     courseList.append(course)
 
                 # isInIt = False
@@ -179,7 +179,6 @@ class Main:
         elif choice == "2":
 
             print("Current courses:")
-
             for course in self.user.get_current_courses():
                 print(course.getCourseInformation().getCourseCode() + " " + course.getCourseName())
                 for courseSection in course.getCourseSections():
