@@ -110,7 +110,8 @@ class DataManagement:
         self.deleteJsonFile(f"../Students/{university_email}.json")
 
     def getAllLecturers(self):
-        return self.getAllJsons("../Lecturers")
+        absolute_path = os.path.abspath("../Lecturers")
+        return self.getAllJsons(absolute_path)
 
     def createOrChangeLecturer(self, lecturer):
         self.saveToJson(lecturer)
@@ -122,7 +123,8 @@ class DataManagement:
         self.deleteJsonFile(f"../Lecturers/{university_email}.json")
 
     def getAllCourses(self):
-        return self.getAllJsons("../Courses")
+        absolute_path = os.path.abspath("../Courses")
+        return self.getAllJsons(absolute_path)
 
     def createOrChangeCourse(self, course):
         self.saveToJson(course)
@@ -134,7 +136,8 @@ class DataManagement:
         self.deleteJsonFile(f"../Courses/{course_name}.json")
 
     def getAllAdvisors(self):
-        return self.getAllJsons("../Advisors")
+        absolute_path = os.path.abspath("../Advisors")
+        return self.getAllJsons(absolute_path)
 
     def createOrChangeAdvisor(self, advisor):
         self.saveToJson(advisor)
@@ -146,7 +149,8 @@ class DataManagement:
         self.deleteJsonFile(f"../Advisors/{university_email}.json")
 
     def getAllFaculties(self):
-        return self.getAllJsons("../Faculties")
+        absolute_path = os.path.abspath("../Faculties")
+        return self.getAllJsons(absolute_path)
 
     def createOrChangeFaculty(self, faculty):
         self.saveToJson(faculty)
@@ -158,7 +162,8 @@ class DataManagement:
         self.deleteJsonFile(f"../Faculties/{faculty_name}.json")
 
     def getAllDepartments(self):
-        return self.getAllJsons("../Departments")
+        absolute_path = os.path.abspath("../Departments")
+        return self.getAllJsons(absolute_path)
 
     def createOrChangeDepartment(self, department):
         self.saveToJson(department)
@@ -170,7 +175,8 @@ class DataManagement:
         self.deleteJsonFile(f"../Departments/{department_name}.json")
 
     def getAllDepartmentHeads(self):
-        return self.getAllJsons("../DepartmentHeads")
+        absolute_path = os.path.abspath("../DepartmentHeads")
+        return self.getAllJsons(absolute_path)
 
     def createOrChangeDepartmentHead(self, departmentHead):
         self.saveToJson(departmentHead)
@@ -182,7 +188,8 @@ class DataManagement:
         self.deleteJsonFile(f"../DepartmentHeads/{university_email}.json")
 
     def getAllDepartmentSchedulers(self):
-        return self.getAllJsons("../DepartmentSchedulers")
+        absolute_path = os.path.abspath("../DepartmentSchedulers")
+        return self.getAllJsons(absolute_path)
 
     def createOrChangeDepartmentScheduler(self, departmentScheduler):
         self.saveToJson(departmentScheduler)
@@ -194,7 +201,8 @@ class DataManagement:
         self.deleteJsonFile(f"../DepartmentSchedulers/{university_email}.json")
 
     def getAllStudentsAffairs(self):
-        return self.getAllJsons("../StudentsAffairs")
+        absolute_path = os.path.abspath("../StudentsAffairs")
+        return self.getAllJsons(absolute_path)
 
     def createOrChangeStudentsAffairs(self, studentsAffairs):
         self.saveToJson(studentsAffairs)
