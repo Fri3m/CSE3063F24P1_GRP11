@@ -174,6 +174,8 @@ class Main:
                         self.user.takeCourse(course, self._course_registration_service)
                         courseTaken = True
                         break
+                if courseTaken:
+                    break
                 logging.info("Invalid input for course name")
                 print("Invalid course name. Please try again. Type exit if you want to exit.")
 

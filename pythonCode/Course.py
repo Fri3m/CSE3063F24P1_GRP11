@@ -10,6 +10,11 @@ class Course:
         self.courseInformation = courseInformation
         self.courseRequirements = courseRequirements
         self.courseSections = courseSections
+        # set course capacity to
+        self._courseCapacity = int(1e9)
+        for courseSection in courseSections:
+            if courseSection._classRoom.get_capacity() < self._courseCapacity:
+                self._courseCapacity = courseSection._classRoom.get_capacity()
 
     @staticmethod
     def from_dict(data):
@@ -35,6 +40,8 @@ class Course:
 
     def getCourseSections(self):
         return self.courseSections
+    def getCourseCapacity(self):
+        return self._courseCapacity
 
 
 class CourseInformation:
@@ -179,6 +186,7 @@ class CourseSection:
         self._classRoom = classRoom
         self._quota = classRoom.get_capacity()
         self._currentStudentCount = 0
+
 
     @staticmethod
     def from_dict(data):
