@@ -67,7 +67,6 @@ class StudentID:
         self._faculty_id = faculty_id
         self._id = self.createStudentID()
 
-        # Loglama
         logging.info(f"Student ID created: {self._id} (Department: {self._department_id.getDepartmentID()}, "
                      f"Entrance Date: {self._entrance_date}, Rank: {self._entrance_rank})")
 

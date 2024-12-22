@@ -8,7 +8,7 @@ class CourseRegistrationService:
     def checkAccesiableRequests(self, advisor):
         accessibleRequests = list()
         for courseRequest in self._courseRequests:
-            if advisor.get_staffId() == courseRequest.get_advisorID:
+            if advisor.get_staffId().get_staff_id() == courseRequest.get_advisorID().get_staff_id():
                 accessibleRequests.append(courseRequest)
         return accessibleRequests
 

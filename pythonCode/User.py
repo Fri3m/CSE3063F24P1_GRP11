@@ -24,7 +24,7 @@ class Staff(User):
         logger.info(f'get_staffId called: {str(self._staffId)}')
         return self._staffId
 
-class StaffId():
+class StaffId:
     _staffIdCounter = 1
 
     def __init__(self):

@@ -152,14 +152,17 @@ class Main:
             print("Please choose a course to register:")
             courseList = []
             for course in self._courses:
-                isInIt = False
-                for currentCourse in self.user.get_current_courses():
-                    if currentCourse.getCourseInformation().getCourseCode().equals(course.getCourseInformation().getCourseCode()):
-                        isInIt = True
-                        break
-
-                if(not isInIt):
+                if course not in self.user.get_current_courses():
                     courseList.append(course)
+
+                # isInIt = False
+                # for currentCourse in self.user.get_current_courses():
+                #     if currentCourse.getCourseInformation().getCourseCode().equals(course.getCourseInformation().getCourseCode()):
+                #         isInIt = True
+                #         break
+                #
+                # if not isInIt:
+                #     courseList.append(course)
 
             for course in courseList:
                 print(course.getCourseName())
