@@ -133,7 +133,7 @@ class CourseRequirements:
         ans[0] = student.getCurrentClass() >= self._minimum_current_class
         ans[
             1] = self._departmentID is None or self._departmentID == student.get_studentID().get_departmentID().getDepartmentID()
-        ans[2] = self._facultyID is None or self._facultyID == student.get_studentID.get_facultyID().getFacultyID()
+        ans[2] = self._facultyID is None or self._facultyID == student.get_studentID().get_facultyID().getFacultyID()
         ans[3] = self.checkPrerequisiteCourse(student)
         return ans
 

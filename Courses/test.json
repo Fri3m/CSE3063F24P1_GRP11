@@ -17,8 +17,8 @@
     },
     "courseSections": [
         {
-            "_day": 4,
-            "_sectionTime": 4,
+            "_day": 0,
+            "_sectionTime": 1,
             "_lecturer": {
                 "_user_information": {
                     "_FIRST_NAME": "Burcu",

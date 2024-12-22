@@ -15,7 +15,9 @@ import DataManagement
 
 logging.basicConfig(filename='../Logs/MainLog.log', level=logging.INFO)
 
-
+day_dict = {0: "Monday", 1: "Tuesday", 2: "Wednesday", 3: "Thursday", 4: "Friday"}
+sectionTime_dict = {0: "First", 1: "Second", 2: "Third", 3: "Fourth", 4: "Fifth", 5: "Sixth", 6: "Seventh", 7: "Eighth",
+                    8: "Ninth"}
 class Main:
 
 
@@ -48,8 +50,7 @@ class Main:
         self.changeStaticStaffID()
 
         # BUNA SONRA BAK !!!!! (loginauthservice)
-        _admin = Admin(UserInformation(("admin"), ("admin"), ("admin"), ("admin"), ("admin"), ("admin"),
-                                       self._login_auth_service.hashPassword("admin")))
+        _admin = Admin(UserInformation(("admin"), ("admin"), ("admin"), ("admin"), ("admin"), ("admin"),("admin")))
 
 
         self._users = []
@@ -178,10 +179,11 @@ class Main:
         elif choice == "2":
 
             print("Current courses:")
+
             for course in self.user.get_current_courses():
                 print(course.getCourseInformation().getCourseCode() + " " + course.getCourseName())
                 for courseSection in course.getCourseSections():
-                    print("Day :" + courseSection._day.name() + " Time " + courseSection._sectionTime.name())
+                    print("Day :" + day_dict[courseSection._day] + " Time " + sectionTime_dict[courseSection._sectionTime])
 
         elif choice == "3":
             # GetUserInformation çalışmıyor!!!  (studentten dolayı olabilir)
@@ -352,7 +354,7 @@ class Main:
             print("Student" + student.getUserInformation().get_FIRST_NAME() + " " + student.getUserInformation().get_LAST_NAME() + " added successfully.")
 
         elif choice == "2":
-            d = self._departments.get(int(random.random() * len(self._departments)))
+            d = random.choice(self._departments)
             entranceRank = int(random.random() * 1000)
 
             while True:
@@ -365,8 +367,10 @@ class Main:
                     break
                 entranceRank = int(random.random() * 1000)
 
-            advisorID2 = self._advisors.get(int(random.random() * len(self._advisors))).get_staffId()
-            student2 = DataManagement.generateRandomStudent(d, entranceRank, advisorID2)
+            advisorID2 = random.choice(self._advisors).get_staffId()
+            entranceDate = random.choice([2024,2023,2022,2021])
+
+            student2 = DataManagement.generateRandomStudent(d, entranceDate, entranceRank, advisorID2)
             self._data_management.createOrChangeStudent(student2)
             self._students.append(student2)
             self._login_auth_service._users.append(student2)
@@ -417,7 +421,7 @@ class Main:
         phone_number = input()
         print("Enter password: ")
         password = input()
-        return UserInformation(first_name, last_name, university_email,email, address,phone_number, self._login_auth_service.hashPassword(password))
+        return UserInformation(first_name, last_name, university_email,email, address,phone_number, password)
 
     def departmentSchedulerMainMenu(self):
         print("Please choose an option:")
@@ -445,7 +449,7 @@ class Main:
             print("Select course to continue")
             coursesForThisDepartment = []
             for c in self._courses:
-                if c.getCourseRequirements().get_departmentID().getDepartmentID() == department.getDepartmentID().getDepartmentID():
+                if c.getCourseRequirements().getDepartmentID() == department.getDepartmentID().getDepartmentID():
                     coursesForThisDepartment.append(c)
                     print(c.getCourseName())
 
@@ -454,7 +458,8 @@ class Main:
                 courseSelection = input()
                 found = False
                 for c in coursesForThisDepartment:
-                    if c.getCourseName == courseSelection:
+                    if c.getCourseName() == courseSelection:
+                        logging.info("Course found")
                         found = True
                         course = c
                         break
@@ -463,11 +468,12 @@ class Main:
 
             #getCourseSections çalışmıyor
             if len(course.getCourseSections())==0:
+                logging.info("There are no sections for this course")
                 print("There are no sections for this course")
                 return
 
             for courseSection in course.getCourseSections():
-                print("This course section is in day " + courseSection._day + " time " +courseSection._sectionTime)
+                print("This course section is in day " + day_dict[courseSection._day] + " time " + sectionTime_dict[courseSection._sectionTime])
                 print("Do you want to change this section? Yes if continue: ")
                 choice = input()
                 if not choice == "Yes" or choice == "yes":
@@ -746,7 +752,7 @@ class Main:
         new_password = input()
 
 
-        if self.user.getUserInformation().changePassword(self._login_auth_service.hashPassword(current_password), self._login_auth_service.hashPassword(new_password)):
+        if self.user.getUserInformation().changePassword(current_password, new_password):
             print("Password changed successfully.")
         else:
             print("Password update failed. Please try again.")
@@ -757,7 +763,7 @@ class Main:
         print("Enter your new email: ")
         new_email = input()
 
-        if self.user.getUserInformation().changeEmail(self._login_auth_service.hashPassword(current_password), new_email):
+        if self.user.getUserInformation().changeEmail(current_password, new_email):
             print("Email changed successfully.")
         else:
             print("Email update failed. Please try again.")
@@ -768,7 +774,7 @@ class Main:
         print("Enter your new address: ")
         new_address = input()
 
-        if self.user.getUserInformation().changeAddress(self._login_auth_service.hashPassword(current_password), new_address):
+        if self.user.getUserInformation().changeAddress(current_password, new_address):
             print("Address changed successfully.")
         else:
             print("Address update failed. Please try again.")
@@ -779,7 +785,7 @@ class Main:
         print("Enter your new phone number: ")
         new_phone_number = input()
 
-        if self.user.getUserInformation().changePhoneNumber(self._login_auth_service.hashPassword(current_password), new_phone_number):
+        if self.user.getUserInformation().changePhoneNumber(current_password, new_phone_number):
             print("Phone number changed successfully.")
         else:
             print("Phone number update failed. Please try again.")
