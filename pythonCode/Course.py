@@ -175,7 +175,8 @@ class CourseSection:
         self._day = day
         self._sectionTime = sectionTime
         self._lecturer = lecturer
-        self._quota = quota#asd
+        self._quota = quota
+        self._currentStudentCount = 0
 
     @staticmethod
     def from_dict(data):
@@ -190,6 +191,8 @@ class CourseSection:
             return classroom
         else:
             return "Classroom capacity is not enough"
+    def getCurrentStudentCount(self):
+        return self._currentStudentCount
 
 
 

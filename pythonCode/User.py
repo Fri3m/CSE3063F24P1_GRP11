@@ -4,8 +4,10 @@ import UserInformation
 
 
 logger = logging.getLogger(__name__)
+logging.basicConfig(filename='UserLogs.log', level=logging.INFO)
 
-class User:
+
+class User():
     def __init__(self, user_information):
         logger.info('User initialized')
         self._user_information = user_information
@@ -19,13 +21,14 @@ class Staff(User):
     def __init__(self, user_information):
         logger.info('Staff initialized')
         super().__init__(user_information)
-        self._staffId = StaffId()
+        self._staffId = StaffId
 
     def get_staffId(self):
         logger.info(f'get_staffId called: {str(self._staffId)}')
         return self._staffId
 
-class StaffId:
+
+class StaffId():
     _staffIdCounter = 1
 
     def __init__(self):
@@ -94,7 +97,10 @@ class Advisor(Lecturer):
 
     def approveCourseRequest(self, courseRequest):
         logger.info('approveCourseRequest called')
-        courseRequest.get_student().get_current_courses().append(courseRequest.get_course().getCourseInformation())
+        courseRequest.get_student().get_current_courses().append(courseRequest.get_course())
+        for courseSection in courseRequest.get_course().getCourseSections():
+            courseSection._currentStudentCount += 1
+
 
 
 class Admin(Staff):
@@ -125,7 +131,7 @@ class DepartmentScheduler(Staff):
             if course.getCourseRequirements().get_departmentID().getDepartmentName().equalsIgnoreCase(
                     department.getDepartmentID().getDepartmentName()):
                 departmentCourses.append(course)
-                logger.info("Course added to the departmentCourses list")
+                logger.info("Course: {} added to the departmentCourses list".format(course.getCourseName()))
         return departmentCourses
 
     def changeCourseSectionDayAndTime(self, courseSection, day, time):
@@ -170,12 +176,12 @@ class DepartmentHead(Staff):
         return dh
 
 
-# staffId = StaffId()
-# staffId2 = StaffId()
-# staffId3 = StaffId()
-# staffId4 = StaffId()
-# staffId5 = StaffId()
-# staffId6 = StaffId()
-#
-# print(staffId.get_staff_id())
-# print(staffId5.get_staff_id())
+staffId = StaffId()
+staffId2 = StaffId()
+staffId3 = StaffId()
+staffId4 = StaffId()
+staffId5 = StaffId()
+staffId6 = StaffId()
+
+print(staffId.get_staff_id())
+print(staffId5.get_staff_id())
