@@ -3,7 +3,7 @@ class CourseRegistrationService:
         self._courseRequests = list()
 
     def createCourseRequest(self, student, course):
-        _courseRequests.append(CourseRequest(student, course, student.get_advisorID()))
+        self._courseRequests.append(CourseRequest(student, course, student.get_advisorID()))
 
     def checkAccesiableRequests(self, advisor):
         accessibleRequests = list()

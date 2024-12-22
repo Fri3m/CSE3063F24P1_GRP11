@@ -28,13 +28,12 @@ class Main:
 
     def __init__(self):
 
-        self._user = None
 
         self._data_management = DataManagement.DataManagement()
         self._login_auth_service = LoginAuthService()
         self._course_registration_service = CourseRegistrationService()
 
-        self.user = None
+
 
         self._faculties = self._data_management.getAllFaculties()
         self._departments = self._data_management.getAllDepartments()
@@ -61,7 +60,7 @@ class Main:
         self._users.extend(self._studentsAffairs)
         self._users.append(_admin)
 
-        self._login_auth_service._user = self._user
+        self._login_auth_service._users = self._users
 
         for _departments in self._departments:
             for _lecturers in self._lecturers:
@@ -706,7 +705,7 @@ class Main:
 
     def login(self):
         print("Which type of user are you? (Student, Advisor, Lecturer, Admin, DepartmentScheduler, StudentAffair)")
-        user_type = input()
+        self.user_type = input()
         print("Enter your university email: ")
         email = input()
         print("Enter your password: ")
@@ -714,19 +713,19 @@ class Main:
 
         self.user = self._login_auth_service.login(email,password)
         if self.user is None:
-            user_type = None
+            self.user_type = str()
 
-        if user_type.lower() == "student":
+        if self.user_type.lower() == "student":
             self.studentMainMenu()
-        elif user_type.lower() == "advisor":
+        elif self.user_type.lower() == "advisor":
             self.advisorMainMenu()
-        elif user_type.lower() =="lecturer":
+        elif self.user_type.lower() =="lecturer":
             self.lecturerMainMenu()
-        elif user_type.lower() == "admin":
+        elif self.user_type.lower() == "admin":
             self.adminMainMenu()
-        elif user_type.lower() == "departmentScheduler":
+        elif self.user_type.lower() == "departmentscheduler":
             self.departmentSchedulerMainMenu()
-        elif user_type.lower() == "studentsAffairs":
+        elif self.user_type.lower() == "studentsaffairs":
             self.studentsAffairsMainMenu()
         else:
             print("Invalid login. To retry enter 1, to return to the main menu enter any other key")

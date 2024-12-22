@@ -34,7 +34,7 @@ class LoginAuthService:
 
     def login(self, email, password):
         logging.info(f"Trying to log in with email: {email}")
-        password = self.hashPassword(password)
+        #password = self.hashPassword(password)
         
         for user in self._users:
             user_info = user.get_user_information()
