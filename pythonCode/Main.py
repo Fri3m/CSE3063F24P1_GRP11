@@ -261,6 +261,15 @@ class Main:
 
         self.advisorMainMenu()
 
+    def checkSectionConflict(self, courseSections, courses):
+        for courseSection in courseSections:
+            for course in courses:
+                for courseSection1 in course.getCourseSections():
+                    if courseSection._day == courseSection1._day and courseSection._sectionTime == courseSection1._sectionTime:
+                        print("Student is already taking a course at this time. ")
+                        return False
+        return True
+
     def checkRegistration(self, advisor, course_registration_service):
         logging.info(f"Checking registration for advisor {advisor.getUserInformation().get_UNIVERSITY_EMAIL()}")
         courseRequests = course_registration_service.checkAccesiableRequests(advisor)
@@ -274,13 +283,13 @@ class Main:
                 courseRequest.get_student().getUserInformation().get_FIRST_NAME() + " " + courseRequest.get_course().getCourseName())
             x = advisor.checkCourseRequest(courseRequest)
 
-            if courseRequests.get_course().getCurrentStudentCount() >= courseRequests.get_course().getCourseCapacity():
+            if courseRequest.get_course().getCurrentStudentCount() >= courseRequest.get_course().getCourseCapacity():
                 print("Course is full. Course request denied.")
                 course_registration_service.removeCourseRequest(courseRequest)
                 continue
 
-             # bura
-            #if courseRequests.get_course()
+            if self.checkSectionConflict(courseRequest.get_course().getCourseSections(), courseRequest.get_student().get_current_courses()):
+                print("Student doesn't have any courses at this time.")
 
             if x[0] and x[1] and x[2] and x[3]:
                 print("Student is qualified for this course.")
