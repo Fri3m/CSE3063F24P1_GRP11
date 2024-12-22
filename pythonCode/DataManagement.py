@@ -21,7 +21,6 @@ class DataManagement:
     def __init__(self):
         pass
 
-
     def saveToJson(self, obj):
         file_name = ""
         logging.info(f"Saving {type(obj).__name__} to JSON")
@@ -33,7 +32,7 @@ class DataManagement:
             file_name = obj.getDepartmentID().getDepartmentName()
             logging.info(f"Saving {type(obj).__name__} with department name: {file_name}")
         elif type(obj).__name__ == "Faculty":
-            file_name = obj.getFacultyID().getFacultyName()
+            file_name = obj.getFacultyID().get_faculty_name()
             logging.info(f"Saving {type(obj).__name__} with faculty name: {file_name}")
         elif type(obj).__name__ == "Course":
             file_name = obj.getCourseID().getCourseName()
@@ -57,11 +56,8 @@ class DataManagement:
 
     def loadFromJson(self, file_path_and_name):
         # Extract the directory path from the file path
-        directory = os.path.dirname(file_path_and_name)
-
-        # Return None if the directory doesn't exist
-        if directory and not os.path.exists(directory):
-            logging.error(f"Directory doesn't exist: {directory}")
+        if not os.path.exists(file_path_and_name):
+            logging.error(f"File doesn't exist: {file_path_and_name}")
             return None
 
         # Open the file and read JSON data
@@ -86,16 +82,23 @@ class DataManagement:
     def getAllJsons(self, folder_path):
         allObjects = []
         logging.info(f"Getting all JSON files from {folder_path}")
-        for root, dirs, files in os.walk(folder_path):
-            for file in files:
-                if file.endswith(".json"):
-                    allObjects.append(self.loadFromJson(os.path.join(root, file)))
+        for filename in os.listdir(folder_path):
+            file_path = os.path.join(folder_path, filename)
+            if os.path.isfile(file_path) and file_path.endswith(".json"):
+                allObjects.append(self.loadFromJson(file_path))
+
+        # for root, dirs, files in os.walk(folder_path):
+        #     print(f"{root} {dirs} {files}")
+        #     for file in files:
+        #         if file.endswith(".json"):
+        #             allObjects.append(self.loadFromJson(os.path.join(root, file)))
 
         logging.info(f"Got all JSON files from {folder_path}")
         return allObjects
 
     def getAllStudents(self):
-        return self.getAllJsons("../Students")
+        absolute_path = os.path.abspath("../Students")
+        return self.getAllJsons(absolute_path)
 
     def createOrChangeStudent(self, student):
         self.saveToJson(student)
@@ -388,10 +391,15 @@ class customEncoder(JSONEncoder):
         return o.__dict__
 
 
-dm = DataManagement()
+# dm = DataManagement()
+# fac = generateFaculty(15,"eng")
+# dep = generateDepartment(150, "comp eng",fac )
+# ad = generateRandomAdvisor(dep)
+# stu = generateRandomStudent(dep,2022,1,ad.get_staffId())
+# dm.createOrChangeStudent(stu)
+# dm.createOrChangeFaculty(fac)
+# dm.createOrChangeDepartment(dep)
+# dm.createOrChangeAdvisor(ad)
 
-# st = generateRandomStudent(Department(DepartmentID("1", "Computer Engineering"), "1"), 2019, 1, "1")
-# dm.saveToJson(st)
-
-students = dm.getAllStudents()
-print(students)
+# students = dm.getAllStudents()
+# print(students)

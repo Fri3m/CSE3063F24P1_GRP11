@@ -18,7 +18,7 @@ class Staff(User):
     def __init__(self, user_information):
         logger.info('Staff initialized')
         super().__init__(user_information)
-        self._staffId = StaffId
+        self._staffId = StaffId()
 
     def get_staffId(self):
         logger.info(f'get_staffId called: {str(self._staffId)}')

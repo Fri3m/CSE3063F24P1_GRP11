@@ -778,14 +778,15 @@ class Main:
             print("Phone number update failed. Please try again.")
 
 
-us = DataManagement.__generateRandomUserInformation()
-us1 = DataManagement.__generateRandomUserInformation()
-dep = Department(DepartmentID(0, "Computer Engineering"), FacultyID(0, "Engineering"))
-advisor = DataManagement.generateRandomAdvisor(dep)
-student = DataManagement.generateRandomStudent(dep, 2024, 100, advisor.get_staffId())
-DataManagement.DataManagement().createOrChangeStudent(student)
-DataManagement.DataManagement().createOrChangeAdvisor(advisor)
-DataManagement.DataManagement().createOrChangeDepartment(dep)
+# us = DataManagement.__generateRandomUserInformation()
+# us1 = DataManagement.__generateRandomUserInformation()
+# dep = Department(DepartmentID(0, "Computer Engineering"), FacultyID(0, "Engineering"))
+# advisor = DataManagement.generateRandomAdvisor(dep)
+# student = DataManagement.generateRandomStudent(dep, 2024, 100, advisor.get_staffId())
+# DataManagement.DataManagement().createOrChangeDepartment(dep)
+# DataManagement.DataManagement().createOrChangeStudent(student)
+# DataManagement.DataManagement().createOrChangeAdvisor(advisor)
+
 
 
 if __name__ == '__main__':
