@@ -9,9 +9,12 @@ from pythonCode.DataManagement import DataManagement
 from pythonCode.Day import Day, SectionTime
 from pythonCode.Department import Department, DepartmentID
 from pythonCode.Faculty import FacultyID
-from pythonCode.User import StaffId, Admin
+from pythonCode.User import StaffId, Admin, Advisor
 from pythonCode.UserInformation import UserInformation
 import DataManagement
+
+logging.basicConfig(filename='../Logs/MainLog.log', level=logging.INFO)
+
 
 class Main:
 
@@ -37,6 +40,7 @@ class Main:
         self._departments = self._data_management.getAllDepartments()
         self._students = self._data_management.getAllStudents()
         self._advisors = self._data_management.getAllAdvisors()
+
         self._lecturers = self._data_management.getAllLecturers()
         self._departmentSchedulers = self._data_management.getAllDepartmentSchedulers()
         self._studentsAffairs = self._data_management.getAllStudentsAffairs()
@@ -61,7 +65,7 @@ class Main:
 
         for _departments in self._departments:
             for _lecturers in self._lecturers:
-                if _lecturers.get_department_id() is not None and _lecturers.get_department_id().getDepartmentID == _departments.getDepartmentID().getDepartmentID():
+                if _lecturers.get_departmentId() is not None and _lecturers.get_departmentId() == _departments.getDepartmentID().getDepartmentID():
                     _departments.add_lecturer(_lecturers)
 
 

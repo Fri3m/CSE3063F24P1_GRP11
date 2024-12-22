@@ -1,10 +1,10 @@
 import logging
 
+import UserInformation
+
 logger = logging.getLogger(__name__)
-logging.basicConfig(filename='UserLogs.log', level=logging.INFO)
 
-
-class User():
+class User:
     def __init__(self, user_information):
         logger.info('User initialized')
         self._user_information = user_information
@@ -24,13 +24,21 @@ class Staff(User):
         logger.info(f'get_staffId called: {str(self._staffId)}')
         return self._staffId
 
-
 class StaffId():
     _staffIdCounter = 1
 
     def __init__(self):
         logger.info('StaffId initialized')
         StaffId._generateStaffId(self)
+
+
+    @staticmethod
+    def from_dict(data):
+        sid = StaffId()
+        sid._staffId = int(data["_staffId"])
+        return sid
+
+
 
     @staticmethod
     def _generateStaffId(staffId):
@@ -56,6 +64,12 @@ class Lecturer(Staff):
         self._departmentId = ""
         self._facultyId = ""
 
+    @staticmethod
+    def from_dict(data):
+        lec =Lecturer(UserInformation.UserInformation.from_dict(data["_user_information"]))
+        lec._staffId = StaffId.from_dict(data["_staffId"])
+        return lec
+
     def get_departmentId(self):
         logger.info('get_departmentId called')
         return self._departmentId
@@ -65,6 +79,12 @@ class Advisor(Lecturer):
     def __init__(self, user_information):
         logger.info('Advisor initialized')
         super().__init__(user_information)
+
+    @staticmethod
+    def from_dict(data):
+        ad = Advisor(UserInformation.UserInformation.from_dict(data["_user_information"]))
+        ad._staffId = StaffId.from_dict(data["_staffId"])
+        return ad
 
     def checkCourseRequest(self, courseRequest):
         logger.info('checkCourseRequest called')
@@ -87,6 +107,13 @@ class DepartmentScheduler(Staff):
 
         logger.info('DepartmentScheduler initialized')
         super().__init__(user_information)
+
+    @staticmethod
+    def from_dict(data):
+        ds = DepartmentScheduler(UserInformation.UserInformation.from_dict(data["_user_information"]))
+        ds._staffId = StaffId.from_dict(data["_staffId"])
+        return ds
+
 
     def returnCoursesForDepartment(self, courses, department):
 
@@ -111,6 +138,13 @@ class StudentsAffairs(Staff):
     def __init__(self, user_information):
         logger.info('StudentsAffairs initialized')
         super().__init__(user_information)
+
+    @staticmethod
+    def from_dict(data):
+        sa = StudentsAffairs(UserInformation.UserInformation.from_dict(data["_user_information"]))
+        sa._staffId = StaffId.from_dict(data["_staffId"])
+        return sa
+
 
     def addCourse(self, course, courses):
         courses.add(course)

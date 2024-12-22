@@ -1,4 +1,9 @@
-from pythonCode.User import User
+import Course
+import Department
+import Faculty
+import Transcript
+import UserInformation
+from pythonCode.User import User, StaffId
 
 import logging
 
@@ -12,6 +17,21 @@ class Student(User):
         self._current_courses = []
 
         logging.info(f"Student created with ID: {self._student_id.get_id()}")
+
+    @staticmethod
+    def from_dict(data):
+        ui = UserInformation.UserInformation.from_dict(data["_user_information"])
+        sid = StudentID.from_dict(data["_student_id"])
+        trc = Transcript.Transcript.from_dict(data["_transcript"])
+        ad_id = StaffId.from_dict(data["_advisor_id"])
+        c_class = int(data["_current_class"])
+        c_courses = list()
+        for x in data["_current_courses"]:
+            c_courses.append(Course.Course.from_dict(x))
+
+        s = Student(ui,sid,trc,ad_id, c_class)
+        s._current_courses = c_courses
+        return s
 
     def take_course(self, course, course_registration_service):
         logging.info(f"Student {self._student_id.get_id()} attempting to take course {course}.")
@@ -50,6 +70,14 @@ class StudentID:
         # Loglama
         logging.info(f"Student ID created: {self._id} (Department: {self._department_id.getDepartmentID()}, "
                      f"Entrance Date: {self._entrance_date}, Rank: {self._entrance_rank})")
+
+    @staticmethod
+    def from_dict(data):
+        did = Department.DepartmentID.from_dict(data["_department_id"])
+        ed = int(data["_entrance_date"])
+        er = int(data["_entrance_rank"])
+        fid = Faculty.FacultyID.from_dict(data["_faculty_id"])
+        return StudentID(did,ed,er,fid)
 
     def _create_student_id(self):
         logging.debug(f"Creating student ID using department {self._department_id.getDepartmentID()}, "

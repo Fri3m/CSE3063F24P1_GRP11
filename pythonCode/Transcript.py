@@ -1,5 +1,8 @@
 import logging
 
+import Student
+from Course import TakenCourse
+
 
 class Transcript:
     def __init__(self, student_id):
@@ -8,6 +11,20 @@ class Transcript:
         self._gpa = 0.0
 
         logging.info(f"Transcript created for student ID: {self._student_id.get_id()}")
+
+    @staticmethod
+    def from_dict(data):
+        sid = Student.StudentID.from_dict(data["_student_id"])
+        tc_list =list()
+
+        for dtc in data["_taken_courses"]:
+            tc_list.append(TakenCourse.from_dict(dtc))
+
+        tc = Transcript(sid)
+        tc.add_taken_courses(tc_list)
+        tc._calculate_gpa()
+        return tc
+
 
     def add_taken_courses(self, taken_courses):
         logging.info(f"Adding courses to transcript for student ID: {self._student_id.get_id()}. Courses: {taken_courses}")

@@ -5,11 +5,10 @@ from json import JSONEncoder
 import logging
 
 from Course import CourseInformation, CourseRequirements, CourseSection, Course
+from Day import Day, SectionTime
 from Department import DepartmentID, Department
 from Faculty import FacultyID, Faculty
-from User import Lecturer, Advisor, DepartmentScheduler, StudentsAffairs
-
-logging.basicConfig(filename='../Logs/DataLogs.log', level=logging.INFO)
+from User import Lecturer, Advisor, DepartmentScheduler, StudentsAffairs, DepartmentHead
 
 from pythonCode.UserInformation import UserInformation
 from pythonCode.Student import StudentID, Student
@@ -35,7 +34,7 @@ class DataManagement:
             file_name = obj.getFacultyID().get_faculty_name()
             logging.info(f"Saving {type(obj).__name__} with faculty name: {file_name}")
         elif type(obj).__name__ == "Course":
-            file_name = obj.getCourseID().getCourseName()
+            file_name = obj.getCourseName()
             logging.info(f"Saving {type(obj).__name__} with course name: {file_name}")
         file_path = f"../{type(obj).__name__}s/{file_name}.json"
         self.__saveToJson(obj, file_path)
@@ -90,96 +89,133 @@ class DataManagement:
             if os.path.isfile(file_path) and file_path.endswith(".json"):
                 allObjects.append(self.loadFromJson(file_path))
 
-        # for root, dirs, files in os.walk(folder_path):
-        #     print(f"{root} {dirs} {files}")
-        #     for file in files:
-        #         if file.endswith(".json"):
-        #             allObjects.append(self.loadFromJson(os.path.join(root, file)))
-
         logging.info(f"Got all JSON files from {folder_path}")
         return allObjects
 
     def getAllStudents(self):
         absolute_path = os.path.abspath("../Students")
-        return self.getAllJsons(absolute_path)
+        datas = self.getAllJsons(absolute_path)
+        s_list = list()
+
+        for data in datas:
+            s_list.append(Student.from_dict(data))
+
+        return s_list
 
     def createOrChangeStudent(self, student):
         self.saveToJson(student)
 
     def getStudent(self, university_email):
-        return self.loadFromJson(f"../Students/{university_email}.json")
+        data = self.loadFromJson(f"../Students/{university_email}.json")
+        return Student.from_dict(data)
 
     def removeStudent(self, university_email):
         self.deleteJsonFile(f"../Students/{university_email}.json")
 
     def getAllLecturers(self):
         absolute_path = os.path.abspath("../Lecturers")
-        return self.getAllJsons(absolute_path)
+        datas = self.getAllJsons(absolute_path)
+
+        lecturers = list()
+        for data in datas:
+            lecturers.append(Lecturer.from_dict(data))
+
+        return lecturers
 
     def createOrChangeLecturer(self, lecturer):
         self.saveToJson(lecturer)
 
     def getLecturer(self, university_email):
-        return self.loadFromJson(f"../Lecturers/{university_email}.json")
+        data = self.loadFromJson(f"../Lecturers/{university_email}.json")
+        return Lecturer.from_dict(data)
 
     def removeLecturer(self, university_email):
         self.deleteJsonFile(f"../Lecturers/{university_email}.json")
 
     def getAllCourses(self):
         absolute_path = os.path.abspath("../Courses")
-        return self.getAllJsons(absolute_path)
+        datas = self.getAllJsons(absolute_path)
+        c_list = list()
+
+        for data in datas:
+            c_list.append(Course.from_dict(data))
+
+        return c_list
 
     def createOrChangeCourse(self, course):
         self.saveToJson(course)
 
     def getCourse(self, course_name):
-        return self.loadFromJson(f"../Courses/{course_name}.json")
+        data = self.loadFromJson(f"../Courses/{course_name}.json")
+        return Course.from_dict(data)
 
     def removeCourse(self, course_name):
         self.deleteJsonFile(f"../Courses/{course_name}.json")
 
     def getAllAdvisors(self):
         absolute_path = os.path.abspath("../Advisors")
-        return self.getAllJsons(absolute_path)
+        datas = self.getAllJsons(absolute_path)
+        advisors = list()
+        for data in datas:
+            advisors.append(Advisor.from_dict(data))
+        return advisors
 
     def createOrChangeAdvisor(self, advisor):
         self.saveToJson(advisor)
 
     def getAdvisor(self, university_email):
-        return self.loadFromJson(f"../Advisors/{university_email}.json")
+        data = self.loadFromJson(f"../Advisors/{university_email}.json")
+        return Advisor.from_dict(data)
 
     def removeAdvisor(self, university_email):
         self.deleteJsonFile(f"../Advisors/{university_email}.json")
 
     def getAllFaculties(self):
         absolute_path = os.path.abspath("../Facultys")
-        return self.getAllJsons(absolute_path)
+        datas = self.getAllJsons(absolute_path)
+        f_list = list()
+
+        for data in datas:
+            f_list.append(data)
+        return f_list
 
     def createOrChangeFaculty(self, faculty):
         self.saveToJson(faculty)
 
     def getFaculty(self, faculty_name):
-        return self.loadFromJson(f"../Faculties/{faculty_name}.json")
+        data = self.loadFromJson(f"../Faculties/{faculty_name}.json")
+        return Faculty.from_dict(data)
+
 
     def removeFaculty(self, faculty_name):
         self.deleteJsonFile(f"../Faculties/{faculty_name}.json")
 
     def getAllDepartments(self):
         absolute_path = os.path.abspath("../Departments")
-        return self.getAllJsons(absolute_path)
+        datas = self.getAllJsons(absolute_path)
+        d_list = list()
+
+        for data in datas:
+            d_list.append(Department.from_dict(data))
+        return d_list
 
     def createOrChangeDepartment(self, department):
         self.saveToJson(department)
 
     def getDepartment(self, department_name):
-        return self.loadFromJson(f"../Departments/{department_name}.json")
+        data = self.loadFromJson(f"../Departments/{department_name}.json")
+        return Department.from_dict(data)
 
     def removeDepartment(self, department_name):
         self.deleteJsonFile(f"../Departments/{department_name}.json")
 
     def getAllDepartmentHeads(self):
         absolute_path = os.path.abspath("../DepartmentHeads")
-        return self.getAllJsons(absolute_path)
+        datas = self.getAllJsons(absolute_path)
+        dh_list = list()
+        return
+        # for data in datas:
+        #     return DepartmentHead()
 
     def createOrChangeDepartmentHead(self, departmentHead):
         self.saveToJson(departmentHead)
@@ -192,26 +228,36 @@ class DataManagement:
 
     def getAllDepartmentSchedulers(self):
         absolute_path = os.path.abspath("../DepartmentSchedulers")
-        return self.getAllJsons(absolute_path)
+        datas = self.getAllJsons(absolute_path)
+        dss = list()
+        for data in datas:
+            dss.append(DepartmentScheduler.from_dict(data))
+        return dss
 
     def createOrChangeDepartmentScheduler(self, departmentScheduler):
         self.saveToJson(departmentScheduler)
 
     def getDepartmentScheduler(self, university_email):
-        return self.loadFromJson(f"../DepartmentSchedulers/{university_email}.json")
+        data = self.loadFromJson(f"../DepartmentSchedulers/{university_email}.json")
+        return DepartmentScheduler.from_dict(data)
 
     def removeDepartmentScheduler(self, university_email):
         self.deleteJsonFile(f"../DepartmentSchedulers/{university_email}.json")
 
     def getAllStudentsAffairs(self):
-        absolute_path = os.path.abspath("../StudentsAffairs")
-        return self.getAllJsons(absolute_path)
+        absolute_path = os.path.abspath("../StudentsAffairss")
+        datas = self.getAllJsons(absolute_path)
+        sas = list()
+        for data in datas:
+            sas.append(StudentsAffairs.from_dict(data))
+        return sas
 
     def createOrChangeStudentsAffairs(self, studentsAffairs):
         self.saveToJson(studentsAffairs)
 
     def getStudentsAffairs(self, university_email):
-        return self.loadFromJson(f"../StudentsAffairs/{university_email}.json")
+        data = self.loadFromJson(f"../StudentsAffairs/{university_email}.json")
+        return StudentsAffairs.from_dict(data)
 
     def removeStudentsAffairs(self, university_email):
         self.deleteJsonFile(f"../StudentsAffairs/{university_email}.json")
@@ -372,7 +418,7 @@ def generateCourse(lecturerForSections, days, sectionTimes, courseName, courseCo
     ___courseReq = generateCourseRequirements(prerequisiteCourses, minimumCurrentClass, facultyID, departmentID)
     courseSections = list()
     for i in range(len(lecturerForSections)):
-        ___courseSec = CourseSection(lecturerForSections[i], days[i], sectionTimes[i])
+        ___courseSec = CourseSection(days[i], sectionTimes[i], lecturerForSections[i])
         courseSections.append(___courseSec)
     ___course = Course(___courseInfo, ___courseReq, courseSections)
     logging.info(f"Generated course: {courseName} {courseCode}")
@@ -401,16 +447,27 @@ class customEncoder(JSONEncoder):
     def default(self, o):
         return o.__dict__
 
-
 # dm = DataManagement()
 # fac = generateFaculty(15,"eng")
+# dm.createOrChangeFaculty(fac)
+#
 # dep = generateDepartment(150, "comp eng",fac )
+# dm.createOrChangeDepartment(dep)
+#
 # ad = generateRandomAdvisor(dep)
+# dm.createOrChangeAdvisor(ad)
+#
 # stu = generateRandomStudent(dep,2022,1,ad.get_staffId())
 # dm.createOrChangeStudent(stu)
-# dm.createOrChangeFaculty(fac)
-# dm.createOrChangeDepartment(dep)
-# dm.createOrChangeAdvisor(ad)
-
-# students = dm.getAllStudents()
-# print(students)
+#
+# lec = generateRandomLecturer(dep)
+# dm.createOrChangeLecturer(lec)
+#
+# sa = generateRandomStudentsAffairs(dep)
+# dm.createOrChangeStudentsAffairs(sa)
+#
+# dsch = generateRandomDepartmentScheduler(dep)
+# dm.createOrChangeDepartmentScheduler(dsch)
+#
+# course = generateCourse([lec],[Day.Friday],[SectionTime.Fifth], "test", "TT101", list(),1, dep.get_facultyID(),dep.getDepartmentID())
+# dm.createOrChangeCourse(course)

@@ -1,4 +1,4 @@
-class UserInformation():
+class UserInformation:
     def __init__(self, first_name, last_name, encoded_password, university_email, email, address, phone_number):
         self._FIRST_NAME = first_name
         self._LAST_NAME = last_name
@@ -9,6 +9,12 @@ class UserInformation():
         self._phone_number = phone_number
         # I didn't write main method we didn't need it
 
+    @staticmethod
+    def from_dict(data):
+        return UserInformation(data["_FIRST_NAME"], data[
+            "_LAST_NAME"], data["_encoded_password"], data["_UNIVERSITY_EMAIL"], data["_email"], data["_address"], data[
+                            "_phone_number"])
+
     def _verifyPassword(self, encoded_password):
         return self._encoded_password == encoded_password
 
@@ -18,7 +24,7 @@ class UserInformation():
             return True
         return False
 
-    def changeEmail(self, current_encoded_password , new_email):
+    def changeEmail(self, current_encoded_password, new_email):
         if self._verifyPassword(current_encoded_password):
             self._email = new_email
             return True
@@ -38,15 +44,21 @@ class UserInformation():
 
     def get_FIRST_NAME(self):
         return self._FIRST_NAME
+
     def get_LAST_NAME(self):
         return self._LAST_NAME
+
     def get_UNIVERSITY_EMAIL(self):
         return self._UNIVERSITY_EMAIL
+
     def get_encoded_password(self):
         return self._encoded_password
+
     def get_email(self):
         return self._email
+
     def get_address(self):
         return self._address
+
     def get_phone_number(self):
         return self._phone_number

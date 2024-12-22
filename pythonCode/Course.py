@@ -1,8 +1,23 @@
+import Department
+import Faculty
+from User import Lecturer
+
+
 class Course:
     def __init__(self, courseInformation, courseRequirements, courseSections):
         self.courseInformation = courseInformation
         self.courseRequirements = courseRequirements
         self.courseSections = courseSections
+
+    @staticmethod
+    def from_dict(data):
+        ci = CourseInformation.from_dict(data["courseInformation"])
+        cr = CourseRequirements.from_dict(data["courseRequirements"])
+        css = list()
+        for data_cs in data["courseSections"]:
+            css.append(CourseSection.from_dict(data_cs))
+
+        return Course(ci, cr, css)
 
     def getCourseName(self):
         return self.courseInformation.getCourseName()
@@ -25,6 +40,10 @@ class CourseInformation:
         self.courseName = courseName
         self.courseCode = courseCode
 
+    @staticmethod
+    def from_dict(data):
+        return CourseInformation(data["courseName"], data["courseCode"])
+
     def getCourseCode(self):
         return self.courseCode
 
@@ -37,6 +56,13 @@ class TakenCourse:
         self._courseInformation = courseInformation
         self._midterm_score = midtermScore
         self._final_score = finalScore
+
+    @staticmethod
+    def from_dict(data):
+        ci = data["_courseInformation"]
+        ms = int(data["_midterm_score"])
+        fs = int(data["_final_score"])
+        return TakenCourse(ci,ms,fs)
 
     def getCourseInformation(self):
         return self._courseInformation
@@ -88,6 +114,20 @@ class CourseRequirements:
         self._facultyID = facultyID
         self._departmentID = departmentID
 
+    @staticmethod
+    def from_dict(data):
+        prerequisite_courses_dict = data["_prerequisite_courses"]
+        prerequisite_courses_list = list()
+
+        for x in prerequisite_courses_dict:
+            prerequisite_courses_list.append(CourseInformation.from_dict(x))
+
+        mcc = int(data["_minimum_current_class"])
+        fid = Faculty.FacultyID.from_dict(data["_facultyID"])
+        did = Department.DepartmentID.from_dict(data["_departmentID"])
+
+        return CourseRequirements(prerequisite_courses_list, mcc, fid, did)
+
     def isStudentQualified(self, student):
         ans = [False, False, False, False]
         ans[0] = student.getCurrentClass() >= self._minimum_current_class
@@ -134,3 +174,10 @@ class CourseSection:
         self._day = day
         self._sectionTime = sectionTime
         self._lecturer = lecturer
+
+    @staticmethod
+    def from_dict(data):
+        d = int(data["_day"])
+        lec = Lecturer.from_dict(data["_lecturer"])
+        sect = int(data["_sectionTime"])
+        return CourseSection(d, sect, lec)
