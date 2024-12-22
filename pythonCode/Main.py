@@ -462,7 +462,7 @@ class Main:
                 if found:
                     break
 
-            # getCourseSections çalışmıyor
+
             if len(course.getCourseSections()) == 0:
                 logging.info("There are no sections for this course")
                 print("There are no sections for this course")
@@ -471,6 +471,9 @@ class Main:
             for courseSection in course.getCourseSections():
                 print("This course section is in day " + day_dict[courseSection._day] + " time " + sectionTime_dict[
                     courseSection._sectionTime])
+                print("Select course section for quota change")
+                inp = input()
+                if inp ==
                 print("Do you want to change this section quota? Yes if continue: ")
                 choice = input()
                 if not choice == "Yes" or choice == "yes":

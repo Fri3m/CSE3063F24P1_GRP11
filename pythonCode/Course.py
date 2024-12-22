@@ -175,7 +175,7 @@ class CourseSection:
         self._day = day
         self._sectionTime = sectionTime
         self._lecturer = lecturer
-        self._quota = quota
+        self._quota = quota#asd
 
     @staticmethod
     def from_dict(data):
