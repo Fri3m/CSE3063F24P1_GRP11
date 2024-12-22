@@ -4,13 +4,12 @@ from Classroom import Classroom
 from User import Lecturer
 
 
-
 class Course:
     def __init__(self, courseInformation, courseRequirements, courseSections):
         self.courseInformation = courseInformation
         self.courseRequirements = courseRequirements
         self.courseSections = courseSections
-        # set course capacity to
+        self._currentStudentCount = 0
         self._courseCapacity = int(1e9)
         for courseSection in courseSections:
             if courseSection._classRoom.get_capacity() < self._courseCapacity:
@@ -40,8 +39,15 @@ class Course:
 
     def getCourseSections(self):
         return self.courseSections
+
     def getCourseCapacity(self):
         return self._courseCapacity
+
+    def getCurrentStudentCount(self):
+        return self._currentStudentCount
+
+    def incrementCurrentStudentCount(self):
+        self._currentStudentCount += 1
 
 
 class CourseInformation:
@@ -71,7 +77,7 @@ class TakenCourse:
         ci = data["_courseInformation"]
         ms = int(data["_midterm_score"])
         fs = int(data["_final_score"])
-        return TakenCourse(ci,ms,fs)
+        return TakenCourse(ci, ms, fs)
 
     def getCourseInformation(self):
         return self._courseInformation
@@ -185,8 +191,6 @@ class CourseSection:
         self._lecturer = lecturer
         self._classRoom = classRoom
         self._quota = classRoom.get_capacity()
-        self._currentStudentCount = 0
-
 
     @staticmethod
     def from_dict(data):
@@ -195,14 +199,3 @@ class CourseSection:
         sect = int(data["_sectionTime"])
         cr = Classroom.from_dict(data["_classRoom"])
         return CourseSection(d, sect, lec, cr)
-
-    def changeClassroom(self, classroom):
-        if self._quota <= classroom.get_capacity():
-            return classroom
-        else:
-            return "Classroom capacity is not enough"
-    def getCurrentStudentCount(self):
-        return self._currentStudentCount
-
-
-

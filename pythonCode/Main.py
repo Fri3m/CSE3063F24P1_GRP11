@@ -273,6 +273,12 @@ class Main:
             print(
                 courseRequest.get_student().getUserInformation().get_FIRST_NAME() + " " + courseRequest.get_course().getCourseName())
             x = advisor.checkCourseRequest(courseRequest)
+
+            if courseRequests.get_course().getCurrentStudentCount() >= courseRequests.get_course().getCourseCapacity():
+                print("Course is full. Course request denied.")
+                course_registration_service.removeCourseRequest(courseRequest)
+                continue
+
             if x[0] and x[1] and x[2] and x[3]:
                 print("Student is qualified for this course.")
             else:
@@ -470,29 +476,25 @@ class Main:
                 print("There are no sections for this course")
                 return
 
+            # course kotasını değiş
+            maxCapacity = int(1e9)
             for courseSection in course.getCourseSections():
-                print("This course section is in day " + day_dict[courseSection._day] + " time " + sectionTime_dict[
-                    courseSection._sectionTime])
-                print("Select course day for quota change")
-                inpDay = input()
-                if inpDay.lower() == day_dict[courseSection._day].lower():
-                    print("Select course time for quota change")
-                    inpTime = input()
-                    if inpTime.lower() == sectionTime_dict[courseSection._sectionTime].lower():
-                        print("Current quota for this section is " + str(courseSection._quota))
-                        print("Do you want to change this section quota? Yes if continue: ")
-                        choice = input()
-                        if choice == "Yes" or choice == "yes":
-                            print("Enter new quota: ")
-                            inp =input()
-                            courseSection._quota = inp
-                        if not choice == "Yes" or choice == "yes":
-                            continue
-                    else:
-                        print("Invalid section time. Please try again.")
+                maxCapacity = min(maxCapacity, courseSection._quota)
+            print(f"Select new quota for course {course.getCourseName()}. Current course quota is {course.getCourseCapacity()}. Maximum quota for a section is {maxCapacity}")
+            newCapacity = 0
+            while True:
+                try:
+                    inp = int(input())
+                    if inp > maxCapacity:
+                        print("Invalid quota. Please try again.")
                         continue
+                    newCapacity = inp
+                    break
+                except ValueError:
+                    newCapacity = course.getCourseCapacity()
+                    break
 
-
+            course._courseCapacity = newCapacity
 
             self._data_management.createOrChangeCourse(course)
             print("Course section quota changed successfully")

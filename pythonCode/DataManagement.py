@@ -482,5 +482,5 @@ class customEncoder(JSONEncoder):
 # dh = generateRandomDepartmentHead(dep)
 # dm.createOrChangeDepartmentHead(dh)
 #
-# course = generateCourse([lec], [Day.Friday], [SectionTime.Fifth], [Classroom("aa",20)], "test", "TT101", list(), 1, dep.get_facultyID(), dep.getDepartmentID())
+# course = generateCourse([lec], [Day.Friday], [SectionTime.Fifth], [Classroom("aa",20), Classroom("bb", 15)], "test", "TT101", list(), 1, dep.get_facultyID(), dep.getDepartmentID())
 # dm.createOrChangeCourse(course)
