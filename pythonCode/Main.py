@@ -206,7 +206,7 @@ class Main:
         print("In year: " + str( self.user.getCurrentClass()))
         print("Student ID: " +  str(self.user.get_studentID().get_ID()))
         print("Department Name: " + str(self.user.get_studentID().get_departmentID().getDepartmentID()))
-        print("Faculty Name: " + str(self.user.get_studentID().getFacultyID().getFacultyName()))
+        print("Faculty Name: " + str(self.user.get_studentID().get_facultyID().getFacultyName()))
 
     def lecturerMainMenu(self):
         print("Please choose an option:")
