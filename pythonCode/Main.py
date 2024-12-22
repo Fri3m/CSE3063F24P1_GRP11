@@ -1,7 +1,6 @@
 import logging
 import random
 
-
 from CourseRegistrationService import CourseRegistrationService
 from LoginAuthService import LoginAuthService
 
@@ -18,24 +17,20 @@ logging.basicConfig(filename='../Logs/MainLog.log', level=logging.INFO)
 day_dict = {0: "Monday", 1: "Tuesday", 2: "Wednesday", 3: "Thursday", 4: "Friday"}
 sectionTime_dict = {0: "First", 1: "Second", 2: "Third", 3: "Fourth", 4: "Fifth", 5: "Sixth", 6: "Seventh", 7: "Eighth",
                     8: "Ninth"}
+
+
 class Main:
-
-
     user_type = str()
 
     def main(self):
 
         self.startMenu()
 
-
     def __init__(self):
-
 
         self._data_management = DataManagement.DataManagement()
         self._login_auth_service = LoginAuthService()
         self._course_registration_service = CourseRegistrationService()
-
-
 
         self._faculties = self._data_management.getAllFaculties()
         self._departments = self._data_management.getAllDepartments()
@@ -52,8 +47,7 @@ class Main:
 
         self.changeStaticStaffID()
 
-        _admin = Admin(UserInformation(("admin"), ("admin"), ("admin"), ("admin"), ("admin"), ("admin"),("admin")))
-
+        _admin = Admin(UserInformation(("admin"), ("admin"), ("admin"), ("admin"), ("admin"), ("admin"), ("admin")))
 
         self._users = []
         self._users.extend(self._students)
@@ -69,8 +63,6 @@ class Main:
             for _lecturers in self._lecturers:
                 if _lecturers.get_departmentId() is not None and _lecturers.get_departmentId() == _departments.getDepartmentID().getDepartmentID():
                     _departments.add_lecturer(_lecturers)
-
-
 
     def changeStaticStaffID(self):
 
@@ -107,7 +99,6 @@ class Main:
             print("Invalid choice. Please try again.")
             self.startMenu()
 
-
     def showUserInformation(self):
         print("Name: " + self.user.getUserInformation().get_FIRST_NAME())
         print("Surname: " + self.user.getUserInformation().get_LAST_NAME())
@@ -115,14 +106,13 @@ class Main:
         print("Phone Number: " + self.user.getUserInformation().get_phone_number())
         print("Address: " + self.user.getUserInformation().get_address())
 
-
     def updateUserInfo(self):
-        print ("Please enter the information you would like to update:")
-        print ("1. Change password")
-        print ("2. Change email")
-        print ("3. Change address")
-        print ("4. Change phone number")
-        print ("5. Exit")
+        print("Please enter the information you would like to update:")
+        print("1. Change password")
+        print("2. Change email")
+        print("3. Change address")
+        print("4. Change phone number")
+        print("5. Exit")
         choice = input()
         if choice == "1":
             self.changePassword()
@@ -133,10 +123,10 @@ class Main:
         elif choice == "4":
             self.changePhoneNumber()
         elif choice == "5":
-            print ("Returning to main menu")
+            print("Returning to main menu")
             self.startMenu()
         else:
-            print ("Invalid choice. Please try again.")
+            print("Invalid choice. Please try again.")
 
         self.updateUserInfo()
 
@@ -184,14 +174,17 @@ class Main:
             for courseInfo in self.user.get_current_courses():
                 print(courseInfo.getCourseCode() + " " + courseInfo.getCourseName())
                 for courseSection in self.coursesNameDict[courseInfo.getCourseName()].getCourseSections():
-                    print("Day :" + day_dict[courseSection._day] + " Time " + sectionTime_dict[courseSection._sectionTime])
+                    print("Day :" + day_dict[courseSection._day] + " Time " + sectionTime_dict[
+                        courseSection._sectionTime])
 
         elif choice == "3":
             # GetUserInformation çalışmıyor!!!  (studentten dolayı olabilir)
-            print ("Transcript for student " + self.user.getUserInformation().get_FIRST_NAME() + " " + self.user.getUserInformation().get_LAST_NAME())
-            print("GPA:" , self.user.getTranscript().get_GPA())
+            print(
+                "Transcript for student " + self.user.getUserInformation().get_FIRST_NAME() + " " + self.user.getUserInformation().get_LAST_NAME())
+            print("GPA:", self.user.getTranscript().get_GPA())
             for takenCourse in self.user.getTranscript().getTakenCourses():
-                print(takenCourse.getCourseInformation().getCourseCode() + ": " + takenCourse.getCourseInformation().getCourseName()+ ": " + takenCourse.getCourseScore().name())
+                print(
+                    takenCourse.getCourseInformation().getCourseCode() + ": " + takenCourse.getCourseInformation().getCourseName() + ": " + takenCourse.getCourseScore().name())
 
         elif choice == "4":
             self.updateUserInfo()
@@ -210,8 +203,8 @@ class Main:
 
     def showStudentInfo(self):
 
-        print("In year: " + str( self.user.getCurrentClass()))
-        print("Student ID: " +  str(self.user.get_studentID().get_ID()))
+        print("In year: " + str(self.user.getCurrentClass()))
+        print("Student ID: " + str(self.user.get_studentID().get_ID()))
         print("Department Name: " + str(self.user.get_studentID().get_departmentID().getDepartmentID()))
         print("Faculty Name: " + str(self.user.get_studentID().get_facultyID().getFacultyName()))
 
@@ -256,14 +249,15 @@ class Main:
 
         self.advisorMainMenu()
 
-    def checkRegistration (self, advisor, course_registration_service):
+    def checkRegistration(self, advisor, course_registration_service):
         courseRequests = course_registration_service.checkAccesiableRequests(advisor)
 
         if courseRequests is None:
             print("There is no requests")
             return
         for courseRequest in courseRequests:
-            print(courseRequest.get_student().getUserInformation().get_FIRST_NAME() + " " + courseRequest.get_course().getCourseName())
+            print(
+                courseRequest.get_student().getUserInformation().get_FIRST_NAME() + " " + courseRequest.get_course().getCourseName())
             x = advisor.checkCourseRequest(courseRequest)
             if x[0] and x[1] and x[2] and x[3]:
                 print("Student is qualified for this course.")
@@ -273,17 +267,19 @@ class Main:
                 if not x[1]: print("Department condition");
                 if not x[2]: print("Faculty condition");
                 if not x[3]: print("Prerequisites condition");
-
-            print("Do you want to approve the course request? (Y/N)")
-            choice = input()
-            if choice == "Y" or choice == "y":
-                advisor.approveCourseRequest(courseRequest)
-                self._data_management.createOrChangeStudent(courseRequest.get_student())
-                print("Course request approved")
-            elif choice == "N" or choice == "n":
-                print("Course request denied")
-            else:
-                print("Invalid choice. Please try again.")
+            while True:
+                print("Do you want to approve the course request? (Y/N)")
+                choice = input()
+                if choice == "Y" or choice == "y":
+                    advisor.approveCourseRequest(courseRequest)
+                    self._data_management.createOrChangeStudent(courseRequest.get_student())
+                    print("Course request approved")
+                    break
+                elif choice == "N" or choice == "n":
+                    print("Course request denied")
+                    break
+                else:
+                    print("Invalid choice. Please try again.")
 
             course_registration_service.removeCourseRequest(courseRequest)
 
@@ -305,7 +301,7 @@ class Main:
 
             department = None
 
-            while(True):
+            while (True):
                 department_name = input()
                 for d in self._departments:
                     if d.getDepartmentID().getDepartmentName() == department_name:
@@ -334,7 +330,8 @@ class Main:
 
             print("Select a advisor: ")
             for advisor in self._advisors:
-                print(advisor.getUserInformation().get_FIRST_NAME() + " " + advisor.getUserInformation().get_LAST_NAME())
+                print(
+                    advisor.getUserInformation().get_FIRST_NAME() + " " + advisor.getUserInformation().get_LAST_NAME())
 
             advisorID = None
 
@@ -348,11 +345,13 @@ class Main:
                     break
             print("Invalid advisor name. Please try again.")
 
-            student = DataManagement.generateNonRandomStudent(userInformation, department, entrance_date, entrance_rank, advisorID)
+            student = DataManagement.generateNonRandomStudent(userInformation, department, entrance_date, entrance_rank,
+                                                              advisorID)
             self._data_management.createOrChangeStudent(student)
             self._students.append(student)
             self._login_auth_service._users.append(student)
-            print("Student" + student.getUserInformation().get_FIRST_NAME() + " " + student.getUserInformation().get_LAST_NAME() + " added successfully.")
+            print(
+                "Student" + student.getUserInformation().get_FIRST_NAME() + " " + student.getUserInformation().get_LAST_NAME() + " added successfully.")
 
         elif choice == "2":
             d = random.choice(self._departments)
@@ -361,7 +360,7 @@ class Main:
             while True:
                 found = False
                 for s in self._students:
-                    if s.get_studentID().get_entrance_rank() == entranceRank and s.get_studentID().get_entrance_rank() == 2024 :
+                    if s.get_studentID().get_entrance_rank() == entranceRank and s.get_studentID().get_entrance_rank() == 2024:
                         found = True
                         break
                 if not found:
@@ -369,18 +368,19 @@ class Main:
                 entranceRank = int(random.random() * 1000)
 
             advisorID2 = random.choice(self._advisors).get_staffId()
-            entranceDate = random.choice([2024,2023,2022,2021])
+            entranceDate = random.choice([2024, 2023, 2022, 2021])
 
             student2 = DataManagement.generateRandomStudent(d, entranceDate, entranceRank, advisorID2)
             self._data_management.createOrChangeStudent(student2)
             self._students.append(student2)
             self._login_auth_service._users.append(student2)
-            print("Student" + student2.getUserInformation().get_FIRST_NAME() + " " + student2.getUserInformation().get_LAST_NAME() + " added successfully.")
+            print(
+                "Student" + student2.getUserInformation().get_FIRST_NAME() + " " + student2.getUserInformation().get_LAST_NAME() + " added successfully.")
 
         elif choice == "3":
             print("Please choose a student to remove:")
             for student1 in self._students:
-                #get_UNIVERSITY_EMAIL çalışmıyor(get'i silince çalışıyor)
+                # get_UNIVERSITY_EMAIL çalışmıyor(get'i silince çalışıyor)
                 print(student1.getUserInformation().get_UNIVERSITY_EMAIL())
 
             student_email = input()
@@ -391,7 +391,8 @@ class Main:
                     self._students.remove(student1)
                     self._login_auth_service._users.remove(student1)
                     self._data_management.removeStudent(student1)
-                    print("Student " + student1.getUserInformation().get_FIRST_NAME() + " " + student1.getUserInformation().get_LAST_NAME() + " removed successfully.")
+                    print(
+                        "Student " + student1.getUserInformation().get_FIRST_NAME() + " " + student1.getUserInformation().get_LAST_NAME() + " removed successfully.")
                     studentExists = True
                     break
 
@@ -403,7 +404,7 @@ class Main:
             self.startMenu()
             return
         else:
-           print("Invalid choice. Please try again.")
+            print("Invalid choice. Please try again.")
 
         self.adminMainMenu()
 
@@ -422,7 +423,7 @@ class Main:
         phone_number = input()
         print("Enter password: ")
         password = input()
-        return UserInformation(first_name, last_name, university_email,email, address,phone_number, password)
+        return UserInformation(first_name, last_name, university_email, email, address, phone_number, password)
 
     def departmentSchedulerMainMenu(self):
         print("Please choose an option:")
@@ -467,14 +468,15 @@ class Main:
                 if found:
                     break
 
-            #getCourseSections çalışmıyor
-            if len(course.getCourseSections())==0:
+            # getCourseSections çalışmıyor
+            if len(course.getCourseSections()) == 0:
                 logging.info("There are no sections for this course")
                 print("There are no sections for this course")
                 return
 
             for courseSection in course.getCourseSections():
-                print("This course section is in day " + day_dict[courseSection._day] + " time " + sectionTime_dict[courseSection._sectionTime])
+                print("This course section is in day " + day_dict[courseSection._day] + " time " + sectionTime_dict[
+                    courseSection._sectionTime])
                 print("Do you want to change this section? Yes if continue: ")
                 choice = input()
                 if not choice == "Yes" or choice == "yes":
@@ -502,9 +504,9 @@ class Main:
                         x = False
                         print("Invalid day. Please try again.")
 
-                    if x : break
+                    if x: break
 
-                while True :
+                while True:
                     x = True
                     print("Enter the section time(First, Second, Third,Fourth, Fifth, Sixth, Seventh, Eighth, Ninth)")
                     inp = input()
@@ -581,7 +583,7 @@ class Main:
             print("If your course has a department requirement, enter the department name. If not, enter anything: ")
             for department in self._departments:
                 print(department.getDepartmentID().getDepartmentName())
-            inp= input()
+            inp = input()
             department = None
             for d in self._departments:
                 if d.getDepartmentID().getDepartmentName() == inp:
@@ -589,7 +591,7 @@ class Main:
                     break
 
             if department is None:
-                department = Department (DepartmentID(0,"No Department"), FacultyID(0,"No Faculty"))
+                department = Department(DepartmentID(0, "No Department"), FacultyID(0, "No Faculty"))
 
             print("Enter all the prerequisites for this course. When you are finished, type 'finished'")
             for course in self._courses:
@@ -603,7 +605,7 @@ class Main:
                         break
                 if inp == "finished":
                     break
-            #niye unreachable
+            # niye unreachable
             print("Enter the number of sections for this course: ")
 
             section_number = 0
@@ -617,75 +619,85 @@ class Main:
             lecturerArrayList = []
             print("Select a lecturer for this course: ")
             for lecturer in self._lecturers:
-                print(lecturer.getUserInformation().get_FIRST_NAME() + " " + lecturer.getUserInformation().get_LAST_NAME())
-            for i in range(section_number):
-                print("Enter lecturer name for section" + str(i+1) + ":")
+                print(
+                    lecturer.getUserInformation().get_FIRST_NAME() + " " + lecturer.getUserInformation().get_LAST_NAME())
+
+            current_section = 0
+            while current_section < section_number:
+                print("Enter lecturer name for section" + str(current_section + 1) + ":")
                 lecturer_name = input()
                 lecturerExists = False
                 for lecturer in self._lecturers:
-                    if (lecturer.getUserInformation().get_FIRST_NAME() + " " + lecturer.getUserInformation().get_LAST_NAME()) == lecturer_name:
+                    if (
+                            lecturer.getUserInformation().get_FIRST_NAME() + " " + lecturer.getUserInformation().get_LAST_NAME()) == lecturer_name:
                         lecturerExists = True
                         lecturerArrayList.append(lecturer)
                         break
                 if not lecturerExists:
                     print("Lecturer not found. Please try again.")
-                    i -= 1
+                    current_section -= 1
+                current_section += 1
 
             dayArrayList = []
             sectionTimeArrayList = []
             print("Days: ")
-            day_members = {key: value for key, value in vars(Day).items() if not key.startswith("__")}
-            for name, value in day_members.items():
-                print(f"{name}, ")
-            print()
+            print("Monday, Tuesday, Wednesday, Thursday, Friday")
 
             print("Section Times: ")
+            print("First, Second, Third, Fourth, Fifth, Sixth, Seventh, Eighth, Ninth")
 
-            for i in range(section_number):
-                print("Enter day for section "+ str(i+1) + ":")
-                day =input()
+            current_section = 0
+            while current_section < section_number:
+                print("Enter day for section " + str(current_section + 1) + ":")
+                day = input()
+                day = day.lower()
+                match day:
+                    case "monday":
+                        dayArrayList.insert(current_section, Day.Monday)
+                    case "tuesday":
+                        dayArrayList.insert(current_section, Day.Tuesday)
+                    case "wednesday":
+                        dayArrayList.insert(current_section, Day.Wednesday)
+                    case "thursday":
+                        dayArrayList.insert(current_section, Day.Thursday)
+                    case "friday":
+                        dayArrayList.insert(current_section, Day.Friday)
+                    case _:
+                        print("Invalid day. Please try again.")
+                        continue
 
-                if day.lower() == "monday":
-                    dayArrayList.append(Day.Monday)
-                elif day.lower() == "tuesday":
-                    dayArrayList.append(Day.Tuesday)
-                elif day.lower() == "wednesday":
-                    dayArrayList.append(Day.Wednesday)
-                elif day.lower() == "thursday":
-                    dayArrayList.append(Day.Thursday)
-                elif day.lower() == "friday":
-                    dayArrayList.append(Day.Friday)
-                else:
-                    print("Invalid day. Please try again.")
-                    i -= 1
-                    continue
-
-                print("Enter section time for section " + str(i + 1) + ": ")
+                print("Enter section time for section " + str(current_section + 1) + ": ")
                 sectionTime = input()
+                sectionTime = sectionTime.lower()
 
-                if sectionTime.lower() == "first":
-                    sectionTimeArrayList.append(SectionTime.First)
-                elif sectionTime.lower() == "second":
-                    sectionTimeArrayList.append(SectionTime.Second)
-                elif sectionTime.lower() == "third":
-                    sectionTimeArrayList.append(SectionTime.Third)
-                elif sectionTime.lower() == "fourth":
-                    sectionTimeArrayList.append(SectionTime.Fourth)
-                elif sectionTime.lower() == "fifth":
-                    sectionTimeArrayList.append(SectionTime.Fifth)
-                elif sectionTime.lower() == "sixth":
-                    sectionTimeArrayList.append(SectionTime.Sixth)
-                elif sectionTime.lower() == "seventh":
-                    sectionTimeArrayList.append(SectionTime.Seventh)
-                elif sectionTime.lower() == "eighth":
-                    sectionTimeArrayList.append(SectionTime.Eighth)
-                elif sectionTime.lower() == "ninth":
-                    sectionTimeArrayList.append(SectionTime.Ninth)
-                else:
-                    print("Invalid section time. Please try again.")
-                    i -= 1
+                match sectionTime:
+                    case "first":
+                        sectionTimeArrayList.insert(current_section, SectionTime.First)
+                    case "second":
+                        sectionTimeArrayList.insert(current_section, SectionTime.Second)
+                    case "third":
+                        sectionTimeArrayList.insert(current_section, SectionTime.Third)
+                    case "fourth":
+                        sectionTimeArrayList.insert(current_section, SectionTime.Fourth)
+                    case "fifth":
+                        sectionTimeArrayList.insert(current_section, SectionTime.Fifth)
+                    case "sixth":
+                        sectionTimeArrayList.insert(current_section, SectionTime.Sixth)
+                    case "seventh":
+                        sectionTimeArrayList.insert(current_section, SectionTime.Seventh)
+                    case "eighth":
+                        sectionTimeArrayList.insert(current_section, SectionTime.Eighth)
+                    case "ninth":
+                        sectionTimeArrayList.insert(current_section, SectionTime.Ninth)
+                    case _:
+                        print("Invalid section time. Please try again.")
+                        current_section -= 1
 
-            course = DataManagement.generateCourse(lecturerArrayList, dayArrayList, sectionTimeArrayList, course_name, course_code, prerequisites, min_current_class, department.get_facultyID(), department.getDepartmentID())
+                current_section += 1
+
+            course = DataManagement.generateCourse(lecturerArrayList, dayArrayList, sectionTimeArrayList, course_name,
+                                                   course_code, prerequisites, min_current_class,
+                                                   department.get_facultyID(), department.getDepartmentID())
             self._data_management.createOrChangeCourse(course)
             self._courses.append(course)
 
@@ -715,22 +727,23 @@ class Main:
         self.studentsAffairsMainMenu()
 
     def login(self):
-        print("Which type of user are you? (Student, Advisor, Lecturer, Admin, DepartmentScheduler, StudentAffair)")
+        print("Which type of user are you? (Student, Advisor, Lecturer, Admin, DepartmentScheduler, StudentsAffairs)")
         self.user_type = input()
         print("Enter your university email: ")
         email = input()
         print("Enter your password: ")
         password = input()
 
-        self.user = self._login_auth_service.login(email,password)
+        self.user = self._login_auth_service.login(email, password)
         if self.user is None:
+            print("None")
             self.user_type = str()
 
         if self.user_type.lower() == "student":
             self.studentMainMenu()
         elif self.user_type.lower() == "advisor":
             self.advisorMainMenu()
-        elif self.user_type.lower() =="lecturer":
+        elif self.user_type.lower() == "lecturer":
             self.lecturerMainMenu()
         elif self.user_type.lower() == "admin":
             self.adminMainMenu()
@@ -751,7 +764,6 @@ class Main:
         current_password = input()
         print("Enter your new password: ")
         new_password = input()
-
 
         if self.user.getUserInformation().changePassword(current_password, new_password):
             print("Password changed successfully.")
@@ -800,7 +812,6 @@ class Main:
 # DataManagement.DataManagement().createOrChangeDepartment(dep)
 # DataManagement.DataManagement().createOrChangeStudent(student)
 # DataManagement.DataManagement().createOrChangeAdvisor(advisor)
-
 
 
 if __name__ == '__main__':

@@ -4153,3 +4153,1040 @@ INFO:root:Trying to log in with email: burakerol@marun.edu.tr
 INFO:pythonCode.User:getUserInformation called
 INFO:root:Checking email: burakerol@marun.edu.tr
 INFO:root:Login successful for email: burakerol@marun.edu.tr
+INFO:root:Initializing LoginAuthService
+INFO:root:Getting all JSON files from C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\Facultys
+INFO:root:Loaded dict from JSON
+INFO:root:Got all JSON files from C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\Facultys
+INFO:root:Getting all JSON files from C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\Departments
+INFO:root:Loaded dict from JSON
+INFO:root:Got all JSON files from C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\Departments
+INFO:root:Creating FacultyID with ID: 15, Name: eng
+INFO:root:Getting all JSON files from C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\Students
+INFO:root:Loaded dict from JSON
+INFO:root:Got all JSON files from C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\Students
+INFO:root:Creating FacultyID with ID: 15, Name: eng
+INFO:root:Student ID created: 150022001 (Department: 150, Entrance Date: 2022, Rank: 1)
+INFO:root:Creating FacultyID with ID: 15, Name: eng
+INFO:root:Student ID created: 150022001 (Department: 150, Entrance Date: 2022, Rank: 1)
+INFO:root:Transcript created for student ID: 150022001
+INFO:root:Adding courses to transcript for student ID: 150022001. Courses: []
+INFO:root:Courses added. New GPA: 0.00
+INFO:pythonCode.User:StaffId initialized
+INFO:pythonCode.User:Staff ID generated, Current staffIdCounter: 2
+INFO:pythonCode.User:User initialized
+INFO:root:Student created with ID: 150022001
+INFO:root:Getting all JSON files from C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\Advisors
+INFO:root:Loaded dict from JSON
+INFO:root:Got all JSON files from C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\Advisors
+INFO:User:Advisor initialized
+INFO:User:Lecturer initialized
+INFO:User:Staff initialized
+INFO:User:User initialized
+INFO:User:StaffId initialized
+INFO:User:Staff ID generated, Current staffIdCounter: 2
+INFO:User:StaffId initialized
+INFO:User:Staff ID generated, Current staffIdCounter: 3
+INFO:root:Getting all JSON files from C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\Lecturers
+INFO:root:Loaded dict from JSON
+INFO:root:Got all JSON files from C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\Lecturers
+INFO:User:Lecturer initialized
+INFO:User:Staff initialized
+INFO:User:User initialized
+INFO:User:StaffId initialized
+INFO:User:Staff ID generated, Current staffIdCounter: 4
+INFO:User:StaffId initialized
+INFO:User:Staff ID generated, Current staffIdCounter: 5
+INFO:root:Getting all JSON files from C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\DepartmentSchedulers
+INFO:root:Loaded dict from JSON
+INFO:root:Got all JSON files from C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\DepartmentSchedulers
+INFO:User:DepartmentScheduler initialized
+INFO:User:Staff initialized
+INFO:User:User initialized
+INFO:User:StaffId initialized
+INFO:User:Staff ID generated, Current staffIdCounter: 6
+INFO:User:StaffId initialized
+INFO:User:Staff ID generated, Current staffIdCounter: 7
+INFO:root:Getting all JSON files from C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\StudentsAffairss
+INFO:root:Loaded dict from JSON
+INFO:root:Got all JSON files from C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\StudentsAffairss
+INFO:User:StudentsAffairs initialized
+INFO:User:Staff initialized
+INFO:User:User initialized
+INFO:User:StaffId initialized
+INFO:User:Staff ID generated, Current staffIdCounter: 8
+INFO:User:StaffId initialized
+INFO:User:Staff ID generated, Current staffIdCounter: 9
+INFO:root:Getting all JSON files from C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\Courses
+INFO:root:Loaded dict from JSON
+INFO:root:Got all JSON files from C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\Courses
+INFO:root:Creating FacultyID with ID: 15, Name: eng
+INFO:User:Lecturer initialized
+INFO:User:Staff initialized
+INFO:User:User initialized
+INFO:User:StaffId initialized
+INFO:User:Staff ID generated, Current staffIdCounter: 10
+INFO:User:StaffId initialized
+INFO:User:Staff ID generated, Current staffIdCounter: 11
+INFO:User:get_staffId called: <User.StaffId object at 0x000002DF68991810>
+INFO:User:get_staffId called: 1
+INFO:User:get_staffId called: <User.StaffId object at 0x000002DF68991810>
+INFO:User:get_staffId called: 1
+INFO:User:get_staffId called: <User.StaffId object at 0x000002DF68900180>
+INFO:User:get_staffId called: 2
+INFO:User:get_staffId called: <User.StaffId object at 0x000002DF68900180>
+INFO:User:get_staffId called: 2
+INFO:User:get_staffId called: <User.StaffId object at 0x000002DF6899A570>
+INFO:User:get_staffId called: 4
+INFO:User:get_staffId called: <User.StaffId object at 0x000002DF6899A570>
+INFO:User:get_staffId called: 4
+INFO:User:get_staffId called: <User.StaffId object at 0x000002DF689D8050>
+INFO:User:get_staffId called: 3
+INFO:pythonCode.User:changeStaticCounter called
+INFO:pythonCode.User:Admin initialized
+INFO:pythonCode.User:Staff initialized
+INFO:pythonCode.User:User initialized
+INFO:pythonCode.User:StaffId initialized
+INFO:pythonCode.User:Staff ID generated, Current staffIdCounter: 5
+INFO:User:get_departmentId called
+INFO:User:get_departmentId called
+INFO:root:Trying to log in with email: tamerdurmaz@marun.edu.tr
+INFO:pythonCode.User:getUserInformation called
+INFO:root:Checking email: tamerdurmaz@marun.edu.tr
+INFO:root:Login successful for email: tamerdurmaz@marun.edu.tr
+INFO:root:Student 150022001 attempting to take course <Course.Course object at 0x000002DF689E5FD0>.
+INFO:root:Student 150022001 successfully enrolled in course <Course.Course object at 0x000002DF689E5FD0>.
+INFO:root:Trying to log in with email: eminecelik@marun.edu.tr
+INFO:pythonCode.User:getUserInformation called
+INFO:root:Checking email: tamerdurmaz@marun.edu.tr
+INFO:User:getUserInformation called
+INFO:root:Checking email: eminecelik@marun.edu.tr
+INFO:root:Login successful for email: eminecelik@marun.edu.tr
+INFO:User:get_staffId called: <User.StaffId object at 0x000002DF68991810>
+INFO:User:get_staffId called: 1
+INFO:pythonCode.User:get_staffId called: 1
+INFO:pythonCode.User:getUserInformation called
+INFO:User:checkCourseRequest called
+INFO:root:Getting FacultyID: 15
+INFO:root:Initializing LoginAuthService
+INFO:root:Getting all JSON files from C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\Facultys
+INFO:root:Loaded dict from JSON
+INFO:root:Got all JSON files from C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\Facultys
+INFO:root:Getting all JSON files from C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\Departments
+INFO:root:Loaded dict from JSON
+INFO:root:Got all JSON files from C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\Departments
+INFO:root:Creating FacultyID with ID: 15, Name: eng
+INFO:root:Getting all JSON files from C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\Students
+INFO:root:Loaded dict from JSON
+INFO:root:Got all JSON files from C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\Students
+INFO:root:Creating FacultyID with ID: 15, Name: eng
+INFO:root:Student ID created: 150022001 (Department: 150, Entrance Date: 2022, Rank: 1)
+INFO:root:Creating FacultyID with ID: 15, Name: eng
+INFO:root:Student ID created: 150022001 (Department: 150, Entrance Date: 2022, Rank: 1)
+INFO:root:Transcript created for student ID: 150022001
+INFO:root:Adding courses to transcript for student ID: 150022001. Courses: []
+INFO:root:Courses added. New GPA: 0.00
+INFO:pythonCode.User:StaffId initialized
+INFO:pythonCode.User:Staff ID generated, Current staffIdCounter: 2
+INFO:pythonCode.User:User initialized
+INFO:root:Student created with ID: 150022001
+INFO:root:Getting all JSON files from C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\Advisors
+INFO:root:Loaded dict from JSON
+INFO:root:Got all JSON files from C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\Advisors
+INFO:User:Advisor initialized
+INFO:User:Lecturer initialized
+INFO:User:Staff initialized
+INFO:User:User initialized
+INFO:User:StaffId initialized
+INFO:User:Staff ID generated, Current staffIdCounter: 2
+INFO:User:StaffId initialized
+INFO:User:Staff ID generated, Current staffIdCounter: 3
+INFO:root:Getting all JSON files from C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\Lecturers
+INFO:root:Loaded dict from JSON
+INFO:root:Got all JSON files from C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\Lecturers
+INFO:User:Lecturer initialized
+INFO:User:Staff initialized
+INFO:User:User initialized
+INFO:User:StaffId initialized
+INFO:User:Staff ID generated, Current staffIdCounter: 4
+INFO:User:StaffId initialized
+INFO:User:Staff ID generated, Current staffIdCounter: 5
+INFO:root:Getting all JSON files from C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\DepartmentSchedulers
+INFO:root:Loaded dict from JSON
+INFO:root:Got all JSON files from C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\DepartmentSchedulers
+INFO:User:DepartmentScheduler initialized
+INFO:User:Staff initialized
+INFO:User:User initialized
+INFO:User:StaffId initialized
+INFO:User:Staff ID generated, Current staffIdCounter: 6
+INFO:User:StaffId initialized
+INFO:User:Staff ID generated, Current staffIdCounter: 7
+INFO:root:Getting all JSON files from C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\StudentsAffairss
+INFO:root:Loaded dict from JSON
+INFO:root:Got all JSON files from C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\StudentsAffairss
+INFO:User:StudentsAffairs initialized
+INFO:User:Staff initialized
+INFO:User:User initialized
+INFO:User:StaffId initialized
+INFO:User:Staff ID generated, Current staffIdCounter: 8
+INFO:User:StaffId initialized
+INFO:User:Staff ID generated, Current staffIdCounter: 9
+INFO:root:Getting all JSON files from C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\Courses
+INFO:root:Loaded dict from JSON
+INFO:root:Got all JSON files from C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\Courses
+INFO:root:Creating FacultyID with ID: 15, Name: eng
+INFO:User:Lecturer initialized
+INFO:User:Staff initialized
+INFO:User:User initialized
+INFO:User:StaffId initialized
+INFO:User:Staff ID generated, Current staffIdCounter: 10
+INFO:User:StaffId initialized
+INFO:User:Staff ID generated, Current staffIdCounter: 11
+INFO:User:get_staffId called: <User.StaffId object at 0x0000018142945810>
+INFO:User:get_staffId called: 1
+INFO:User:get_staffId called: <User.StaffId object at 0x0000018142945810>
+INFO:User:get_staffId called: 1
+INFO:User:get_staffId called: <User.StaffId object at 0x00000181428B0C30>
+INFO:User:get_staffId called: 2
+INFO:User:get_staffId called: <User.StaffId object at 0x00000181428B0C30>
+INFO:User:get_staffId called: 2
+INFO:User:get_staffId called: <User.StaffId object at 0x000001814296A570>
+INFO:User:get_staffId called: 4
+INFO:User:get_staffId called: <User.StaffId object at 0x000001814296A570>
+INFO:User:get_staffId called: 4
+INFO:User:get_staffId called: <User.StaffId object at 0x000001814299C050>
+INFO:User:get_staffId called: 3
+INFO:pythonCode.User:changeStaticCounter called
+INFO:pythonCode.User:Admin initialized
+INFO:pythonCode.User:Staff initialized
+INFO:pythonCode.User:User initialized
+INFO:pythonCode.User:StaffId initialized
+INFO:pythonCode.User:Staff ID generated, Current staffIdCounter: 5
+INFO:User:get_departmentId called
+INFO:User:get_departmentId called
+INFO:root:Trying to log in with email: tamerdurmaz@marun.edu.tr
+INFO:pythonCode.User:getUserInformation called
+INFO:root:Checking email: tamerdurmaz@marun.edu.tr
+INFO:root:Login successful for email: tamerdurmaz@marun.edu.tr
+INFO:root:Student 150022001 attempting to take course <Course.Course object at 0x00000181429A9D30>.
+INFO:root:Student 150022001 successfully enrolled in course <Course.Course object at 0x00000181429A9D30>.
+INFO:root:Trying to log in with email: eminecelik@marun.edu.tr
+INFO:pythonCode.User:getUserInformation called
+INFO:root:Checking email: tamerdurmaz@marun.edu.tr
+INFO:User:getUserInformation called
+INFO:root:Checking email: eminecelik@marun.edu.tr
+INFO:root:Login successful for email: eminecelik@marun.edu.tr
+INFO:User:get_staffId called: <User.StaffId object at 0x0000018142945810>
+INFO:User:get_staffId called: 1
+INFO:pythonCode.User:get_staffId called: 1
+INFO:pythonCode.User:getUserInformation called
+INFO:User:checkCourseRequest called
+INFO:root:Getting FacultyID: 15
+INFO:User:approveCourseRequest called
+INFO:root:Saving Student to JSON
+INFO:pythonCode.User:getUserInformation called
+INFO:root:Saving Student with university email: tamerdurmaz@marun.edu.tr
+INFO:root:Saved Student to JSON
+INFO:root:Trying to log in with email: tamerdurmaz@marun.edu.tr
+INFO:pythonCode.User:getUserInformation called
+INFO:root:Checking email: tamerdurmaz@marun.edu.tr
+INFO:root:Login successful for email: tamerdurmaz@marun.edu.tr
+INFO:pythonCode.User:getUserInformation called
+INFO:pythonCode.User:getUserInformation called
+INFO:root:Initializing LoginAuthService
+INFO:root:Getting all JSON files from C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\Facultys
+INFO:root:Loaded dict from JSON
+INFO:root:Got all JSON files from C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\Facultys
+INFO:root:Getting all JSON files from C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\Departments
+INFO:root:Loaded dict from JSON
+INFO:root:Got all JSON files from C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\Departments
+INFO:root:Creating FacultyID with ID: 15, Name: eng
+INFO:root:Getting all JSON files from C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\Students
+INFO:root:Loaded dict from JSON
+INFO:root:Got all JSON files from C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\Students
+INFO:root:Creating FacultyID with ID: 15, Name: eng
+INFO:root:Student ID created: 150022001 (Department: 150, Entrance Date: 2022, Rank: 1)
+INFO:root:Creating FacultyID with ID: 15, Name: eng
+INFO:root:Student ID created: 150022001 (Department: 150, Entrance Date: 2022, Rank: 1)
+INFO:root:Transcript created for student ID: 150022001
+INFO:root:Adding courses to transcript for student ID: 150022001. Courses: []
+INFO:root:Courses added. New GPA: 0.00
+INFO:pythonCode.User:StaffId initialized
+INFO:pythonCode.User:Staff ID generated, Current staffIdCounter: 2
+INFO:pythonCode.User:User initialized
+INFO:root:Student created with ID: 150022001
+INFO:root:Getting all JSON files from C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\Advisors
+INFO:root:Loaded dict from JSON
+INFO:root:Got all JSON files from C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\Advisors
+INFO:User:Advisor initialized
+INFO:User:Lecturer initialized
+INFO:User:Staff initialized
+INFO:User:User initialized
+INFO:User:StaffId initialized
+INFO:User:Staff ID generated, Current staffIdCounter: 2
+INFO:User:StaffId initialized
+INFO:User:Staff ID generated, Current staffIdCounter: 3
+INFO:root:Getting all JSON files from C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\Lecturers
+INFO:root:Loaded dict from JSON
+INFO:root:Got all JSON files from C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\Lecturers
+INFO:User:Lecturer initialized
+INFO:User:Staff initialized
+INFO:User:User initialized
+INFO:User:StaffId initialized
+INFO:User:Staff ID generated, Current staffIdCounter: 4
+INFO:User:StaffId initialized
+INFO:User:Staff ID generated, Current staffIdCounter: 5
+INFO:root:Getting all JSON files from C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\DepartmentSchedulers
+INFO:root:Loaded dict from JSON
+INFO:root:Got all JSON files from C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\DepartmentSchedulers
+INFO:User:DepartmentScheduler initialized
+INFO:User:Staff initialized
+INFO:User:User initialized
+INFO:User:StaffId initialized
+INFO:User:Staff ID generated, Current staffIdCounter: 6
+INFO:User:StaffId initialized
+INFO:User:Staff ID generated, Current staffIdCounter: 7
+INFO:root:Getting all JSON files from C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\StudentsAffairss
+INFO:root:Loaded dict from JSON
+INFO:root:Got all JSON files from C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\StudentsAffairss
+INFO:User:StudentsAffairs initialized
+INFO:User:Staff initialized
+INFO:User:User initialized
+INFO:User:StaffId initialized
+INFO:User:Staff ID generated, Current staffIdCounter: 8
+INFO:User:StaffId initialized
+INFO:User:Staff ID generated, Current staffIdCounter: 9
+INFO:root:Getting all JSON files from C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\Courses
+INFO:root:Loaded dict from JSON
+INFO:root:Got all JSON files from C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\Courses
+INFO:root:Creating FacultyID with ID: 15, Name: eng
+INFO:User:Lecturer initialized
+INFO:User:Staff initialized
+INFO:User:User initialized
+INFO:User:StaffId initialized
+INFO:User:Staff ID generated, Current staffIdCounter: 10
+INFO:User:StaffId initialized
+INFO:User:Staff ID generated, Current staffIdCounter: 11
+INFO:User:get_staffId called: <User.StaffId object at 0x000001EDA6609810>
+INFO:User:get_staffId called: 1
+INFO:User:get_staffId called: <User.StaffId object at 0x000001EDA6609810>
+INFO:User:get_staffId called: 1
+INFO:User:get_staffId called: <User.StaffId object at 0x000001EDA6570C30>
+INFO:User:get_staffId called: 2
+INFO:User:get_staffId called: <User.StaffId object at 0x000001EDA6570C30>
+INFO:User:get_staffId called: 2
+INFO:User:get_staffId called: <User.StaffId object at 0x000001EDA662E570>
+INFO:User:get_staffId called: 4
+INFO:User:get_staffId called: <User.StaffId object at 0x000001EDA662E570>
+INFO:User:get_staffId called: 4
+INFO:User:get_staffId called: <User.StaffId object at 0x000001EDA6660050>
+INFO:User:get_staffId called: 3
+INFO:pythonCode.User:changeStaticCounter called
+INFO:pythonCode.User:Admin initialized
+INFO:pythonCode.User:Staff initialized
+INFO:pythonCode.User:User initialized
+INFO:pythonCode.User:StaffId initialized
+INFO:pythonCode.User:Staff ID generated, Current staffIdCounter: 5
+INFO:User:get_departmentId called
+INFO:User:get_departmentId called
+INFO:root:Trying to log in with email: tamerdurmaz@marun.edu.tr
+INFO:pythonCode.User:getUserInformation called
+INFO:root:Checking email: tamerdurmaz@marun.edu.tr
+INFO:root:Login successful for email: tamerdurmaz@marun.edu.tr
+INFO:root:Trying to log in with email: cagridemir98@gmail.com
+INFO:pythonCode.User:getUserInformation called
+INFO:root:Checking email: tamerdurmaz@marun.edu.tr
+INFO:User:getUserInformation called
+INFO:root:Checking email: eminecelik@marun.edu.tr
+INFO:User:getUserInformation called
+INFO:root:Checking email: neclatunc@marun.edu.tr
+INFO:User:getUserInformation called
+INFO:root:Checking email: cagridemir@marun.edu.tr
+INFO:User:getUserInformation called
+INFO:root:Checking email: tulaydeniz@marun.edu.tr
+INFO:pythonCode.User:getUserInformation called
+INFO:root:Checking email: admin
+INFO:root:No user found with email: cagridemir98@gmail.com
+INFO:root:Trying to log in with email: cagridemir98@gmail.com
+INFO:pythonCode.User:getUserInformation called
+INFO:root:Checking email: tamerdurmaz@marun.edu.tr
+INFO:User:getUserInformation called
+INFO:root:Checking email: eminecelik@marun.edu.tr
+INFO:User:getUserInformation called
+INFO:root:Checking email: neclatunc@marun.edu.tr
+INFO:User:getUserInformation called
+INFO:root:Checking email: cagridemir@marun.edu.tr
+INFO:User:getUserInformation called
+INFO:root:Checking email: tulaydeniz@marun.edu.tr
+INFO:pythonCode.User:getUserInformation called
+INFO:root:Checking email: admin
+INFO:root:No user found with email: cagridemir98@gmail.com
+INFO:root:Trying to log in with email: 123
+INFO:pythonCode.User:getUserInformation called
+INFO:root:Checking email: tamerdurmaz@marun.edu.tr
+INFO:User:getUserInformation called
+INFO:root:Checking email: eminecelik@marun.edu.tr
+INFO:User:getUserInformation called
+INFO:root:Checking email: neclatunc@marun.edu.tr
+INFO:User:getUserInformation called
+INFO:root:Checking email: cagridemir@marun.edu.tr
+INFO:User:getUserInformation called
+INFO:root:Checking email: tulaydeniz@marun.edu.tr
+INFO:pythonCode.User:getUserInformation called
+INFO:root:Checking email: admin
+INFO:root:No user found with email: 123
+INFO:root:Trying to log in with email: cagridemir@marun.edu.tr
+INFO:pythonCode.User:getUserInformation called
+INFO:root:Checking email: tamerdurmaz@marun.edu.tr
+INFO:User:getUserInformation called
+INFO:root:Checking email: eminecelik@marun.edu.tr
+INFO:User:getUserInformation called
+INFO:root:Checking email: neclatunc@marun.edu.tr
+INFO:User:getUserInformation called
+INFO:root:Checking email: cagridemir@marun.edu.tr
+INFO:root:Login successful for email: cagridemir@marun.edu.tr
+INFO:root:Course found
+INFO:root:Saving Course to JSON
+INFO:root:Saving Course with course name: test
+INFO:root:Saved Course to JSON
+INFO:root:Trying to log in with email: tamerdurmaz@marun.edu.tr
+INFO:pythonCode.User:getUserInformation called
+INFO:root:Checking email: tamerdurmaz@marun.edu.tr
+INFO:root:Login successful for email: tamerdurmaz@marun.edu.tr
+INFO:root:Trying to log in with email: tulaydeniz@marun.edu.tr
+INFO:pythonCode.User:getUserInformation called
+INFO:root:Checking email: tamerdurmaz@marun.edu.tr
+INFO:User:getUserInformation called
+INFO:root:Checking email: eminecelik@marun.edu.tr
+INFO:User:getUserInformation called
+INFO:root:Checking email: neclatunc@marun.edu.tr
+INFO:User:getUserInformation called
+INFO:root:Checking email: cagridemir@marun.edu.tr
+INFO:User:getUserInformation called
+INFO:root:Checking email: tulaydeniz@marun.edu.tr
+INFO:root:Login successful for email: tulaydeniz@marun.edu.tr
+INFO:root:Trying to log in with email: tulaydeniz@marun.edu.tr
+INFO:pythonCode.User:getUserInformation called
+INFO:root:Checking email: tamerdurmaz@marun.edu.tr
+INFO:User:getUserInformation called
+INFO:root:Checking email: eminecelik@marun.edu.tr
+INFO:User:getUserInformation called
+INFO:root:Checking email: neclatunc@marun.edu.tr
+INFO:User:getUserInformation called
+INFO:root:Checking email: cagridemir@marun.edu.tr
+INFO:User:getUserInformation called
+INFO:root:Checking email: tulaydeniz@marun.edu.tr
+INFO:root:Login successful for email: tulaydeniz@marun.edu.tr
+INFO:root:Initializing LoginAuthService
+INFO:root:Getting all JSON files from C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\Facultys
+INFO:root:Loaded dict from JSON
+INFO:root:Got all JSON files from C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\Facultys
+INFO:root:Getting all JSON files from C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\Departments
+INFO:root:Loaded dict from JSON
+INFO:root:Got all JSON files from C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\Departments
+INFO:root:Creating FacultyID with ID: 15, Name: eng
+INFO:root:Getting all JSON files from C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\Students
+INFO:root:Loaded dict from JSON
+INFO:root:Got all JSON files from C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\Students
+INFO:root:Creating FacultyID with ID: 15, Name: eng
+INFO:root:Student ID created: 150022001 (Department: 150, Entrance Date: 2022, Rank: 1)
+INFO:root:Creating FacultyID with ID: 15, Name: eng
+INFO:root:Student ID created: 150022001 (Department: 150, Entrance Date: 2022, Rank: 1)
+INFO:root:Transcript created for student ID: 150022001
+INFO:root:Adding courses to transcript for student ID: 150022001. Courses: []
+INFO:root:Courses added. New GPA: 0.00
+INFO:pythonCode.User:StaffId initialized
+INFO:pythonCode.User:Staff ID generated, Current staffIdCounter: 2
+INFO:pythonCode.User:User initialized
+INFO:root:Student created with ID: 150022001
+INFO:root:Getting all JSON files from C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\Advisors
+INFO:root:Loaded dict from JSON
+INFO:root:Got all JSON files from C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\Advisors
+INFO:User:Advisor initialized
+INFO:User:Lecturer initialized
+INFO:User:Staff initialized
+INFO:User:User initialized
+INFO:User:StaffId initialized
+INFO:User:Staff ID generated, Current staffIdCounter: 2
+INFO:User:StaffId initialized
+INFO:User:Staff ID generated, Current staffIdCounter: 3
+INFO:root:Getting all JSON files from C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\Lecturers
+INFO:root:Loaded dict from JSON
+INFO:root:Got all JSON files from C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\Lecturers
+INFO:User:Lecturer initialized
+INFO:User:Staff initialized
+INFO:User:User initialized
+INFO:User:StaffId initialized
+INFO:User:Staff ID generated, Current staffIdCounter: 4
+INFO:User:StaffId initialized
+INFO:User:Staff ID generated, Current staffIdCounter: 5
+INFO:root:Getting all JSON files from C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\DepartmentSchedulers
+INFO:root:Loaded dict from JSON
+INFO:root:Got all JSON files from C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\DepartmentSchedulers
+INFO:User:DepartmentScheduler initialized
+INFO:User:Staff initialized
+INFO:User:User initialized
+INFO:User:StaffId initialized
+INFO:User:Staff ID generated, Current staffIdCounter: 6
+INFO:User:StaffId initialized
+INFO:User:Staff ID generated, Current staffIdCounter: 7
+INFO:root:Getting all JSON files from C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\StudentsAffairss
+INFO:root:Loaded dict from JSON
+INFO:root:Got all JSON files from C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\StudentsAffairss
+INFO:User:StudentsAffairs initialized
+INFO:User:Staff initialized
+INFO:User:User initialized
+INFO:User:StaffId initialized
+INFO:User:Staff ID generated, Current staffIdCounter: 8
+INFO:User:StaffId initialized
+INFO:User:Staff ID generated, Current staffIdCounter: 9
+INFO:root:Getting all JSON files from C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\Courses
+INFO:root:Loaded dict from JSON
+INFO:root:Got all JSON files from C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\Courses
+INFO:root:Creating FacultyID with ID: 15, Name: eng
+INFO:User:Lecturer initialized
+INFO:User:Staff initialized
+INFO:User:User initialized
+INFO:User:StaffId initialized
+INFO:User:Staff ID generated, Current staffIdCounter: 10
+INFO:User:StaffId initialized
+INFO:User:Staff ID generated, Current staffIdCounter: 11
+INFO:User:get_staffId called: <User.StaffId object at 0x000001B9FA215810>
+INFO:User:get_staffId called: 1
+INFO:User:get_staffId called: <User.StaffId object at 0x000001B9FA215810>
+INFO:User:get_staffId called: 1
+INFO:User:get_staffId called: <User.StaffId object at 0x000001B9FA180C30>
+INFO:User:get_staffId called: 2
+INFO:User:get_staffId called: <User.StaffId object at 0x000001B9FA180C30>
+INFO:User:get_staffId called: 2
+INFO:User:get_staffId called: <User.StaffId object at 0x000001B9FA23E570>
+INFO:User:get_staffId called: 4
+INFO:User:get_staffId called: <User.StaffId object at 0x000001B9FA23E570>
+INFO:User:get_staffId called: 4
+INFO:User:get_staffId called: <User.StaffId object at 0x000001B9FA26C050>
+INFO:User:get_staffId called: 3
+INFO:pythonCode.User:changeStaticCounter called
+INFO:pythonCode.User:Admin initialized
+INFO:pythonCode.User:Staff initialized
+INFO:pythonCode.User:User initialized
+INFO:pythonCode.User:StaffId initialized
+INFO:pythonCode.User:Staff ID generated, Current staffIdCounter: 5
+INFO:User:get_departmentId called
+INFO:User:get_departmentId called
+INFO:root:Trying to log in with email: tulaydeniz@marun.edu.tr
+INFO:pythonCode.User:getUserInformation called
+INFO:root:Checking email: tamerdurmaz@marun.edu.tr
+INFO:User:getUserInformation called
+INFO:root:Checking email: eminecelik@marun.edu.tr
+INFO:User:getUserInformation called
+INFO:root:Checking email: neclatunc@marun.edu.tr
+INFO:User:getUserInformation called
+INFO:root:Checking email: cagridemir@marun.edu.tr
+INFO:User:getUserInformation called
+INFO:root:Checking email: tulaydeniz@marun.edu.tr
+INFO:root:Login successful for email: tulaydeniz@marun.edu.tr
+INFO:root:Initializing LoginAuthService
+INFO:root:Getting all JSON files from C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\Facultys
+INFO:root:Loaded dict from JSON
+INFO:root:Got all JSON files from C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\Facultys
+INFO:root:Getting all JSON files from C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\Departments
+INFO:root:Loaded dict from JSON
+INFO:root:Got all JSON files from C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\Departments
+INFO:root:Creating FacultyID with ID: 15, Name: eng
+INFO:root:Getting all JSON files from C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\Students
+INFO:root:Loaded dict from JSON
+INFO:root:Got all JSON files from C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\Students
+INFO:root:Creating FacultyID with ID: 15, Name: eng
+INFO:root:Student ID created: 150022001 (Department: 150, Entrance Date: 2022, Rank: 1)
+INFO:root:Creating FacultyID with ID: 15, Name: eng
+INFO:root:Student ID created: 150022001 (Department: 150, Entrance Date: 2022, Rank: 1)
+INFO:root:Transcript created for student ID: 150022001
+INFO:root:Adding courses to transcript for student ID: 150022001. Courses: []
+INFO:root:Courses added. New GPA: 0.00
+INFO:pythonCode.User:StaffId initialized
+INFO:pythonCode.User:Staff ID generated, Current staffIdCounter: 2
+INFO:pythonCode.User:User initialized
+INFO:root:Student created with ID: 150022001
+INFO:root:Getting all JSON files from C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\Advisors
+INFO:root:Loaded dict from JSON
+INFO:root:Got all JSON files from C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\Advisors
+INFO:User:Advisor initialized
+INFO:User:Lecturer initialized
+INFO:User:Staff initialized
+INFO:User:User initialized
+INFO:User:StaffId initialized
+INFO:User:Staff ID generated, Current staffIdCounter: 2
+INFO:User:StaffId initialized
+INFO:User:Staff ID generated, Current staffIdCounter: 3
+INFO:root:Getting all JSON files from C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\Lecturers
+INFO:root:Loaded dict from JSON
+INFO:root:Got all JSON files from C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\Lecturers
+INFO:User:Lecturer initialized
+INFO:User:Staff initialized
+INFO:User:User initialized
+INFO:User:StaffId initialized
+INFO:User:Staff ID generated, Current staffIdCounter: 4
+INFO:User:StaffId initialized
+INFO:User:Staff ID generated, Current staffIdCounter: 5
+INFO:root:Getting all JSON files from C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\DepartmentSchedulers
+INFO:root:Loaded dict from JSON
+INFO:root:Got all JSON files from C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\DepartmentSchedulers
+INFO:User:DepartmentScheduler initialized
+INFO:User:Staff initialized
+INFO:User:User initialized
+INFO:User:StaffId initialized
+INFO:User:Staff ID generated, Current staffIdCounter: 6
+INFO:User:StaffId initialized
+INFO:User:Staff ID generated, Current staffIdCounter: 7
+INFO:root:Getting all JSON files from C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\StudentsAffairss
+INFO:root:Loaded dict from JSON
+INFO:root:Got all JSON files from C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\StudentsAffairss
+INFO:User:StudentsAffairs initialized
+INFO:User:Staff initialized
+INFO:User:User initialized
+INFO:User:StaffId initialized
+INFO:User:Staff ID generated, Current staffIdCounter: 8
+INFO:User:StaffId initialized
+INFO:User:Staff ID generated, Current staffIdCounter: 9
+INFO:root:Getting all JSON files from C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\Courses
+INFO:root:Loaded dict from JSON
+INFO:root:Got all JSON files from C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\Courses
+INFO:root:Creating FacultyID with ID: 15, Name: eng
+INFO:User:Lecturer initialized
+INFO:User:Staff initialized
+INFO:User:User initialized
+INFO:User:StaffId initialized
+INFO:User:Staff ID generated, Current staffIdCounter: 10
+INFO:User:StaffId initialized
+INFO:User:Staff ID generated, Current staffIdCounter: 11
+INFO:User:get_staffId called: <User.StaffId object at 0x0000016497DE9810>
+INFO:User:get_staffId called: 1
+INFO:User:get_staffId called: <User.StaffId object at 0x0000016497DE9810>
+INFO:User:get_staffId called: 1
+INFO:User:get_staffId called: <User.StaffId object at 0x0000016497D50C30>
+INFO:User:get_staffId called: 2
+INFO:User:get_staffId called: <User.StaffId object at 0x0000016497D50C30>
+INFO:User:get_staffId called: 2
+INFO:User:get_staffId called: <User.StaffId object at 0x0000016497E0E570>
+INFO:User:get_staffId called: 4
+INFO:User:get_staffId called: <User.StaffId object at 0x0000016497E0E570>
+INFO:User:get_staffId called: 4
+INFO:User:get_staffId called: <User.StaffId object at 0x0000016497E40050>
+INFO:User:get_staffId called: 3
+INFO:pythonCode.User:changeStaticCounter called
+INFO:pythonCode.User:Admin initialized
+INFO:pythonCode.User:Staff initialized
+INFO:pythonCode.User:User initialized
+INFO:pythonCode.User:StaffId initialized
+INFO:pythonCode.User:Staff ID generated, Current staffIdCounter: 5
+INFO:User:get_departmentId called
+INFO:User:get_departmentId called
+INFO:root:Trying to log in with email: tulaydeniz@marun.edu.tr
+INFO:pythonCode.User:getUserInformation called
+INFO:root:Checking email: tamerdurmaz@marun.edu.tr
+INFO:User:getUserInformation called
+INFO:root:Checking email: eminecelik@marun.edu.tr
+INFO:User:getUserInformation called
+INFO:root:Checking email: neclatunc@marun.edu.tr
+INFO:User:getUserInformation called
+INFO:root:Checking email: cagridemir@marun.edu.tr
+INFO:User:getUserInformation called
+INFO:root:Checking email: tulaydeniz@marun.edu.tr
+INFO:root:Login successful for email: tulaydeniz@marun.edu.tr
+INFO:root:Creating FacultyID with ID: 0, Name: No Faculty
+INFO:User:getUserInformation called
+INFO:User:getUserInformation called
+INFO:User:getUserInformation called
+INFO:User:getUserInformation called
+INFO:User:getUserInformation called
+INFO:User:getUserInformation called
+INFO:root:Generating course
+INFO:root:Generating course information
+INFO:root:Generated course information: Deneme DNM101
+INFO:root:Generating course requirements
+INFO:root:Generated course requirements: [] 1
+INFO:root:Initializing LoginAuthService
+INFO:root:Getting all JSON files from C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\Facultys
+INFO:root:Loaded dict from JSON
+INFO:root:Got all JSON files from C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\Facultys
+INFO:root:Getting all JSON files from C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\Departments
+INFO:root:Loaded dict from JSON
+INFO:root:Got all JSON files from C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\Departments
+INFO:root:Creating FacultyID with ID: 15, Name: eng
+INFO:root:Getting all JSON files from C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\Students
+INFO:root:Loaded dict from JSON
+INFO:root:Got all JSON files from C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\Students
+INFO:root:Creating FacultyID with ID: 15, Name: eng
+INFO:root:Student ID created: 150022001 (Department: 150, Entrance Date: 2022, Rank: 1)
+INFO:root:Creating FacultyID with ID: 15, Name: eng
+INFO:root:Student ID created: 150022001 (Department: 150, Entrance Date: 2022, Rank: 1)
+INFO:root:Transcript created for student ID: 150022001
+INFO:root:Adding courses to transcript for student ID: 150022001. Courses: []
+INFO:root:Courses added. New GPA: 0.00
+INFO:pythonCode.User:StaffId initialized
+INFO:pythonCode.User:Staff ID generated, Current staffIdCounter: 2
+INFO:pythonCode.User:User initialized
+INFO:root:Student created with ID: 150022001
+INFO:root:Getting all JSON files from C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\Advisors
+INFO:root:Loaded dict from JSON
+INFO:root:Got all JSON files from C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\Advisors
+INFO:User:Advisor initialized
+INFO:User:Lecturer initialized
+INFO:User:Staff initialized
+INFO:User:User initialized
+INFO:User:StaffId initialized
+INFO:User:Staff ID generated, Current staffIdCounter: 2
+INFO:User:StaffId initialized
+INFO:User:Staff ID generated, Current staffIdCounter: 3
+INFO:root:Getting all JSON files from C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\Lecturers
+INFO:root:Loaded dict from JSON
+INFO:root:Got all JSON files from C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\Lecturers
+INFO:User:Lecturer initialized
+INFO:User:Staff initialized
+INFO:User:User initialized
+INFO:User:StaffId initialized
+INFO:User:Staff ID generated, Current staffIdCounter: 4
+INFO:User:StaffId initialized
+INFO:User:Staff ID generated, Current staffIdCounter: 5
+INFO:root:Getting all JSON files from C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\DepartmentSchedulers
+INFO:root:Loaded dict from JSON
+INFO:root:Got all JSON files from C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\DepartmentSchedulers
+INFO:User:DepartmentScheduler initialized
+INFO:User:Staff initialized
+INFO:User:User initialized
+INFO:User:StaffId initialized
+INFO:User:Staff ID generated, Current staffIdCounter: 6
+INFO:User:StaffId initialized
+INFO:User:Staff ID generated, Current staffIdCounter: 7
+INFO:root:Getting all JSON files from C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\StudentsAffairss
+INFO:root:Loaded dict from JSON
+INFO:root:Got all JSON files from C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\StudentsAffairss
+INFO:User:StudentsAffairs initialized
+INFO:User:Staff initialized
+INFO:User:User initialized
+INFO:User:StaffId initialized
+INFO:User:Staff ID generated, Current staffIdCounter: 8
+INFO:User:StaffId initialized
+INFO:User:Staff ID generated, Current staffIdCounter: 9
+INFO:root:Getting all JSON files from C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\Courses
+INFO:root:Loaded dict from JSON
+INFO:root:Got all JSON files from C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\Courses
+INFO:root:Creating FacultyID with ID: 15, Name: eng
+INFO:User:Lecturer initialized
+INFO:User:Staff initialized
+INFO:User:User initialized
+INFO:User:StaffId initialized
+INFO:User:Staff ID generated, Current staffIdCounter: 10
+INFO:User:StaffId initialized
+INFO:User:Staff ID generated, Current staffIdCounter: 11
+INFO:User:get_staffId called: <User.StaffId object at 0x0000023BCA435810>
+INFO:User:get_staffId called: 1
+INFO:User:get_staffId called: <User.StaffId object at 0x0000023BCA435810>
+INFO:User:get_staffId called: 1
+INFO:User:get_staffId called: <User.StaffId object at 0x0000023BCA3A0C30>
+INFO:User:get_staffId called: 2
+INFO:User:get_staffId called: <User.StaffId object at 0x0000023BCA3A0C30>
+INFO:User:get_staffId called: 2
+INFO:User:get_staffId called: <User.StaffId object at 0x0000023BCA45E570>
+INFO:User:get_staffId called: 4
+INFO:User:get_staffId called: <User.StaffId object at 0x0000023BCA45E570>
+INFO:User:get_staffId called: 4
+INFO:User:get_staffId called: <User.StaffId object at 0x0000023BCA490050>
+INFO:User:get_staffId called: 3
+INFO:pythonCode.User:changeStaticCounter called
+INFO:pythonCode.User:Admin initialized
+INFO:pythonCode.User:Staff initialized
+INFO:pythonCode.User:User initialized
+INFO:pythonCode.User:StaffId initialized
+INFO:pythonCode.User:Staff ID generated, Current staffIdCounter: 5
+INFO:User:get_departmentId called
+INFO:User:get_departmentId called
+INFO:root:Trying to log in with email: tulaydeniz@marun.edu.tr
+INFO:pythonCode.User:getUserInformation called
+INFO:root:Checking email: tamerdurmaz@marun.edu.tr
+INFO:User:getUserInformation called
+INFO:root:Checking email: eminecelik@marun.edu.tr
+INFO:User:getUserInformation called
+INFO:root:Checking email: neclatunc@marun.edu.tr
+INFO:User:getUserInformation called
+INFO:root:Checking email: cagridemir@marun.edu.tr
+INFO:User:getUserInformation called
+INFO:root:Checking email: tulaydeniz@marun.edu.tr
+INFO:root:Login successful for email: tulaydeniz@marun.edu.tr
+INFO:root:Creating FacultyID with ID: 0, Name: No Faculty
+INFO:User:getUserInformation called
+INFO:User:getUserInformation called
+INFO:User:getUserInformation called
+INFO:User:getUserInformation called
+INFO:User:getUserInformation called
+INFO:User:getUserInformation called
+INFO:User:getUserInformation called
+INFO:User:getUserInformation called
+INFO:User:getUserInformation called
+INFO:User:getUserInformation called
+INFO:User:getUserInformation called
+INFO:User:getUserInformation called
+INFO:User:getUserInformation called
+INFO:User:getUserInformation called
+INFO:User:getUserInformation called
+INFO:User:getUserInformation called
+INFO:root:Initializing LoginAuthService
+INFO:root:Getting all JSON files from C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\Facultys
+INFO:root:Loaded dict from JSON
+INFO:root:Got all JSON files from C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\Facultys
+INFO:root:Getting all JSON files from C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\Departments
+INFO:root:Loaded dict from JSON
+INFO:root:Got all JSON files from C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\Departments
+INFO:root:Creating FacultyID with ID: 15, Name: eng
+INFO:root:Getting all JSON files from C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\Students
+INFO:root:Loaded dict from JSON
+INFO:root:Got all JSON files from C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\Students
+INFO:root:Creating FacultyID with ID: 15, Name: eng
+INFO:root:Student ID created: 150022001 (Department: 150, Entrance Date: 2022, Rank: 1)
+INFO:root:Creating FacultyID with ID: 15, Name: eng
+INFO:root:Student ID created: 150022001 (Department: 150, Entrance Date: 2022, Rank: 1)
+INFO:root:Transcript created for student ID: 150022001
+INFO:root:Adding courses to transcript for student ID: 150022001. Courses: []
+INFO:root:Courses added. New GPA: 0.00
+INFO:pythonCode.User:StaffId initialized
+INFO:pythonCode.User:Staff ID generated, Current staffIdCounter: 2
+INFO:pythonCode.User:User initialized
+INFO:root:Student created with ID: 150022001
+INFO:root:Getting all JSON files from C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\Advisors
+INFO:root:Loaded dict from JSON
+INFO:root:Got all JSON files from C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\Advisors
+INFO:User:Advisor initialized
+INFO:User:Lecturer initialized
+INFO:User:Staff initialized
+INFO:User:User initialized
+INFO:User:StaffId initialized
+INFO:User:Staff ID generated, Current staffIdCounter: 2
+INFO:User:StaffId initialized
+INFO:User:Staff ID generated, Current staffIdCounter: 3
+INFO:root:Getting all JSON files from C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\Lecturers
+INFO:root:Loaded dict from JSON
+INFO:root:Got all JSON files from C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\Lecturers
+INFO:User:Lecturer initialized
+INFO:User:Staff initialized
+INFO:User:User initialized
+INFO:User:StaffId initialized
+INFO:User:Staff ID generated, Current staffIdCounter: 4
+INFO:User:StaffId initialized
+INFO:User:Staff ID generated, Current staffIdCounter: 5
+INFO:root:Getting all JSON files from C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\DepartmentSchedulers
+INFO:root:Loaded dict from JSON
+INFO:root:Got all JSON files from C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\DepartmentSchedulers
+INFO:User:DepartmentScheduler initialized
+INFO:User:Staff initialized
+INFO:User:User initialized
+INFO:User:StaffId initialized
+INFO:User:Staff ID generated, Current staffIdCounter: 6
+INFO:User:StaffId initialized
+INFO:User:Staff ID generated, Current staffIdCounter: 7
+INFO:root:Getting all JSON files from C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\StudentsAffairss
+INFO:root:Loaded dict from JSON
+INFO:root:Got all JSON files from C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\StudentsAffairss
+INFO:User:StudentsAffairs initialized
+INFO:User:Staff initialized
+INFO:User:User initialized
+INFO:User:StaffId initialized
+INFO:User:Staff ID generated, Current staffIdCounter: 8
+INFO:User:StaffId initialized
+INFO:User:Staff ID generated, Current staffIdCounter: 9
+INFO:root:Getting all JSON files from C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\Courses
+INFO:root:Loaded dict from JSON
+INFO:root:Got all JSON files from C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\Courses
+INFO:root:Creating FacultyID with ID: 15, Name: eng
+INFO:User:Lecturer initialized
+INFO:User:Staff initialized
+INFO:User:User initialized
+INFO:User:StaffId initialized
+INFO:User:Staff ID generated, Current staffIdCounter: 10
+INFO:User:StaffId initialized
+INFO:User:Staff ID generated, Current staffIdCounter: 11
+INFO:User:get_staffId called: <User.StaffId object at 0x000002A866695810>
+INFO:User:get_staffId called: 1
+INFO:User:get_staffId called: <User.StaffId object at 0x000002A866695810>
+INFO:User:get_staffId called: 1
+INFO:User:get_staffId called: <User.StaffId object at 0x000002A866600C30>
+INFO:User:get_staffId called: 2
+INFO:User:get_staffId called: <User.StaffId object at 0x000002A866600C30>
+INFO:User:get_staffId called: 2
+INFO:User:get_staffId called: <User.StaffId object at 0x000002A8666BE570>
+INFO:User:get_staffId called: 4
+INFO:User:get_staffId called: <User.StaffId object at 0x000002A8666BE570>
+INFO:User:get_staffId called: 4
+INFO:User:get_staffId called: <User.StaffId object at 0x000002A8666F0050>
+INFO:User:get_staffId called: 3
+INFO:pythonCode.User:changeStaticCounter called
+INFO:pythonCode.User:Admin initialized
+INFO:pythonCode.User:Staff initialized
+INFO:pythonCode.User:User initialized
+INFO:pythonCode.User:StaffId initialized
+INFO:pythonCode.User:Staff ID generated, Current staffIdCounter: 5
+INFO:User:get_departmentId called
+INFO:User:get_departmentId called
+INFO:root:Trying to log in with email: tulaydeniz@marun.edu.tr
+INFO:pythonCode.User:getUserInformation called
+INFO:root:Checking email: tamerdurmaz@marun.edu.tr
+INFO:User:getUserInformation called
+INFO:root:Checking email: eminecelik@marun.edu.tr
+INFO:User:getUserInformation called
+INFO:root:Checking email: neclatunc@marun.edu.tr
+INFO:User:getUserInformation called
+INFO:root:Checking email: cagridemir@marun.edu.tr
+INFO:User:getUserInformation called
+INFO:root:Checking email: tulaydeniz@marun.edu.tr
+INFO:root:Login successful for email: tulaydeniz@marun.edu.tr
+INFO:root:Creating FacultyID with ID: 0, Name: No Faculty
+INFO:User:getUserInformation called
+INFO:User:getUserInformation called
+INFO:User:getUserInformation called
+INFO:User:getUserInformation called
+INFO:User:getUserInformation called
+INFO:User:getUserInformation called
+INFO:User:getUserInformation called
+INFO:User:getUserInformation called
+INFO:User:getUserInformation called
+INFO:User:getUserInformation called
+INFO:User:getUserInformation called
+INFO:User:getUserInformation called
+INFO:User:getUserInformation called
+INFO:User:getUserInformation called
+INFO:User:getUserInformation called
+INFO:User:getUserInformation called
+INFO:root:Initializing LoginAuthService
+INFO:root:Getting all JSON files from C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\Facultys
+INFO:root:Loaded dict from JSON
+INFO:root:Got all JSON files from C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\Facultys
+INFO:root:Getting all JSON files from C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\Departments
+INFO:root:Loaded dict from JSON
+INFO:root:Got all JSON files from C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\Departments
+INFO:root:Creating FacultyID with ID: 15, Name: eng
+INFO:root:Getting all JSON files from C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\Students
+INFO:root:Loaded dict from JSON
+INFO:root:Got all JSON files from C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\Students
+INFO:root:Creating FacultyID with ID: 15, Name: eng
+INFO:root:Student ID created: 150022001 (Department: 150, Entrance Date: 2022, Rank: 1)
+INFO:root:Creating FacultyID with ID: 15, Name: eng
+INFO:root:Student ID created: 150022001 (Department: 150, Entrance Date: 2022, Rank: 1)
+INFO:root:Transcript created for student ID: 150022001
+INFO:root:Adding courses to transcript for student ID: 150022001. Courses: []
+INFO:root:Courses added. New GPA: 0.00
+INFO:pythonCode.User:StaffId initialized
+INFO:pythonCode.User:Staff ID generated, Current staffIdCounter: 2
+INFO:pythonCode.User:User initialized
+INFO:root:Student created with ID: 150022001
+INFO:root:Getting all JSON files from C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\Advisors
+INFO:root:Loaded dict from JSON
+INFO:root:Got all JSON files from C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\Advisors
+INFO:User:Advisor initialized
+INFO:User:Lecturer initialized
+INFO:User:Staff initialized
+INFO:User:User initialized
+INFO:User:StaffId initialized
+INFO:User:Staff ID generated, Current staffIdCounter: 2
+INFO:User:StaffId initialized
+INFO:User:Staff ID generated, Current staffIdCounter: 3
+INFO:root:Getting all JSON files from C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\Lecturers
+INFO:root:Loaded dict from JSON
+INFO:root:Got all JSON files from C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\Lecturers
+INFO:User:Lecturer initialized
+INFO:User:Staff initialized
+INFO:User:User initialized
+INFO:User:StaffId initialized
+INFO:User:Staff ID generated, Current staffIdCounter: 4
+INFO:User:StaffId initialized
+INFO:User:Staff ID generated, Current staffIdCounter: 5
+INFO:root:Getting all JSON files from C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\DepartmentSchedulers
+INFO:root:Loaded dict from JSON
+INFO:root:Got all JSON files from C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\DepartmentSchedulers
+INFO:User:DepartmentScheduler initialized
+INFO:User:Staff initialized
+INFO:User:User initialized
+INFO:User:StaffId initialized
+INFO:User:Staff ID generated, Current staffIdCounter: 6
+INFO:User:StaffId initialized
+INFO:User:Staff ID generated, Current staffIdCounter: 7
+INFO:root:Getting all JSON files from C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\StudentsAffairss
+INFO:root:Loaded dict from JSON
+INFO:root:Got all JSON files from C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\StudentsAffairss
+INFO:User:StudentsAffairs initialized
+INFO:User:Staff initialized
+INFO:User:User initialized
+INFO:User:StaffId initialized
+INFO:User:Staff ID generated, Current staffIdCounter: 8
+INFO:User:StaffId initialized
+INFO:User:Staff ID generated, Current staffIdCounter: 9
+INFO:root:Getting all JSON files from C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\Courses
+INFO:root:Loaded dict from JSON
+INFO:root:Got all JSON files from C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\Courses
+INFO:root:Creating FacultyID with ID: 15, Name: eng
+INFO:User:Lecturer initialized
+INFO:User:Staff initialized
+INFO:User:User initialized
+INFO:User:StaffId initialized
+INFO:User:Staff ID generated, Current staffIdCounter: 10
+INFO:User:StaffId initialized
+INFO:User:Staff ID generated, Current staffIdCounter: 11
+INFO:User:get_staffId called: <User.StaffId object at 0x000001E4C2A99810>
+INFO:User:get_staffId called: 1
+INFO:User:get_staffId called: <User.StaffId object at 0x000001E4C2A99810>
+INFO:User:get_staffId called: 1
+INFO:User:get_staffId called: <User.StaffId object at 0x000001E4C29FCC30>
+INFO:User:get_staffId called: 2
+INFO:User:get_staffId called: <User.StaffId object at 0x000001E4C29FCC30>
+INFO:User:get_staffId called: 2
+INFO:User:get_staffId called: <User.StaffId object at 0x000001E4C2ABE570>
+INFO:User:get_staffId called: 4
+INFO:User:get_staffId called: <User.StaffId object at 0x000001E4C2ABE570>
+INFO:User:get_staffId called: 4
+INFO:User:get_staffId called: <User.StaffId object at 0x000001E4C2AEC050>
+INFO:User:get_staffId called: 3
+INFO:pythonCode.User:changeStaticCounter called
+INFO:pythonCode.User:Admin initialized
+INFO:pythonCode.User:Staff initialized
+INFO:pythonCode.User:User initialized
+INFO:pythonCode.User:StaffId initialized
+INFO:pythonCode.User:Staff ID generated, Current staffIdCounter: 5
+INFO:User:get_departmentId called
+INFO:User:get_departmentId called
+INFO:root:Trying to log in with email: tulaydeniz@marun.edu.tr
+INFO:pythonCode.User:getUserInformation called
+INFO:root:Checking email: tamerdurmaz@marun.edu.tr
+INFO:User:getUserInformation called
+INFO:root:Checking email: eminecelik@marun.edu.tr
+INFO:User:getUserInformation called
+INFO:root:Checking email: neclatunc@marun.edu.tr
+INFO:User:getUserInformation called
+INFO:root:Checking email: cagridemir@marun.edu.tr
+INFO:User:getUserInformation called
+INFO:root:Checking email: tulaydeniz@marun.edu.tr
+INFO:root:Login successful for email: tulaydeniz@marun.edu.tr
+INFO:root:Creating FacultyID with ID: 0, Name: No Faculty
+INFO:User:getUserInformation called
+INFO:User:getUserInformation called
+INFO:User:getUserInformation called
+INFO:User:getUserInformation called
+INFO:User:getUserInformation called
+INFO:User:getUserInformation called
+INFO:User:getUserInformation called
+INFO:User:getUserInformation called
+INFO:User:getUserInformation called
+INFO:User:getUserInformation called
+INFO:User:getUserInformation called
+INFO:User:getUserInformation called
+INFO:User:getUserInformation called
+INFO:User:getUserInformation called
+INFO:User:getUserInformation called
+INFO:User:getUserInformation called
+INFO:User:getUserInformation called
+INFO:User:getUserInformation called
+INFO:root:Generating course
+INFO:root:Generating course information
+INFO:root:Generated course information: deneme dnm1
+INFO:root:Generating course requirements
+INFO:root:Generated course requirements: [] 1
+INFO:root:Generated course: deneme dnm1
+INFO:root:Saving Course to JSON
+INFO:root:Saving Course with course name: deneme
+INFO:root:Saved Course to JSON
