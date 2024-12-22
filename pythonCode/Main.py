@@ -279,6 +279,9 @@ class Main:
                 course_registration_service.removeCourseRequest(courseRequest)
                 continue
 
+             # bura
+            #if courseRequests.get_course()
+
             if x[0] and x[1] and x[2] and x[3]:
                 print("Student is qualified for this course.")
             else:
