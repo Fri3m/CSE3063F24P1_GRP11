@@ -213,9 +213,10 @@ class DataManagement:
         absolute_path = os.path.abspath("../DepartmentHeads")
         datas = self.getAllJsons(absolute_path)
         dh_list = list()
-        return
-        # for data in datas:
-        #     return DepartmentHead()
+        for data in datas:
+            dh_list.append(DepartmentHead.from_dict(data))
+        return dh_list
+
 
     def createOrChangeDepartmentHead(self, departmentHead):
         self.saveToJson(departmentHead)
@@ -418,7 +419,7 @@ def generateCourse(lecturerForSections, days, sectionTimes, courseName, courseCo
     ___courseReq = generateCourseRequirements(prerequisiteCourses, minimumCurrentClass, facultyID, departmentID)
     courseSections = list()
     for i in range(len(lecturerForSections)):
-        ___courseSec = CourseSection(days[i], sectionTimes[i], lecturerForSections[i])
+        ___courseSec = CourseSection(days[i], sectionTimes[i], lecturerForSections[i],20)
         courseSections.append(___courseSec)
     ___course = Course(___courseInfo, ___courseReq, courseSections)
     logging.info(f"Generated course: {courseName} {courseCode}")
@@ -433,6 +434,13 @@ def generateRandomDepartmentScheduler(department):
         f"Generated random department scheduler: {userInformation.get_FIRST_NAME()} {userInformation.get_LAST_NAME()}")
     return ___depSched
 
+def generateRandomDepartmentHead(department):
+    logging.info("Generating random department head")
+    userInformation = __generateRandomUserInformation()
+    ___depHead = DepartmentHead(userInformation)
+    logging.info(
+        f"Generated random department head: {userInformation.get_FIRST_NAME()} {userInformation.get_LAST_NAME()}")
+    return ___depHead
 
 def generateRandomStudentsAffairs(department):
     logging.info("Generating random students affairs")
@@ -447,27 +455,30 @@ class customEncoder(JSONEncoder):
     def default(self, o):
         return o.__dict__
 
-# dm = DataManagement()
-# fac = generateFaculty(15,"eng")
-# dm.createOrChangeFaculty(fac)
+#dm = DataManagement()
+#fac = generateFaculty(15,"eng")
+#dm.createOrChangeFaculty(fac)
 #
-# dep = generateDepartment(150, "comp eng",fac )
-# dm.createOrChangeDepartment(dep)
+#dep = generateDepartment(150, "comp eng",fac )
+#dm.createOrChangeDepartment(dep)
 #
-# ad = generateRandomAdvisor(dep)
-# dm.createOrChangeAdvisor(ad)
+#ad = generateRandomAdvisor(dep)
+#dm.createOrChangeAdvisor(ad)
 #
-# stu = generateRandomStudent(dep,2022,1,ad.get_staffId())
-# dm.createOrChangeStudent(stu)
+#stu = generateRandomStudent(dep,2022,1,ad.get_staffId())
+#dm.createOrChangeStudent(stu)
 #
-# lec = generateRandomLecturer(dep)
-# dm.createOrChangeLecturer(lec)
+#lec = generateRandomLecturer(dep)
+#dm.createOrChangeLecturer(lec)
 #
-# sa = generateRandomStudentsAffairs(dep)
-# dm.createOrChangeStudentsAffairs(sa)
+#sa = generateRandomStudentsAffairs(dep)
+#dm.createOrChangeStudentsAffairs(sa)
+
+#dsch = generateRandomDepartmentScheduler(dep)
+#dm.createOrChangeDepartmentScheduler(dsch)
 #
-# dsch = generateRandomDepartmentScheduler(dep)
-# dm.createOrChangeDepartmentScheduler(dsch)
+#dh = generateRandomDepartmentHead(dep)
+#dm.createOrChangeDepartmentHead(dh)
 #
-# course = generateCourse([lec],[Day.Friday],[SectionTime.Fifth], "test", "TT101", list(),1, dep.get_facultyID(),dep.getDepartmentID())
-# dm.createOrChangeCourse(course)
+#course = generateCourse([lec],[Day.Friday],[SectionTime.Fifth], "test", "TT101", list(),1, dep.get_facultyID(),dep.getDepartmentID())
+#dm.createOrChangeCourse(course)

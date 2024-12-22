@@ -2,6 +2,7 @@ import logging
 
 import UserInformation
 
+
 logger = logging.getLogger(__name__)
 
 class User:
@@ -158,6 +159,15 @@ class StudentsAffairs(Staff):
 class DepartmentHead(Staff):
     def __init__(self, user_information):
         super().__init__(user_information)
+
+    def changeCourseSectionQuota(self, courseSection, quota):
+        print(courseSection._quota)
+        courseSection._quota = quota
+
+    def from_dict(data):
+        dh = DepartmentHead(UserInformation.UserInformation.from_dict(data["_user_information"]))
+        dh._staffId = StaffId.from_dict(data["_staffId"])
+        return dh
 
 
 # staffId = StaffId()

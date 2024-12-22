@@ -40,6 +40,7 @@ class Main:
         self._advisors = self._data_management.getAllAdvisors()
         self._lecturers = self._data_management.getAllLecturers()
         self._departmentSchedulers = self._data_management.getAllDepartmentSchedulers()
+        self._departmentHeads = self._data_management.getAllDepartmentHeads()
         self._studentsAffairs = self._data_management.getAllStudentsAffairs()
         self._courses = self._data_management.getAllCourses()
         logging.info("Data retrieved successfully")
@@ -417,6 +418,86 @@ class Main:
             print("Invalid choice. Please try again.")
 
         self.adminMainMenu()
+
+    def departmentHeadMainMenu(self):
+        print("Please choose an option:")
+        print("1. Change course section quota")
+        print("2. Show user information")
+        print("3. Update user information")
+        print("4. Logout")
+        choice = input()
+        if choice == "1":
+            print("Select department to continue")
+            for department in self._departments:
+                print(department.getDepartmentID().getDepartmentName())
+
+            department = None
+            while True:
+                departmentSelection = input()
+                found = False
+                for d in self._departments:
+                    if departmentSelection == d.getDepartmentID().getDepartmentName():
+                        department = d
+                        found = True
+                        break
+                if found:
+                    break
+            print("Select course to continue")
+            coursesForThisDepartment = []
+            for c in self._courses:
+                if c.getCourseRequirements().getDepartmentID() == department.getDepartmentID().getDepartmentID():
+                    coursesForThisDepartment.append(c)
+                    print(c.getCourseName())
+
+            course = None
+            while True:
+                courseSelection = input()
+                found = False
+                for c in coursesForThisDepartment:
+                    if c.getCourseName() == courseSelection:
+                        logging.info("Course found")
+                        found = True
+                        course = c
+                        break
+                if found:
+                    break
+
+            # getCourseSections çalışmıyor
+            if len(course.getCourseSections()) == 0:
+                logging.info("There are no sections for this course")
+                print("There are no sections for this course")
+                return
+
+            for courseSection in course.getCourseSections():
+                print("This course section is in day " + day_dict[courseSection._day] + " time " + sectionTime_dict[
+                    courseSection._sectionTime])
+                print("Do you want to change this section quota? Yes if continue: ")
+                choice = input()
+                if not choice == "Yes" or choice == "yes":
+                    continue
+
+                print("Enter the new quota: ")
+                inp = int(input())
+                if inp<0:
+                    print("Invalid quota. Please try again.")
+                    continue
+                else:
+                    courseSection._quota = inp
+
+            self._data_management.createOrChangeCourse(course)
+            print("Course section quota changed successfully")
+
+        elif choice == "2":
+            self.showUserInformation()
+        elif choice == "3":
+            self.updateUserInfo()
+        elif choice == "4":
+            self.startMenu()
+            return
+        else:
+            print("Invalid choice. Please try again.")
+
+        self.departmentHeadMainMenu()
 
     def adminCreateUserInformation(self):
         print("Enter first name: ")

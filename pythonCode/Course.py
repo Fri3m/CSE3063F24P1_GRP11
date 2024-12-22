@@ -3,6 +3,7 @@ import Faculty
 from User import Lecturer
 
 
+
 class Course:
     def __init__(self, courseInformation, courseRequirements, courseSections):
         self.courseInformation = courseInformation
@@ -170,14 +171,25 @@ class CourseRequirements:
 
 
 class CourseSection:
-    def __init__(self, day, sectionTime, lecturer):
+    def __init__(self, day, sectionTime, lecturer, quota):
         self._day = day
         self._sectionTime = sectionTime
         self._lecturer = lecturer
+        self._quota = quota
 
     @staticmethod
     def from_dict(data):
         d = int(data["_day"])
         lec = Lecturer.from_dict(data["_lecturer"])
         sect = int(data["_sectionTime"])
-        return CourseSection(d, sect, lec)
+        q = int(data["_quota"])
+        return CourseSection(d, sect, lec, q)
+
+    def createClassroom(self, classroom):
+        if self._quota <= classroom.get_capacity():
+            return classroom
+        else:
+            return "Classroom capacity is not enough"
+
+
+
