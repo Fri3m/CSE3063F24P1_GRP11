@@ -81,6 +81,9 @@ class DataManagement:
 
     def getAllJsons(self, folder_path):
         allObjects = []
+        if not os.path.exists(folder_path):
+            logging.info(f"There is no path such {folder_path}")
+            return
         logging.info(f"Getting all JSON files from {folder_path}")
         for filename in os.listdir(folder_path):
             file_path = os.path.join(folder_path, filename)
@@ -149,7 +152,7 @@ class DataManagement:
         self.deleteJsonFile(f"../Advisors/{university_email}.json")
 
     def getAllFaculties(self):
-        absolute_path = os.path.abspath("../Faculties")
+        absolute_path = os.path.abspath("../Facultys")
         return self.getAllJsons(absolute_path)
 
     def createOrChangeFaculty(self, faculty):
