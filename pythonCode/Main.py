@@ -264,7 +264,7 @@ class Main:
     def checkSectionConflict(self, courseSections, courses):
         for courseSection in courseSections:
             for course in courses:
-                for courseSection1 in course.getCourseSections():
+                for courseSection1 in course.getCourseSections(): # course objesini CourseInformation olarak görebiliyor
                     if courseSection._day == courseSection1._day and courseSection._sectionTime == courseSection1._sectionTime:
                         print("Student is already taking a course at this time. ")
                         return False

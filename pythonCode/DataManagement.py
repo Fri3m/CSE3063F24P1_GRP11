@@ -484,3 +484,6 @@ class customEncoder(JSONEncoder):
 #
 # course = generateCourse([lec], [Day.Friday], [SectionTime.Fifth], [Classroom("aa",20), Classroom("bb", 15)], "test", "TT101", list(), 1, dep.get_facultyID(), dep.getDepartmentID())
 # dm.createOrChangeCourse(course)
+#
+# course1 = generateCourse([lec], [Day.Friday], [SectionTime.Fifth], [Classroom("aa",20), Classroom("bb", 15)], "test2", "TT102", list(), 1, dep.get_facultyID(), dep.getDepartmentID())
+# dm.createOrChangeCourse(course1)
