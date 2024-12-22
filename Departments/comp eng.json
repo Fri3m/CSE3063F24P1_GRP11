@@ -1,0 +1,11 @@
+{
+    "_departmentID": {
+        "_departmentID": 150,
+        "_departmentName": "comp eng"
+    },
+    "_facultyID": {
+        "_FacultyID": 15,
+        "_FacultyName": "eng"
+    },
+    "_lecturers": []
+}

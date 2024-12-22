@@ -97,8 +97,9 @@ class Main:
         if choice == "1":
             self.login()
         elif choice == "2":
-            SystemExit(0)
+
             print("Goodbye!")
+            SystemExit()
         else:
             print("Invalid choice. Please try again.")
             self.startMenu()
