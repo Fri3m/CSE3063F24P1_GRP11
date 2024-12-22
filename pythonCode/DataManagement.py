@@ -447,27 +447,27 @@ class customEncoder(JSONEncoder):
     def default(self, o):
         return o.__dict__
 
-#dm = DataManagement()
-#fac = generateFaculty(15,"eng")
-#dm.createOrChangeFaculty(fac)
+# dm = DataManagement()
+# fac = generateFaculty(15,"eng")
+# dm.createOrChangeFaculty(fac)
 #
-#dep = generateDepartment(150, "comp eng",fac )
-#dm.createOrChangeDepartment(dep)
+# dep = generateDepartment(150, "comp eng",fac )
+# dm.createOrChangeDepartment(dep)
 #
-#ad = generateRandomAdvisor(dep)
-#dm.createOrChangeAdvisor(ad)
+# ad = generateRandomAdvisor(dep)
+# dm.createOrChangeAdvisor(ad)
 #
-#stu = generateRandomStudent(dep,2022,1,ad.get_staffId())
-#dm.createOrChangeStudent(stu)
+# stu = generateRandomStudent(dep,2022,1,ad.get_staffId())
+# dm.createOrChangeStudent(stu)
 #
-#lec = generateRandomLecturer(dep)
-#dm.createOrChangeLecturer(lec)
+# lec = generateRandomLecturer(dep)
+# dm.createOrChangeLecturer(lec)
 #
-#sa = generateRandomStudentsAffairs(dep)
-#dm.createOrChangeStudentsAffairs(sa)
+# sa = generateRandomStudentsAffairs(dep)
+# dm.createOrChangeStudentsAffairs(sa)
 #
-#dsch = generateRandomDepartmentScheduler(dep)
-#dm.createOrChangeDepartmentScheduler(dsch)
+# dsch = generateRandomDepartmentScheduler(dep)
+# dm.createOrChangeDepartmentScheduler(dsch)
 #
-#course = generateCourse([lec],[Day.Friday],[SectionTime.Fifth], "test", "TT101", list(),1, dep.get_facultyID(),dep.getDepartmentID())
-#dm.createOrChangeCourse(course)
+# course = generateCourse([lec],[Day.Friday],[SectionTime.Fifth], "test", "TT101", list(),1, dep.get_facultyID(),dep.getDepartmentID())
+# dm.createOrChangeCourse(course)

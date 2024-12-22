@@ -46,10 +46,12 @@ class Main:
         self._departmentSchedulers = self._data_management.getAllDepartmentSchedulers()
         self._studentsAffairs = self._data_management.getAllStudentsAffairs()
         self._courses = self._data_management.getAllCourses()
+        self.coursesNameDict = dict()
+        for course in self._courses:
+            self.coursesNameDict[course.getCourseName()] = course
 
         self.changeStaticStaffID()
 
-        # BUNA SONRA BAK !!!!! (loginauthservice)
         _admin = Admin(UserInformation(("admin"), ("admin"), ("admin"), ("admin"), ("admin"), ("admin"),("admin")))
 
 
@@ -179,9 +181,9 @@ class Main:
         elif choice == "2":
 
             print("Current courses:")
-            for course in self.user.get_current_courses():
-                print(course.getCourseInformation().getCourseCode() + " " + course.getCourseName())
-                for courseSection in course.getCourseSections():
+            for courseInfo in self.user.get_current_courses():
+                print(courseInfo.getCourseCode() + " " + courseInfo.getCourseName())
+                for courseSection in self.coursesNameDict[courseInfo.getCourseName()].getCourseSections():
                     print("Day :" + day_dict[courseSection._day] + " Time " + sectionTime_dict[courseSection._sectionTime])
 
         elif choice == "3":

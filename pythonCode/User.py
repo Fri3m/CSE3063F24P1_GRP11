@@ -93,7 +93,7 @@ class Advisor(Lecturer):
 
     def approveCourseRequest(self, courseRequest):
         logger.info('approveCourseRequest called')
-        courseRequest.get_student().get_current_courses().append(courseRequest.get_course())
+        courseRequest.get_student().get_current_courses().append(courseRequest.get_course().getCourseInformation())
 
 
 class Admin(Staff):
