@@ -23,24 +23,27 @@ class Main:
     user_type = str()
 
     def main(self):
-
+        logging.info("Program starting")
+        print("Welcome to the Course Registration System")
         self.startMenu()
 
     def __init__(self):
-
+        logging.info("Initializing Main")
         self._data_management = DataManagement.DataManagement()
         self._login_auth_service = LoginAuthService()
         self._course_registration_service = CourseRegistrationService()
 
+        logging.info("Getting all data")
         self._faculties = self._data_management.getAllFaculties()
         self._departments = self._data_management.getAllDepartments()
         self._students = self._data_management.getAllStudents()
         self._advisors = self._data_management.getAllAdvisors()
-
         self._lecturers = self._data_management.getAllLecturers()
         self._departmentSchedulers = self._data_management.getAllDepartmentSchedulers()
         self._studentsAffairs = self._data_management.getAllStudentsAffairs()
         self._courses = self._data_management.getAllCourses()
+        logging.info("Data retrieved successfully")
+
         self.coursesNameDict = dict()
         for course in self._courses:
             self.coursesNameDict[course.getCourseName()] = course
@@ -58,6 +61,7 @@ class Main:
         self._users.append(_admin)
 
         self._login_auth_service._users = self._users
+        logging.info("Users added to login service")
 
         for _departments in self._departments:
             for _lecturers in self._lecturers:
@@ -65,7 +69,7 @@ class Main:
                     _departments.add_lecturer(_lecturers)
 
     def changeStaticStaffID(self):
-
+        logging.info("Changing static staff ID")
         maxID = int(0)
 
         for _advisors in self._advisors:
@@ -82,9 +86,10 @@ class Main:
                 maxID = int(_studentsAffairs.get_staffId().get_staff_id())
 
         StaffId.changeStaticCounter(maxID)
+        logging.info(f"Static staff ID changed successfully to {maxID}")
 
     def startMenu(self):
-        print("Welcome to the Course Registration System")
+        logging.info("Start menu")
         print("Please choose an option:")
         print("1. Login")
         print("2. Exit")
@@ -92,14 +97,16 @@ class Main:
         if choice == "1":
             self.login()
         elif choice == "2":
-
+            logging.info("Exiting program")
             print("Goodbye!")
             SystemExit()
         else:
+            logging.info("Invalid choice in start menu")
             print("Invalid choice. Please try again.")
             self.startMenu()
 
     def showUserInformation(self):
+        logging.info(f"Showing user information for user {self.user.getUserInformation().get_UNIVERSITY_EMAIL()}")
         print("Name: " + self.user.getUserInformation().get_FIRST_NAME())
         print("Surname: " + self.user.getUserInformation().get_LAST_NAME())
         print("Email: " + self.user.getUserInformation().get_email())
@@ -107,6 +114,7 @@ class Main:
         print("Address: " + self.user.getUserInformation().get_address())
 
     def updateUserInfo(self):
+        logging.info(f"Updating user information for user {self.user.getUserInformation().get_UNIVERSITY_EMAIL()}")
         print("Please enter the information you would like to update:")
         print("1. Change password")
         print("2. Change email")
@@ -131,7 +139,7 @@ class Main:
         self.updateUserInfo()
 
     def studentMainMenu(self):
-
+        logging.info(f"Student main menu for user {self.user.getUserInformation().get_UNIVERSITY_EMAIL()}")
         print("Please choose an option:")
         print("1. Register for a course")
         print("2. Show current courses")
@@ -142,34 +150,34 @@ class Main:
 
         choice = input()
         if choice == "1":
+            logging.info("Registering for a course")
             print("Please choose a course to register:")
             courseList = []
             for course in self._courses:
                 if course.courseInformation not in self.user.get_current_courses():
                     courseList.append(course)
-
-                # isInIt = False
-                # for currentCourse in self.user.get_current_courses():
-                #     if currentCourse.getCourseInformation().getCourseCode().equals(course.getCourseInformation().getCourseCode()):
-                #         isInIt = True
-                #         break
-                #
-                # if not isInIt:
-                #     courseList.append(course)
-
+            print("Courses available to register: ")
             for course in courseList:
                 print(course.getCourseName())
 
-            courseName = input()
-
-            for course in courseList:
-                if course.getCourseName() == courseName:
-                    self.user.takeCourse(course, self._course_registration_service)
+            courseTaken = False
+            while not courseTaken:
+                courseName = input()
+                if courseName == "exit":
+                    logging.info("Exiting course registration without registering")
+                    print("Exiting course registration")
                     break
+                for course in courseList:
+                    if course.getCourseName() == courseName:
+                        self.user.takeCourse(course, self._course_registration_service)
+                        courseTaken = True
+                        break
+                logging.info("Invalid input for course name")
+                print("Invalid course name. Please try again. Type exit if you want to exit.")
 
 
         elif choice == "2":
-
+            logging.info(f"Showing current courses for user {self.user.getUserInformation().get_UNIVERSITY_EMAIL()}")
             print("Current courses:")
             for courseInfo in self.user.get_current_courses():
                 print(courseInfo.getCourseCode() + " " + courseInfo.getCourseName())
@@ -178,7 +186,7 @@ class Main:
                         courseSection._sectionTime])
 
         elif choice == "3":
-            # GetUserInformation çalışmıyor!!!  (studentten dolayı olabilir)
+            logging.info(f"Showing transcript for user {self.user.getUserInformation().get_UNIVERSITY_EMAIL()}")
             print(
                 "Transcript for student " + self.user.getUserInformation().get_FIRST_NAME() + " " + self.user.getUserInformation().get_LAST_NAME())
             print("GPA:", self.user.getTranscript().get_GPA())
@@ -202,13 +210,14 @@ class Main:
         self.studentMainMenu()
 
     def showStudentInfo(self):
-
+        logging.info(f"Showing student information for user {self.user.getUserInformation().get_UNIVERSITY_EMAIL()}")
         print("In year: " + str(self.user.getCurrentClass()))
         print("Student ID: " + str(self.user.get_studentID().get_ID()))
         print("Department Name: " + str(self.user.get_studentID().get_departmentID().getDepartmentID()))
         print("Faculty Name: " + str(self.user.get_studentID().get_facultyID().getFacultyName()))
 
     def lecturerMainMenu(self):
+        logging.info(f"Lecturer main menu for user {self.user.getUserInformation().get_UNIVERSITY_EMAIL()}")
         print("Please choose an option:")
         print("1. Show user information: ")
         print("2. Update user information: ")
@@ -227,14 +236,13 @@ class Main:
         self.lecturerMainMenu()
 
     def advisorMainMenu(self):
-
+        logging.info(f"Advisor main menu for user {self.user.getUserInformation().get_UNIVERSITY_EMAIL()}")
         print("Please choose an option:")
         print("1. Check request of course request")
         print("2. Show user information")
         print("3. Update user information")
         print("4. Logout")
         choice = input()
-
         if choice == "1":
             self.checkRegistration(self.user, self._course_registration_service)
         elif choice == "2":
@@ -250,9 +258,11 @@ class Main:
         self.advisorMainMenu()
 
     def checkRegistration(self, advisor, course_registration_service):
+        logging.info(f"Checking registration for advisor {advisor.getUserInformation().get_UNIVERSITY_EMAIL()}")
         courseRequests = course_registration_service.checkAccesiableRequests(advisor)
 
         if courseRequests is None:
+            logging.info("There are no requests")
             print("There is no requests")
             return
         for courseRequest in courseRequests:
@@ -727,15 +737,16 @@ class Main:
         self.studentsAffairsMainMenu()
 
     def login(self):
+        logging.info("Login menu")
         print("Which type of user are you? (Student, Advisor, Lecturer, Admin, DepartmentScheduler, StudentsAffairs)")
         self.user_type = input()
         print("Enter your university email: ")
         email = input()
         print("Enter your password: ")
         password = input()
-
         self.user = self._login_auth_service.login(email, password)
         if self.user is None:
+            logging.info("Invalid login, user is None")
             print("None")
             self.user_type = str()
 
@@ -760,17 +771,18 @@ class Main:
                 self.startMenu()
 
     def changePassword(self):
+        logging.info(f"Changing password for user {self.user.getUserInformation().get_UNIVERSITY_EMAIL()}")
         print("Enter your current password: ")
         current_password = input()
         print("Enter your new password: ")
         new_password = input()
-
         if self.user.getUserInformation().changePassword(current_password, new_password):
             print("Password changed successfully.")
         else:
             print("Password update failed. Please try again.")
 
     def changeEmail(self):
+        logging.info(f"Changing email for user {self.user.getUserInformation().get_UNIVERSITY_EMAIL()}")
         print("Enter your current password: ")
         current_password = input()
         print("Enter your new email: ")
@@ -782,6 +794,7 @@ class Main:
             print("Email update failed. Please try again.")
 
     def changeAddress(self):
+        logging.info(f"Changing address for user {self.user.getUserInformation().get_UNIVERSITY_EMAIL()}")
         print("Enter your current password: ")
         current_password = input()
         print("Enter your new address: ")
@@ -793,6 +806,7 @@ class Main:
             print("Address update failed. Please try again.")
 
     def changePhoneNumber(self):
+        logging.info(f"Changing phone number for user {self.user.getUserInformation().get_UNIVERSITY_EMAIL()}")
         print("Enter your current password: ")
         current_password = input()
         print("Enter your new phone number: ")
