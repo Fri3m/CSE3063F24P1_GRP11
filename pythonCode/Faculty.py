@@ -1,3 +1,5 @@
+import logging
+
 class FacultyID:
     def __init__(self, facultyID, facultyName):
         logging.info(f"Creating FacultyID with ID: {facultyID}, Name: {facultyName}")
