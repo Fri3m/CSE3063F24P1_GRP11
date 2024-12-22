@@ -1,0 +1,26 @@
+2024-12-23 02:04:10,042 - exception - ERROR - An error occurred!
+Traceback (most recent call last):
+  File "C:\Users\omery\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 120, in startMenu
+    raise ValueError("You can only choose 1 or 2")
+ValueError: You can only choose 1 or 2
+2024-12-23 02:04:17,450 - exception - ERROR - An error occurred!
+Traceback (most recent call last):
+  File "C:\Users\omery\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 120, in startMenu
+    raise ValueError("You can only choose 1 or 2")
+ValueError: You can only choose 1 or 2
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\omery\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 985, in <module>
+    main.main()
+  File "C:\Users\omery\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 35, in main
+    self.startMenu()
+  File "C:\Users\omery\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 124, in startMenu
+    self.startMenu()  # Tekrar baþlangýç menüsünü çaðýr
+    ^^^^^^^^^^^^^^^^
+  File "C:\Users\omery\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 111, in startMenu
+    choice = input()
+             ^^^^^^^
+  File "<frozen codecs>", line 319, in decode
+KeyboardInterrupt

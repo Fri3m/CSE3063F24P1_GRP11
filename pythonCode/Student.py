@@ -5,7 +5,7 @@ import Transcript
 import UserInformation
 from pythonCode.User import User, StaffId
 
-import logging
+
 
 class Student(User):
     def __init__(self, user_information, student_id, transcript, advisor_id, current_class):
@@ -16,7 +16,7 @@ class Student(User):
         self._current_class = current_class
         self._current_courses = [] # course information
 
-        logging.info(f"Student created with ID: {self._student_id.get_ID()}")
+
 
     @staticmethod
     def from_dict(data):
@@ -34,29 +34,29 @@ class Student(User):
         return s
 
     def takeCourse(self, course, course_registration_service):
-        logging.info(f"Student {self._student_id.get_ID()} attempting to take course {course}.")
+
         course_registration_service.createCourseRequest(self, course)
-        logging.info(f"Student {self._student_id.get_ID()} successfully enrolled in course {course}.")
+
         return True
 
     def getTranscript(self):
-        logging.debug(f"Retrieving transcript for student {self._student_id.get_ID()}.")
+
         return self._transcript
 
     def getCurrentClass(self):
-        logging.debug(f"Retrieving current class for student {self._student_id.get_ID()}.")
+
         return self._current_class
 
     def get_studentID(self):
-        logging.debug(f"Retrieving student ID: {self._student_id.get_ID()}.")
+
         return self._student_id
 
     def get_advisorID(self):
-        logging.debug(f"Retrieving advisor ID for student {self._student_id.get_ID()}.")
+
         return self._advisor_id
 
     def get_current_courses(self): # course information
-        logging.debug(f"Retrieving current courses for student {self._student_id.get_ID()}.")
+
         return self._current_courses
 
 class StudentID:
@@ -67,8 +67,7 @@ class StudentID:
         self._faculty_id = faculty_id
         self._id = self.createStudentID()
 
-        logging.info(f"Student ID created: {self._id} (Department: {self._department_id.getDepartmentID()}, "
-                     f"Entrance Date: {self._entrance_date}, Rank: {self._entrance_rank})")
+
 
     @staticmethod
     def from_dict(data):
@@ -79,31 +78,30 @@ class StudentID:
         return StudentID(did,ed,er,fid)
 
     def createStudentID(self):
-        logging.debug(f"Creating student ID using department {self._department_id.getDepartmentID()}, "
-                      f"entrance year {self._entrance_date}, rank {self._entrance_rank}.")
+
         first_part = str(self._department_id.getDepartmentID())
         second_part = str(self._entrance_date)[1:]  # Get the last 3 digits of the year (2024 -> 024)
         third_part = str(self._entrance_rank).zfill(3)  # Ensure its at least 3 digits long
         student_id = first_part + second_part + third_part
-        logging.debug(f"Generated student ID: {student_id}")
+
         return student_id
 
     def get_departmentID(self):
-        logging.debug(f"Retrieving department ID: {self._department_id.getDepartmentID()}.")
+
         return self._department_id
 
     def get_facultyID(self):
-        logging.debug(f"Retrieving faculty ID: {self._faculty_id}.")
+
         return self._faculty_id
 
     def get_entrance_date(self):
-        logging.debug(f"Retrieving entrance date: {self._entrance_date}.")
+
         return self._entrance_date
 
     def get_entrance_rank(self):
-        logging.debug(f"Retrieving entrance rank: {self._entrance_rank}.")
+
         return self._entrance_rank
 
     def get_ID(self):
-        logging.debug(f"Retrieving student ID: {self._id}.")
+
         return self._id
