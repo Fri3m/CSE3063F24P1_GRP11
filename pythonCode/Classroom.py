@@ -1,5 +1,5 @@
 class Classroom:
-    def _init_(self, classroom_name, capacity):
+    def __init__(self, classroom_name, capacity):
         self._classroom_name = classroom_name
         self._capacity = capacity
 

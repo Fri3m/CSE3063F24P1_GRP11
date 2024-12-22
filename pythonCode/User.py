@@ -4,8 +4,6 @@ import UserInformation
 
 
 logger = logging.getLogger(__name__)
-logging.basicConfig(filename='UserLogs.log', level=logging.INFO)
-
 
 class User():
     def __init__(self, user_information):
@@ -21,14 +19,14 @@ class Staff(User):
     def __init__(self, user_information):
         logger.info('Staff initialized')
         super().__init__(user_information)
-        self._staffId = StaffId
+        self._staffId = StaffId()
 
     def get_staffId(self):
         logger.info(f'get_staffId called: {str(self._staffId)}')
         return self._staffId
 
 
-class StaffId():
+class StaffId:
     _staffIdCounter = 1
 
     def __init__(self):
@@ -41,7 +39,6 @@ class StaffId():
         sid = StaffId()
         sid._staffId = int(data["_staffId"])
         return sid
-
 
 
     @staticmethod
@@ -176,12 +173,12 @@ class DepartmentHead(Staff):
         return dh
 
 
-staffId = StaffId()
-staffId2 = StaffId()
-staffId3 = StaffId()
-staffId4 = StaffId()
-staffId5 = StaffId()
-staffId6 = StaffId()
-
-print(staffId.get_staff_id())
-print(staffId5.get_staff_id())
+# staffId = StaffId()
+# staffId2 = StaffId()
+# staffId3 = StaffId()
+# staffId4 = StaffId()
+# staffId5 = StaffId()
+# staffId6 = StaffId()
+#
+# print(staffId.get_staff_id())
+# print(staffId5.get_staff_id())
