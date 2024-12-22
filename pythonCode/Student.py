@@ -16,7 +16,7 @@ class Student(User):
         self._current_class = current_class
         self._current_courses = []
 
-        logging.info(f"Student created with ID: {self._student_id.get_id()}")
+        logging.info(f"Student created with ID: {self._student_id.get_ID()}")
 
     @staticmethod
     def from_dict(data):
@@ -33,30 +33,30 @@ class Student(User):
         s._current_courses = c_courses
         return s
 
-    def take_course(self, course, course_registration_service):
-        logging.info(f"Student {self._student_id.get_id()} attempting to take course {course}.")
+    def takeCourse(self, course, course_registration_service):
+        logging.info(f"Student {self._student_id.get_ID()} attempting to take course {course}.")
         course_registration_service.create_course_request(self, course)
-        logging.info(f"Student {self._student_id.get_id()} successfully enrolled in course {course}.")
+        logging.info(f"Student {self._student_id.get_ID()} successfully enrolled in course {course}.")
         return True
 
-    def get_transcript(self):
-        logging.debug(f"Retrieving transcript for student {self._student_id.get_id()}.")
+    def getTranscript(self):
+        logging.debug(f"Retrieving transcript for student {self._student_id.get_ID()}.")
         return self._transcript
 
-    def get_current_class(self):
-        logging.debug(f"Retrieving current class for student {self._student_id.get_id()}.")
+    def getCurrentClass(self):
+        logging.debug(f"Retrieving current class for student {self._student_id.get_ID()}.")
         return self._current_class
 
-    def get_student_id(self):
-        logging.debug(f"Retrieving student ID: {self._student_id.get_id()}.")
+    def get_studentID(self):
+        logging.debug(f"Retrieving student ID: {self._student_id.get_ID()}.")
         return self._student_id
 
-    def get_advisor_id(self):
-        logging.debug(f"Retrieving advisor ID for student {self._student_id.get_id()}.")
+    def get_advisorID(self):
+        logging.debug(f"Retrieving advisor ID for student {self._student_id.get_ID()}.")
         return self._advisor_id
 
     def get_current_courses(self):
-        logging.debug(f"Retrieving current courses for student {self._student_id.get_id()}.")
+        logging.debug(f"Retrieving current courses for student {self._student_id.get_ID()}.")
         return self._current_courses
 
 class StudentID:
@@ -65,7 +65,7 @@ class StudentID:
         self._entrance_date = entrance_date
         self._entrance_rank = entrance_rank
         self._faculty_id = faculty_id
-        self._id = self._create_student_id()
+        self._id = self.createStudentID()
 
         # Loglama
         logging.info(f"Student ID created: {self._id} (Department: {self._department_id.getDepartmentID()}, "
@@ -79,7 +79,7 @@ class StudentID:
         fid = Faculty.FacultyID.from_dict(data["_faculty_id"])
         return StudentID(did,ed,er,fid)
 
-    def _create_student_id(self):
+    def createStudentID(self):
         logging.debug(f"Creating student ID using department {self._department_id.getDepartmentID()}, "
                       f"entrance year {self._entrance_date}, rank {self._entrance_rank}.")
         first_part = str(self._department_id.getDepartmentID())
@@ -89,11 +89,11 @@ class StudentID:
         logging.debug(f"Generated student ID: {student_id}")
         return student_id
 
-    def get_department_id(self):
+    def get_departmentID(self):
         logging.debug(f"Retrieving department ID: {self._department_id.getDepartmentID()}.")
         return self._department_id
 
-    def get_faculty_id(self):
+    def get_facultyID(self):
         logging.debug(f"Retrieving faculty ID: {self._faculty_id}.")
         return self._faculty_id
 
@@ -105,6 +105,6 @@ class StudentID:
         logging.debug(f"Retrieving entrance rank: {self._entrance_rank}.")
         return self._entrance_rank
 
-    def get_id(self):
+    def get_ID(self):
         logging.debug(f"Retrieving student ID: {self._id}.")
         return self._id

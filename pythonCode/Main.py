@@ -167,7 +167,7 @@ class Main:
 
             for course in courseList:
                 if course.getCourseName() == courseName:
-                    self.user.take_course(course, self._course_registration_service)
+                    self.user.takeCourse(course, self._course_registration_service)
                     break
 
 
@@ -182,8 +182,8 @@ class Main:
         elif choice == "3":
             # GetUserInformation çalışmıyor!!!  (studentten dolayı olabilir)
             print ("Transcript for student " + self.user.getUserInformation().get_FIRST_NAME() + " " + self.user.getUserInformation().get_LAST_NAME())
-            print("GPA:" , self.user.get_transcript().get_gpa())
-            for takenCourse in self.user.get_transcript().get_taken_courses():
+            print("GPA:" , self.user.getTranscript().get_GPA())
+            for takenCourse in self.user.getTranscript().getTakenCourses():
                 print(takenCourse.getCourseInformation().getCourseCode() + ": " + takenCourse.getCourseInformation().getCourseName()+ ": " + takenCourse.getCourseScore().name())
 
         elif choice == "4":
@@ -203,10 +203,10 @@ class Main:
 
     def showStudentInfo(self):
 
-        print("In year: " + str( self.user.get_current_class()))
-        print("Student ID: " +  str(self.user.get_student_id().get_id()))
-        print("Department Name: " + str(self.user.get_student_id().get_department_id().getDepartmentID()))
-        print("Faculty Name: " + str(self.user.get_student_id().getFacultyID().getFacultyName()))
+        print("In year: " + str( self.user.getCurrentClass()))
+        print("Student ID: " +  str(self.user.get_studentID().get_ID()))
+        print("Department Name: " + str(self.user.get_studentID().get_departmentID().getDepartmentID()))
+        print("Faculty Name: " + str(self.user.get_studentID().getFacultyID().getFacultyName()))
 
     def lecturerMainMenu(self):
         print("Please choose an option:")
@@ -354,7 +354,7 @@ class Main:
             while True:
                 found = False
                 for s in self._students:
-                    if s.get_student_id().get_entrance_rank() == entranceRank and s.get_student_id().get_entrance_rank() == 2024 :
+                    if s.get_studentID().get_entrance_rank() == entranceRank and s.get_studentID().get_entrance_rank() == 2024 :
                         found = True
                         break
                 if not found:

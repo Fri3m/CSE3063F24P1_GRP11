@@ -10,7 +10,7 @@ class Transcript:
         self._taken_courses = []
         self._gpa = 0.0
 
-        logging.info(f"Transcript created for student ID: {self._student_id.get_id()}")
+        logging.info(f"Transcript created for student ID: {self._student_id.get_ID()}")
 
     @staticmethod
     def from_dict(data):
@@ -21,27 +21,27 @@ class Transcript:
             tc_list.append(TakenCourse.from_dict(dtc))
 
         tc = Transcript(sid)
-        tc.add_taken_courses(tc_list)
-        tc._calculate_gpa()
+        tc.addTakenCourses(tc_list)
+        tc.calculateGPA()
         return tc
 
 
-    def add_taken_courses(self, taken_courses):
-        logging.info(f"Adding courses to transcript for student ID: {self._student_id.get_id()}. Courses: {taken_courses}")
+    def addTakenCourses(self, taken_courses):
+        logging.info(f"Adding courses to transcript for student ID: {self._student_id.get_ID()}. Courses: {taken_courses}")
         self._taken_courses.extend(taken_courses)
-        self._calculate_gpa()
+        self.calculateGPA()
         logging.info(f"Courses added. New GPA: {self._gpa:.2f}")
         return True
 
-    def add_taken_course(self, taken_course):
-        logging.info(f"Adding course {taken_course.get_course_name()} to transcript for student ID: {self._student_id.get_id()}.")
+    def addTakenCourse(self, taken_course):
+        logging.info(f"Adding course {taken_course.get_course_name()} to transcript for student ID: {self._student_id.get_ID()}.")
         self._taken_courses.append(taken_course)
-        self._calculate_gpa()
+        self.calculateGPA()
         logging.info(f"Course {taken_course.get_course_name()} added. New GPA: {self._gpa:.2f}")
         return True
 
-    def _calculate_gpa(self):
-        logging.debug(f"Calculating GPA for student ID: {self._student_id.get_id()} based on courses: {self._taken_courses}.")
+    def calculateGPA(self):
+        logging.debug(f"Calculating GPA for student ID: {self._student_id.get_ID()} based on courses: {self._taken_courses}.")
         self._gpa = 0.0
         if not self._taken_courses:
             logging.debug("No courses taken yet, GPA remains 0.0.")
@@ -64,11 +64,11 @@ class Transcript:
         self._gpa /= len(self._taken_courses)
         logging.debug(f"New GPA calculated: {self._gpa:.2f}")
 
-    def get_taken_courses(self):
-        logging.debug(f"Retrieving taken courses for student ID: {self._student_id.get_id()}.")
+    def getTakenCourses(self):
+        logging.debug(f"Retrieving taken courses for student ID: {self._student_id.get_ID()}.")
         return self._taken_courses
 
-    def get_gpa(self):
-        logging.debug(f"Retrieving GPA for student ID: {self._student_id.get_id()}.")
-        self._calculate_gpa()
+    def get_GPA(self):
+        logging.debug(f"Retrieving GPA for student ID: {self._student_id.get_ID()}.")
+        self.calculateGPA()
         return self._gpa
