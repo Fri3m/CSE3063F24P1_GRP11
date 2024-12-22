@@ -182,7 +182,7 @@ class Main:
         elif choice == "3":
             # GetUserInformation çalışmıyor!!!  (studentten dolayı olabilir)
             print ("Transcript for student " + self.user.getUserInformation().get_FIRST_NAME() + " " + self.user.getUserInformation().get_LAST_NAME())
-            print("GPA: " + self.user.get_transcript().get_gpa())
+            print("GPA:" , self.user.get_transcript().get_gpa())
             for takenCourse in self.user.get_transcript().get_taken_courses():
                 print(takenCourse.getCourseInformation().getCourseCode() + ": " + takenCourse.getCourseInformation().getCourseName()+ ": " + takenCourse.getCourseScore().name())
 
@@ -203,10 +203,10 @@ class Main:
 
     def showStudentInfo(self):
 
-        print("In year: " + self.user.get_current_class())
-        print("Student ID: " + self.user.get_student_id().get_id())
-        print("Department Name: " + self.user.get_student_id().get_department_id().getDepartmentId())
-        print("Faculty Name: " + self.user.get_student_id().get_faculty_id().getFacultyName())
+        print("In year: " + str( self.user.get_current_class()))
+        print("Student ID: " +  str(self.user.get_student_id().get_id()))
+        print("Department Name: " + str(self.user.get_student_id().get_department_id().getDepartmentID()))
+        print("Faculty Name: " + str(self.user.get_student_id().getFacultyID().getFacultyName()))
 
     def lecturerMainMenu(self):
         print("Please choose an option:")

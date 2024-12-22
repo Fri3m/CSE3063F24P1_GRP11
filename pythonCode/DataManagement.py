@@ -31,7 +31,7 @@ class DataManagement:
             file_name = obj.getDepartmentID().getDepartmentName()
             logging.info(f"Saving {type(obj).__name__} with department name: {file_name}")
         elif type(obj).__name__ == "Faculty":
-            file_name = obj.getFacultyID().get_faculty_name()
+            file_name = obj.getFacultyID().getFacultyName()
             logging.info(f"Saving {type(obj).__name__} with faculty name: {file_name}")
         elif type(obj).__name__ == "Course":
             file_name = obj.getCourseName()

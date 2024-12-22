@@ -2,30 +2,6 @@ import hashlib
 import re
 import logging
 
-class UserInformation:
-    def __init__(self, university_email, encoded_password):
-        logging.info(f"Creating UserInformation for email: {university_email}")
-        self._university_email = university_email
-        self._encoded_password = encoded_password
-
-    def get_university_email(self):
-        logging.info(f"Getting university email: {self._university_email}")
-        return self._university_email
-
-    def get_encoded_password(self):
-        logging.info(f"Getting encoded password for email: {self._university_email}")
-        return self._encoded_password
-
-
-class User:
-    def __init__(self, user_information):
-        logging.info(f"Creating User with email: {user_information.get_university_email()}")
-        self._user_information = user_information
-
-    def get_user_information(self):
-        logging.info("Getting user information")
-        return self._user_information
-
 
 class LoginAuthService:
     def __init__(self):
@@ -37,9 +13,9 @@ class LoginAuthService:
         #password = self.hashPassword(password)
         
         for user in self._users:
-            user_info = user.get_user_information()
-            logging.info(f"Checking email: {user_info.get_university_email()}")
-            if user_info.get_university_email() == email:
+            user_info = user.getUserInformation()
+            logging.info(f"Checking email: {user_info.get_UNIVERSITY_EMAIL()}")
+            if user_info.get_UNIVERSITY_EMAIL() == email:
                 if user_info.get_encoded_password() == password:
                     logging.info(f"Login successful for email: {email}")
                     return user

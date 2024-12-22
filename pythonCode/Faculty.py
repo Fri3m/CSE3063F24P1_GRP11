@@ -10,18 +10,18 @@ class FacultyID:
     def from_dict(data):
         return FacultyID(data["_FacultyID"], data["_FacultyName"])
 
-    def get_faculty_id(self):
+    def getFacultyID(self):
         logging.info(f"Getting FacultyID: {self._FacultyID}")
         return self._FacultyID
 
-    def get_faculty_name(self):
+    def getFacultyName(self):
         logging.info(f"Getting FacultyName: {self._FacultyName}")
         return self._FacultyName
 
 
 class Faculty:
     def __init__(self, facultyID):
-        logging.info(f"Creating Faculty with FacultyID: {facultyID.get_faculty_id()}")
+        logging.info(f"Creating Faculty with FacultyID: {facultyID.getFacultyID()}")
         self._facultyID = facultyID
         self._departments = list()
 
@@ -43,5 +43,5 @@ class Faculty:
         return False
 
     def getFacultyID(self):
-        logging.info(f"Getting FacultyID for Faculty: {self._facultyID.get_faculty_id()}")
+        logging.info(f"Getting FacultyID for Faculty: {self._facultyID.getFacultyID()}")
         return self._facultyID
