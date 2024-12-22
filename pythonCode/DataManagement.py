@@ -412,7 +412,7 @@ def generateCourseRequirements(prerequisiteCourses, minimumCurrentClass, faculty
     return ___courseReq
 
 
-def generateCourse(lecturerForSections, days, sectionTimes, courseName, courseCode, prerequisiteCourses,
+def generateCourse(lecturerForSections, days, sectionTimes, classRooms, courseName, courseCode, prerequisiteCourses,
                    minimumCurrentClass, facultyID, departmentID):
     logging.info("Generating course")
     ___courseInfo = generateCourseInformation(courseName, courseCode)

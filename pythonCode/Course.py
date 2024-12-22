@@ -1,5 +1,6 @@
 import Department
 import Faculty
+from Classroom import Classroom
 from User import Lecturer
 
 
@@ -171,11 +172,12 @@ class CourseRequirements:
 
 
 class CourseSection:
-    def __init__(self, day, sectionTime, lecturer, quota):
+    def __init__(self, day, sectionTime, lecturer, classRoom):
         self._day = day
         self._sectionTime = sectionTime
         self._lecturer = lecturer
-        self._quota = quota
+        self._classRoom = classRoom
+        self._quota = classRoom.get_capacity()
         self._currentStudentCount = 0
 
     @staticmethod
@@ -183,10 +185,10 @@ class CourseSection:
         d = int(data["_day"])
         lec = Lecturer.from_dict(data["_lecturer"])
         sect = int(data["_sectionTime"])
-        q = int(data["_quota"])
-        return CourseSection(d, sect, lec, q)
+        cr = Classroom.from_dict(data["_classRoom"])
+        return CourseSection(d, sect, lec, cr)
 
-    def createClassroom(self, classroom):
+    def changeClassroom(self, classroom):
         if self._quota <= classroom.get_capacity():
             return classroom
         else:
