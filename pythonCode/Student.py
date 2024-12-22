@@ -35,7 +35,7 @@ class Student(User):
 
     def takeCourse(self, course, course_registration_service):
         logging.info(f"Student {self._student_id.get_ID()} attempting to take course {course}.")
-        course_registration_service.create_course_request(self, course)
+        course_registration_service.createCourseRequest(self, course)
         logging.info(f"Student {self._student_id.get_ID()} successfully enrolled in course {course}.")
         return True
 
