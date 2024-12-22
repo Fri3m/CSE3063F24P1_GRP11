@@ -94,7 +94,7 @@ class Advisor(Lecturer):
 
     def approveCourseRequest(self, courseRequest):
         logger.info('approveCourseRequest called')
-        courseRequest.get_student().get_current_courses().append(courseRequest.get_course())
+        courseRequest.get_student().get_current_courses().append(courseRequest.get_course().getCourseInformation())
         for courseSection in courseRequest.get_course().getCourseSections():
             courseSection._currentStudentCount += 1
 
