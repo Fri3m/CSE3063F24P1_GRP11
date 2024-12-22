@@ -59,6 +59,7 @@ class Main:
         self._users.extend(self._lecturers)
         self._users.extend(self._departmentSchedulers)
         self._users.extend(self._studentsAffairs)
+        self._users.extend(self._departmentHeads)
         self._users.append(_admin)
 
         self._login_auth_service._users = self._users
@@ -462,7 +463,6 @@ class Main:
                 if found:
                     break
 
-
             if len(course.getCourseSections()) == 0:
                 logging.info("There are no sections for this course")
                 print("There are no sections for this course")
@@ -471,21 +471,26 @@ class Main:
             for courseSection in course.getCourseSections():
                 print("This course section is in day " + day_dict[courseSection._day] + " time " + sectionTime_dict[
                     courseSection._sectionTime])
-                print("Select course section for quota change")
-                inp = input()
-                if inp ==
-                print("Do you want to change this section quota? Yes if continue: ")
-                choice = input()
-                if not choice == "Yes" or choice == "yes":
-                    continue
+                print("Select course day for quota change")
+                inpDay = input()
+                if inpDay.lower() == day_dict[courseSection._day].lower():
+                    print("Select course time for quota change")
+                    inpTime = input()
+                    if inpTime.lower() == sectionTime_dict[courseSection._sectionTime].lower():
+                        print("Current quota for this section is " + str(courseSection._quota))
+                        print("Do you want to change this section quota? Yes if continue: ")
+                        choice = input()
+                        if choice == "Yes" or choice == "yes":
+                            print("Enter new quota: ")
+                            inp =input()
+                            courseSection._quota = inp
+                        if not choice == "Yes" or choice == "yes":
+                            continue
+                    else:
+                        print("Invalid section time. Please try again.")
+                        continue
 
-                print("Enter the new quota: ")
-                inp = int(input())
-                if inp<0:
-                    print("Invalid quota. Please try again.")
-                    continue
-                else:
-                    courseSection._quota = inp
+
 
             self._data_management.createOrChangeCourse(course)
             print("Course section quota changed successfully")
@@ -822,7 +827,7 @@ class Main:
 
     def login(self):
         logging.info("Login menu")
-        print("Which type of user are you? (Student, Advisor, Lecturer, Admin, DepartmentScheduler, StudentsAffairs)")
+        print("Which type of user are you? (Student, Advisor, Lecturer, Admin, DepartmentScheduler, StudentsAffairs, DepartmentHead)")
         self.user_type = input()
         print("Enter your university email: ")
         email = input()
@@ -846,6 +851,8 @@ class Main:
             self.departmentSchedulerMainMenu()
         elif self.user_type.lower() == "studentsaffairs":
             self.studentsAffairsMainMenu()
+        elif self.user_type.lower() == "departmenthead":
+            self.departmentHeadMainMenu()
         else:
             print("Invalid login. To retry enter 1, to return to the main menu enter any other key")
             inp = input()
