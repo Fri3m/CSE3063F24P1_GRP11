@@ -16,7 +16,6 @@ import DataManagement
 from pythonCode.ExceptionHandler import handle_exception
 import logging
 
-
 logging.getLogger().handlers.clear()
 
 logger = setup_logger("Main")
@@ -26,24 +25,20 @@ sectionTime_dict = {0: "First", 1: "Second", 2: "Third", 3: "Fourth", 4: "Fifth"
 
 
 class Main:
-
     user_type = str()
 
     def main(self):
 
         logger.info("Program started")
 
-
         print("Welcome to the Course Registration System")
         self.startMenu()
 
     def __init__(self):
 
-
         self._data_management = DataManagement.DataManagement()
         self._login_auth_service = LoginAuthService()
         self._course_registration_service = CourseRegistrationService()
-
 
         self._faculties = self._data_management.getAllFaculties()
         self._departments = self._data_management.getAllDepartments()
@@ -123,6 +118,7 @@ class Main:
             print("You can only choose 1 or 2")
             logger.error("Invalid choice")
             self.startMenu()  # Tekrar başlangıç menüsünü çağır
+
     def showUserInformation(self):
         logger.info("User information shown")
         print("Name: " + self.user.getUserInformation().get_FIRST_NAME())
@@ -518,7 +514,6 @@ class Main:
                     found = False
                     for c in coursesForThisDepartment:
                         if c.getCourseName() == courseSelection:
-
                             found = True
                             course = c
                             break
@@ -526,7 +521,6 @@ class Main:
                         break
 
                 if len(course.getCourseSections()) == 0:
-
                     print("There are no sections for this course")
                     return
 
@@ -534,7 +528,8 @@ class Main:
                 maxCapacity = int(1e9)
                 for courseSection in course.getCourseSections():
                     maxCapacity = min(maxCapacity, courseSection._quota)
-                print(f"Select new quota for course {course.getCourseName()}. Current course quota is {course.getCourseCapacity()}. Maximum quota for a section is {maxCapacity}")
+                print(
+                    f"Select new quota for course {course.getCourseName()}. Current course quota is {course.getCourseCapacity()}. Maximum quota for a section is {maxCapacity}")
                 newCapacity = 0
                 while True:
                     try:
@@ -764,7 +759,7 @@ class Main:
             handle_exception(type(e), e, sys.exc_info()[2])
             print("You can only choose 1, 2, 3, 4 or 5")
             logger.error("Invalid choice")
-            self.studentsAffairsMainMenu()
+            #self.studentsAffairsMainMenu()
         self.studentsAffairsMainMenu()
 
     def studentsAffairsAddCourseMenu(self):
@@ -785,7 +780,9 @@ class Main:
             "If your course has a department requirement, enter the department name. If not, enter anything: ")
         for department in self._departments:
             print(department.getDepartmentID().getDepartmentName())
-        inp = input()
+
+        inp = str(input())
+
         department = None
         for d in self._departments:
             if d.getDepartmentID().getDepartmentName() == inp:
@@ -800,16 +797,15 @@ class Main:
             print(course.getCourseName())
         prerequisites = []
         while True:
-            inp = input()
+            inp = str(input())
             for course in self._courses:
-                if course.getCourseName() is inp:
+                if course.getCourseName().lower() is inp.lower():
                     prerequisites.append(course.getCourseInformation())
                     break
             if inp == "finished":
                 break
-        # niye unreachable
-        print("Enter the number of sections for this course: ")
 
+        print("Enter the number of sections for this course: ")
         section_number = 0
         while True:
             try:
@@ -877,7 +873,14 @@ class Main:
                     continue
 
             print("Enter section time for section " + str(current_section + 1) + ": ")
-            sectionTime = input()
+            sectionTime = ""
+            while True:
+                try:
+                    sectionTime = str(input())
+                    break
+                except:
+                    print("Invalid format for section time. Please try again.")
+
             sectionTime = sectionTime.lower()
             sectionTimeValue = SectionTime.First
             match sectionTime:
@@ -915,7 +918,7 @@ class Main:
             allAvailableClassrooms = []
             for classroom in self._classrooms:
                 if self._course_registration_service.checkClassroomAvailabilityForDayAndTime(dayValue, sectionTimeValue,
-                                                                                             classroom, self._courses):
+                                                                                            classroom, self._courses):
                     allAvailableClassrooms.append(classroom)
 
             print("Available classrooms for this section: ")

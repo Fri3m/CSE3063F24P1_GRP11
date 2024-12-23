@@ -17,13 +17,529 @@ from pythonCode.Transcript import Transcript
 import logging
 
 from pythonCode.Logger import setup_logger
+
 logger = setup_logger("DataManagement")
+
 
 class DataManagement:
 
     def __init__(self):
         logging.getLogger().handlers.clear()
         logger.info(f"{self.__class__.__name__} classes created.")
+        pass
+
+    def __main__(self):
+        # Yıldırım
+
+        engineering = generateFaculty(1, "Engineering")
+        self.createOrChangeFaculty(engineering)
+
+        science = generateFaculty(2, "Science")
+        self.createOrChangeFaculty(science)
+
+        computerEngineering = generateDepartment(150, "Computer Engineering", engineering)
+        self.createOrChangeDepartment(computerEngineering)
+
+        mechanicalEngineering = generateDepartment(151, "Mechanical Engineering", engineering)
+        self.createOrChangeDepartment(mechanicalEngineering)
+
+        electricalEngineering = generateDepartment(152, "Electrical Engineering", engineering)
+        self.createOrChangeDepartment(electricalEngineering)
+
+        biology = generateDepartment(153, "Biology", science)
+        self.createOrChangeDepartment(biology)
+
+        chemistry = generateDepartment(154, "Chemistry", science)
+        self.createOrChangeDepartment(chemistry)
+
+        advisor = generateRandomAdvisor(computerEngineering)
+
+        lecturer = generateRandomLecturer(computerEngineering)
+        lecturer2 = generateRandomLecturer(computerEngineering)
+        lecturer3 = generateRandomLecturer(computerEngineering)
+        lecturer4 = generateRandomLecturer(computerEngineering)
+        lecturer5 = generateRandomLecturer(computerEngineering)
+        lecturer6 = generateRandomLecturer(computerEngineering)
+        lecturer7 = generateRandomLecturer(computerEngineering)
+        lecturer8 = generateRandomLecturer(computerEngineering)
+        lecturer9 = generateRandomLecturer(computerEngineering)
+        lecturer10 = generateRandomLecturer(computerEngineering)
+        lecturer11 = generateRandomLecturer(computerEngineering)
+
+        self.createOrChangeLecturer(advisor)
+        self.createOrChangeLecturer(lecturer)
+        self.createOrChangeLecturer(lecturer2)
+        self.createOrChangeLecturer(lecturer3)
+        self.createOrChangeLecturer(lecturer4)
+        self.createOrChangeLecturer(lecturer5)
+        self.createOrChangeLecturer(lecturer6)
+        self.createOrChangeLecturer(lecturer7)
+        self.createOrChangeLecturer(lecturer8)
+        self.createOrChangeLecturer(lecturer9)
+        self.createOrChangeLecturer(lecturer10)
+        self.createOrChangeLecturer(lecturer11)
+
+        lecturersForSections = []
+        lecturersForSections.append(lecturer)
+        lecturersForSections.append(lecturer)
+        lecturersForSections.append(lecturer)
+        days = []
+        days.append(Day.Monday)
+        days.append(Day.Monday)
+        days.append(Day.Wednesday)
+        sectionTimes = []
+        sectionTimes.append(SectionTime.First)
+        sectionTimes.append(SectionTime.Second)
+        sectionTimes.append(SectionTime.Fifth)
+
+        o_cr = generateClassroom("CS10", 70)
+        o_cr1 = generateClassroom("CS11", 50)
+        self.createOrChangeClassroom(o_cr)
+        self.createOrChangeClassroom(o_cr1)
+
+        o_course1 = generateCourse(lecturersForSections, days, sectionTimes, [o_cr,o_cr,o_cr1], "Introduction to Computer Engineering","CS1200", list(), 1, computerEngineering.get_facultyID(), computerEngineering.getDepartmentID())
+        self.createOrChangeCourse(o_course1)
+
+        lecturersForSections.clear()
+        lecturersForSections.append(lecturer2)
+        lecturersForSections.append(lecturer2)
+        lecturersForSections.append(lecturer2)
+        days.clear()
+        days.append(Day.Tuesday)
+        days.append(Day.Tuesday)
+        days.append(Day.Thursday)
+        sectionTimes.clear()
+        sectionTimes.append(SectionTime.Third)
+        sectionTimes.append(SectionTime.Fourth)
+        sectionTimes.append(SectionTime.First)
+
+
+        o_cr2 = generateClassroom("CS12", 60)
+        o_cr3 = generateClassroom("CS13", 60)
+        self.createOrChangeClassroom(o_cr2)
+        self.createOrChangeClassroom(o_cr3)
+
+
+
+        o_course2 = generateCourse(lecturersForSections, days, sectionTimes, [o_cr,o_cr,o_cr3], "Introduction to Algorithms","CS1201", list(), 1, computerEngineering.get_facultyID(), computerEngineering.getDepartmentID())
+        self.createOrChangeCourse(o_course2)
+
+        lecturersForSections.clear()
+        lecturersForSections.append(lecturer3)
+        lecturersForSections.append(lecturer3)
+        days.clear()
+        days.append(Day.Tuesday)
+        days.append(Day.Friday)
+        sectionTimes.clear()
+        sectionTimes.append(SectionTime.Second)
+        sectionTimes.append(SectionTime.Sixth)
+
+        o_cr3 = generateClassroom("CS13", 50)
+        self.createOrChangeClassroom(o_cr3)
+
+        o_course3 = generateCourse(lecturersForSections, days, sectionTimes, [o_cr1,o_cr3], "Linear Algebra for Computer Engineering","MATH256", list(), 1, computerEngineering.get_facultyID(), computerEngineering.getDepartmentID())
+        self.createOrChangeCourse(o_course3)
+
+        lecturersForSections.clear()
+        lecturersForSections.append(lecturer2)
+        lecturersForSections.append(lecturer2)
+        lecturersForSections.append(lecturer2)
+        days.clear()
+        days.append(Day.Monday)
+        days.append(Day.Monday)
+        days.append(Day.Tuesday)
+        sectionTimes.clear()
+        sectionTimes.append(SectionTime.Fifth)
+        sectionTimes.append(SectionTime.Sixth)
+        sectionTimes.append(SectionTime.Third)
+
+        prerequisites = []
+        prerequisites.append(o_course1.getCourseInformation())
+
+        o_cr4 = generateClassroom("CS14", 80)
+        self.createOrChangeClassroom(o_cr4)
+
+        o_course4 = generateCourse(lecturersForSections, days, sectionTimes, [o_cr,o_cr,o_cr4], "Data Structures","CS2225", prerequisites, 2, computerEngineering.get_facultyID(), computerEngineering.getDepartmentID())
+        self.createOrChangeCourse(o_course4)
+
+        lecturersForSections.clear()
+        lecturersForSections.append(lecturer3)
+        lecturersForSections.append(lecturer3)
+        days.clear()
+        days.append(Day.Wednesday)
+        days.append(Day.Friday)
+        sectionTimes.clear()
+        sectionTimes.append(SectionTime.Second)
+        sectionTimes.append(SectionTime.First)
+
+        o_cr5 = generateClassroom("CS15", 40)
+        self.createOrChangeClassroom(o_cr5)
+
+        o_course5 = generateCourse(lecturersForSections, days, sectionTimes, [o_cr1,o_cr3], "Differential Equations","MATH205", list(), 2, computerEngineering.get_facultyID(), computerEngineering.getDepartmentID())
+        self.createOrChangeCourse(o_course5)
+
+        lecturersForSections.clear()
+        lecturersForSections.append(lecturer4)
+        lecturersForSections.append(lecturer4)
+        lecturersForSections.append(lecturer4)
+        days.clear()
+        days.append(Day.Thursday)
+        days.append(Day.Thursday)
+        days.append(Day.Friday)
+        sectionTimes.clear()
+        sectionTimes.append(SectionTime.Sixth)
+        sectionTimes.append(SectionTime.Seventh)
+        sectionTimes.append(SectionTime.Fourth)
+
+        o_cr5 = generateClassroom("CS15", 70)
+        self.createOrChangeClassroom(o_cr5)
+
+        o_course6 = generateCourse(lecturersForSections, days, sectionTimes, [o_cr5,o_cr5,o_cr4], "Systems Programming","CS2138", list(), 2, computerEngineering.get_facultyID(), computerEngineering.getDepartmentID())
+        self.createOrChangeCourse(o_course6)
+
+        lecturersForSections.clear()
+        lecturersForSections.append(lecturer5)
+        lecturersForSections.append(lecturer5)
+        lecturersForSections.append(lecturer5)
+        days.clear()
+        days.append(Day.Monday)
+        days.append(Day.Monday)
+        days.append(Day.Friday)
+        sectionTimes.clear()
+        sectionTimes.append(SectionTime.First)
+        sectionTimes.append(SectionTime.Second)
+        sectionTimes.append(SectionTime.First)
+
+        prerequisites1 = []
+        prerequisites1.append(o_course4.getCourseInformation())
+
+        o_cr6 = generateClassroom("CS16", 75)
+        self.createOrChangeClassroom(o_cr6)
+
+        o_course7 = generateCourse(lecturersForSections, days, sectionTimes, [o_cr6,o_cr6,o_cr6], "Database Systems","CS3125", prerequisites1, 3, computerEngineering.get_facultyID(), computerEngineering.getDepartmentID())
+        self.createOrChangeCourse(o_course7)
+
+
+
+# cr = generateClassroom("aa",20)
+# dm.createOrChangeClassroom(cr)
+#
+# course = generateCourse([lec], [Day.Friday], [SectionTime.Fifth], [cr], "test", "TT101", list(), 1, dep.get_facultyID(), dep.getDepartmentID())
+# dm.createOrChangeCourse(course)
+
+        # Yusuf
+        # **************************************************** Faculties ****************************************************
+        # new Faculty "Business"
+        business = generateFaculty(3, "Business")
+        self.createOrChangeFaculty(business)
+
+#         # new Faculty "Science"
+#         Science = generateFaculty(2, "Science")
+#         self.createOrChangeFaculty(Science)
+
+        # **************************************************** Departments ****************************************************
+        # new Department "Business" in Faculty "Business"
+        businessDepartment = generateDepartment(301, "Business", business)
+        self.createOrChangeDepartment(businessDepartment)
+
+#       # New Department "Biology" in Faculty "Science"
+#        Biology = generateDepartment(201, "Biology", Science)
+#        self.createOrChangeDepartment(Biology)
+#        # New Department "Chemistry" in Faculty "Science"
+#        Chemistry = generateDepartment(202, "Chemistry", Science)
+#        elf.createOrChangeDepartment(Chemistry)
+        # **************************************************** Classrooms ****************************************************
+
+        # New Classrooms Business Faculty
+        classroom301 = generateClassroom("B301", 60)
+        classroom302 = generateClassroom("B302", 75)
+
+        self.createOrChangeClassroom(classroom301)
+        self.createOrChangeClassroom(classroom302)
+
+        # New Classrooms Science Faculty
+        classroom201 = generateClassroom("S201", 80)
+        classroom202 = generateClassroom("S202", 75)
+        classroom203 = generateClassroom("S203", 55)
+        classroom204 = generateClassroom("S204", 60)
+        classroom205 = generateClassroom("S205", 55)
+
+        self.createOrChangeClassroom(classroom201)
+        self.createOrChangeClassroom(classroom202)
+        self.createOrChangeClassroom(classroom203)
+        self.createOrChangeClassroom(classroom204)
+        self.createOrChangeClassroom(classroom205)
+
+        # **************************************************** Advisors and Lecturers ****************************************************
+        # new Advisors and Lecturers for Business Department
+        advisor301 = generateRandomAdvisor(businessDepartment)
+        lecturer301 = generateRandomLecturer(businessDepartment)
+        lecturer302 = generateRandomLecturer(businessDepartment)
+        lecturer303 = generateRandomLecturer(businessDepartment)
+
+        self.createOrChangeAdvisor(advisor301)
+        self.createOrChangeLecturer(lecturer301)
+        self.createOrChangeLecturer(lecturer302)
+        self.createOrChangeLecturer(lecturer303)
+
+        # New Advisors and Lecturers for Biology Department
+
+        advisor201 = generateRandomAdvisor(biology)
+        lecturer201 = generateRandomLecturer(biology)
+        lecturer202 = generateRandomLecturer(biology)
+        lecturer203 = generateRandomLecturer(biology)
+        lecturer204 = generateRandomLecturer(biology)
+
+        self.createOrChangeAdvisor(advisor201)
+        self.createOrChangeLecturer(lecturer201)
+        self.createOrChangeLecturer(lecturer202)
+        self.createOrChangeLecturer(lecturer203)
+        self.createOrChangeLecturer(lecturer204)
+
+        # New Advisors and Lecturers for Chemistry Department
+
+        advisor211 = generateRandomAdvisor(chemistry)
+        lecturer211 = generateRandomLecturer(chemistry)
+        lecturer212 = generateRandomLecturer(chemistry)
+        lecturer213 = generateRandomLecturer(chemistry)
+        lecturer214 = generateRandomLecturer(chemistry)
+
+        self.createOrChangeAdvisor(advisor211)
+        self.createOrChangeLecturer(lecturer211)
+        self.createOrChangeLecturer(lecturer212)
+        self.createOrChangeLecturer(lecturer213)
+        self.createOrChangeLecturer(lecturer214)
+
+        # **************************************************** Courses ****************************************************
+
+        # Course1 for Business Department
+        lecturerForSections = []
+        lecturersForSections.append(lecturer301)
+        lecturersForSections.append(lecturer302)
+        lecturersForSections.append(lecturer303)
+        days = []
+        days.append(Day.Monday)
+        days.append(Day.Monday)
+        days.append(Day.Thursday)
+        sectionTimes = []
+        sectionTimes.append(SectionTime.First)
+        sectionTimes.append(SectionTime.Second)
+        sectionTimes.append(SectionTime.Fifth)
+        course301 = generateCourse(lecturersForSections, days, sectionTimes, [classroom301, classroom301, classroom302], "Principles of Microeconomics", "EC101", list(), 1, businessDepartment.get_facultyID(), businessDepartment.getDepartmentID())
+        self.createOrChangeCourse(course301)
+
+        # Course2 for Business Department
+        lecturersForSections.clear()
+        lecturersForSections.append(lecturer301)
+        lecturersForSections.append(lecturer302)
+        lecturersForSections.append(lecturer303)
+
+
+
+
+
+
+
+
+
+
+
+        # dataManagement.createOrChangeFaculty(Engineering)
+        self.createOrChangeFaculty(engineering) # surası nolcak peki
+
+        # createOrChange öyle kullanılmıyo
+
+
+
+
+        MechanicalEngineering = generateDepartment(101,"Mechanical Engineering")
+        self.createOrChangeDepartment(MechanicalEngineering)
+
+
+
+        bAdvisor = generateRandomAdvisor(MechanicalEngineering)
+        self.createOrChangeAdvisor(bAdvisor)
+
+        #yukarıdakilere bakarak yap ömerle kendim nasıl isimlendirdiysem öyle yapıyorum java koduna bakarak
+        #tüm variable isimlerinin başına b_ eklersen daha iyi olur diğerleriyle karışmaz ok şuanda yanlış mı yapıyorum
+        #yukarıda faculty de engineering'in e si büyüktü onların küçük olması lazım
+        #variableların ismi küçük harfle başlasın ok
+        bLecturer1 =generateRandomLecturer(MechanicalEngineering)
+        bLecturer2 =generateRandomLecturer(MechanicalEngineering)
+        bLecturer3 =generateRandomLecturer(MechanicalEngineering)
+        bLecturer4 =generateRandomLecturer(MechanicalEngineering)
+        bLecturer5 =generateRandomLecturer(MechanicalEngineering)
+
+        self.createOrChangeLecturer(bLecturer1)
+        self.createOrChangeLecturer(bLecturer2)
+        self.createOrChangeLecturer(bLecturer3)
+        self.createOrChangeLecturer(bLecturer4)
+        self.createOrChangeLecturer(bLecturer5)
+
+        lecturers_for_sections = []
+        lecturers_for_sections.append(bLecturer1)
+        lecturers_for_sections.append(bLecturer1)
+
+        days =[]
+        days.append(Day.Friday)
+        days.append(Day.Thursday)
+
+        section_times = []
+        section_times.append(SectionTime.Fourth)
+        section_times.append(SectionTime.First)
+
+        prerequisites =[]
+
+        bcr1 = generateClassroom("MEZ01", 60)
+
+        clasrooms = []
+        clasrooms.append(bcr1)
+        clasrooms.append(bcr1)
+
+        Thermodynamics = generateCourse(
+            lecturers_for_sections,
+            days,
+            section_times,
+            clasrooms,
+            "Thermodynamics",
+            "MATH101",
+            prerequisites,
+            1,
+            MechanicalEngineering.get_facultyID(),
+            MechanicalEngineering.getDepartmentID()
+        )
+        self.createOrChangeCourse(Thermodynamics)
+
+
+        lecturers_for_sections = []
+        lecturers_for_sections.append(bLecturer1)
+        lecturers_for_sections.append(bLecturer1)
+
+
+        days = []
+        days.append(Day.Thursday)
+        days.append(Day.Wednesday)
+
+        section_times = []
+        section_times.append(SectionTime.First)
+        section_times.append(SectionTime.Third)
+
+        bcr1 = generateClassroom("MEZ01", 60)
+
+        clasrooms = []
+        clasrooms.append(bcr1)
+        clasrooms.append(bcr1)
+
+        b_prerequisites2 = []
+        MaterialScience = generateCourse(
+            lecturers_for_sections,
+            days,
+            section_times,
+            clasrooms,
+            "Material Sci.",
+            "MSE272",b_prerequisites2,
+            2,
+            MechanicalEngineering.get_facultyID(),
+            MechanicalEngineering.getDepartmentID()
+        )
+        self.createOrChangeCourse(MaterialScience)
+
+
+        lecturers_for_sections = []
+        lecturers_for_sections.append(bLecturer3)
+        lecturers_for_sections.append(bLecturer3)
+        lecturers_for_sections.append(bLecturer3)
+
+
+        days = []
+        days.append(Day.Thursday)
+        days.append(Day.Monday)
+        days.append(Day.Friday)
+
+
+        section_times = []
+        section_times.append(SectionTime.Fourth)
+        section_times.append(SectionTime.Second)
+        section_times.append(SectionTime.Second)
+
+        bcr1 = generateClassroom("MEZ01", 60)
+
+        clasrooms = []
+        clasrooms.append(bcr1)
+        clasrooms.append(bcr1)
+
+        prerequisites = []
+        prerequisites.append(MaterialScience.getCourseInformation())
+
+
+        StrengthOfMaterials = generateCourse(
+            lecturers_for_sections,
+            days,
+            section_times,
+            clasrooms,
+            "Strength of Mat.",
+            "ME271",
+            prerequisites,
+            3,
+            MechanicalEngineering.get_facultyID(),
+            MechanicalEngineering.getDepartmentID()
+        )
+        self.createOrChangeCourse(StrengthOfMaterials)
+
+
+        lecturers_for_sections = []
+        lecturers_for_sections.append(bLecturer4)
+        lecturers_for_sections.append(bLecturer5)
+
+        days = []
+        days.append(Day.Tuesday)
+        days.append(Day.Wednesday)
+
+        section_times = []
+        section_times.append(SectionTime.First)
+        section_times.append(SectionTime.Third)
+
+        prerequisites = []
+
+        FluidMechanics = generateCourse(
+            lecturers_for_sections,
+            days,
+            section_times,
+            "Fluid Mechanics",
+            "ME361",
+            prerequisites,
+            3,
+            MechanicalEngineering.get_facultyID(),
+            MechanicalEngineering.getDepartmentID()
+        )
+
+        self.createOrChangeCourse(FluidMechanics)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         pass
 
     def saveToJson(self, obj):
@@ -196,7 +712,6 @@ class DataManagement:
         data = self.loadFromJson(f"../Faculties/{faculty_name}.json")
         return Faculty.from_dict(data)
 
-
     def removeFaculty(self, faculty_name):
         self.deleteJsonFile(f"../Faculties/{faculty_name}.json")
 
@@ -226,7 +741,6 @@ class DataManagement:
         for data in datas:
             dh_list.append(DepartmentHead.from_dict(data))
         return dh_list
-
 
     def createOrChangeDepartmentHead(self, departmentHead):
         self.saveToJson(departmentHead)
@@ -283,7 +797,6 @@ class DataManagement:
 
     def createOrChangeClassroom(self, classroom):
         self.saveToJson(classroom)
-
 
     def getClassroom(self, classroom_name):
         data = self.loadFromJson(f"../Classrooms/{classroom_name}.json")
@@ -463,6 +976,7 @@ def generateRandomDepartmentScheduler(department):
         f"Generated random department scheduler: {userInformation.get_FIRST_NAME()} {userInformation.get_LAST_NAME()}")
     return ___depSched
 
+
 def generateRandomDepartmentHead(department):
     logger.info("Generating random department head")
     userInformation = __generateRandomUserInformation()
@@ -470,6 +984,7 @@ def generateRandomDepartmentHead(department):
     logger.info(
         f"Generated random department head: {userInformation.get_FIRST_NAME()} {userInformation.get_LAST_NAME()}")
     return ___depHead
+
 
 def generateRandomStudentsAffairs(department):
     logger.info("Generating random students affairs")
@@ -479,11 +994,13 @@ def generateRandomStudentsAffairs(department):
         f"Generated random students affairs: {userInformation.get_FIRST_NAME()} {userInformation.get_LAST_NAME()}")
     return ___stuAff
 
+
 def generateClassroom(classroomName, capacity):
     logger.info("Generating classroom")
     ___classroom = Classroom(classroomName, capacity)
     logger.info(f"Generated classroom: {classroomName} {capacity}")
     return ___classroom
+
 
 class customEncoder(JSONEncoder):
     def default(self, o):

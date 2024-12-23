@@ -25,7 +25,7 @@ class CourseRegistrationService:
         self._courseRequests.remove(courseRequest)
 
     def checkClassroomAvailabilityForDayAndTime(self, day, time, classroom, allCourses):
-        logger.info(f"Checking classroom availability {day} {time} {classroom.get_classroomName()}")
+        logger.info(f"Checking classroom availability {day} {time} {classroom.get_classroom_name()}")
         for course in allCourses:
             for courseSection in course.getCourseSections():
                 if courseSection._day == day and courseSection._sectionTime == time and courseSection._classroom == classroom:
