@@ -4,9 +4,9 @@ import random
 from json import JSONEncoder
 
 
-from Classroom import Classroom
+
 from Course import CourseInformation, CourseRequirements, CourseSection, Course
-from Day import Day, SectionTime
+
 from Department import DepartmentID, Department
 from Faculty import FacultyID, Faculty
 from User import Lecturer, Advisor, DepartmentScheduler, StudentsAffairs, DepartmentHead

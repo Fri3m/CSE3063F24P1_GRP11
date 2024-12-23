@@ -1,0 +1,13 @@
+import unittest
+
+from pythonCode.DataManagement import DataManagement
+
+
+class Transcript_test(unittest.TestCase):
+    def calculateGPA_test(self):
+        data_management = DataManagement()
+        student = data_management.getStudent("baristokgoz@marun.edu.tr")
+        transcript = student.getTranscript()
+        trueGPA = 1.8125
+        calculatedGPA = transcript.get_GPA()
+        self.assertEqual(trueGPA, calculatedGPA, "GPA should be the same!")
