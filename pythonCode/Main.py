@@ -1,8 +1,6 @@
 import random
 import sys
 
-from matplotlib.style.core import available
-
 from Classroom import Classroom
 from CourseRegistrationService import CourseRegistrationService
 from LoginAuthService import LoginAuthService
