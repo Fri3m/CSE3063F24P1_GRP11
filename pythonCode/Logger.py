@@ -1,7 +1,7 @@
 import logging
 
 
-def setup_logger(name: str, log_file: str = "app.log", level: int = logging.INFO):
+def setup_logger(name: str, log_file: str = "../Logs/app.log", level: int = logging.INFO):
 
     for handler in logging.root.handlers[:]:
         logging.root.removeHandler(handler)
@@ -15,7 +15,7 @@ def setup_logger(name: str, log_file: str = "app.log", level: int = logging.INFO
         formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 
 
-        file_handler = logging.FileHandler(log_file, mode='a')#modu w de yapabiliriz.
+        file_handler = logging.FileHandler(log_file, mode='a')
         file_handler.setFormatter(formatter)
 
 
