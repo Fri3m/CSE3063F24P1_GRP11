@@ -43,6 +43,9 @@ class DataManagement:
         elif type(obj).__name__ == "Course":
             file_name = obj.getCourseName()
             logger.info(f"Saving {type(obj).__name__} with course name: {file_name}")
+        elif type(obj).__name__ == "Classroom":
+            file_name = obj.get_classroom_name()
+            logger.info(f"Saving {type(obj).__name__} with classroom name: {file_name}")
         file_path = f"../{type(obj).__name__}s/{file_name}.json"
         self.__saveToJson(obj, file_path)
 
@@ -270,6 +273,25 @@ class DataManagement:
     def removeStudentsAffairs(self, university_email):
         self.deleteJsonFile(f"../StudentsAffairs/{university_email}.json")
 
+    def getAllClassrooms(self):
+        absolute_path = os.path.abspath("../Classrooms")
+        datas = self.getAllJsons(absolute_path)
+        classrooms = list()
+        for data in datas:
+            classrooms.append(Classroom.from_dict(data))
+        return classrooms
+
+    def createOrChangeClassroom(self, classroom):
+        self.saveToJson(classroom)
+
+
+    def getClassroom(self, classroom_name):
+        data = self.loadFromJson(f"../Classrooms/{classroom_name}.json")
+        return Classroom.from_dict(data)
+
+    def removeClassroom(self, classroom_name):
+        self.deleteJsonFile(f"../Classrooms/{classroom_name}.json")
+
 
 names = ["Ali", "Fatma", "Zeynep", "Ahmet", "Ayse", "Mehmet", "Emine", "Hasan", "Huseyin", "Elif", "Mustafa",
          "Sibel", "Burak", "Busra", "Omer", "Halime", "Murat", "Gizem", "Eren", "Esra", "Yusuf", "Melis", "Can",
@@ -457,6 +479,11 @@ def generateRandomStudentsAffairs(department):
         f"Generated random students affairs: {userInformation.get_FIRST_NAME()} {userInformation.get_LAST_NAME()}")
     return ___stuAff
 
+def generateClassroom(classroomName, capacity):
+    logger.info("Generating classroom")
+    ___classroom = Classroom(classroomName, capacity)
+    logger.info(f"Generated classroom: {classroomName} {capacity}")
+    return ___classroom
 
 class customEncoder(JSONEncoder):
     def default(self, o):
