@@ -227,6 +227,7 @@ class Main:
             print("You can only choose 1, 2, 3, 4, 5 or 6")
             logger.error("Invalid choice")
             self.studentMainMenu()
+        self.studentMainMenu()
 
     def showStudentInfo(self):
 
@@ -258,6 +259,7 @@ class Main:
             print("You can only choose 1, 2 or 3")
             logger.error("Invalid choice")
             self.lecturerMainMenu()
+        self.lecturerMainMenu()
 
     def advisorMainMenu(self):
         logger.info("Advisor main menu opened")
@@ -284,6 +286,7 @@ class Main:
             print("You can only choose 1, 2, 3 or 4")
             logger.error("Invalid choice")
             self.advisorMainMenu()
+        self.advisorMainMenu()
 
     def checkSectionConflict(self, courseSections, coursesInformations):
         logger.info("Checking section conflict")
@@ -475,6 +478,7 @@ class Main:
             print("You can only choose 1, 2, 3 or 4")
             logger.error("Invalid choice")
             self.adminMainMenu()
+        self.adminMainMenu()
 
     def departmentHeadMainMenu(self):
         logger.info("Department head main menu opened")
@@ -563,6 +567,7 @@ class Main:
             print("You can only choose 1, 2, 3 or 4")
             logger.error("Invalid choice")
             self.departmentHeadMainMenu()
+        self.departmentHeadMainMenu()
 
     def adminCreateUserInformation(self):
         logger.info("Admin creating user information")
@@ -718,6 +723,7 @@ class Main:
             print("You can only choose 1, 2, 3 or 4")
             logger.error("Invalid choice")
             self.departmentSchedulerMainMenu()
+        self.departmentSchedulerMainMenu()
 
     def studentsAffairsMainMenu(self):
         logger.info("Students affairs main menu opened")
@@ -759,6 +765,7 @@ class Main:
             print("You can only choose 1, 2, 3, 4 or 5")
             logger.error("Invalid choice")
             self.studentsAffairsMainMenu()
+        self.studentsAffairsMainMenu()
 
     def studentsAffairsAddCourseMenu(self):
         print("Enter course name: ")
