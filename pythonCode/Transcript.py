@@ -2,10 +2,15 @@
 
 import Student
 from Course import TakenCourse
+import logging
 
+from pythonCode.Logger import setup_logger
+logger = setup_logger("Transcript")
 
 class Transcript:
     def __init__(self, student_id):
+        logging.getLogger().handlers.clear()
+        logger.info(f"{self.__class__.__name__} classes created.")
         self._student_id = student_id
         self._taken_courses = []
         self._gpa = 0.0
@@ -27,21 +32,21 @@ class Transcript:
 
 
     def addTakenCourses(self, taken_courses):
-
+        logger.info("Adding taken courses to the transcript.")
         self._taken_courses.extend(taken_courses)
         self.calculateGPA()
 
         return True
 
     def addTakenCourse(self, taken_course):
-
+        logger.info("Adding taken course to the transcript.")
         self._taken_courses.append(taken_course)
         self.calculateGPA()
 
         return True
 
     def calculateGPA(self):
-
+        logger.info("Calculating GPA.")
         self._gpa = 0.0
         if not self._taken_courses:
 
@@ -65,10 +70,10 @@ class Transcript:
 
 
     def getTakenCourses(self):
-
+        logger.info(f"The getTakenCourses method in the {self.__class__.__name__} class is called.")
         return self._taken_courses
 
     def get_GPA(self):
-
+        logger.info(f"The get_GPA method in the {self.__class__.__name__} class is called.")
         self.calculateGPA()
         return self._gpa

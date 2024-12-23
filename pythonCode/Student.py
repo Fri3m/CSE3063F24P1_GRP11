@@ -4,11 +4,16 @@ import Faculty
 import Transcript
 import UserInformation
 from pythonCode.User import User, StaffId
+import logging
 
+from pythonCode.Logger import setup_logger
+logger = setup_logger("Student")
 
 
 class Student(User):
     def __init__(self, user_information, student_id, transcript, advisor_id, current_class):
+        logging.getLogger().handlers.clear()
+        logger.info(f"{self.__class__.__name__} classes created.")
         super().__init__(user_information)
         self._student_id = student_id
         self._transcript = transcript
@@ -34,33 +39,35 @@ class Student(User):
         return s
 
     def takeCourse(self, course, course_registration_service):
-
+        logger.info(f"{self.__class__.__name__} takeCourse method called.")
         course_registration_service.createCourseRequest(self, course)
 
         return True
 
     def getTranscript(self):
-
+        logger.info(f"{self.__class__.__name__} getTranscript method called.")
         return self._transcript
 
     def getCurrentClass(self):
-
+        logger.info(f"{self.__class__.__name__} getCurrentClass method called.")
         return self._current_class
 
     def get_studentID(self):
-
+        logger.info(f"{self.__class__.__name__} get_studentID method called.")
         return self._student_id
 
     def get_advisorID(self):
-
+        logger.info(f"{self.__class__.__name__} get_advisorID method called.")
         return self._advisor_id
 
     def get_current_courses(self): # course information
-
+        logger.info(f"{self.__class__.__name__} get_current_courses method called.")
         return self._current_courses
 
 class StudentID:
     def __init__(self, department_id, entrance_date, entrance_rank, faculty_id):
+        logging.getLogger().handlers.clear()
+        logger.info(f"{self.__class__.__name__} classes created.")
         self._department_id = department_id
         self._entrance_date = entrance_date
         self._entrance_rank = entrance_rank
@@ -78,7 +85,7 @@ class StudentID:
         return StudentID(did,ed,er,fid)
 
     def createStudentID(self):
-
+        logger.info("Creating student ID in StudentID class.")
         first_part = str(self._department_id.getDepartmentID())
         second_part = str(self._entrance_date)[1:]  # Get the last 3 digits of the year (2024 -> 024)
         third_part = str(self._entrance_rank).zfill(3)  # Ensure its at least 3 digits long
@@ -87,21 +94,21 @@ class StudentID:
         return student_id
 
     def get_departmentID(self):
-
+        logger.info(f"{self.__class__.__name__} get_departmentID method called.")
         return self._department_id
 
     def get_facultyID(self):
-
+        logger.info(f"{self.__class__.__name__} get_facultyID method called.")
         return self._faculty_id
 
     def get_entrance_date(self):
-
+        logger.info(f"{self.__class__.__name__} get_entrance_date method called.")
         return self._entrance_date
 
     def get_entrance_rank(self):
-
+        logger.info(f"{self.__class__.__name__} get_entrance_rank method called.")
         return self._entrance_rank
 
     def get_ID(self):
-
+        logger.info(f"{self.__class__.__name__} get_ID method called.")
         return self._id

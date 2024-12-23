@@ -14,9 +14,12 @@ from pythonCode.User import StaffId, Admin, Advisor
 from pythonCode.UserInformation import UserInformation
 import DataManagement
 from pythonCode.ExceptionHandler import handle_exception
+import logging
 
 
-logger = setup_logger("file_logger")
+logging.getLogger().handlers.clear()
+
+logger = setup_logger("Main")
 day_dict = {0: "Monday", 1: "Tuesday", 2: "Wednesday", 3: "Thursday", 4: "Friday"}
 sectionTime_dict = {0: "First", 1: "Second", 2: "Third", 3: "Fourth", 4: "Fifth", 5: "Sixth", 6: "Seventh", 7: "Eighth",
                     8: "Ninth"}
@@ -117,10 +120,11 @@ class Main:
                 print("Goodbye!")
                 SystemExit()
             else:
-                raise ValueError("You can only choose 1 or 2")
+                raise ValueError("User can only choose 1 or 2")
         except Exception as e:
             handle_exception(type(e), e, sys.exc_info()[2])
-            print("An error log has been created. Please try again.")
+            print("You can only choose 1 or 2")
+            logger.error("Invalid choice")
             self.startMenu()  # Tekrar başlangıç menüsünü çağır
     def showUserInformation(self):
         logger.info("User information shown")
@@ -152,12 +156,12 @@ class Main:
                 print("Returning to main menu")
                 self.startMenu()
             else:
-                raise ValueError("You can only choose 1, 2, 3, 4 or 5")
+                raise ValueError("User can only choose 1, 2, 3, 4 or 5")
         except Exception as e:
             handle_exception(type(e), e, sys.exc_info()[2])
-            print("An error log has been created. Please try again.")
-
-        self.updateUserInfo()
+            print("You can only choose 1, 2, 3, 4 or 5")
+            logger.error("Invalid choice")
+            self.updateUserInfo()
 
     def studentMainMenu(self):
         logger.info("Student main menu opened")
@@ -221,11 +225,12 @@ class Main:
                 self.startMenu()
                 return
             else:
-                raise ValueError("You can only choose 1, 2, 3, 4, 5 or 6")
+                raise ValueError("User can only choose 1, 2, 3, 4, 5 or 6")
         except Exception as e:
             handle_exception(type(e), e, sys.exc_info()[2])
-            print("An error log has been created. Please try again.")
-        self.studentMainMenu()
+            print("You can only choose 1, 2, 3, 4, 5 or 6")
+            logger.error("Invalid choice")
+            self.studentMainMenu()
 
     def showStudentInfo(self):
 
@@ -251,11 +256,12 @@ class Main:
                 self.startMenu()
                 return
             else:
-                raise ValueError("You can only choose 1, 2 or 3")
+                raise ValueError("User can only choose 1, 2 or 3")
         except Exception as e:
             handle_exception(type(e), e, sys.exc_info()[2])
-            print("An error log has been created. Please try again.")
-        self.lecturerMainMenu()
+            print("You can only choose 1, 2 or 3")
+            logger.error("Invalid choice")
+            self.lecturerMainMenu()
 
     def advisorMainMenu(self):
         logger.info("Advisor main menu opened")
@@ -276,11 +282,12 @@ class Main:
                 self.startMenu()
                 return
             else:
-                raise ValueError("You can only choose 1, 2, 3 or 4")
+                raise ValueError("User can only choose 1, 2, 3 or 4")
         except Exception as e:
             handle_exception(type(e), e, sys.exc_info()[2])
-            print("An error log has been created. Please try again.")
-        self.advisorMainMenu()
+            print("You can only choose 1, 2, 3 or 4")
+            logger.error("Invalid choice")
+            self.advisorMainMenu()
 
     def checkSectionConflict(self, courseSections, courses):
         logger.info("Checking section conflict")
@@ -292,7 +299,8 @@ class Main:
                             raise ValueError("Student is already taking a course at this time. ")
                     except Exception as e:
                         handle_exception(type(e), e, sys.exc_info()[2])
-                        print("An error log has been created. Please try again.")
+                        print("Student is already taking a course at this time.")
+                        logger.error("Student is already taking a course at this time.")
                         return False
         return True
 
@@ -464,11 +472,12 @@ class Main:
                 self.startMenu()
                 return
             else:
-                raise ValueError("You can only choose 1, 2, 3 or 4")
+                raise ValueError("User can only choose 1, 2, 3 or 4")
         except Exception as e:
             handle_exception(type(e), e, sys.exc_info()[2])
-            print("An error log has been created. Please try again.")
-        self.adminMainMenu()
+            print("You can only choose 1, 2, 3 or 4")
+            logger.error("Invalid choice")
+            self.adminMainMenu()
 
     def departmentHeadMainMenu(self):
         logger.info("Department head main menu opened")
@@ -551,12 +560,12 @@ class Main:
                 self.startMenu()
                 return
             else:
-                raise ValueError("You can only choose 1, 2, 3 or 4")
+                raise ValueError("User can only choose 1, 2, 3 or 4")
         except Exception as e:
             handle_exception(type(e), e, sys.exc_info()[2])
-            print("An error log has been created. Please try again.")
-
-        self.departmentHeadMainMenu()
+            print("You can only choose 1, 2, 3 or 4")
+            logger.error("Invalid choice")
+            self.departmentHeadMainMenu()
 
     def adminCreateUserInformation(self):
         logger.info("Admin creating user information")
@@ -707,11 +716,12 @@ class Main:
                 self.startMenu()
                 return
             else:
-                raise ValueError("You can only choose 1, 2, 3 or 4")
+                raise ValueError("User can only choose 1, 2, 3 or 4")
         except Exception as e:
             handle_exception(type(e), e, sys.exc_info()[2])
-            print("An error log has been created. Please try again.")
-        self.departmentSchedulerMainMenu()
+            print("You can only choose 1, 2, 3 or 4")
+            logger.error("Invalid choice")
+            self.departmentSchedulerMainMenu()
 
     def studentsAffairsMainMenu(self):
         logger.info("Students affairs main menu opened")
@@ -879,11 +889,12 @@ class Main:
                 self.startMenu()
                 return
             else:
-                raise ValueError("You can only choose 1, 2, 3, 4 or 5")
+                raise ValueError("User can only choose 1, 2, 3, 4 or 5")
         except Exception as e:
             handle_exception(type(e), e, sys.exc_info()[2])
-            print("An error log has been created. Please try again.")
-        self.studentsAffairsMainMenu()
+            print("You can only choose 1, 2, 3, 4 or 5")
+            logger.error("Invalid choice")
+            self.studentsAffairsMainMenu()
 
     def login(self):
         logger.info("Login started")

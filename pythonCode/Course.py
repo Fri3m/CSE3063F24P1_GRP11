@@ -2,10 +2,15 @@ import Department
 import Faculty
 from Classroom import Classroom
 from User import Lecturer
+import logging
 
+from pythonCode.Logger import setup_logger
+logger = setup_logger("Course")
 
 class Course:
     def __init__(self, courseInformation, courseRequirements, courseSections):
+        logging.getLogger().handlers.clear()
+        logger.info(f"{self.__class__.__name__} classes created.")
         self.courseInformation = courseInformation
         self.courseRequirements = courseRequirements
         self.courseSections = courseSections
@@ -26,32 +31,42 @@ class Course:
         return Course(ci, cr, css)
 
     def getCourseName(self):
+        logger.info(f"The getCourseName method in the {self.__class__.__name__} class is called.")
         return self.courseInformation.getCourseName()
 
     def getCourseCode(self):
+        logger.info(f"The getCourseCode method in the {self.__class__.__name__} class is called.")
         return self.courseInformation.getCourseCode()
 
     def getCourseInformation(self):
+        logger.info(f"The getCourseInformation method in the {self.__class__.__name__} class is called.")
         return self.courseInformation
 
     def getCourseRequirements(self):
+        logger.info(f"The getCourseRequirements method in the {self.__class__.__name__} class is called")
         return self.courseRequirements
 
     def getCourseSections(self):
+        logger.info(f"The getCourseSections method in the {self.__class__.__name__} class is called.")
         return self.courseSections
 
     def getCourseCapacity(self):
+        logger.info(f"The getCourseCapacity method in the {self.__class__.__name__} class is called.")
         return self._courseCapacity
 
     def getCurrentStudentCount(self):
+        logger.info(f"The getCurrentStudentCount method in the {self.__class__.__name__} class is called.")
         return self._currentStudentCount
 
     def incrementCurrentStudentCount(self):
+        logger.info(f"The incrementCurrentStudentCount method in the {self.__class__.__name__} class is called.")
         self._currentStudentCount += 1
 
 
 class CourseInformation:
     def __init__(self, courseName, courseCode):
+        logging.getLogger().handlers.clear()
+        logger.info(f"{self.__class__.__name__} classes created.")
         self.courseName = courseName
         self.courseCode = courseCode
 
@@ -60,14 +75,18 @@ class CourseInformation:
         return CourseInformation(data["courseName"], data["courseCode"])
 
     def getCourseCode(self):
+        logger.info(f"The getCourseCode method in the {self.__class__.__name__} class is called.")
         return self.courseCode
 
     def getCourseName(self):
+        logger.info(f"The getCourseName method in the {self.__class__.__name__} class is called.")
         return self.courseName
 
 
 class TakenCourse:
     def __init__(self, courseInformation, midtermScore, finalScore):
+        logging.getLogger().handlers.clear()
+        logger.info(f"{self.__class__.__name__} classes created.")
         self._courseInformation = courseInformation
         self._midterm_score = midtermScore
         self._final_score = finalScore
@@ -80,15 +99,19 @@ class TakenCourse:
         return TakenCourse(ci, ms, fs)
 
     def getCourseInformation(self):
+        logger.info(f"The getCourseInformation method in the {self.__class__.__name__} class is called.")
         return self._courseInformation
 
     def getMidtermScore(self):
+        logger.info(f"The getMidtermScore method in the {self.__class__.__name__} class is called.")
         return self._midterm_score
 
     def getFinalScore(self):
+        logger.info(f"The getFinalScore method in the {self.__class__.__name__} class is called.")
         return self._final_score
 
     def calculateCourseScore(self):
+        logger.info("Calculating the course score.")
         total = self._midterm_score * 0.6 + self._final_score * 0.4
         if total >= 90:
             return Score.AA
@@ -108,6 +131,7 @@ class TakenCourse:
             return Score.FF
 
     def getCourseScore(self):
+
         return self.calculateCourseScore()
 
 
@@ -124,6 +148,8 @@ class Score:
 
 class CourseRequirements:
     def __init__(self, prerequisiteCourses, minimumCurrentClass, facultyID, departmentID):
+        logging.getLogger().handlers.clear()
+        logger.info(f"{self.__class__.__name__} classes created.")
         self._prerequisite_courses = prerequisiteCourses
         self._minimum_current_class = minimumCurrentClass
         self._facultyID = facultyID
@@ -144,6 +170,7 @@ class CourseRequirements:
         return CourseRequirements(prerequisite_courses_list, mcc, fid, did)
 
     def isStudentQualified(self, student):
+        logger.info("Checking if student is qualified for the course.")
         ans = [False, False, False, False]
         ans[0] = student.getCurrentClass() >= self._minimum_current_class
         ans[
@@ -153,6 +180,7 @@ class CourseRequirements:
         return ans
 
     def checkPrerequisiteCourse(self, student):
+        logger.info("Checking if student has taken the prerequisite courses.")
         if self._prerequisite_courses is None or len(self._prerequisite_courses) == 0:
             return True
 
@@ -169,23 +197,30 @@ class CourseRequirements:
         return True
 
     def get_departmentID(self, _departmentID):
+        logger.info(f"The get_departmentID method in the {self.__class__.__name__} class is called.")
         return self._departmentID
 
     def get_facultyID(self, _facultyID):
+        logger.info(f"The get_facultyID method in the {self.__class__.__name__} class is called.")
         return self._facultyID
 
     def get_minimum_current_class(self):
+        logger.info(f"The get_minimum_current_class method in the {self.__class__.__name__} class is called.")
         return self._minimum_current_class
 
     def getDepartmentID(self):
+        logger.info(f"The getDepartmentID method in the {self.__class__.__name__} class is called.")
         return self._departmentID.getDepartmentID()
 
     def getFacultyID(self):
+        logger.info(f"The getFacultyID method in the {self.__class__.__name__} class is called.")
         return self._facultyID.getFacultyID()
 
 
 class CourseSection:
     def __init__(self, day, sectionTime, lecturer, classRoom):
+        logging.getLogger().handlers.clear()
+        logger.info(f"{self.__class__.__name__} classes created.")
         self._day = day
         self._sectionTime = sectionTime
         self._lecturer = lecturer
