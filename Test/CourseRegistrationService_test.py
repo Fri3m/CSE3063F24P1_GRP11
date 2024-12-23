@@ -19,6 +19,6 @@ class CourseRegistrationService_test(unittest.TestCase):
         trueList.append(CourseRequest(student,data_management.getCourse("Heat Transfer"),student.get_advisorID()))
         trueList.append(CourseRequest(student,data_management.getCourse("Material Sci."),student.get_advisorID()))
 
-        calculatedList = courseRegistrationService.checkAccesiableRequests(student)
+        calculatedList = courseRegistrationService.checkAccesiableRequests(advisor)
         for i in range(len(trueList)):
             self.assertEqual(trueList[i].get_course().getCourseName(), calculatedList[i].get_course().getCourseName(), "Requests are not calculated correctly!")
