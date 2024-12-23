@@ -1,0 +1,97 @@
+{
+    "courseInformation": {
+        "courseName": "Strategic Management",
+        "courseCode": "AD401"
+    },
+    "courseRequirements": {
+        "_prerequisite_courses": [],
+        "_minimum_current_class": 4,
+        "_facultyID": {
+            "_FacultyID": 3,
+            "_FacultyName": "Business"
+        },
+        "_departmentID": {
+            "_departmentID": 301,
+            "_departmentName": "Business"
+        }
+    },
+    "courseSections": [
+        {
+            "_day": 2,
+            "_sectionTime": 1,
+            "_lecturer": {
+                "_user_information": {
+                    "_FIRST_NAME": "Tayfun",
+                    "_LAST_NAME": "Torun",
+                    "_encoded_password": "1234",
+                    "_UNIVERSITY_EMAIL": "tayfuntorun@marun.edu.tr",
+                    "_email": "tayfuntorun6@gmail.com",
+                    "_address": "Aydin",
+                    "_phone_number": "+90 518 587 88 87"
+                },
+                "_staffId": {
+                    "_staffId": 19
+                },
+                "_departmentId": "",
+                "_facultyId": ""
+            },
+            "_classRoom": {
+                "_classroom_name": "B302",
+                "_capacity": 75
+            },
+            "_quota": 75
+        },
+        {
+            "_day": 2,
+            "_sectionTime": 2,
+            "_lecturer": {
+                "_user_information": {
+                    "_FIRST_NAME": "Tayfun",
+                    "_LAST_NAME": "Torun",
+                    "_encoded_password": "1234",
+                    "_UNIVERSITY_EMAIL": "tayfuntorun@marun.edu.tr",
+                    "_email": "tayfuntorun6@gmail.com",
+                    "_address": "Aydin",
+                    "_phone_number": "+90 518 587 88 87"
+                },
+                "_staffId": {
+                    "_staffId": 19
+                },
+                "_departmentId": "",
+                "_facultyId": ""
+            },
+            "_classRoom": {
+                "_classroom_name": "B302",
+                "_capacity": 75
+            },
+            "_quota": 75
+        },
+        {
+            "_day": 2,
+            "_sectionTime": 3,
+            "_lecturer": {
+                "_user_information": {
+                    "_FIRST_NAME": "Tayfun",
+                    "_LAST_NAME": "Torun",
+                    "_encoded_password": "1234",
+                    "_UNIVERSITY_EMAIL": "tayfuntorun@marun.edu.tr",
+                    "_email": "tayfuntorun6@gmail.com",
+                    "_address": "Aydin",
+                    "_phone_number": "+90 518 587 88 87"
+                },
+                "_staffId": {
+                    "_staffId": 19
+                },
+                "_departmentId": "",
+                "_facultyId": ""
+            },
+            "_classRoom": {
+                "_classroom_name": "B302",
+                "_capacity": 75
+            },
+            "_quota": 75
+        }
+    ],
+    "_currentStudentCount": 0,
+    "_courseCapacity": 75
+}

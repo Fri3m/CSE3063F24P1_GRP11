@@ -1,0 +1,102 @@
+{
+    "courseInformation": {
+        "courseName": "Database Systems",
+        "courseCode": "CS3125"
+    },
+    "courseRequirements": {
+        "_prerequisite_courses": [
+            {
+                "courseName": "Data Structures",
+                "courseCode": "CS2225"
+            }
+        ],
+        "_minimum_current_class": 3,
+        "_facultyID": {
+            "_FacultyID": 1,
+            "_FacultyName": "Engineering"
+        },
+        "_departmentID": {
+            "_departmentID": 150,
+            "_departmentName": "Computer Engineering"
+        }
+    },
+    "courseSections": [
+        {
+            "_day": 0,
+            "_sectionTime": 0,
+            "_lecturer": {
+                "_user_information": {
+                    "_FIRST_NAME": "Necla",
+                    "_LAST_NAME": "Kaya",
+                    "_encoded_password": "1234",
+                    "_UNIVERSITY_EMAIL": "neclakaya@marun.edu.tr",
+                    "_email": "neclakaya46@gmail.com",
+                    "_address": "Ardahan",
+                    "_phone_number": "+90 586 566 14 18"
+                },
+                "_staffId": {
+                    "_staffId": 6
+                },
+                "_departmentId": "",
+                "_facultyId": ""
+            },
+            "_classRoom": {
+                "_classroom_name": "CS16",
+                "_capacity": 75
+            },
+            "_quota": 75
+        },
+        {
+            "_day": 0,
+            "_sectionTime": 1,
+            "_lecturer": {
+                "_user_information": {
+                    "_FIRST_NAME": "Necla",
+                    "_LAST_NAME": "Kaya",
+                    "_encoded_password": "1234",
+                    "_UNIVERSITY_EMAIL": "neclakaya@marun.edu.tr",
+                    "_email": "neclakaya46@gmail.com",
+                    "_address": "Ardahan",
+                    "_phone_number": "+90 586 566 14 18"
+                },
+                "_staffId": {
+                    "_staffId": 6
+                },
+                "_departmentId": "",
+                "_facultyId": ""
+            },
+            "_classRoom": {
+                "_classroom_name": "CS16",
+                "_capacity": 75
+            },
+            "_quota": 75
+        },
+        {
+            "_day": 4,
+            "_sectionTime": 0,
+            "_lecturer": {
+                "_user_information": {
+                    "_FIRST_NAME": "Necla",
+                    "_LAST_NAME": "Kaya",
+                    "_encoded_password": "1234",
+                    "_UNIVERSITY_EMAIL": "neclakaya@marun.edu.tr",
+                    "_email": "neclakaya46@gmail.com",
+                    "_address": "Ardahan",
+                    "_phone_number": "+90 586 566 14 18"
+                },
+                "_staffId": {
+                    "_staffId": 6
+                },
+                "_departmentId": "",
+                "_facultyId": ""
+            },
+            "_classRoom": {
+                "_classroom_name": "CS16",
+                "_capacity": 75
+            },
+            "_quota": 75
+        }
+    ],
+    "_currentStudentCount": 0,
+    "_courseCapacity": 75
+}

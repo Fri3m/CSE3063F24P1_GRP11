@@ -1,0 +1,46 @@
+{
+    "_user_information": {
+        "_FIRST_NAME": "Oguz",
+        "_LAST_NAME": "Ersoy",
+        "_encoded_password": "1234",
+        "_UNIVERSITY_EMAIL": "oguzersoy@marun.edu.tr",
+        "_email": "oguzersoy32@gmail.com",
+        "_address": "Bartin",
+        "_phone_number": "+90 591 693 76 98"
+    },
+    "_student_id": {
+        "_department_id": {
+            "_departmentID": 154,
+            "_departmentName": "Chemistry"
+        },
+        "_entrance_date": 2024,
+        "_entrance_rank": 1,
+        "_faculty_id": {
+            "_FacultyID": 2,
+            "_FacultyName": "Science"
+        },
+        "_id": "154024001"
+    },
+    "_transcript": {
+        "_student_id": {
+            "_department_id": {
+                "_departmentID": 154,
+                "_departmentName": "Chemistry"
+            },
+            "_entrance_date": 2024,
+            "_entrance_rank": 1,
+            "_faculty_id": {
+                "_FacultyID": 2,
+                "_FacultyName": "Science"
+            },
+            "_id": "154024001"
+        },
+        "_taken_courses": [],
+        "_gpa": 0.0
+    },
+    "_advisor_id": {
+        "_staffId": 25
+    },
+    "_current_class": 1,
+    "_current_courses": []
+}

@@ -1,0 +1,46 @@
+{
+    "_user_information": {
+        "_FIRST_NAME": "Baris",
+        "_LAST_NAME": "Tas",
+        "_encoded_password": "1234",
+        "_UNIVERSITY_EMAIL": "baristas@marun.edu.tr",
+        "_email": "baristas97@gmail.com",
+        "_address": "Zonguldak",
+        "_phone_number": "+90 559 329 17 02"
+    },
+    "_student_id": {
+        "_department_id": {
+            "_departmentID": 150,
+            "_departmentName": "Computer Engineering"
+        },
+        "_entrance_date": 2024,
+        "_entrance_rank": 45,
+        "_faculty_id": {
+            "_FacultyID": 1,
+            "_FacultyName": "Engineering"
+        },
+        "_id": "150024045"
+    },
+    "_transcript": {
+        "_student_id": {
+            "_department_id": {
+                "_departmentID": 150,
+                "_departmentName": "Computer Engineering"
+            },
+            "_entrance_date": 2024,
+            "_entrance_rank": 45,
+            "_faculty_id": {
+                "_FacultyID": 1,
+                "_FacultyName": "Engineering"
+            },
+            "_id": "150024045"
+        },
+        "_taken_courses": [],
+        "_gpa": 0.0
+    },
+    "_advisor_id": {
+        "_staffId": 1
+    },
+    "_current_class": 1,
+    "_current_courses": []
+}

@@ -1,0 +1,102 @@
+{
+    "courseInformation": {
+        "courseName": "Simulation",
+        "courseCode": "IE3064"
+    },
+    "courseRequirements": {
+        "_prerequisite_courses": [
+            {
+                "courseName": "Probability",
+                "courseCode": "IE2151"
+            }
+        ],
+        "_minimum_current_class": 3,
+        "_facultyID": {
+            "_FacultyID": 1,
+            "_FacultyName": "Engineering"
+        },
+        "_departmentID": {
+            "_departmentID": 101,
+            "_departmentName": "Industrial Engineering"
+        }
+    },
+    "courseSections": [
+        {
+            "_day": 2,
+            "_sectionTime": 3,
+            "_lecturer": {
+                "_user_information": {
+                    "_FIRST_NAME": "Ayla",
+                    "_LAST_NAME": "Arman",
+                    "_encoded_password": "1234",
+                    "_UNIVERSITY_EMAIL": "aylaarman@marun.edu.tr",
+                    "_email": "aylaarman93@gmail.com",
+                    "_address": "Mardin",
+                    "_phone_number": "+90 566 763 83 38"
+                },
+                "_staffId": {
+                    "_staffId": 50
+                },
+                "_departmentId": "",
+                "_facultyId": ""
+            },
+            "_classRoom": {
+                "_classroom_name": "IEZ03",
+                "_capacity": 60
+            },
+            "_quota": 60
+        },
+        {
+            "_day": 0,
+            "_sectionTime": 3,
+            "_lecturer": {
+                "_user_information": {
+                    "_FIRST_NAME": "Ayla",
+                    "_LAST_NAME": "Arman",
+                    "_encoded_password": "1234",
+                    "_UNIVERSITY_EMAIL": "aylaarman@marun.edu.tr",
+                    "_email": "aylaarman93@gmail.com",
+                    "_address": "Mardin",
+                    "_phone_number": "+90 566 763 83 38"
+                },
+                "_staffId": {
+                    "_staffId": 50
+                },
+                "_departmentId": "",
+                "_facultyId": ""
+            },
+            "_classRoom": {
+                "_classroom_name": "IEZ03",
+                "_capacity": 60
+            },
+            "_quota": 60
+        },
+        {
+            "_day": 1,
+            "_sectionTime": 2,
+            "_lecturer": {
+                "_user_information": {
+                    "_FIRST_NAME": "Ayla",
+                    "_LAST_NAME": "Arman",
+                    "_encoded_password": "1234",
+                    "_UNIVERSITY_EMAIL": "aylaarman@marun.edu.tr",
+                    "_email": "aylaarman93@gmail.com",
+                    "_address": "Mardin",
+                    "_phone_number": "+90 566 763 83 38"
+                },
+                "_staffId": {
+                    "_staffId": 50
+                },
+                "_departmentId": "",
+                "_facultyId": ""
+            },
+            "_classRoom": {
+                "_classroom_name": "IEZ03",
+                "_capacity": 60
+            },
+            "_quota": 60
+        }
+    ],
+    "_currentStudentCount": 0,
+    "_courseCapacity": 60
+}

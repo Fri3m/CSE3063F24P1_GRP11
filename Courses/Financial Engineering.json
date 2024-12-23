@@ -1,0 +1,72 @@
+{
+    "courseInformation": {
+        "courseName": "Financial Engineering",
+        "courseCode": "CHE4068"
+    },
+    "courseRequirements": {
+        "_prerequisite_courses": [],
+        "_minimum_current_class": 4,
+        "_facultyID": {
+            "_FacultyID": 1,
+            "_FacultyName": "Engineering"
+        },
+        "_departmentID": {
+            "_departmentID": 150,
+            "_departmentName": "Computer Engineering"
+        }
+    },
+    "courseSections": [
+        {
+            "_day": 1,
+            "_sectionTime": 4,
+            "_lecturer": {
+                "_user_information": {
+                    "_FIRST_NAME": "Cem",
+                    "_LAST_NAME": "Duman",
+                    "_encoded_password": "1234",
+                    "_UNIVERSITY_EMAIL": "cemduman@marun.edu.tr",
+                    "_email": "cemduman47@gmail.com",
+                    "_address": "Kocaeli",
+                    "_phone_number": "+90 587 369 24 27"
+                },
+                "_staffId": {
+                    "_staffId": 11
+                },
+                "_departmentId": "",
+                "_facultyId": ""
+            },
+            "_classRoom": {
+                "_classroom_name": "CS19",
+                "_capacity": 40
+            },
+            "_quota": 40
+        },
+        {
+            "_day": 1,
+            "_sectionTime": 5,
+            "_lecturer": {
+                "_user_information": {
+                    "_FIRST_NAME": "Cem",
+                    "_LAST_NAME": "Duman",
+                    "_encoded_password": "1234",
+                    "_UNIVERSITY_EMAIL": "cemduman@marun.edu.tr",
+                    "_email": "cemduman47@gmail.com",
+                    "_address": "Kocaeli",
+                    "_phone_number": "+90 587 369 24 27"
+                },
+                "_staffId": {
+                    "_staffId": 11
+                },
+                "_departmentId": "",
+                "_facultyId": ""
+            },
+            "_classRoom": {
+                "_classroom_name": "CS19",
+                "_capacity": 40
+            },
+            "_quota": 40
+        }
+    ],
+    "_currentStudentCount": 0,
+    "_courseCapacity": 40
+}

@@ -1,0 +1,97 @@
+{
+    "courseInformation": {
+        "courseName": "Computer Networks",
+        "courseCode": "CS4074"
+    },
+    "courseRequirements": {
+        "_prerequisite_courses": [],
+        "_minimum_current_class": 4,
+        "_facultyID": {
+            "_FacultyID": 1,
+            "_FacultyName": "Engineering"
+        },
+        "_departmentID": {
+            "_departmentID": 150,
+            "_departmentName": "Computer Engineering"
+        }
+    },
+    "courseSections": [
+        {
+            "_day": 0,
+            "_sectionTime": 0,
+            "_lecturer": {
+                "_user_information": {
+                    "_FIRST_NAME": "Sevgi",
+                    "_LAST_NAME": "Koc",
+                    "_encoded_password": "1234",
+                    "_UNIVERSITY_EMAIL": "sevgikoc@marun.edu.tr",
+                    "_email": "sevgikoc100@gmail.com",
+                    "_address": "Sinop",
+                    "_phone_number": "+90 583 392 51 42"
+                },
+                "_staffId": {
+                    "_staffId": 8
+                },
+                "_departmentId": "",
+                "_facultyId": ""
+            },
+            "_classRoom": {
+                "_classroom_name": "CS17",
+                "_capacity": 60
+            },
+            "_quota": 60
+        },
+        {
+            "_day": 2,
+            "_sectionTime": 0,
+            "_lecturer": {
+                "_user_information": {
+                    "_FIRST_NAME": "Sevgi",
+                    "_LAST_NAME": "Koc",
+                    "_encoded_password": "1234",
+                    "_UNIVERSITY_EMAIL": "sevgikoc@marun.edu.tr",
+                    "_email": "sevgikoc100@gmail.com",
+                    "_address": "Sinop",
+                    "_phone_number": "+90 583 392 51 42"
+                },
+                "_staffId": {
+                    "_staffId": 8
+                },
+                "_departmentId": "",
+                "_facultyId": ""
+            },
+            "_classRoom": {
+                "_classroom_name": "CS17",
+                "_capacity": 60
+            },
+            "_quota": 60
+        },
+        {
+            "_day": 2,
+            "_sectionTime": 1,
+            "_lecturer": {
+                "_user_information": {
+                    "_FIRST_NAME": "Sevgi",
+                    "_LAST_NAME": "Koc",
+                    "_encoded_password": "1234",
+                    "_UNIVERSITY_EMAIL": "sevgikoc@marun.edu.tr",
+                    "_email": "sevgikoc100@gmail.com",
+                    "_address": "Sinop",
+                    "_phone_number": "+90 583 392 51 42"
+                },
+                "_staffId": {
+                    "_staffId": 8
+                },
+                "_departmentId": "",
+                "_facultyId": ""
+            },
+            "_classRoom": {
+                "_classroom_name": "CS17",
+                "_capacity": 60
+            },
+            "_quota": 60
+        }
+    ],
+    "_currentStudentCount": 0,
+    "_courseCapacity": 60
+}

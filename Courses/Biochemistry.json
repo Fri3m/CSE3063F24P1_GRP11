@@ -1,0 +1,127 @@
+{
+    "courseInformation": {
+        "courseName": "Biochemistry",
+        "courseCode": "CHM4011"
+    },
+    "courseRequirements": {
+        "_prerequisite_courses": [
+            {
+                "courseName": "Industrial Analysis",
+                "courseCode": "CHM3042"
+            }
+        ],
+        "_minimum_current_class": 4,
+        "_facultyID": {
+            "_FacultyID": 2,
+            "_FacultyName": "Science"
+        },
+        "_departmentID": {
+            "_departmentID": 154,
+            "_departmentName": "Chemistry"
+        }
+    },
+    "courseSections": [
+        {
+            "_day": 1,
+            "_sectionTime": 2,
+            "_lecturer": {
+                "_user_information": {
+                    "_FIRST_NAME": "Omer",
+                    "_LAST_NAME": "Sahin",
+                    "_encoded_password": "1234",
+                    "_UNIVERSITY_EMAIL": "omersahin@marun.edu.tr",
+                    "_email": "omersahin99@gmail.com",
+                    "_address": "Hakkari",
+                    "_phone_number": "+90 539 195 03 47"
+                },
+                "_staffId": {
+                    "_staffId": 29
+                },
+                "_departmentId": "",
+                "_facultyId": ""
+            },
+            "_classRoom": {
+                "_classroom_name": "S205",
+                "_capacity": 55
+            },
+            "_quota": 55
+        },
+        {
+            "_day": 2,
+            "_sectionTime": 1,
+            "_lecturer": {
+                "_user_information": {
+                    "_FIRST_NAME": "Omer",
+                    "_LAST_NAME": "Sahin",
+                    "_encoded_password": "1234",
+                    "_UNIVERSITY_EMAIL": "omersahin@marun.edu.tr",
+                    "_email": "omersahin99@gmail.com",
+                    "_address": "Hakkari",
+                    "_phone_number": "+90 539 195 03 47"
+                },
+                "_staffId": {
+                    "_staffId": 29
+                },
+                "_departmentId": "",
+                "_facultyId": ""
+            },
+            "_classRoom": {
+                "_classroom_name": "S205",
+                "_capacity": 55
+            },
+            "_quota": 55
+        },
+        {
+            "_day": 2,
+            "_sectionTime": 2,
+            "_lecturer": {
+                "_user_information": {
+                    "_FIRST_NAME": "Omer",
+                    "_LAST_NAME": "Sahin",
+                    "_encoded_password": "1234",
+                    "_UNIVERSITY_EMAIL": "omersahin@marun.edu.tr",
+                    "_email": "omersahin99@gmail.com",
+                    "_address": "Hakkari",
+                    "_phone_number": "+90 539 195 03 47"
+                },
+                "_staffId": {
+                    "_staffId": 29
+                },
+                "_departmentId": "",
+                "_facultyId": ""
+            },
+            "_classRoom": {
+                "_classroom_name": "S204",
+                "_capacity": 60
+            },
+            "_quota": 60
+        },
+        {
+            "_day": 4,
+            "_sectionTime": 0,
+            "_lecturer": {
+                "_user_information": {
+                    "_FIRST_NAME": "Omer",
+                    "_LAST_NAME": "Sahin",
+                    "_encoded_password": "1234",
+                    "_UNIVERSITY_EMAIL": "omersahin@marun.edu.tr",
+                    "_email": "omersahin99@gmail.com",
+                    "_address": "Hakkari",
+                    "_phone_number": "+90 539 195 03 47"
+                },
+                "_staffId": {
+                    "_staffId": 29
+                },
+                "_departmentId": "",
+                "_facultyId": ""
+            },
+            "_classRoom": {
+                "_classroom_name": "S203",
+                "_capacity": 55
+            },
+            "_quota": 55
+        }
+    ],
+    "_currentStudentCount": 0,
+    "_courseCapacity": 55
+}

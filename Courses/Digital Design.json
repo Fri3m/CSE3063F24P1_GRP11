@@ -1,0 +1,72 @@
+{
+    "courseInformation": {
+        "courseName": "Digital Design",
+        "courseCode": "EE2003"
+    },
+    "courseRequirements": {
+        "_prerequisite_courses": [],
+        "_minimum_current_class": 2,
+        "_facultyID": {
+            "_FacultyID": 1,
+            "_FacultyName": "Engineering"
+        },
+        "_departmentID": {
+            "_departmentID": 101,
+            "_departmentName": "Electrical Engineering"
+        }
+    },
+    "courseSections": [
+        {
+            "_day": 2,
+            "_sectionTime": 3,
+            "_lecturer": {
+                "_user_information": {
+                    "_FIRST_NAME": "Pelin",
+                    "_LAST_NAME": "Ozkan",
+                    "_encoded_password": "1234",
+                    "_UNIVERSITY_EMAIL": "pelinozkan@marun.edu.tr",
+                    "_email": "pelinozkan61@gmail.com",
+                    "_address": "Tekirdag",
+                    "_phone_number": "+90 569 491 03 61"
+                },
+                "_staffId": {
+                    "_staffId": 54
+                },
+                "_departmentId": "",
+                "_facultyId": ""
+            },
+            "_classRoom": {
+                "_classroom_name": "EEZ02",
+                "_capacity": 60
+            },
+            "_quota": 60
+        },
+        {
+            "_day": 3,
+            "_sectionTime": 1,
+            "_lecturer": {
+                "_user_information": {
+                    "_FIRST_NAME": "Pelin",
+                    "_LAST_NAME": "Ozkan",
+                    "_encoded_password": "1234",
+                    "_UNIVERSITY_EMAIL": "pelinozkan@marun.edu.tr",
+                    "_email": "pelinozkan61@gmail.com",
+                    "_address": "Tekirdag",
+                    "_phone_number": "+90 569 491 03 61"
+                },
+                "_staffId": {
+                    "_staffId": 54
+                },
+                "_departmentId": "",
+                "_facultyId": ""
+            },
+            "_classRoom": {
+                "_classroom_name": "EEZ02",
+                "_capacity": 60
+            },
+            "_quota": 60
+        }
+    ],
+    "_currentStudentCount": 0,
+    "_courseCapacity": 60
+}

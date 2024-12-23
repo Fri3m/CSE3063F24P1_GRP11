@@ -1,0 +1,97 @@
+{
+    "courseInformation": {
+        "courseName": "Systems Programming",
+        "courseCode": "CS2138"
+    },
+    "courseRequirements": {
+        "_prerequisite_courses": [],
+        "_minimum_current_class": 2,
+        "_facultyID": {
+            "_FacultyID": 1,
+            "_FacultyName": "Engineering"
+        },
+        "_departmentID": {
+            "_departmentID": 150,
+            "_departmentName": "Computer Engineering"
+        }
+    },
+    "courseSections": [
+        {
+            "_day": 3,
+            "_sectionTime": 5,
+            "_lecturer": {
+                "_user_information": {
+                    "_FIRST_NAME": "Cengiz",
+                    "_LAST_NAME": "Celik",
+                    "_encoded_password": "1234",
+                    "_UNIVERSITY_EMAIL": "cengizcelik@marun.edu.tr",
+                    "_email": "cengizcelik26@gmail.com",
+                    "_address": "Denizli",
+                    "_phone_number": "+90 574 381 90 46"
+                },
+                "_staffId": {
+                    "_staffId": 5
+                },
+                "_departmentId": "",
+                "_facultyId": ""
+            },
+            "_classRoom": {
+                "_classroom_name": "CS15",
+                "_capacity": 70
+            },
+            "_quota": 70
+        },
+        {
+            "_day": 3,
+            "_sectionTime": 6,
+            "_lecturer": {
+                "_user_information": {
+                    "_FIRST_NAME": "Cengiz",
+                    "_LAST_NAME": "Celik",
+                    "_encoded_password": "1234",
+                    "_UNIVERSITY_EMAIL": "cengizcelik@marun.edu.tr",
+                    "_email": "cengizcelik26@gmail.com",
+                    "_address": "Denizli",
+                    "_phone_number": "+90 574 381 90 46"
+                },
+                "_staffId": {
+                    "_staffId": 5
+                },
+                "_departmentId": "",
+                "_facultyId": ""
+            },
+            "_classRoom": {
+                "_classroom_name": "CS15",
+                "_capacity": 70
+            },
+            "_quota": 70
+        },
+        {
+            "_day": 4,
+            "_sectionTime": 3,
+            "_lecturer": {
+                "_user_information": {
+                    "_FIRST_NAME": "Cengiz",
+                    "_LAST_NAME": "Celik",
+                    "_encoded_password": "1234",
+                    "_UNIVERSITY_EMAIL": "cengizcelik@marun.edu.tr",
+                    "_email": "cengizcelik26@gmail.com",
+                    "_address": "Denizli",
+                    "_phone_number": "+90 574 381 90 46"
+                },
+                "_staffId": {
+                    "_staffId": 5
+                },
+                "_departmentId": "",
+                "_facultyId": ""
+            },
+            "_classRoom": {
+                "_classroom_name": "CS14",
+                "_capacity": 80
+            },
+            "_quota": 80
+        }
+    ],
+    "_currentStudentCount": 0,
+    "_courseCapacity": 70
+}

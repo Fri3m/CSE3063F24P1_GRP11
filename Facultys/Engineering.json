@@ -1,0 +1,52 @@
+{
+    "_facultyID": {
+        "_FacultyID": 1,
+        "_FacultyName": "Engineering"
+    },
+    "_departments": [
+        {
+            "_departmentID": {
+                "_departmentID": 150,
+                "_departmentName": "Computer Engineering"
+            },
+            "_facultyID": {
+                "_FacultyID": 1,
+                "_FacultyName": "Engineering"
+            },
+            "_lecturers": []
+        },
+        {
+            "_departmentID": {
+                "_departmentID": 151,
+                "_departmentName": "Mechanical Engineering"
+            },
+            "_facultyID": {
+                "_FacultyID": 1,
+                "_FacultyName": "Engineering"
+            },
+            "_lecturers": []
+        },
+        {
+            "_departmentID": {
+                "_departmentID": 152,
+                "_departmentName": "Electrical Engineering"
+            },
+            "_facultyID": {
+                "_FacultyID": 1,
+                "_FacultyName": "Engineering"
+            },
+            "_lecturers": []
+        },
+        {
+            "_departmentID": {
+                "_departmentID": 101,
+                "_departmentName": "Mechanical Engineering"
+            },
+            "_facultyID": {
+                "_FacultyID": 1,
+                "_FacultyName": "Engineering"
+            },
+            "_lecturers": []
+        }
+    ]
+}

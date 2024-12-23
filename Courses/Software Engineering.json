@@ -1,0 +1,102 @@
+{
+    "courseInformation": {
+        "courseName": "Software Engineering",
+        "courseCode": "CS3044"
+    },
+    "courseRequirements": {
+        "_prerequisite_courses": [
+            {
+                "courseName": "Database Systems",
+                "courseCode": "CS3125"
+            }
+        ],
+        "_minimum_current_class": 3,
+        "_facultyID": {
+            "_FacultyID": 1,
+            "_FacultyName": "Engineering"
+        },
+        "_departmentID": {
+            "_departmentID": 150,
+            "_departmentName": "Computer Engineering"
+        }
+    },
+    "courseSections": [
+        {
+            "_day": 1,
+            "_sectionTime": 6,
+            "_lecturer": {
+                "_user_information": {
+                    "_FIRST_NAME": "Eren",
+                    "_LAST_NAME": "Altun",
+                    "_encoded_password": "1234",
+                    "_UNIVERSITY_EMAIL": "erenaltun@marun.edu.tr",
+                    "_email": "erenaltun33@gmail.com",
+                    "_address": "Samsun",
+                    "_phone_number": "+90 586 272 89 30"
+                },
+                "_staffId": {
+                    "_staffId": 7
+                },
+                "_departmentId": "",
+                "_facultyId": ""
+            },
+            "_classRoom": {
+                "_classroom_name": "CS16",
+                "_capacity": 75
+            },
+            "_quota": 75
+        },
+        {
+            "_day": 2,
+            "_sectionTime": 1,
+            "_lecturer": {
+                "_user_information": {
+                    "_FIRST_NAME": "Eren",
+                    "_LAST_NAME": "Altun",
+                    "_encoded_password": "1234",
+                    "_UNIVERSITY_EMAIL": "erenaltun@marun.edu.tr",
+                    "_email": "erenaltun33@gmail.com",
+                    "_address": "Samsun",
+                    "_phone_number": "+90 586 272 89 30"
+                },
+                "_staffId": {
+                    "_staffId": 7
+                },
+                "_departmentId": "",
+                "_facultyId": ""
+            },
+            "_classRoom": {
+                "_classroom_name": "CS15",
+                "_capacity": 70
+            },
+            "_quota": 70
+        },
+        {
+            "_day": 2,
+            "_sectionTime": 2,
+            "_lecturer": {
+                "_user_information": {
+                    "_FIRST_NAME": "Eren",
+                    "_LAST_NAME": "Altun",
+                    "_encoded_password": "1234",
+                    "_UNIVERSITY_EMAIL": "erenaltun@marun.edu.tr",
+                    "_email": "erenaltun33@gmail.com",
+                    "_address": "Samsun",
+                    "_phone_number": "+90 586 272 89 30"
+                },
+                "_staffId": {
+                    "_staffId": 7
+                },
+                "_departmentId": "",
+                "_facultyId": ""
+            },
+            "_classRoom": {
+                "_classroom_name": "CS15",
+                "_capacity": 70
+            },
+            "_quota": 70
+        }
+    ],
+    "_currentStudentCount": 0,
+    "_courseCapacity": 70
+}

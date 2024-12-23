@@ -1,0 +1,63 @@
+{
+    "_user_information": {
+        "_FIRST_NAME": "Pelin",
+        "_LAST_NAME": "Aksu",
+        "_encoded_password": "1234",
+        "_UNIVERSITY_EMAIL": "pelinaksu@marun.edu.tr",
+        "_email": "pelinaksu9@gmail.com",
+        "_address": "Artvin",
+        "_phone_number": "+90 566 620 48 56"
+    },
+    "_student_id": {
+        "_department_id": {
+            "_departmentID": 153,
+            "_departmentName": "Biology"
+        },
+        "_entrance_date": 2022,
+        "_entrance_rank": 53,
+        "_faculty_id": {
+            "_FacultyID": 2,
+            "_FacultyName": "Science"
+        },
+        "_id": "153022053"
+    },
+    "_transcript": {
+        "_student_id": {
+            "_department_id": {
+                "_departmentID": 153,
+                "_departmentName": "Biology"
+            },
+            "_entrance_date": 2022,
+            "_entrance_rank": 53,
+            "_faculty_id": {
+                "_FacultyID": 2,
+                "_FacultyName": "Science"
+            },
+            "_id": "153022053"
+        },
+        "_taken_courses": [
+            {
+                "_courseInformation": {
+                    "courseName": "General Biology",
+                    "courseCode": "BYL1011"
+                },
+                "_midterm_score": 68,
+                "_final_score": 75
+            },
+            {
+                "_courseInformation": {
+                    "courseName": "History of Biology",
+                    "courseCode": "BYL2031"
+                },
+                "_midterm_score": 88,
+                "_final_score": 72
+            }
+        ],
+        "_gpa": 0.0
+    },
+    "_advisor_id": {
+        "_staffId": 20
+    },
+    "_current_class": 3,
+    "_current_courses": []
+}

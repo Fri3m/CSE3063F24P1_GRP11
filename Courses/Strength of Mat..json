@@ -1,0 +1,102 @@
+{
+    "courseInformation": {
+        "courseName": "Strength of Mat.",
+        "courseCode": "ME271"
+    },
+    "courseRequirements": {
+        "_prerequisite_courses": [
+            {
+                "courseName": "Material Sci.",
+                "courseCode": "MSE272"
+            }
+        ],
+        "_minimum_current_class": 3,
+        "_facultyID": {
+            "_FacultyID": 1,
+            "_FacultyName": "Engineering"
+        },
+        "_departmentID": {
+            "_departmentID": 101,
+            "_departmentName": "Mechanical Engineering"
+        }
+    },
+    "courseSections": [
+        {
+            "_day": 3,
+            "_sectionTime": 3,
+            "_lecturer": {
+                "_user_information": {
+                    "_FIRST_NAME": "Merve",
+                    "_LAST_NAME": "Eren",
+                    "_encoded_password": "1234",
+                    "_UNIVERSITY_EMAIL": "merveeren@marun.edu.tr",
+                    "_email": "merveeren8@gmail.com",
+                    "_address": "Afyonkarahisar",
+                    "_phone_number": "+90 576 976 55 77"
+                },
+                "_staffId": {
+                    "_staffId": 45
+                },
+                "_departmentId": "",
+                "_facultyId": ""
+            },
+            "_classRoom": {
+                "_classroom_name": "MEZ02",
+                "_capacity": 60
+            },
+            "_quota": 60
+        },
+        {
+            "_day": 0,
+            "_sectionTime": 1,
+            "_lecturer": {
+                "_user_information": {
+                    "_FIRST_NAME": "Merve",
+                    "_LAST_NAME": "Eren",
+                    "_encoded_password": "1234",
+                    "_UNIVERSITY_EMAIL": "merveeren@marun.edu.tr",
+                    "_email": "merveeren8@gmail.com",
+                    "_address": "Afyonkarahisar",
+                    "_phone_number": "+90 576 976 55 77"
+                },
+                "_staffId": {
+                    "_staffId": 45
+                },
+                "_departmentId": "",
+                "_facultyId": ""
+            },
+            "_classRoom": {
+                "_classroom_name": "MEZ02",
+                "_capacity": 60
+            },
+            "_quota": 60
+        },
+        {
+            "_day": 4,
+            "_sectionTime": 1,
+            "_lecturer": {
+                "_user_information": {
+                    "_FIRST_NAME": "Merve",
+                    "_LAST_NAME": "Eren",
+                    "_encoded_password": "1234",
+                    "_UNIVERSITY_EMAIL": "merveeren@marun.edu.tr",
+                    "_email": "merveeren8@gmail.com",
+                    "_address": "Afyonkarahisar",
+                    "_phone_number": "+90 576 976 55 77"
+                },
+                "_staffId": {
+                    "_staffId": 45
+                },
+                "_departmentId": "",
+                "_facultyId": ""
+            },
+            "_classRoom": {
+                "_classroom_name": "MEZ02",
+                "_capacity": 60
+            },
+            "_quota": 60
+        }
+    ],
+    "_currentStudentCount": 0,
+    "_courseCapacity": 60
+}

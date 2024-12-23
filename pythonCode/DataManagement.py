@@ -873,43 +873,44 @@ class DataManagement:
         student216 = generateRandomStudent(chemistry, 2023, 8, advisor211.get_staffId())
 
         #Add students taken courses to the system
-        student301.getTranscript().addTakemCourse(course301.getCourseInformation(), 90, 54)
-        student301.getTranscript().addTakemCourse(course301.getCourseInformation(), 80, 65)
-        student301.getTranscript().addTakemCourse(course301.getCourseInformation(), 70, 75)
 
-        student303.getTranscript().addTakemCourse(course301.getCourseInformation(), 90, 64)
+        student301.getTranscript().addTakenCourse(TakenCourse(course301.getCourseInformation(), 90, 54))
+        student301.getTranscript().addTakenCourse(TakenCourse(course301.getCourseInformation(), 80, 65))
+        student301.getTranscript().addTakenCourse(TakenCourse(course301.getCourseInformation(), 70, 75))
 
-        student304.getTranscript().addTakemCourse(course301.getCourseInformation(), 93, 74)
-        student304.getTranscript().addTakemCourse(course301.getCourseInformation(), 85, 65)
+        student303.getTranscript().addTakenCourse(TakenCourse(course301.getCourseInformation(), 90, 64))
 
-        student305.getTranscript().addTakemCourse(course301.getCourseInformation(), 75, 70)
-        student305.getTranscript().addTakemCourse(course301.getCourseInformation(), 65, 85)
-        student305.getTranscript().addTakemCourse(course301.getCourseInformation(), 75, 75)
+        student304.getTranscript().addTakenCourse(TakenCourse(course301.getCourseInformation(), 93, 74))
+        student304.getTranscript().addTakenCourse(TakenCourse(course301.getCourseInformation(), 85, 65))
 
-        student306.getTranscript().addTakemCourse(course301.getCourseInformation(), 85, 75)
+        student305.getTranscript().addTakenCourse(TakenCourse(course301.getCourseInformation(), 75, 70))
+        student305.getTranscript().addTakenCourse(TakenCourse(course301.getCourseInformation(), 65, 85))
+        student305.getTranscript().addTakenCourse(TakenCourse(course301.getCourseInformation(), 75, 75))
 
-        student306.getTranscript().addTakenCourse(course301.getCourseInformation(), 85, 75)
+        student306.getTranscript().addTakenCourse(TakenCourse(course301.getCourseInformation(), 85, 75))
 
-        student201.getTranscript().addTakenCourse(course201.getCourseInformation(), 85, 75)
-        student201.getTranscript().addTakenCourse(course202.getCourseInformation(), 90, 85)
+        student306.getTranscript().addTakenCourse(TakenCourse(course301.getCourseInformation(), 85, 75))
 
-        student202.getTranscript().addTakenCourse(course201.getCourseInformation(), 68, 75)
-        student202.getTranscript().addTakenCourse(course202.getCourseInformation(), 88, 72)
+        student201.getTranscript().addTakenCourse(TakenCourse(course201.getCourseInformation(), 85, 75))
+        student201.getTranscript().addTakenCourse(TakenCourse(course202.getCourseInformation(), 90, 85))
 
-        student204.getTranscript().addTakenCourse(course201.getCourseInformation(), 65, 85)
-        student204.getTranscript().addTakenCourse(course202.getCourseInformation(), 75, 850)
-        student204.getTranscript().addTakenCourse(course203.getCourseInformation(), 55, 10)
+        student202.getTranscript().addTakenCourse(TakenCourse(course201.getCourseInformation(), 68, 75))
+        student202.getTranscript().addTakenCourse(TakenCourse(course202.getCourseInformation(), 88, 72))
 
-        student205.getTranscript().addTakenCourse(course201.getCourseInformation(), 75, 85)
+        student204.getTranscript().addTakenCourse(TakenCourse(course201.getCourseInformation(), 65, 85))
+        student204.getTranscript().addTakenCourse(TakenCourse(course202.getCourseInformation(), 75, 850))
+        student204.getTranscript().addTakenCourse(TakenCourse(course203.getCourseInformation(), 55, 10))
 
-        student211.getTranscript().addTakenCourse(course211.getCourseInformation(), 38, 90)
-        student211.getTranscript().addTakenCourse(course212.getCourseInformation(), 45, 85)
-        student211.getTranscript().addTakenCourse(course213.getCourseInformation(), 85, 75)
+        student205.getTranscript().addTakenCourse(TakenCourse(course201.getCourseInformation(), 75, 85))
 
-        student212.getTranscript().addTakenCourse(course211.getCourseInformation(), 75, 85)
-        student212.getTranscript().addTakenCourse(course212.getCourseInformation(), 55, 80)
+        student211.getTranscript().addTakenCourse(TakenCourse(course211.getCourseInformation(), 38, 90))
+        student211.getTranscript().addTakenCourse(TakenCourse(course212.getCourseInformation(), 45, 85))
+        student211.getTranscript().addTakenCourse(TakenCourse(course213.getCourseInformation(), 85, 75))
 
-        student216.getTranscript().addTakenCourse(course211.getCourseInformation(), 70, 85)
+        student212.getTranscript().addTakenCourse(TakenCourse(course211.getCourseInformation(), 75, 85))
+        student212.getTranscript().addTakenCourse(TakenCourse(course212.getCourseInformation(), 55, 80))
+
+        student216.getTranscript().addTakenCourse(TakenCourse(course211.getCourseInformation(), 70, 85))
 
         #Add students to the system
         self.createOrChangeStudent(student301)
@@ -966,7 +967,7 @@ class DataManagement:
 
 
 
-        MechanicalEngineering = generateDepartment(101,"Mechanical Engineering")
+        MechanicalEngineering = generateDepartment(101,"Mechanical Engineering",engineering)
         self.createOrChangeDepartment(MechanicalEngineering)
 
 
@@ -1081,6 +1082,7 @@ class DataManagement:
         clasrooms = []
         clasrooms.append(bcr1)
         clasrooms.append(bcr1)
+        clasrooms.append(bcr1)
 
         prerequisites = []
         prerequisites.append(MaterialScience.getCourseInformation())
@@ -1113,12 +1115,17 @@ class DataManagement:
         section_times.append(SectionTime.First)
         section_times.append(SectionTime.Third)
 
+        clasrooms.clear()
+        clasrooms.append(bcr1)
+        clasrooms.append(bcr1)
+
         prerequisites = []
 
         FluidMechanics = generateCourse(
             lecturers_for_sections,
             days,
             section_times,
+            clasrooms,
             "Fluid Mechanics",
             "ME361",
             prerequisites,
@@ -1132,7 +1139,7 @@ class DataManagement:
 
         self.createOrChangeFaculty(engineering)
 
-        MechanicalEngineering = generateDepartment(101, "Mechanical Engineering")
+        MechanicalEngineering = generateDepartment(101, "Mechanical Engineering",engineering)
         self.createOrChangeDepartment(MechanicalEngineering)
 
         bAdvisor = generateRandomAdvisor(MechanicalEngineering)
@@ -1329,23 +1336,23 @@ class DataManagement:
 
         self.createOrChangeCourse(HeatTransfer)
 
-        bStudent2021_2 = self.generateRandomStudent(MechanicalEngineering, 2021, 4, bAdvisor.get_staffId())
+        bStudent2021_2 = generateRandomStudent(MechanicalEngineering, 2021, 4, bAdvisor.get_staffId())
         bStudent2021_2.getTranscript().addTakenCourse(TakenCourse(Thermodynamics.getCourseInformation(), 90, 85))
         bStudent2021_2.getTranscript().addTakenCourse(TakenCourse(MaterialScience.getCourseInformation(), 88, 72))
         bStudent2021_2.getTranscript().addTakenCourse(TakenCourse(StrengthOfMaterials.getCourseInformation(), 75, 85))
         bStudent2021_2.getTranscript().addTakenCourse(TakenCourse(FluidMechanics.getCourseInformation(), 55, 100))
         self.createOrChangeStudent(bStudent2021_2)
 
-        bStudent2022_1 = self.generateRandomStudent(MechanicalEngineering, 2022, 3, bAdvisor.get_staffId())
+        bStudent2022_1 = generateRandomStudent(MechanicalEngineering, 2022, 3, bAdvisor.get_staffId())
         bStudent2022_1.getTranscript().addTakenCourse(TakenCourse(Thermodynamics.getCourseInformation(), 67, 80))
         bStudent2022_1.getTranscript().addTakenCourse(TakenCourse(MaterialScience.getCourseInformation(), 74, 69))
         self.createOrChangeStudent(bStudent2022_1)
 
-        bStudent2023_2 = self.generateRandomStudent(MechanicalEngineering, 2023, 2, bAdvisor.get_staffId())
+        bStudent2023_2 = generateRandomStudent(MechanicalEngineering, 2023, 2, bAdvisor.get_staffId())
         self.createOrChangeStudent(bStudent2023_2)
         bStudent2022_1.getTranscript().addTakenCourse(TakenCourse(Thermodynamics.getCourseInformation(), 31, 90))
 
-        bStudent2024_2 = self.generateRandomStudent(MechanicalEngineering, 2024, 1, bAdvisor.get_staffId())
+        bStudent2024_2 = generateRandomStudent(MechanicalEngineering, 2024, 1, bAdvisor.get_staffId())
         self.createOrChangeStudent(bStudent2024_2)
         #
         #
@@ -1357,9 +1364,8 @@ class DataManagement:
         #
         #
         #
-        Engineering = generateFaculty(105, "Engineering")
 
-        IndustrialEngineering = generateDepartment(101, "Industrial Engineering", Engineering)
+        IndustrialEngineering = generateDepartment(101, "Industrial Engineering", engineering)
         self.createOrChangeDepartment(IndustrialEngineering)
 
         ieLecturer1 = generateRandomLecturer(IndustrialEngineering)
@@ -1560,7 +1566,7 @@ class DataManagement:
         #
         #
 
-        ElectricalEngineering = generateDepartment(101, "Electrical Engineering", Engineering)
+        ElectricalEngineering = generateDepartment(101, "Electrical Engineering", engineering)
         self.createOrChangeDepartment(ElectricalEngineering)
 
         eeLecturer1 = generateRandomLecturer(ElectricalEngineering)
@@ -2065,7 +2071,7 @@ names = ["Ali", "Fatma", "Zeynep", "Ahmet", "Ayse", "Mehmet", "Emine", "Hasan", 
          "Sibel", "Burak", "Busra", "Omer", "Halime", "Murat", "Gizem", "Eren", "Esra", "Yusuf", "Melis", "Can",
          "Hatice", "Oguz", "Rabia", "Kerem", "Derya", "Furkan", "Sevgi", "Kadir", "Selin", "Ibrahim", "Tugce",
          "Cem", "Pelin", "Baris", "Leyla", "Serkan", "Sule", "Deniz", "Cansu", "Hakan", "Damla", "Merve", "Tolga",
-         "Ezgi", "Volkan", "Dilara", "Uğur", "Selma", "Ece", "Adem", "Zeynep", "Burcu", "Ozan", "Cemile",
+         "Ezgi", "Volkan", "Dilara", "Ugur", "Selma", "Ece", "Adem", "Zeynep", "Burcu", "Ozan", "Cemile",
          "Yasemin", "Alper", "Duygu", "Serdar", "Gul", "Okan", "Seda", "Bora", "Nurgul", "Cagri", "Seyma",
          "Dogukan", "Gulsah", "Tuna", "Hande", "Gokhan", "Berna", "Caner", "Bahar", "Arda", "Necla", "Batuhan",
          "Hilal", "Atakan", "Tulay", "Cengiz", "Berke", "Perihan", "Ece", "Tayfun", "Ceyda", "Emirhan", "Gonca",
@@ -2261,67 +2267,7 @@ class customEncoder(JSONEncoder):
     def default(self, o):
         return o.__dict__
 
-# dm = DataManagement()
-# fac = generateFaculty(15,"eng")
-# dm.createOrChangeFaculty(fac)
-#
-# dep = generateDepartment(150, "comp eng",fac )
-# dm.createOrChangeDepartment(dep)
-#
-# ad = generateRandomAdvisor(dep)
-#
-# dm.createOrChangeAdvisor(ad)
-#
-# stu = generateRandomStudent(dep,2022,1,ad.get_staffId())
-# dm.createOrChangeStudent(stu)
-#
-# lec = generateRandomLecturer(dep)
-# dm.createOrChangeLecturer(lec)
-#
-# sa = generateRandomStudentsAffairs(dep)
-# dm.createOrChangeStudentsAffairs(sa)
-#
-# dsch = generateRandomDepartmentScheduler(dep)
-# dm.createOrChangeDepartmentScheduler(dsch)
-#
-# dh = generateRandomDepartmentHead(dep)
-# dm.createOrChangeDepartmentHead(dh)
-#
-# cr = generateClassroom("aa",20)
-# dm.createOrChangeClassroom(cr)
-#
-# course = generateCourse([lec], [Day.Friday], [SectionTime.Fifth], [cr], "test", "TT101", list(), 1, dep.get_facultyID(), dep.getDepartmentID())
-# dm.createOrChangeCourse(course)
-#
-# course1 = generateCourse([lec], [Day.Friday], [SectionTime.Fifth], [cr], "test2", "TT102", list(), 1, dep.get_facultyID(), dep.getDepartmentID())
-# dm.createOrChangeCourse(course1)
-
-# Yusuf
-# **************************************************** Faculties ****************************************************
-# # new Faculty "Business"
-# Business = generateFaculty(3, "Business")
-# dm.createOrChangeFaculty(Business)
-# # new Faculty "Science"
-# Science = generateFaculty(2, "Science")
-# dm.createOrChangeFaculty(Science)
-#
-# #**************************************************** Departments ****************************************************
-# # new Department "Business" in Faculty "Business"
-# BusinessDepartment = generateDepartment(301, "Business", Business)
-# dm.createOrChangeDepartment(BusinessDepartment)
-# # New Department "Biology" in Faculty "Science"
-# Biology = generateDepartment(201, "Biology", Science)
-# dm.createOrChangeDepartment(Biology)
-# # New Department "Chemistry" in Faculty "Science"
-# Chemistry = generateDepartment(202, "Chemistry", Science)
-# dm.createOrChangeDepartment(Chemistry)
-#
-# #**************************************************** Advisors and Lecturers ****************************************************
-# # new Advisors and Lecturers for Business Department
-# advisor301 = generateRandomAdvisor(BusinessDepartment)
-
-
-if __name__ == "__main__":
-    dm = DataManagement()
-    dm.__main__()
-    # dm.saveToJson(dm.getStudent("
+# if __name__ == "__main__":
+#     dm = DataManagement()
+#     dm.__main__()
+#     # dm.saveToJson(dm.getStudent("

@@ -1,0 +1,97 @@
+{
+    "courseInformation": {
+        "courseName": "General Biology",
+        "courseCode": "BYL1011"
+    },
+    "courseRequirements": {
+        "_prerequisite_courses": [],
+        "_minimum_current_class": 1,
+        "_facultyID": {
+            "_FacultyID": 2,
+            "_FacultyName": "Science"
+        },
+        "_departmentID": {
+            "_departmentID": 153,
+            "_departmentName": "Biology"
+        }
+    },
+    "courseSections": [
+        {
+            "_day": 1,
+            "_sectionTime": 1,
+            "_lecturer": {
+                "_user_information": {
+                    "_FIRST_NAME": "Bahar",
+                    "_LAST_NAME": "Bulut",
+                    "_encoded_password": "1234",
+                    "_UNIVERSITY_EMAIL": "baharbulut@marun.edu.tr",
+                    "_email": "baharbulut90@gmail.com",
+                    "_address": "Eskisehir",
+                    "_phone_number": "+90 583 819 37 64"
+                },
+                "_staffId": {
+                    "_staffId": 21
+                },
+                "_departmentId": "",
+                "_facultyId": ""
+            },
+            "_classRoom": {
+                "_classroom_name": "S201",
+                "_capacity": 80
+            },
+            "_quota": 80
+        },
+        {
+            "_day": 1,
+            "_sectionTime": 2,
+            "_lecturer": {
+                "_user_information": {
+                    "_FIRST_NAME": "Bahar",
+                    "_LAST_NAME": "Bulut",
+                    "_encoded_password": "1234",
+                    "_UNIVERSITY_EMAIL": "baharbulut@marun.edu.tr",
+                    "_email": "baharbulut90@gmail.com",
+                    "_address": "Eskisehir",
+                    "_phone_number": "+90 583 819 37 64"
+                },
+                "_staffId": {
+                    "_staffId": 21
+                },
+                "_departmentId": "",
+                "_facultyId": ""
+            },
+            "_classRoom": {
+                "_classroom_name": "S201",
+                "_capacity": 80
+            },
+            "_quota": 80
+        },
+        {
+            "_day": 4,
+            "_sectionTime": 0,
+            "_lecturer": {
+                "_user_information": {
+                    "_FIRST_NAME": "Bahar",
+                    "_LAST_NAME": "Bulut",
+                    "_encoded_password": "1234",
+                    "_UNIVERSITY_EMAIL": "baharbulut@marun.edu.tr",
+                    "_email": "baharbulut90@gmail.com",
+                    "_address": "Eskisehir",
+                    "_phone_number": "+90 583 819 37 64"
+                },
+                "_staffId": {
+                    "_staffId": 21
+                },
+                "_departmentId": "",
+                "_facultyId": ""
+            },
+            "_classRoom": {
+                "_classroom_name": "S205",
+                "_capacity": 55
+            },
+            "_quota": 55
+        }
+    ],
+    "_currentStudentCount": 0,
+    "_courseCapacity": 55
+}

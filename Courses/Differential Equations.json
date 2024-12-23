@@ -1,0 +1,72 @@
+{
+    "courseInformation": {
+        "courseName": "Differential Equations",
+        "courseCode": "MATH205"
+    },
+    "courseRequirements": {
+        "_prerequisite_courses": [],
+        "_minimum_current_class": 2,
+        "_facultyID": {
+            "_FacultyID": 1,
+            "_FacultyName": "Engineering"
+        },
+        "_departmentID": {
+            "_departmentID": 150,
+            "_departmentName": "Computer Engineering"
+        }
+    },
+    "courseSections": [
+        {
+            "_day": 2,
+            "_sectionTime": 1,
+            "_lecturer": {
+                "_user_information": {
+                    "_FIRST_NAME": "Damla",
+                    "_LAST_NAME": "Orhan",
+                    "_encoded_password": "1234",
+                    "_UNIVERSITY_EMAIL": "damlaorhan@marun.edu.tr",
+                    "_email": "damlaorhan27@gmail.com",
+                    "_address": "Nigde",
+                    "_phone_number": "+90 555 978 85 56"
+                },
+                "_staffId": {
+                    "_staffId": 4
+                },
+                "_departmentId": "",
+                "_facultyId": ""
+            },
+            "_classRoom": {
+                "_classroom_name": "CS11",
+                "_capacity": 50
+            },
+            "_quota": 50
+        },
+        {
+            "_day": 4,
+            "_sectionTime": 0,
+            "_lecturer": {
+                "_user_information": {
+                    "_FIRST_NAME": "Damla",
+                    "_LAST_NAME": "Orhan",
+                    "_encoded_password": "1234",
+                    "_UNIVERSITY_EMAIL": "damlaorhan@marun.edu.tr",
+                    "_email": "damlaorhan27@gmail.com",
+                    "_address": "Nigde",
+                    "_phone_number": "+90 555 978 85 56"
+                },
+                "_staffId": {
+                    "_staffId": 4
+                },
+                "_departmentId": "",
+                "_facultyId": ""
+            },
+            "_classRoom": {
+                "_classroom_name": "CS13",
+                "_capacity": 50
+            },
+            "_quota": 50
+        }
+    ],
+    "_currentStudentCount": 0,
+    "_courseCapacity": 50
+}

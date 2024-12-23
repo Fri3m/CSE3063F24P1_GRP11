@@ -1,0 +1,424 @@
+2024-12-23 14:51:19,037 - exception - ERROR - An error occurred!
+Traceback (most recent call last):
+  File "C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 1043, in <module>
+    main.main()
+    ~~~~~~~~~^^
+  File "C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 38, in main
+    self.startMenu()
+    ~~~~~~~~~~~~~~^^
+  File "C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 111, in startMenu
+    choice = input()
+  File "<frozen codecs>", line 322, in decode
+KeyboardInterrupt
+2024-12-23 14:51:55,239 - exception - ERROR - An error occurred!
+Traceback (most recent call last):
+  File "C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 1043, in <module>
+    main.main()
+    ~~~~~~~~~^^
+  File "C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 38, in main
+    self.startMenu()
+    ~~~~~~~~~~~~~~^^
+  File "C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 114, in startMenu
+    self.login()
+    ~~~~~~~~~~^^
+  File "C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 947, in login
+    self.user_type = input()
+                     ~~~~~^^
+  File "<frozen codecs>", line 322, in decode
+KeyboardInterrupt
+2024-12-23 14:53:01,379 - exception - ERROR - An error occurred!
+Traceback (most recent call last):
+  File "C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 1043, in <module>
+    main.main()
+    ~~~~~~~~~^^
+  File "C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 38, in main
+    self.startMenu()
+    ~~~~~~~~~~~~~~^^
+  File "C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 114, in startMenu
+    self.login()
+    ~~~~~~~~~~^^
+  File "C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 958, in login
+    self.studentMainMenu()
+    ~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 172, in studentMainMenu
+    choice = input()
+  File "<frozen codecs>", line 322, in decode
+KeyboardInterrupt
+2024-12-23 15:02:25,226 - exception - ERROR - An error occurred!
+Traceback (most recent call last):
+  File "C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 733, in studentsAffairsMainMenu
+    self.studentsAffairsAddCourseMenu()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 910, in studentsAffairsAddCourseMenu
+    if self._course_registration_service.checkClassroomAvailabilityForDayAndTime(dayValue, sectionTimeValue,
+       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                                                                 classroom, self._courses):
+                                                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\CourseRegistrationService.py", line 28, in checkClassroomAvailabilityForDayAndTime
+    logger.info(f"Checking classroom availability {day} {time} {classroom.get_classroomName()}")
+                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Classroom' object has no attribute 'get_classroomName'. Did you mean: 'get_classroom_name'?
+2024-12-23 15:02:46,472 - exception - ERROR - An error occurred!
+Traceback (most recent call last):
+  File "C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 733, in studentsAffairsMainMenu
+    self.studentsAffairsAddCourseMenu()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 910, in studentsAffairsAddCourseMenu
+    if self._course_registration_service.checkClassroomAvailabilityForDayAndTime(dayValue, sectionTimeValue,
+       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                                                                 classroom, self._courses):
+                                                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\CourseRegistrationService.py", line 28, in checkClassroomAvailabilityForDayAndTime
+    logger.info(f"Checking classroom availability {day} {time} {classroom.get_classroomName()}")
+                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Classroom' object has no attribute 'get_classroomName'. Did you mean: 'get_classroom_name'?
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 1043, in <module>
+    main.main()
+    ~~~~~~~~~^^
+  File "C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 38, in main
+    self.startMenu()
+    ~~~~~~~~~~~~~~^^
+  File "C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 114, in startMenu
+    self.login()
+    ~~~~~~~~~~^^
+  File "C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 975, in login
+    self.login()
+    ~~~~~~~~~~^^
+  File "C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 968, in login
+    self.studentsAffairsMainMenu()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 761, in studentsAffairsMainMenu
+    self.studentsAffairsMainMenu()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 730, in studentsAffairsMainMenu
+    choice = input()
+  File "<frozen codecs>", line 322, in decode
+KeyboardInterrupt
+2024-12-23 15:53:01,249 - exception - ERROR - An error occurred!
+Traceback (most recent call last):
+  File "C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 734, in studentsAffairsMainMenu
+    self.studentsAffairsAddCourseMenu()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 913, in studentsAffairsAddCourseMenu
+    if self._course_registration_service.checkClassroomAvailabilityForDayAndTime(dayValue, sectionTimeValue,
+       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                                                                 classroom, self._courses):
+                                                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\CourseRegistrationService.py", line 28, in checkClassroomAvailabilityForDayAndTime
+    logger.info(f"Checking classroom availability {day} {time} {classroom.get_classroomName()}")
+                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Classroom' object has no attribute 'get_classroomName'. Did you mean: 'get_classroom_name'?
+2024-12-23 15:56:22,673 - exception - ERROR - An error occurred!
+Traceback (most recent call last):
+  File "C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 734, in studentsAffairsMainMenu
+    self.studentsAffairsAddCourseMenu()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 913, in studentsAffairsAddCourseMenu
+    if self._course_registration_service.checkClassroomAvailabilityForDayAndTime(dayValue, sectionTimeValue,
+       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                                                                 classroom, self._courses):
+                                                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\CourseRegistrationService.py", line 28, in checkClassroomAvailabilityForDayAndTime
+    logger.info(f"Checking classroom availability {day} {time} {classroom.get_classroomName()}")
+                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Classroom' object has no attribute 'get_classroomName'. Did you mean: 'get_classroom_name'?
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 1046, in <module>
+    main.main()
+    ~~~~~~~~~^^
+  File "C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 35, in main
+    self.startMenu()
+    ~~~~~~~~~~~~~~^^
+  File "C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 109, in startMenu
+    self.login()
+    ~~~~~~~~~~^^
+  File "C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 971, in login
+    self.studentsAffairsMainMenu()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 762, in studentsAffairsMainMenu
+    self.studentsAffairsMainMenu()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 731, in studentsAffairsMainMenu
+    choice = input()
+  File "<frozen codecs>", line 322, in decode
+KeyboardInterrupt
+2024-12-23 16:00:42,511 - exception - ERROR - An error occurred!
+Traceback (most recent call last):
+  File "C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 734, in studentsAffairsMainMenu
+    self.studentsAffairsAddCourseMenu()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 920, in studentsAffairsAddCourseMenu
+    if self._course_registration_service.checkClassroomAvailabilityForDayAndTime(dayValue, sectionTimeValue,
+       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                                                                 classroom, self._courses):
+                                                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\CourseRegistrationService.py", line 28, in checkClassroomAvailabilityForDayAndTime
+    logger.info(f"Checking classroom availability {day} {time} {classroom.get_classroomName()}")
+                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Classroom' object has no attribute 'get_classroomName'. Did you mean: 'get_classroom_name'?
+2024-12-23 16:17:25,592 - exception - ERROR - An error occurred!
+Traceback (most recent call last):
+  File "C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 734, in studentsAffairsMainMenu
+    self.studentsAffairsAddCourseMenu()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 920, in studentsAffairsAddCourseMenu
+    if self._course_registration_service.checkClassroomAvailabilityForDayAndTime(dayValue, sectionTimeValue,
+       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                                                                classroom, self._courses):
+                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\CourseRegistrationService.py", line 28, in checkClassroomAvailabilityForDayAndTime
+    logger.info(f"Checking classroom availability {day} {time} {classroom.get_classroomName()}")
+                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Classroom' object has no attribute 'get_classroomName'. Did you mean: 'get_classroom_name'?
+2024-12-23 16:20:04,324 - exception - ERROR - An error occurred!
+Traceback (most recent call last):
+  File "C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 734, in studentsAffairsMainMenu
+    self.studentsAffairsAddCourseMenu()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 920, in studentsAffairsAddCourseMenu
+    if self._course_registration_service.checkClassroomAvailabilityForDayAndTime(dayValue, sectionTimeValue,
+       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                                                                classroom, self._courses):
+                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\CourseRegistrationService.py", line 28, in checkClassroomAvailabilityForDayAndTime
+    logger.info(f"Checking classroom availability {day} {time} {classroom.get_classroomName()}")
+                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Classroom' object has no attribute 'get_classroomName'. Did you mean: 'get_classroom_name'?
+2024-12-23 16:21:04,952 - exception - ERROR - An error occurred!
+Traceback (most recent call last):
+  File "C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 1053, in <module>
+    main.main()
+    ~~~~~~~~~^^
+  File "C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 35, in main
+    self.startMenu()
+    ~~~~~~~~~~~~~~^^
+  File "C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 109, in startMenu
+    self.login()
+    ~~~~~~~~~~^^
+  File "C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 978, in login
+    self.studentsAffairsMainMenu()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 763, in studentsAffairsMainMenu
+    self.studentsAffairsMainMenu()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 763, in studentsAffairsMainMenu
+    self.studentsAffairsMainMenu()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 731, in studentsAffairsMainMenu
+    choice = input()
+  File "<frozen codecs>", line 322, in decode
+KeyboardInterrupt
+2024-12-23 16:25:58,675 - exception - ERROR - An error occurred!
+Traceback (most recent call last):
+  File "C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 734, in studentsAffairsMainMenu
+    self.studentsAffairsAddCourseMenu()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 926, in studentsAffairsAddCourseMenu
+    print(classroom.getClassroomName())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Classroom' object has no attribute 'getClassroomName'. Did you mean: 'get_classroom_name'?
+2024-12-23 16:27:00,338 - exception - ERROR - An error occurred!
+Traceback (most recent call last):
+  File "C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 1053, in <module>
+    main.main()
+    ~~~~~~~~~^^
+  File "C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 35, in main
+    self.startMenu()
+    ~~~~~~~~~~~~~~^^
+  File "C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 109, in startMenu
+    self.login()
+    ~~~~~~~~~~^^
+  File "C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 978, in login
+    self.studentsAffairsMainMenu()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 763, in studentsAffairsMainMenu
+    self.studentsAffairsMainMenu()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 731, in studentsAffairsMainMenu
+    choice = input()
+  File "<frozen codecs>", line 322, in decode
+KeyboardInterrupt
+2024-12-23 16:27:57,232 - exception - ERROR - An error occurred!
+Traceback (most recent call last):
+  File "C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 734, in studentsAffairsMainMenu
+    self.studentsAffairsAddCourseMenu()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 935, in studentsAffairsAddCourseMenu
+    if classroom.getClassroomName().lower() == inpClassroom:
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Classroom' object has no attribute 'getClassroomName'. Did you mean: 'get_classroom_name'?
+2024-12-23 16:28:50,380 - exception - ERROR - An error occurred!
+Traceback (most recent call last):
+  File "C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 1053, in <module>
+    main.main()
+    ~~~~~~~~~^^
+  File "C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 35, in main
+    self.startMenu()
+    ~~~~~~~~~~~~~~^^
+  File "C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 109, in startMenu
+    self.login()
+    ~~~~~~~~~~^^
+  File "C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 978, in login
+    self.studentsAffairsMainMenu()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 763, in studentsAffairsMainMenu
+    self.studentsAffairsMainMenu()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 731, in studentsAffairsMainMenu
+    choice = input()
+  File "<frozen codecs>", line 322, in decode
+KeyboardInterrupt
+2024-12-23 16:32:47,710 - exception - ERROR - An error occurred!
+Traceback (most recent call last):
+  File "C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 1053, in <module>
+    main.main()
+    ~~~~~~~~~^^
+  File "C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 35, in main
+    self.startMenu()
+    ~~~~~~~~~~~~~~^^
+  File "C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 109, in startMenu
+    self.login()
+    ~~~~~~~~~~^^
+  File "C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 978, in login
+    self.studentsAffairsMainMenu()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 734, in studentsAffairsMainMenu
+    self.studentsAffairsAddCourseMenu()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 852, in studentsAffairsAddCourseMenu
+    day = input()
+  File "<frozen codecs>", line 322, in decode
+KeyboardInterrupt
+2024-12-23 16:34:12,867 - exception - ERROR - An error occurred!
+Traceback (most recent call last):
+  File "C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 1054, in <module>
+    main.main()
+    ~~~~~~~~~^^
+  File "C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 35, in main
+    self.startMenu()
+    ~~~~~~~~~~~~~~^^
+  File "C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 109, in startMenu
+    self.login()
+    ~~~~~~~~~~^^
+  File "C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 979, in login
+    self.studentsAffairsMainMenu()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 734, in studentsAffairsMainMenu
+    self.studentsAffairsAddCourseMenu()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 852, in studentsAffairsAddCourseMenu
+    day = input()
+  File "<frozen codecs>", line 322, in decode
+KeyboardInterrupt
+2024-12-23 16:35:15,655 - exception - ERROR - An error occurred!
+Traceback (most recent call last):
+  File "C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 734, in studentsAffairsMainMenu
+    self.studentsAffairsAddCourseMenu()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 947, in studentsAffairsAddCourseMenu
+    course = DataManagement.generateCourse(lecturerArrayList, dayArrayList, sectionTimeArrayList,
+                                           course_name,
+                                           course_code, prerequisites, min_current_class,
+                                           department.get_facultyID(), department.getDepartmentID())
+TypeError: generateCourse() missing 1 required positional argument: 'departmentID'
+2024-12-23 16:38:05,858 - exception - ERROR - An error occurred!
+Traceback (most recent call last):
+  File "C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 1055, in <module>
+    main.main()
+    ~~~~~~~~~^^
+  File "C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 35, in main
+    self.startMenu()
+    ~~~~~~~~~~~~~~^^
+  File "C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 109, in startMenu
+    self.login()
+    ~~~~~~~~~~^^
+  File "C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 980, in login
+    self.studentsAffairsMainMenu()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 763, in studentsAffairsMainMenu
+    self.studentsAffairsMainMenu()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 731, in studentsAffairsMainMenu
+    choice = input()
+  File "<frozen codecs>", line 322, in decode
+KeyboardInterrupt
+2024-12-23 16:38:45,337 - exception - ERROR - An error occurred!
+Traceback (most recent call last):
+  File "C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 734, in studentsAffairsMainMenu
+    self.studentsAffairsAddCourseMenu()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 920, in studentsAffairsAddCourseMenu
+    if self._course_registration_service.checkClassroomAvailabilityForDayAndTime(dayValue, sectionTimeValue,
+       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                                                                 classroom, self._courses):
+                                                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\CourseRegistrationService.py", line 31, in checkClassroomAvailabilityForDayAndTime
+    if courseSection._day == day and courseSection._sectionTime == time and courseSection._classroom == classroom:
+                                                                            ^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'CourseSection' object has no attribute '_classroom'. Did you mean: '_classRoom'?
+2024-12-23 16:49:53,329 - exception - ERROR - An error occurred!
+Traceback (most recent call last):
+  File "C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 597, in departmentSchedulerMainMenu
+    self.departmentSchedulerChangeCourseSection()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 727, in departmentSchedulerChangeCourseSection
+    if self._course_registration_service.checkClassroomAvailabilityForDayAndTime(courseSection._day,
+       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+                                                                                 courseSection._sectionTime,
+                                                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                                                                 classroom,
+                                                                                 ^^^^^^^^^^
+                                                                                 self._courses):
+                                                                                 ^^^^^^^^^^^^^^
+  File "C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\CourseRegistrationService.py", line 31, in checkClassroomAvailabilityForDayAndTime
+    if courseSection._day == day and courseSection._sectionTime == time and courseSection._classroom == classroom:
+                                                                            ^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'CourseSection' object has no attribute '_classroom'. Did you mean: '_classRoom'?
+2024-12-23 16:51:50,155 - exception - ERROR - An error occurred!
+Traceback (most recent call last):
+  File "C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 597, in departmentSchedulerMainMenu
+    self.departmentSchedulerChangeCourseSection()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 727, in departmentSchedulerChangeCourseSection
+    if self._course_registration_service.checkClassroomAvailabilityForDayAndTime(courseSection._day,
+       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+                                                                                 courseSection._sectionTime,
+                                                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                                                                 classroom,
+                                                                                 ^^^^^^^^^^
+                                                                                 self._courses):
+                                                                                 ^^^^^^^^^^^^^^
+  File "C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\CourseRegistrationService.py", line 31, in checkClassroomAvailabilityForDayAndTime
+    if courseSection._day == day and courseSection._sectionTime == time and courseSection._classroom == classroom:
+                                                                            ^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'CourseSection' object has no attribute '_classroom'. Did you mean: '_classRoom'?
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 1080, in <module>
+    main.main()
+    ~~~~~~~~~^^
+  File "C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 37, in main
+    self.startMenu()
+    ~~~~~~~~~~~~~~^^
+  File "C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 111, in startMenu
+    self.login()
+    ~~~~~~~~~~^^
+  File "C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 1003, in login
+    self.departmentSchedulerMainMenu()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 611, in departmentSchedulerMainMenu
+    self.departmentSchedulerMainMenu()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 594, in departmentSchedulerMainMenu
+    choice = input()
+  File "<frozen codecs>", line 322, in decode
+KeyboardInterrupt

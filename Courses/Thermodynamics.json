@@ -1,0 +1,72 @@
+{
+    "courseInformation": {
+        "courseName": "Thermodynamics",
+        "courseCode": "MATH101"
+    },
+    "courseRequirements": {
+        "_prerequisite_courses": [],
+        "_minimum_current_class": 1,
+        "_facultyID": {
+            "_FacultyID": 1,
+            "_FacultyName": "Engineering"
+        },
+        "_departmentID": {
+            "_departmentID": 101,
+            "_departmentName": "Mechanical Engineering"
+        }
+    },
+    "courseSections": [
+        {
+            "_day": 4,
+            "_sectionTime": 3,
+            "_lecturer": {
+                "_user_information": {
+                    "_FIRST_NAME": "Serdar",
+                    "_LAST_NAME": "Karahan",
+                    "_encoded_password": "1234",
+                    "_UNIVERSITY_EMAIL": "serdarkarahan@marun.edu.tr",
+                    "_email": "serdarkarahan33@gmail.com",
+                    "_address": "Erzincan",
+                    "_phone_number": "+90 552 466 61 06"
+                },
+                "_staffId": {
+                    "_staffId": 43
+                },
+                "_departmentId": "",
+                "_facultyId": ""
+            },
+            "_classRoom": {
+                "_classroom_name": "MEZ01",
+                "_capacity": 60
+            },
+            "_quota": 60
+        },
+        {
+            "_day": 3,
+            "_sectionTime": 0,
+            "_lecturer": {
+                "_user_information": {
+                    "_FIRST_NAME": "Serdar",
+                    "_LAST_NAME": "Karahan",
+                    "_encoded_password": "1234",
+                    "_UNIVERSITY_EMAIL": "serdarkarahan@marun.edu.tr",
+                    "_email": "serdarkarahan33@gmail.com",
+                    "_address": "Erzincan",
+                    "_phone_number": "+90 552 466 61 06"
+                },
+                "_staffId": {
+                    "_staffId": 43
+                },
+                "_departmentId": "",
+                "_facultyId": ""
+            },
+            "_classRoom": {
+                "_classroom_name": "MEZ01",
+                "_capacity": 60
+            },
+            "_quota": 60
+        }
+    ],
+    "_currentStudentCount": 0,
+    "_courseCapacity": 60
+}

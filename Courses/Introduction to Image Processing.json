@@ -1,0 +1,72 @@
+{
+    "courseInformation": {
+        "courseName": "Introduction to Image Processing",
+        "courseCode": "EE4062"
+    },
+    "courseRequirements": {
+        "_prerequisite_courses": [],
+        "_minimum_current_class": 4,
+        "_facultyID": {
+            "_FacultyID": 1,
+            "_FacultyName": "Engineering"
+        },
+        "_departmentID": {
+            "_departmentID": 150,
+            "_departmentName": "Computer Engineering"
+        }
+    },
+    "courseSections": [
+        {
+            "_day": 1,
+            "_sectionTime": 1,
+            "_lecturer": {
+                "_user_information": {
+                    "_FIRST_NAME": "Tuna",
+                    "_LAST_NAME": "Keser",
+                    "_encoded_password": "1234",
+                    "_UNIVERSITY_EMAIL": "tunakeser@marun.edu.tr",
+                    "_email": "tunakeser85@gmail.com",
+                    "_address": "Erzincan",
+                    "_phone_number": "+90 522 487 17 59"
+                },
+                "_staffId": {
+                    "_staffId": 12
+                },
+                "_departmentId": "",
+                "_facultyId": ""
+            },
+            "_classRoom": {
+                "_classroom_name": "CS19",
+                "_capacity": 40
+            },
+            "_quota": 40
+        },
+        {
+            "_day": 3,
+            "_sectionTime": 3,
+            "_lecturer": {
+                "_user_information": {
+                    "_FIRST_NAME": "Tuna",
+                    "_LAST_NAME": "Keser",
+                    "_encoded_password": "1234",
+                    "_UNIVERSITY_EMAIL": "tunakeser@marun.edu.tr",
+                    "_email": "tunakeser85@gmail.com",
+                    "_address": "Erzincan",
+                    "_phone_number": "+90 522 487 17 59"
+                },
+                "_staffId": {
+                    "_staffId": 12
+                },
+                "_departmentId": "",
+                "_facultyId": ""
+            },
+            "_classRoom": {
+                "_classroom_name": "CS19",
+                "_capacity": 40
+            },
+            "_quota": 40
+        }
+    ],
+    "_currentStudentCount": 0,
+    "_courseCapacity": 40
+}

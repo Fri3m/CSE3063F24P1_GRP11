@@ -1,0 +1,11 @@
+{
+    "_departmentID": {
+        "_departmentID": 154,
+        "_departmentName": "Chemistry"
+    },
+    "_facultyID": {
+        "_FacultyID": 2,
+        "_FacultyName": "Science"
+    },
+    "_lecturers": []
+}

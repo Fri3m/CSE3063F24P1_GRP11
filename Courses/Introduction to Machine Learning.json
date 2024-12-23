@@ -1,0 +1,102 @@
+{
+    "courseInformation": {
+        "courseName": "Introduction to Machine Learning",
+        "courseCode": "CS4288"
+    },
+    "courseRequirements": {
+        "_prerequisite_courses": [
+            {
+                "courseName": "Linear Algebra for Computer Engineering",
+                "courseCode": "MATH256"
+            }
+        ],
+        "_minimum_current_class": 4,
+        "_facultyID": {
+            "_FacultyID": 1,
+            "_FacultyName": "Engineering"
+        },
+        "_departmentID": {
+            "_departmentID": 150,
+            "_departmentName": "Computer Engineering"
+        }
+    },
+    "courseSections": [
+        {
+            "_day": 1,
+            "_sectionTime": 2,
+            "_lecturer": {
+                "_user_information": {
+                    "_FIRST_NAME": "Eren",
+                    "_LAST_NAME": "Altun",
+                    "_encoded_password": "1234",
+                    "_UNIVERSITY_EMAIL": "erenaltun@marun.edu.tr",
+                    "_email": "erenaltun33@gmail.com",
+                    "_address": "Samsun",
+                    "_phone_number": "+90 586 272 89 30"
+                },
+                "_staffId": {
+                    "_staffId": 7
+                },
+                "_departmentId": "",
+                "_facultyId": ""
+            },
+            "_classRoom": {
+                "_classroom_name": "CS17",
+                "_capacity": 60
+            },
+            "_quota": 60
+        },
+        {
+            "_day": 4,
+            "_sectionTime": 0,
+            "_lecturer": {
+                "_user_information": {
+                    "_FIRST_NAME": "Eren",
+                    "_LAST_NAME": "Altun",
+                    "_encoded_password": "1234",
+                    "_UNIVERSITY_EMAIL": "erenaltun@marun.edu.tr",
+                    "_email": "erenaltun33@gmail.com",
+                    "_address": "Samsun",
+                    "_phone_number": "+90 586 272 89 30"
+                },
+                "_staffId": {
+                    "_staffId": 7
+                },
+                "_departmentId": "",
+                "_facultyId": ""
+            },
+            "_classRoom": {
+                "_classroom_name": "CS18",
+                "_capacity": 70
+            },
+            "_quota": 70
+        },
+        {
+            "_day": 4,
+            "_sectionTime": 1,
+            "_lecturer": {
+                "_user_information": {
+                    "_FIRST_NAME": "Eren",
+                    "_LAST_NAME": "Altun",
+                    "_encoded_password": "1234",
+                    "_UNIVERSITY_EMAIL": "erenaltun@marun.edu.tr",
+                    "_email": "erenaltun33@gmail.com",
+                    "_address": "Samsun",
+                    "_phone_number": "+90 586 272 89 30"
+                },
+                "_staffId": {
+                    "_staffId": 7
+                },
+                "_departmentId": "",
+                "_facultyId": ""
+            },
+            "_classRoom": {
+                "_classroom_name": "CS18",
+                "_capacity": 70
+            },
+            "_quota": 70
+        }
+    ],
+    "_currentStudentCount": 0,
+    "_courseCapacity": 60
+}

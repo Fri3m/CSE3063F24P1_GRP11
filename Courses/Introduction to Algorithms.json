@@ -1,0 +1,97 @@
+{
+    "courseInformation": {
+        "courseName": "Introduction to Algorithms",
+        "courseCode": "CS1201"
+    },
+    "courseRequirements": {
+        "_prerequisite_courses": [],
+        "_minimum_current_class": 1,
+        "_facultyID": {
+            "_FacultyID": 1,
+            "_FacultyName": "Engineering"
+        },
+        "_departmentID": {
+            "_departmentID": 150,
+            "_departmentName": "Computer Engineering"
+        }
+    },
+    "courseSections": [
+        {
+            "_day": 1,
+            "_sectionTime": 2,
+            "_lecturer": {
+                "_user_information": {
+                    "_FIRST_NAME": "Dilara",
+                    "_LAST_NAME": "Gunes",
+                    "_encoded_password": "1234",
+                    "_UNIVERSITY_EMAIL": "dilaragunes@marun.edu.tr",
+                    "_email": "dilaragunes31@gmail.com",
+                    "_address": "Kilis",
+                    "_phone_number": "+90 574 296 27 31"
+                },
+                "_staffId": {
+                    "_staffId": 3
+                },
+                "_departmentId": "",
+                "_facultyId": ""
+            },
+            "_classRoom": {
+                "_classroom_name": "CS10",
+                "_capacity": 70
+            },
+            "_quota": 70
+        },
+        {
+            "_day": 1,
+            "_sectionTime": 3,
+            "_lecturer": {
+                "_user_information": {
+                    "_FIRST_NAME": "Dilara",
+                    "_LAST_NAME": "Gunes",
+                    "_encoded_password": "1234",
+                    "_UNIVERSITY_EMAIL": "dilaragunes@marun.edu.tr",
+                    "_email": "dilaragunes31@gmail.com",
+                    "_address": "Kilis",
+                    "_phone_number": "+90 574 296 27 31"
+                },
+                "_staffId": {
+                    "_staffId": 3
+                },
+                "_departmentId": "",
+                "_facultyId": ""
+            },
+            "_classRoom": {
+                "_classroom_name": "CS10",
+                "_capacity": 70
+            },
+            "_quota": 70
+        },
+        {
+            "_day": 3,
+            "_sectionTime": 0,
+            "_lecturer": {
+                "_user_information": {
+                    "_FIRST_NAME": "Dilara",
+                    "_LAST_NAME": "Gunes",
+                    "_encoded_password": "1234",
+                    "_UNIVERSITY_EMAIL": "dilaragunes@marun.edu.tr",
+                    "_email": "dilaragunes31@gmail.com",
+                    "_address": "Kilis",
+                    "_phone_number": "+90 574 296 27 31"
+                },
+                "_staffId": {
+                    "_staffId": 3
+                },
+                "_departmentId": "",
+                "_facultyId": ""
+            },
+            "_classRoom": {
+                "_classroom_name": "CS13",
+                "_capacity": 60
+            },
+            "_quota": 60
+        }
+    ],
+    "_currentStudentCount": 0,
+    "_courseCapacity": 60
+}

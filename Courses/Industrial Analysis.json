@@ -1,0 +1,97 @@
+{
+    "courseInformation": {
+        "courseName": "Industrial Analysis",
+        "courseCode": "CHM3042"
+    },
+    "courseRequirements": {
+        "_prerequisite_courses": [],
+        "_minimum_current_class": 3,
+        "_facultyID": {
+            "_FacultyID": 2,
+            "_FacultyName": "Science"
+        },
+        "_departmentID": {
+            "_departmentID": 154,
+            "_departmentName": "Chemistry"
+        }
+    },
+    "courseSections": [
+        {
+            "_day": 1,
+            "_sectionTime": 1,
+            "_lecturer": {
+                "_user_information": {
+                    "_FIRST_NAME": "Deniz",
+                    "_LAST_NAME": "Kurt",
+                    "_encoded_password": "1234",
+                    "_UNIVERSITY_EMAIL": "denizkurt@marun.edu.tr",
+                    "_email": "denizkurt93@gmail.com",
+                    "_address": "Yalova",
+                    "_phone_number": "+90 578 255 94 10"
+                },
+                "_staffId": {
+                    "_staffId": 28
+                },
+                "_departmentId": "",
+                "_facultyId": ""
+            },
+            "_classRoom": {
+                "_classroom_name": "S204",
+                "_capacity": 60
+            },
+            "_quota": 60
+        },
+        {
+            "_day": 1,
+            "_sectionTime": 2,
+            "_lecturer": {
+                "_user_information": {
+                    "_FIRST_NAME": "Deniz",
+                    "_LAST_NAME": "Kurt",
+                    "_encoded_password": "1234",
+                    "_UNIVERSITY_EMAIL": "denizkurt@marun.edu.tr",
+                    "_email": "denizkurt93@gmail.com",
+                    "_address": "Yalova",
+                    "_phone_number": "+90 578 255 94 10"
+                },
+                "_staffId": {
+                    "_staffId": 28
+                },
+                "_departmentId": "",
+                "_facultyId": ""
+            },
+            "_classRoom": {
+                "_classroom_name": "S204",
+                "_capacity": 60
+            },
+            "_quota": 60
+        },
+        {
+            "_day": 2,
+            "_sectionTime": 1,
+            "_lecturer": {
+                "_user_information": {
+                    "_FIRST_NAME": "Deniz",
+                    "_LAST_NAME": "Kurt",
+                    "_encoded_password": "1234",
+                    "_UNIVERSITY_EMAIL": "denizkurt@marun.edu.tr",
+                    "_email": "denizkurt93@gmail.com",
+                    "_address": "Yalova",
+                    "_phone_number": "+90 578 255 94 10"
+                },
+                "_staffId": {
+                    "_staffId": 28
+                },
+                "_departmentId": "",
+                "_facultyId": ""
+            },
+            "_classRoom": {
+                "_classroom_name": "S202",
+                "_capacity": 75
+            },
+            "_quota": 75
+        }
+    ],
+    "_currentStudentCount": 0,
+    "_courseCapacity": 60
+}

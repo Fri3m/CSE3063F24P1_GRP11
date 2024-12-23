@@ -1,0 +1,46 @@
+{
+    "_user_information": {
+        "_FIRST_NAME": "Oguz",
+        "_LAST_NAME": "Yucel",
+        "_encoded_password": "1234",
+        "_UNIVERSITY_EMAIL": "oguzyucel@marun.edu.tr",
+        "_email": "oguzyucel58@gmail.com",
+        "_address": "Isparta",
+        "_phone_number": "+90 578 101 86 72"
+    },
+    "_student_id": {
+        "_department_id": {
+            "_departmentID": 101,
+            "_departmentName": "Electrical Engineering"
+        },
+        "_entrance_date": 2024,
+        "_entrance_rank": 1,
+        "_faculty_id": {
+            "_FacultyID": 1,
+            "_FacultyName": "Engineering"
+        },
+        "_id": "101024001"
+    },
+    "_transcript": {
+        "_student_id": {
+            "_department_id": {
+                "_departmentID": 101,
+                "_departmentName": "Electrical Engineering"
+            },
+            "_entrance_date": 2024,
+            "_entrance_rank": 1,
+            "_faculty_id": {
+                "_FacultyID": 1,
+                "_FacultyName": "Engineering"
+            },
+            "_id": "101024001"
+        },
+        "_taken_courses": [],
+        "_gpa": 0.0
+    },
+    "_advisor_id": {
+        "_staffId": 55
+    },
+    "_current_class": 1,
+    "_current_courses": []
+}

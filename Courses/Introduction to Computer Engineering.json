@@ -1,0 +1,97 @@
+{
+    "courseInformation": {
+        "courseName": "Introduction to Computer Engineering",
+        "courseCode": "CS1200"
+    },
+    "courseRequirements": {
+        "_prerequisite_courses": [],
+        "_minimum_current_class": 1,
+        "_facultyID": {
+            "_FacultyID": 1,
+            "_FacultyName": "Engineering"
+        },
+        "_departmentID": {
+            "_departmentID": 150,
+            "_departmentName": "Computer Engineering"
+        }
+    },
+    "courseSections": [
+        {
+            "_day": 0,
+            "_sectionTime": 0,
+            "_lecturer": {
+                "_user_information": {
+                    "_FIRST_NAME": "Emirhan",
+                    "_LAST_NAME": "Demir",
+                    "_encoded_password": "1234",
+                    "_UNIVERSITY_EMAIL": "emirhandemir@marun.edu.tr",
+                    "_email": "emirhandemir90@gmail.com",
+                    "_address": "Kirikkale",
+                    "_phone_number": "+90 559 710 09 75"
+                },
+                "_staffId": {
+                    "_staffId": 2
+                },
+                "_departmentId": "",
+                "_facultyId": ""
+            },
+            "_classRoom": {
+                "_classroom_name": "CS10",
+                "_capacity": 70
+            },
+            "_quota": 70
+        },
+        {
+            "_day": 0,
+            "_sectionTime": 1,
+            "_lecturer": {
+                "_user_information": {
+                    "_FIRST_NAME": "Emirhan",
+                    "_LAST_NAME": "Demir",
+                    "_encoded_password": "1234",
+                    "_UNIVERSITY_EMAIL": "emirhandemir@marun.edu.tr",
+                    "_email": "emirhandemir90@gmail.com",
+                    "_address": "Kirikkale",
+                    "_phone_number": "+90 559 710 09 75"
+                },
+                "_staffId": {
+                    "_staffId": 2
+                },
+                "_departmentId": "",
+                "_facultyId": ""
+            },
+            "_classRoom": {
+                "_classroom_name": "CS10",
+                "_capacity": 70
+            },
+            "_quota": 70
+        },
+        {
+            "_day": 2,
+            "_sectionTime": 4,
+            "_lecturer": {
+                "_user_information": {
+                    "_FIRST_NAME": "Emirhan",
+                    "_LAST_NAME": "Demir",
+                    "_encoded_password": "1234",
+                    "_UNIVERSITY_EMAIL": "emirhandemir@marun.edu.tr",
+                    "_email": "emirhandemir90@gmail.com",
+                    "_address": "Kirikkale",
+                    "_phone_number": "+90 559 710 09 75"
+                },
+                "_staffId": {
+                    "_staffId": 2
+                },
+                "_departmentId": "",
+                "_facultyId": ""
+            },
+            "_classRoom": {
+                "_classroom_name": "CS11",
+                "_capacity": 50
+            },
+            "_quota": 50
+        }
+    ],
+    "_currentStudentCount": 0,
+    "_courseCapacity": 50
+}

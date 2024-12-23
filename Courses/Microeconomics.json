@@ -1,0 +1,127 @@
+{
+    "courseInformation": {
+        "courseName": "Microeconomics",
+        "courseCode": "EC203"
+    },
+    "courseRequirements": {
+        "_prerequisite_courses": [
+            {
+                "courseName": "Principles of Microeconomics",
+                "courseCode": "EC101"
+            }
+        ],
+        "_minimum_current_class": 2,
+        "_facultyID": {
+            "_FacultyID": 3,
+            "_FacultyName": "Business"
+        },
+        "_departmentID": {
+            "_departmentID": 301,
+            "_departmentName": "Business"
+        }
+    },
+    "courseSections": [
+        {
+            "_day": 1,
+            "_sectionTime": 1,
+            "_lecturer": {
+                "_user_information": {
+                    "_FIRST_NAME": "Pelin",
+                    "_LAST_NAME": "Tas",
+                    "_encoded_password": "1234",
+                    "_UNIVERSITY_EMAIL": "pelintas@marun.edu.tr",
+                    "_email": "pelintas64@gmail.com",
+                    "_address": "Ardahan",
+                    "_phone_number": "+90 512 715 93 86"
+                },
+                "_staffId": {
+                    "_staffId": 18
+                },
+                "_departmentId": "",
+                "_facultyId": ""
+            },
+            "_classRoom": {
+                "_classroom_name": "B302",
+                "_capacity": 75
+            },
+            "_quota": 75
+        },
+        {
+            "_day": 1,
+            "_sectionTime": 2,
+            "_lecturer": {
+                "_user_information": {
+                    "_FIRST_NAME": "Pelin",
+                    "_LAST_NAME": "Tas",
+                    "_encoded_password": "1234",
+                    "_UNIVERSITY_EMAIL": "pelintas@marun.edu.tr",
+                    "_email": "pelintas64@gmail.com",
+                    "_address": "Ardahan",
+                    "_phone_number": "+90 512 715 93 86"
+                },
+                "_staffId": {
+                    "_staffId": 18
+                },
+                "_departmentId": "",
+                "_facultyId": ""
+            },
+            "_classRoom": {
+                "_classroom_name": "B302",
+                "_capacity": 75
+            },
+            "_quota": 75
+        },
+        {
+            "_day": 2,
+            "_sectionTime": 0,
+            "_lecturer": {
+                "_user_information": {
+                    "_FIRST_NAME": "Pelin",
+                    "_LAST_NAME": "Tas",
+                    "_encoded_password": "1234",
+                    "_UNIVERSITY_EMAIL": "pelintas@marun.edu.tr",
+                    "_email": "pelintas64@gmail.com",
+                    "_address": "Ardahan",
+                    "_phone_number": "+90 512 715 93 86"
+                },
+                "_staffId": {
+                    "_staffId": 18
+                },
+                "_departmentId": "",
+                "_facultyId": ""
+            },
+            "_classRoom": {
+                "_classroom_name": "B301",
+                "_capacity": 60
+            },
+            "_quota": 60
+        },
+        {
+            "_day": 2,
+            "_sectionTime": 1,
+            "_lecturer": {
+                "_user_information": {
+                    "_FIRST_NAME": "Pelin",
+                    "_LAST_NAME": "Tas",
+                    "_encoded_password": "1234",
+                    "_UNIVERSITY_EMAIL": "pelintas@marun.edu.tr",
+                    "_email": "pelintas64@gmail.com",
+                    "_address": "Ardahan",
+                    "_phone_number": "+90 512 715 93 86"
+                },
+                "_staffId": {
+                    "_staffId": 18
+                },
+                "_departmentId": "",
+                "_facultyId": ""
+            },
+            "_classRoom": {
+                "_classroom_name": "B301",
+                "_capacity": 60
+            },
+            "_quota": 60
+        }
+    ],
+    "_currentStudentCount": 0,
+    "_courseCapacity": 60
+}

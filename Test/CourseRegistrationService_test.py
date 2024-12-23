@@ -5,10 +5,10 @@ from pythonCode.DataManagement import DataManagement
 
 
 class CourseRegistrationService_test(unittest.TestCase):
-    def checkAccesiableRequests_test(self):
+    def test_checkAccesiableRequests_test(self):
         data_management = DataManagement()
-        advisor = data_management.getAdvisor("hilalozkan@marun.edu.tr")
-        student = data_management.getStudent("leylapala@marun.edu.tr")
+        advisor = data_management.getAdvisor("emirhancelikkan@marun.edu.tr")
+        student = data_management.getStudent("alimeucar@marun.edu.tr")
 
         courseRegistrationService = CourseRegistrationService()
         courseRegistrationService.createCourseRequest(student,data_management.getCourse("Fluid Mechanics"))

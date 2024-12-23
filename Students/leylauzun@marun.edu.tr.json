@@ -1,0 +1,55 @@
+{
+    "_user_information": {
+        "_FIRST_NAME": "Leyla",
+        "_LAST_NAME": "Uzun",
+        "_encoded_password": "1234",
+        "_UNIVERSITY_EMAIL": "leylauzun@marun.edu.tr",
+        "_email": "leylauzun8@gmail.com",
+        "_address": "Gumushane",
+        "_phone_number": "+90 507 005 43 08"
+    },
+    "_student_id": {
+        "_department_id": {
+            "_departmentID": 101,
+            "_departmentName": "Industrial Engineering"
+        },
+        "_entrance_date": 2023,
+        "_entrance_rank": 33,
+        "_faculty_id": {
+            "_FacultyID": 1,
+            "_FacultyName": "Engineering"
+        },
+        "_id": "101023033"
+    },
+    "_transcript": {
+        "_student_id": {
+            "_department_id": {
+                "_departmentID": 101,
+                "_departmentName": "Industrial Engineering"
+            },
+            "_entrance_date": 2023,
+            "_entrance_rank": 33,
+            "_faculty_id": {
+                "_FacultyID": 1,
+                "_FacultyName": "Engineering"
+            },
+            "_id": "101023033"
+        },
+        "_taken_courses": [
+            {
+                "_courseInformation": {
+                    "courseName": "Operations Research",
+                    "courseCode": "IE3003"
+                },
+                "_midterm_score": 31,
+                "_final_score": 90
+            }
+        ],
+        "_gpa": 0.0
+    },
+    "_advisor_id": {
+        "_staffId": 52
+    },
+    "_current_class": 2,
+    "_current_courses": []
+}

@@ -1,0 +1,72 @@
+{
+    "courseInformation": {
+        "courseName": "Planning and Management of Research",
+        "courseCode": "BIOE4072"
+    },
+    "courseRequirements": {
+        "_prerequisite_courses": [],
+        "_minimum_current_class": 4,
+        "_facultyID": {
+            "_FacultyID": 1,
+            "_FacultyName": "Engineering"
+        },
+        "_departmentID": {
+            "_departmentID": 150,
+            "_departmentName": "Computer Engineering"
+        }
+    },
+    "courseSections": [
+        {
+            "_day": 0,
+            "_sectionTime": 1,
+            "_lecturer": {
+                "_user_information": {
+                    "_FIRST_NAME": "Sevgi",
+                    "_LAST_NAME": "Bozkurt",
+                    "_encoded_password": "1234",
+                    "_UNIVERSITY_EMAIL": "sevgibozkurt@marun.edu.tr",
+                    "_email": "sevgibozkurt70@gmail.com",
+                    "_address": "Giresun",
+                    "_phone_number": "+90 572 989 09 61"
+                },
+                "_staffId": {
+                    "_staffId": 10
+                },
+                "_departmentId": "",
+                "_facultyId": ""
+            },
+            "_classRoom": {
+                "_classroom_name": "CS13",
+                "_capacity": 50
+            },
+            "_quota": 50
+        },
+        {
+            "_day": 0,
+            "_sectionTime": 2,
+            "_lecturer": {
+                "_user_information": {
+                    "_FIRST_NAME": "Sevgi",
+                    "_LAST_NAME": "Bozkurt",
+                    "_encoded_password": "1234",
+                    "_UNIVERSITY_EMAIL": "sevgibozkurt@marun.edu.tr",
+                    "_email": "sevgibozkurt70@gmail.com",
+                    "_address": "Giresun",
+                    "_phone_number": "+90 572 989 09 61"
+                },
+                "_staffId": {
+                    "_staffId": 10
+                },
+                "_departmentId": "",
+                "_facultyId": ""
+            },
+            "_classRoom": {
+                "_classroom_name": "CS13",
+                "_capacity": 50
+            },
+            "_quota": 50
+        }
+    ],
+    "_currentStudentCount": 0,
+    "_courseCapacity": 50
+}

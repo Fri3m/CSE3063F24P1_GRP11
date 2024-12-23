@@ -1,0 +1,102 @@
+{
+    "courseInformation": {
+        "courseName": "Human Anatomy",
+        "courseCode": "BYL4011"
+    },
+    "courseRequirements": {
+        "_prerequisite_courses": [
+            {
+                "courseName": "General Biology",
+                "courseCode": "BYL1011"
+            }
+        ],
+        "_minimum_current_class": 4,
+        "_facultyID": {
+            "_FacultyID": 2,
+            "_FacultyName": "Science"
+        },
+        "_departmentID": {
+            "_departmentID": 153,
+            "_departmentName": "Biology"
+        }
+    },
+    "courseSections": [
+        {
+            "_day": 0,
+            "_sectionTime": 1,
+            "_lecturer": {
+                "_user_information": {
+                    "_FIRST_NAME": "Derya",
+                    "_LAST_NAME": "Arman",
+                    "_encoded_password": "1234",
+                    "_UNIVERSITY_EMAIL": "deryaarman@marun.edu.tr",
+                    "_email": "deryaarman91@gmail.com",
+                    "_address": "Diyarbakir",
+                    "_phone_number": "+90 524 123 11 48"
+                },
+                "_staffId": {
+                    "_staffId": 24
+                },
+                "_departmentId": "",
+                "_facultyId": ""
+            },
+            "_classRoom": {
+                "_classroom_name": "S201",
+                "_capacity": 80
+            },
+            "_quota": 80
+        },
+        {
+            "_day": 0,
+            "_sectionTime": 2,
+            "_lecturer": {
+                "_user_information": {
+                    "_FIRST_NAME": "Derya",
+                    "_LAST_NAME": "Arman",
+                    "_encoded_password": "1234",
+                    "_UNIVERSITY_EMAIL": "deryaarman@marun.edu.tr",
+                    "_email": "deryaarman91@gmail.com",
+                    "_address": "Diyarbakir",
+                    "_phone_number": "+90 524 123 11 48"
+                },
+                "_staffId": {
+                    "_staffId": 24
+                },
+                "_departmentId": "",
+                "_facultyId": ""
+            },
+            "_classRoom": {
+                "_classroom_name": "S201",
+                "_capacity": 80
+            },
+            "_quota": 80
+        },
+        {
+            "_day": 0,
+            "_sectionTime": 3,
+            "_lecturer": {
+                "_user_information": {
+                    "_FIRST_NAME": "Derya",
+                    "_LAST_NAME": "Arman",
+                    "_encoded_password": "1234",
+                    "_UNIVERSITY_EMAIL": "deryaarman@marun.edu.tr",
+                    "_email": "deryaarman91@gmail.com",
+                    "_address": "Diyarbakir",
+                    "_phone_number": "+90 524 123 11 48"
+                },
+                "_staffId": {
+                    "_staffId": 24
+                },
+                "_departmentId": "",
+                "_facultyId": ""
+            },
+            "_classRoom": {
+                "_classroom_name": "S201",
+                "_capacity": 80
+            },
+            "_quota": 80
+        }
+    ],
+    "_currentStudentCount": 0,
+    "_courseCapacity": 80
+}

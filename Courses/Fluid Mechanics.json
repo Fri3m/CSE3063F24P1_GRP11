@@ -1,0 +1,72 @@
+{
+    "courseInformation": {
+        "courseName": "Fluid Mechanics",
+        "courseCode": "ME361"
+    },
+    "courseRequirements": {
+        "_prerequisite_courses": [],
+        "_minimum_current_class": 3,
+        "_facultyID": {
+            "_FacultyID": 1,
+            "_FacultyName": "Engineering"
+        },
+        "_departmentID": {
+            "_departmentID": 101,
+            "_departmentName": "Mechanical Engineering"
+        }
+    },
+    "courseSections": [
+        {
+            "_day": 1,
+            "_sectionTime": 0,
+            "_lecturer": {
+                "_user_information": {
+                    "_FIRST_NAME": "Sevgi",
+                    "_LAST_NAME": "Celik",
+                    "_encoded_password": "1234",
+                    "_UNIVERSITY_EMAIL": "sevgicelik@marun.edu.tr",
+                    "_email": "sevgicelik7@gmail.com",
+                    "_address": "Osmaniye",
+                    "_phone_number": "+90 545 081 01 35"
+                },
+                "_staffId": {
+                    "_staffId": 46
+                },
+                "_departmentId": "",
+                "_facultyId": ""
+            },
+            "_classRoom": {
+                "_classroom_name": "MEZ01",
+                "_capacity": 60
+            },
+            "_quota": 60
+        },
+        {
+            "_day": 2,
+            "_sectionTime": 2,
+            "_lecturer": {
+                "_user_information": {
+                    "_FIRST_NAME": "Necla",
+                    "_LAST_NAME": "Bulut",
+                    "_encoded_password": "1234",
+                    "_UNIVERSITY_EMAIL": "neclabulut@marun.edu.tr",
+                    "_email": "neclabulut72@gmail.com",
+                    "_address": "Antalya",
+                    "_phone_number": "+90 550 905 20 18"
+                },
+                "_staffId": {
+                    "_staffId": 47
+                },
+                "_departmentId": "",
+                "_facultyId": ""
+            },
+            "_classRoom": {
+                "_classroom_name": "MEZ01",
+                "_capacity": 60
+            },
+            "_quota": 60
+        }
+    ],
+    "_currentStudentCount": 0,
+    "_courseCapacity": 60
+}

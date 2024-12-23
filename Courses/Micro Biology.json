@@ -1,0 +1,102 @@
+{
+    "courseInformation": {
+        "courseName": "Micro Biology",
+        "courseCode": "BYL3042"
+    },
+    "courseRequirements": {
+        "_prerequisite_courses": [
+            {
+                "courseName": "General Biology",
+                "courseCode": "BYL1011"
+            }
+        ],
+        "_minimum_current_class": 3,
+        "_facultyID": {
+            "_FacultyID": 2,
+            "_FacultyName": "Science"
+        },
+        "_departmentID": {
+            "_departmentID": 153,
+            "_departmentName": "Biology"
+        }
+    },
+    "courseSections": [
+        {
+            "_day": 1,
+            "_sectionTime": 0,
+            "_lecturer": {
+                "_user_information": {
+                    "_FIRST_NAME": "Hakan",
+                    "_LAST_NAME": "Saglam",
+                    "_encoded_password": "1234",
+                    "_UNIVERSITY_EMAIL": "hakansaglam@marun.edu.tr",
+                    "_email": "hakansaglam17@gmail.com",
+                    "_address": "Gaziantep",
+                    "_phone_number": "+90 542 745 26 91"
+                },
+                "_staffId": {
+                    "_staffId": 23
+                },
+                "_departmentId": "",
+                "_facultyId": ""
+            },
+            "_classRoom": {
+                "_classroom_name": "S203",
+                "_capacity": 55
+            },
+            "_quota": 55
+        },
+        {
+            "_day": 1,
+            "_sectionTime": 1,
+            "_lecturer": {
+                "_user_information": {
+                    "_FIRST_NAME": "Hakan",
+                    "_LAST_NAME": "Saglam",
+                    "_encoded_password": "1234",
+                    "_UNIVERSITY_EMAIL": "hakansaglam@marun.edu.tr",
+                    "_email": "hakansaglam17@gmail.com",
+                    "_address": "Gaziantep",
+                    "_phone_number": "+90 542 745 26 91"
+                },
+                "_staffId": {
+                    "_staffId": 23
+                },
+                "_departmentId": "",
+                "_facultyId": ""
+            },
+            "_classRoom": {
+                "_classroom_name": "S203",
+                "_capacity": 55
+            },
+            "_quota": 55
+        },
+        {
+            "_day": 3,
+            "_sectionTime": 3,
+            "_lecturer": {
+                "_user_information": {
+                    "_FIRST_NAME": "Hakan",
+                    "_LAST_NAME": "Saglam",
+                    "_encoded_password": "1234",
+                    "_UNIVERSITY_EMAIL": "hakansaglam@marun.edu.tr",
+                    "_email": "hakansaglam17@gmail.com",
+                    "_address": "Gaziantep",
+                    "_phone_number": "+90 542 745 26 91"
+                },
+                "_staffId": {
+                    "_staffId": 23
+                },
+                "_departmentId": "",
+                "_facultyId": ""
+            },
+            "_classRoom": {
+                "_classroom_name": "S201",
+                "_capacity": 80
+            },
+            "_quota": 80
+        }
+    ],
+    "_currentStudentCount": 0,
+    "_courseCapacity": 55
+}
