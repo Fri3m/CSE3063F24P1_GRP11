@@ -3,8 +3,7 @@ import os
 import random
 from json import JSONEncoder
 
-
-
+from Classroom import Classroom
 from Course import CourseInformation, CourseRequirements, CourseSection, Course
 from Day import Day, SectionTime
 
