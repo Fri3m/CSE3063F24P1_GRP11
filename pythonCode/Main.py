@@ -125,7 +125,8 @@ class Main:
             handle_exception(type(e), e, sys.exc_info()[2])
             print("You can only choose 1 or 2")
             logger.error("Invalid choice")
-            self.startMenu()  # Tekrar başlangıç menüsünü çağır
+        self.startMenu()  # Tekrar başlangıç menüsünü çağır
+
     def showUserInformation(self):
         logger.info("User information shown")
         print("Name: " + self.user.getUserInformation().get_FIRST_NAME())
@@ -161,7 +162,7 @@ class Main:
             handle_exception(type(e), e, sys.exc_info()[2])
             print("You can only choose 1, 2, 3, 4 or 5")
             logger.error("Invalid choice")
-            self.updateUserInfo()
+        self.updateUserInfo()
 
     def studentMainMenu(self):
         logger.info("Student main menu opened")
@@ -230,8 +231,7 @@ class Main:
             handle_exception(type(e), e, sys.exc_info()[2])
             print("You can only choose 1, 2, 3, 4, 5 or 6")
             logger.error("Invalid choice")
-            self.studentMainMenu()
-
+        self.studentMainMenu()
     def showStudentInfo(self):
 
         print("In year: " + str(self.user.getCurrentClass()))
@@ -261,7 +261,7 @@ class Main:
             handle_exception(type(e), e, sys.exc_info()[2])
             print("You can only choose 1, 2 or 3")
             logger.error("Invalid choice")
-            self.lecturerMainMenu()
+        self.lecturerMainMenu()
 
     def advisorMainMenu(self):
         logger.info("Advisor main menu opened")
@@ -287,13 +287,13 @@ class Main:
             handle_exception(type(e), e, sys.exc_info()[2])
             print("You can only choose 1, 2, 3 or 4")
             logger.error("Invalid choice")
-            self.advisorMainMenu()
+        self.advisorMainMenu()
 
-    def checkSectionConflict(self, courseSections, courses):
+    def checkSectionConflict(self, courseSections, coursesInformations):
         logger.info("Checking section conflict")
         for courseSection in courseSections:
-            for course in courses:
-                for courseSection1 in course.getCourseSections():
+            for courseInformation in coursesInformations:
+                for courseSection1 in self.coursesNameDict[courseInformation.getCourseName()].getCourseSections():
                     try:
                         if courseSection._day == courseSection1._day and courseSection._sectionTime == courseSection1._sectionTime:
                             raise ValueError("Student is already taking a course at this time. ")
@@ -323,6 +323,7 @@ class Main:
                 continue
             if self.checkSectionConflict(courseRequest.get_course().getCourseSections(), courseRequest.get_student().get_current_courses()):
                 print("Student doesn't have any courses at this time.")
+
             if x[0] and x[1] and x[2] and x[3]:
                 print("Student is qualified for this course.")
             else:
@@ -477,7 +478,7 @@ class Main:
             handle_exception(type(e), e, sys.exc_info()[2])
             print("You can only choose 1, 2, 3 or 4")
             logger.error("Invalid choice")
-            self.adminMainMenu()
+        self.adminMainMenu()
 
     def departmentHeadMainMenu(self):
         logger.info("Department head main menu opened")
@@ -565,7 +566,7 @@ class Main:
             handle_exception(type(e), e, sys.exc_info()[2])
             print("You can only choose 1, 2, 3 or 4")
             logger.error("Invalid choice")
-            self.departmentHeadMainMenu()
+        self.departmentHeadMainMenu()
 
     def adminCreateUserInformation(self):
         logger.info("Admin creating user information")
@@ -721,7 +722,7 @@ class Main:
             handle_exception(type(e), e, sys.exc_info()[2])
             print("You can only choose 1, 2, 3 or 4")
             logger.error("Invalid choice")
-            self.departmentSchedulerMainMenu()
+        self.departmentSchedulerMainMenu()
 
     def studentsAffairsMainMenu(self):
         logger.info("Students affairs main menu opened")
@@ -894,7 +895,7 @@ class Main:
             handle_exception(type(e), e, sys.exc_info()[2])
             print("You can only choose 1, 2, 3, 4 or 5")
             logger.error("Invalid choice")
-            self.studentsAffairsMainMenu()
+        self.studentsAffairsMainMenu()
 
     def login(self):
         logger.info("Login started")
