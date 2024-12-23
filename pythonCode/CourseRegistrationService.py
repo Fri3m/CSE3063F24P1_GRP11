@@ -28,7 +28,7 @@ class CourseRegistrationService:
         logger.info(f"Checking classroom availability {day} {time} {classroom.get_classroom_name()}")
         for course in allCourses:
             for courseSection in course.getCourseSections():
-                if courseSection._day == day and courseSection._sectionTime == time and courseSection._classroom == classroom:
+                if courseSection._day == day and courseSection._sectionTime == time and courseSection._classRoom == classroom:
                     return False
         return True
 

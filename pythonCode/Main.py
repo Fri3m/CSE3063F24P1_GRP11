@@ -1,6 +1,8 @@
 import random
 import sys
 
+from matplotlib.style.core import available
+
 from Classroom import Classroom
 from CourseRegistrationService import CourseRegistrationService
 from LoginAuthService import LoginAuthService
@@ -592,118 +594,7 @@ class Main:
         choice = input()
         try:
             if choice == "1":
-                print("Select department to continue")
-                for department in self._departments:
-                    print(department.getDepartmentID().getDepartmentName())
-
-                department = None
-                while True:
-                    departmentSelection = input()
-                    found = False
-                    for d in self._departments:
-                        if departmentSelection == d.getDepartmentID().getDepartmentName():
-                            department = d
-                            found = True
-                            break
-                    if found:
-                        break
-                print("Select course to continue")
-                coursesForThisDepartment = []
-                for c in self._courses:
-                    if c.getCourseRequirements().getDepartmentID() == department.getDepartmentID().getDepartmentID():
-                        coursesForThisDepartment.append(c)
-                        print(c.getCourseName())
-
-                course = None
-                while True:
-                    courseSelection = input()
-                    found = False
-                    for c in coursesForThisDepartment:
-                        if c.getCourseName() == courseSelection:
-                            found = True
-                            course = c
-                            break
-                    if found:
-                        break
-
-                # getCourseSections çalışmıyor
-                if len(course.getCourseSections()) == 0:
-                    print("There are no sections for this course")
-                    return
-
-                for courseSection in course.getCourseSections():
-                    print("This course section is in day " + day_dict[courseSection._day] + " time " + sectionTime_dict[
-                        courseSection._sectionTime])
-                    print("Do you want to change this section? Yes if continue: ")
-                    choice = input()
-                    if not choice == "Yes" or choice == "yes":
-                        continue
-                    while True:
-                        x = True
-                        print("Enter the day(Monday, Tuesday, Wednesday, Thursday, Friday): ")
-                        inp = input()
-                        if inp.lower() == "monday":
-                            print("This section day changed to Monday")
-                            courseSection._day = Day.Monday
-                        elif inp.lower() == "tuesday":
-                            print("This section day changed to Tuesday")
-                            courseSection._day = Day.Tuesday
-                        elif inp.lower() == "wednesday":
-                            print("This section day changed to Wednesday")
-                            courseSection._day = Day.Wednesday
-                        elif inp.lower() == "thursday":
-                            print("This section day changed to Thursday")
-                            courseSection._day = Day.Thursday
-                        elif inp.lower() == "friday":
-                            print("This section day changed to Friday")
-                            courseSection._day = Day.Friday
-                        else:
-                            x = False
-                            print("Invalid day. Please try again.")
-
-                        if x: break
-
-                    while True:
-                        x = True
-                        print(
-                            "Enter the section time(First, Second, Third,Fourth, Fifth, Sixth, Seventh, Eighth, Ninth)")
-                        inp = input()
-                        if inp.lower() == "first":
-                            print("This section time changed to First")
-                            courseSection._sectionTime = SectionTime.First
-                        elif inp.lower() == "second":
-                            print("This section time changed to Second")
-                            courseSection._sectionTime = SectionTime.Second
-                        elif inp.lower() == "third":
-                            print("This section time changed to Third")
-                            courseSection._sectionTime = SectionTime.Third
-                        elif inp.lower() == "fourth":
-                            print("This section time changed to Fourth")
-                            courseSection._sectionTime = SectionTime.Fourth
-                        elif inp.lower() == "fifth":
-                            print("This section time changed to Fifth")
-                            courseSection._sectionTime = SectionTime.Fifth
-                        elif inp.lower() == "sixth":
-                            print("This section time changed to Sixth")
-                            courseSection._sectionTime = SectionTime.Sixth
-                        elif inp.lower() == "seventh":
-                            print("This section time changed to Seventh")
-                            courseSection._sectionTime = SectionTime.Seventh
-                        elif inp.lower() == "eighth":
-                            print("This section time changed to Eighth")
-                            courseSection._sectionTime = SectionTime.Eighth
-                        elif inp.lower() == "ninth":
-                            print("This section time changed to Ninth")
-                            courseSection._sectionTime = SectionTime.Ninth
-                        else:
-                            x = False
-                            print("Invalid time. Please try again.")
-
-                        if x: break
-
-                self._data_management.createOrChangeCourse(course)
-                print("Course section changed successfully")
-
+                self.departmentSchedulerChangeCourseSection()
             elif choice == "2":
                 self.showUserInformation()
             elif choice == "3":
@@ -719,6 +610,141 @@ class Main:
             logger.error("Invalid choice")
             self.departmentSchedulerMainMenu()
         self.departmentSchedulerMainMenu()
+
+    def departmentSchedulerChangeCourseSection(self):
+        print("Select department to continue")
+        for department in self._departments:
+            print(department.getDepartmentID().getDepartmentName())
+
+        department = None
+        while True:
+            departmentSelection = input()
+            found = False
+            for d in self._departments:
+                if departmentSelection == d.getDepartmentID().getDepartmentName():
+                    department = d
+                    found = True
+                    break
+            if found:
+                break
+        print("Select course to continue")
+        coursesForThisDepartment = []
+        for c in self._courses:
+            if c.getCourseRequirements().getDepartmentID() == department.getDepartmentID().getDepartmentID():
+                coursesForThisDepartment.append(c)
+                print(c.getCourseName())
+
+        course = None
+        while True:
+            courseSelection = input()
+            found = False
+            for c in coursesForThisDepartment:
+                if c.getCourseName() == courseSelection:
+                    found = True
+                    course = c
+                    break
+            if found:
+                break
+
+        if len(course.getCourseSections()) == 0:
+            print("There are no sections for this course")
+            return
+
+        for courseSection in course.getCourseSections():
+            print(f"This course section is in day {day_dict[courseSection._day]} time {sectionTime_dict[
+                courseSection._sectionTime]} and in class {courseSection._classRoom.get_classroom_name()}")
+            print("Do you want to change this section? Yes if continue: ")
+            choice = input()
+            if not choice == "Yes" or choice == "yes":
+                continue
+            while True:
+                x = True
+                print("Enter the day(Monday, Tuesday, Wednesday, Thursday, Friday): ")
+                inp = input()
+                if inp.lower() == "monday":
+                    print("This section day changed to Monday")
+                    courseSection._day = Day.Monday
+                elif inp.lower() == "tuesday":
+                    print("This section day changed to Tuesday")
+                    courseSection._day = Day.Tuesday
+                elif inp.lower() == "wednesday":
+                    print("This section day changed to Wednesday")
+                    courseSection._day = Day.Wednesday
+                elif inp.lower() == "thursday":
+                    print("This section day changed to Thursday")
+                    courseSection._day = Day.Thursday
+                elif inp.lower() == "friday":
+                    print("This section day changed to Friday")
+                    courseSection._day = Day.Friday
+                else:
+                    x = False
+                    print("Invalid day. Please try again.")
+
+                if x: break
+
+            while True:
+                x = True
+                print(
+                    "Enter the section time(First, Second, Third,Fourth, Fifth, Sixth, Seventh, Eighth, Ninth)")
+                inp = input()
+                if inp.lower() == "first":
+                    print("This section time changed to First")
+                    courseSection._sectionTime = SectionTime.First
+                elif inp.lower() == "second":
+                    print("This section time changed to Second")
+                    courseSection._sectionTime = SectionTime.Second
+                elif inp.lower() == "third":
+                    print("This section time changed to Third")
+                    courseSection._sectionTime = SectionTime.Third
+                elif inp.lower() == "fourth":
+                    print("This section time changed to Fourth")
+                    courseSection._sectionTime = SectionTime.Fourth
+                elif inp.lower() == "fifth":
+                    print("This section time changed to Fifth")
+                    courseSection._sectionTime = SectionTime.Fifth
+                elif inp.lower() == "sixth":
+                    print("This section time changed to Sixth")
+                    courseSection._sectionTime = SectionTime.Sixth
+                elif inp.lower() == "seventh":
+                    print("This section time changed to Seventh")
+                    courseSection._sectionTime = SectionTime.Seventh
+                elif inp.lower() == "eighth":
+                    print("This section time changed to Eighth")
+                    courseSection._sectionTime = SectionTime.Eighth
+                elif inp.lower() == "ninth":
+                    print("This section time changed to Ninth")
+                    courseSection._sectionTime = SectionTime.Ninth
+                else:
+                    x = False
+                    print("Invalid time. Please try again.")
+
+                if x: break
+
+            while True:
+                print("Available classrooms: ")
+                availableClassrooms = []
+                for classroom in self._classrooms:
+                    if self._course_registration_service.checkClassroomAvailabilityForDayAndTime(courseSection._day,
+                                                                                                 courseSection._sectionTime,
+                                                                                                 classroom,
+                                                                                                 self._courses):
+                        print(classroom.get_classroom_name())
+                        availableClassrooms.append(classroom)
+
+                print("Enter the classroom name: ")
+                inp = input()
+                found = False
+                for classroom in availableClassrooms:
+                    if classroom.get_classroom_name() == inp:
+                        courseSection._classRoom = classroom
+                        found = True
+                        break
+                if found:
+                    break
+                print("Classroom not found. Please try again.")
+
+        self._data_management.createOrChangeCourse(course)
+        print("Course section changed successfully")
 
     def studentsAffairsMainMenu(self):
         logger.info("Students affairs main menu opened")
@@ -757,9 +783,8 @@ class Main:
                 raise ValueError("User can only choose 1, 2, 3, 4 or 5")
         except Exception as e:
             handle_exception(type(e), e, sys.exc_info()[2])
-            print("You can only choose 1, 2, 3, 4 or 5")
             logger.error("Invalid choice")
-            #self.studentsAffairsMainMenu()
+            # self.studentsAffairsMainMenu()
         self.studentsAffairsMainMenu()
 
     def studentsAffairsAddCourseMenu(self):
@@ -918,21 +943,21 @@ class Main:
             allAvailableClassrooms = []
             for classroom in self._classrooms:
                 if self._course_registration_service.checkClassroomAvailabilityForDayAndTime(dayValue, sectionTimeValue,
-                                                                                            classroom, self._courses):
+                                                                                             classroom, self._courses):
                     allAvailableClassrooms.append(classroom)
 
             print("Available classrooms for this section: ")
             for classroom in allAvailableClassrooms:
-                print(classroom.getClassroomName())
+                print(classroom.get_classroom_name())
 
             print("Enter classroom for this section " + str(current_section + 1) + ": ")
             inpClassroom = input()
-            inpClassroom = sectionTime.lower()
+            inpClassroom = inpClassroom.lower()
 
             classroomExists = False
 
             for classroom in allAvailableClassrooms:
-                if classroom.getClassroomName().lower() == inpClassroom:
+                if classroom.get_classroom_name().lower() == inpClassroom:
                     classroomArrayList.insert(current_section, classroom)
                     classroomExists = True
                     break
@@ -944,6 +969,7 @@ class Main:
             current_section += 1
 
         course = DataManagement.generateCourse(lecturerArrayList, dayArrayList, sectionTimeArrayList,
+                                               classroomArrayList,
                                                course_name,
                                                course_code, prerequisites, min_current_class,
                                                department.get_facultyID(), department.getDepartmentID())
@@ -961,7 +987,6 @@ class Main:
         password = input()
         self.user = self._login_auth_service.login(email, password)
         if self.user is None:
-            print("None")
             self.user_type = str()
 
         if self.user_type.lower() == "student":
