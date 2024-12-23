@@ -4,7 +4,7 @@
         "_LAST_NAME": "Aksu",
         "_encoded_password": "1234",
         "_UNIVERSITY_EMAIL": "caneraksu@marun.edu.tr",
-        "_email": "caneraksu83@gmail.com",
+        "_email": "newemail@gmail.com",
         "_address": "Batman",
         "_phone_number": "+90 554 442 95 23"
     },
@@ -67,5 +67,10 @@
         "_staffId": 25
     },
     "_current_class": 4,
-    "_current_courses": []
+    "_current_courses": [
+        {
+            "courseName": "Strategic Management",
+            "courseCode": "AD401"
+        }
+    ]
 }

@@ -146,8 +146,7 @@ class Main:
             elif choice == "4":
                 self.changePhoneNumber()
             elif choice == "5":
-                print("Returning to main menu")
-                self.startMenu()
+                return
             else:
                 raise ValueError("User can only choose 1, 2, 3, 4 or 5")
         except Exception as e:
