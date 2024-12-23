@@ -593,7 +593,7 @@ class DataManagement:
         # **************************************************** Courses ****************************************************
 
         # Course1 for Business Department
-        lecturerForSections = []
+        lecturersForSections = []
         lecturersForSections.append(lecturer301)
         lecturersForSections.append(lecturer301)
         lecturersForSections.append(lecturer301)
@@ -631,7 +631,7 @@ class DataManagement:
         self.createOrChangeCourse(course302)
 
         # Course3 for Business Department
-        lecturerForSections.clear()
+        lecturersForSections.clear()
         lecturersForSections.append(lecturer301)
         lecturersForSections.append(lecturer301)
         lecturersForSections.append(lecturer301)
@@ -651,7 +651,7 @@ class DataManagement:
         self.createOrChangeCourse(course303)
 
         # Course4 for Business Department
-        lecturerForSections.clear()
+        lecturersForSections.clear()
         lecturersForSections.append(lecturer303)
         lecturersForSections.append(lecturer303)
         lecturersForSections.append(lecturer303)
@@ -671,7 +671,7 @@ class DataManagement:
         self.createOrChangeLecturer(course304)
         # ********************************************************************************************************************
         # Course1 for Biology Department
-        lecturerForSections.clear()
+        lecturersForSections.clear()
         lecturersForSections.append(lecturer201)
         lecturersForSections.append(lecturer201)
         lecturersForSections.append(lecturer201)
@@ -691,7 +691,7 @@ class DataManagement:
         self.createOrChangeCourse(course201)
 
         # Course2 for Biology Department
-        lecturerForSections.clear()
+        lecturersForSections.clear()
         lecturersForSections.append(lecturer202)
         lecturersForSections.append(lecturer202)
         lecturersForSections.append(lecturer202)
@@ -716,7 +716,7 @@ class DataManagement:
         self.createOrChangeCourse(course202)
 
         # Course3 for Biology Department
-        lecturerForSections.clear()
+        lecturersForSections.clear()
         lecturersForSections.append(lecturer203)
         lecturersForSections.append(lecturer203)
         lecturersForSections.append(lecturer203)
@@ -737,7 +737,7 @@ class DataManagement:
         self.createOrChangeCourse(course203)
 
         # Course4 for Biology Department
-        lecturerForSections.clear()
+        lecturersForSections.clear()
         lecturersForSections.append(lecturer204)
         lecturersForSections.append(lecturer204)
         lecturersForSections.append(lecturer204)
@@ -758,7 +758,7 @@ class DataManagement:
         self.createOrChangeCourse(course204)
         #********************************************************************************************************************
         # Course1 for Chemistry Department
-        lecturerForSections.clear()
+        lecturersForSections.clear()
         lecturersForSections.append(lecturer211)
         lecturersForSections.append(lecturer211)
         lecturersForSections.append(lecturer211)
@@ -780,7 +780,7 @@ class DataManagement:
                                    chemistry.getDepartmentID())
         self.createOrChangeCourse(course211)
         # Course2 for Chemistry Department
-        lecturerForSections.clear()
+        lecturersForSections.clear()
         lecturersForSections.append(lecturer212)
         lecturersForSections.append(lecturer212)
         lecturersForSections.append(lecturer212)
@@ -804,7 +804,7 @@ class DataManagement:
         self.createOrChangeCourse(course212)
 
         # Course3 for Chemistry Department
-        lecturerForSections.clear()
+        lecturersForSections.clear()
         lecturersForSections.append(lecturer213)
         lecturersForSections.append(lecturer213)
         lecturersForSections.append(lecturer213)
@@ -825,7 +825,7 @@ class DataManagement:
         self.createOrChangeCourse(course213)
 
         # Course4 for Chemistry Department
-        lecturerForSections.clear()
+        lecturersForSections.clear()
         lecturersForSections.append(lecturer214)
         lecturersForSections.append(lecturer214)
         lecturersForSections.append(lecturer214)
