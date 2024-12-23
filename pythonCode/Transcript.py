@@ -61,7 +61,7 @@ class Transcript:
                 "CC": 2.0,
                 "DC": 1.5,
                 "DD": 1.0
-            }.get(course.get_course_score(), 0.0)
+            }.get(course.getCourseScore(), 0.0)
 
 
             self._gpa += score
