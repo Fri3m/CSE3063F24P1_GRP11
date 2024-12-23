@@ -315,8 +315,8 @@ class DataManagement:
         # Course1 for Business Department
         lecturerForSections = []
         lecturersForSections.append(lecturer301)
-        lecturersForSections.append(lecturer302)
-        lecturersForSections.append(lecturer303)
+        lecturersForSections.append(lecturer301)
+        lecturersForSections.append(lecturer301)
         days = []
         days.append(Day.Monday)
         days.append(Day.Monday)
@@ -330,15 +330,349 @@ class DataManagement:
 
         # Course2 for Business Department
         lecturersForSections.clear()
-        lecturersForSections.append(lecturer301)
         lecturersForSections.append(lecturer302)
+        lecturersForSections.append(lecturer302)
+        lecturersForSections.append(lecturer302)
+        lecturersForSections.append(lecturer302)
+
+        days.clear()
+        days.append(Day.Tuesday)
+        days.append(Day.Tuesday)
+        days.append(Day.Wednesday)
+        days.append(Day.Wednesday)
+        sectionTimes.clear()
+        sectionTimes.append(SectionTime.Second)
+        sectionTimes.append(SectionTime.Third)
+        sectionTimes.append(SectionTime.First)
+        sectionTimes.append(SectionTime.Second)
+        prerequisites = []
+        prerequisites.append(course301.getCourseInformation())
+        course302 = generateCourse(lecturersForSections, days, sectionTimes, [classroom302, classroom302, classroom301, classroom301], "Microeconomics", "EC203", prerequisites, 2, businessDepartment.get_facultyID(), businessDepartment.getDepartmentID())
+        self.createOrChangeCourse(course302)
+
+        # Course3 for Business Department
+        lecturerForSections.clear()
+        lecturersForSections.append(lecturer301)
+        lecturersForSections.append(lecturer301)
+        lecturersForSections.append(lecturer301)
+        lecturersForSections.append(lecturer301)
+        days.clear()
+        days.append(Day.Monday)
+        days.append(Day.Tuesday)
+        days.append(Day.Tuesday)
+        days.append(Day.Friday)
+        sectionTimes.clear()
+        sectionTimes.append(SectionTime.Fifth)
+        sectionTimes.append(SectionTime.Third)
+        sectionTimes.append(SectionTime.Fourth)
+        sectionTimes.append(SectionTime.First)
+        prerequisites.clear()
+        course303 = generateCourse(lecturersForSections, days, sectionTimes, [classroom301, classroom301, classroom301, classroom302], "Financial Management", "FM311", prerequisites, 3, businessDepartment.get_facultyID(), businessDepartment.getDepartmentID())
+        self.createOrChangeCourse(course303)
+
+        # Course4 for Business Department
+        lecturerForSections.clear()
         lecturersForSections.append(lecturer303)
+        lecturersForSections.append(lecturer303)
+        lecturersForSections.append(lecturer303)
+        days.clear()
+        days.append(Day.Wednesday)
+        days.append(Day.Wednesday)
+        days.append(Day.Wednesday)
+        sectionTimes.clear()
+        sectionTimes.append(SectionTime.Second)
+        sectionTimes.append(SectionTime.Third)
+        sectionTimes.append(SectionTime.Fourth)
+        prerequisites.clear()
+        course304 = generateCourse(lecturersForSections, days, sectionTimes,
+                                   [classroom302, classroom302, classroom302], "Strategic Management",
+                                   "AD401", prerequisites, 4, businessDepartment.get_facultyID(),
+                                   businessDepartment.getDepartmentID())
+        self.createOrChangeLecturer(course304)
+        # ********************************************************************************************************************
+        # Course1 for Biology Department
+        lecturerForSections.clear()
+        lecturersForSections.append(lecturer201)
+        lecturersForSections.append(lecturer201)
+        lecturersForSections.append(lecturer201)
+        days.clear()
+        days.append(Day.Tuesday)
+        days.append(Day.Tuesday)
+        days.append(Day.Friday)
+        sectionTimes.clear()
+        sectionTimes.append(SectionTime.Second)
+        sectionTimes.append(SectionTime.Third)
+        sectionTimes.append(SectionTime.First)
+        prerequisites.clear()
+        course201 = generateCourse(lecturersForSections, days, sectionTimes,
+                                   [classroom201, classroom201, classroom205], "General Biology",
+                                   "BYL1011", prerequisites, 1, biology.get_facultyID(),
+                                   biology.getDepartmentID())
+        self.createOrChangeCourse(course201)
+
+        # Course2 for Biology Department
+        lecturerForSections.clear()
+        lecturersForSections.append(lecturer202)
+        lecturersForSections.append(lecturer202)
+        lecturersForSections.append(lecturer202)
+        lecturersForSections.append(lecturer202)
+
+        days.clear()
+        days.append(Day.Wednesday)
+        days.append(Day.Thursday)
+        days.append(Day.Thursday)
+        days.append(Day.Friday)
+
+        sectionTimes.clear()
+        sectionTimes.append(SectionTime.Second)
+        sectionTimes.append(SectionTime.Second)
+        sectionTimes.append(SectionTime.Third)
+        sectionTimes.append(SectionTime.First)
+        prerequisites.clear()
+        course202 = generateCourse(lecturersForSections, days, sectionTimes,
+                                   [classroom202, classroom204, classroom204, classroom202], "History of Biology",
+                                   "BYL2031", prerequisites, 2, biology.get_facultyID(),
+                                   biology.getDepartmentID())
+        self.createOrChangeCourse(course202)
+
+        # Course3 for Biology Department
+        lecturerForSections.clear()
+        lecturersForSections.append(lecturer203)
+        lecturersForSections.append(lecturer203)
+        lecturersForSections.append(lecturer203)
+        days.clear()
+        days.append(Day.Tuesday)
+        days.append(Day.Tuesday)
+        days.append(Day.Thursday)
+        sectionTimes.clear()
+        sectionTimes.append(SectionTime.First)
+        sectionTimes.append(SectionTime.Second)
+        sectionTimes.append(SectionTime.Fourth)
+        prerequisites.clear()
+        prerequisites.append(course201.getCourseInformation())
+        course203 = generateCourse(lecturersForSections, days, sectionTimes,
+                                   [classroom203, classroom203, classroom201], "Micro Biology",
+                                   "BYL3042", prerequisites, 3, biology.get_facultyID(),
+                                   biology.getDepartmentID())
+        self.createOrChangeCourse(course203)
+
+        # Course4 for Biology Department
+        lecturerForSections.clear()
+        lecturersForSections.append(lecturer204)
+        lecturersForSections.append(lecturer204)
+        lecturersForSections.append(lecturer204)
+        days.clear()
+        days.append(Day.Monday)
+        days.append(Day.Monday)
+        days.append(Day.Monday)
+        sectionTimes.clear()
+        sectionTimes.append(SectionTime.Second)
+        sectionTimes.append(SectionTime.Third)
+        sectionTimes.append(SectionTime.Fourth)
+        prerequisites.clear()
+        prerequisites.append(course201.getCourseInformation())
+        course204 = generateCourse(lecturersForSections, days, sectionTimes,
+                                   [classroom201, classroom201, classroom201], "Human Anatomy",
+                                   "BYL4011", prerequisites, 4, biology.get_facultyID(),
+                                   biology.getDepartmentID())
+        self.createOrChangeCourse(course204)
+        #********************************************************************************************************************
+        # Course1 for Chemistry Department
+        lecturerForSections.clear()
+        lecturersForSections.append(lecturer211)
+        lecturersForSections.append(lecturer211)
+        lecturersForSections.append(lecturer211)
+        lecturersForSections.append(lecturer211)
+        days.clear()
+        days.append(Day.Monday)
+        days.append(Day.Monday)
+        days.append(Day.Friday)
+        days.append(Day.Friday)
+        sectionTimes.clear()
+        sectionTimes.append(SectionTime.Second)
+        sectionTimes.append(SectionTime.Third)
+        sectionTimes.append(SectionTime.Third)
+        sectionTimes.append(SectionTime.Fourth)
+        prerequisites.clear()
+        course211 = generateCourse(lecturersForSections, days, sectionTimes,
+                                   [classroom202, classroom202, classroom203, classroom203], "General Chemistry",
+                                   "CHM1135", prerequisites, 1, chemistry.get_facultyID(),
+                                   chemistry.getDepartmentID())
+        self.createOrChangeCourse(course211)
+        # Course2 for Chemistry Department
+        lecturerForSections.clear()
+        lecturersForSections.append(lecturer212)
+        lecturersForSections.append(lecturer212)
+        lecturersForSections.append(lecturer212)
+        lecturersForSections.append(lecturer212)
+        days.clear()
+        days.append(Day.Tuesday)
+        days.append(Day.Tuesday)
+        days.append(Day.Wednesday)
+        days.append(Day.Thursday)
+        sectionTimes.clear()
+        sectionTimes.append(SectionTime.Second)
+        sectionTimes.append(SectionTime.Third)
+        sectionTimes.append(SectionTime.Second)
+        sectionTimes.append(SectionTime.Second)
+        prerequisites.clear()
+        prerequisites.append(course211.getCourseInformation())
+        course212 = generateCourse(lecturersForSections, days, sectionTimes,
+                                   [classroom205, classroom205, classroom204, classroom203], "Analytical Chemistry",
+                                   "CHM2023", prerequisites, 2, chemistry.get_facultyID(),
+                                   chemistry.getDepartmentID())
+        self.createOrChangeCourse(course212)
+
+        # Course3 for Chemistry Department
+        lecturerForSections.clear()
+        lecturersForSections.append(lecturer213)
+        lecturersForSections.append(lecturer213)
+        lecturersForSections.append(lecturer213)
+        days.clear()
+        days.append(Day.Tuesday)
+        days.append(Day.Tuesday)
+        days.append(Day.Wednesday)
+        sectionTimes.clear()
+        sectionTimes.append(SectionTime.Second)
+        sectionTimes.append(SectionTime.Third)
+        sectionTimes.append(SectionTime.Second)
+        prerequisites.clear()
+
+        course213 = generateCourse(lecturersForSections, days, sectionTimes,
+                                   [classroom204, classroom204, classroom202], "Industrial Analysis",
+                                   "CHM3042", prerequisites, 3, chemistry.get_facultyID(),
+                                   chemistry.getDepartmentID())
+        self.createOrChangeCourse(course213)
+
+        # Course4 for Chemistry Department
+        lecturerForSections.clear()
+        lecturersForSections.append(lecturer214)
+        lecturersForSections.append(lecturer214)
+        lecturersForSections.append(lecturer214)
+        lecturersForSections.append(lecturer214)
+        days.clear()
+        days.append(Day.Tuesday)
+        days.append(Day.Wednesday)
+        days.append(Day.Wednesday)
+        days.append(Day.Friday)
+        sectionTimes.clear()
+        sectionTimes.append(SectionTime.Third)
+        sectionTimes.append(SectionTime.Second)
+        sectionTimes.append(SectionTime.Third)
+        sectionTimes.append(SectionTime.First)
+        prerequisites.clear()
+        prerequisites.append(course213.getCourseInformation())
+        course214 = generateCourse(lecturersForSections, days, sectionTimes,
+                                   [classroom205, classroom205, classroom204, classroom203], "Biochemistry",
+                                   "CHM4011", prerequisites, 4, chemistry.get_facultyID(),
+                                   chemistry.getDepartmentID())
+        self.createOrChangeCourse(course214)
+
+        #*****************************************************Students***************************************************************
+        # for example: student306 is for 6th student in Business Department, student204 is for 4th student in Biology Department, student213 is for 3rd student in Chemistry Department
+
+        student301 = generateRandomStudent(businessDepartment, 2021, 2, advisor301.get_staffId())
+        student302 = generateRandomStudent(businessDepartment, 2024, 15, advisor301.get_staffId())
+        student303 = generateRandomStudent(businessDepartment, 2023, 66, advisor301.get_staffId())
+        student304 = generateRandomStudent(businessDepartment, 2022, 58, advisor301.get_staffId())
+        student305 = generateRandomStudent(businessDepartment, 2021, 24, advisor301.get_staffId())
+        student306 = generateRandomStudent(businessDepartment, 2023, 13, advisor301.get_staffId())
+
+        student201 = generateRandomStudent(biology, 2022, 75, advisor201.get_staffId())
+        student202 = generateRandomStudent(biology, 2022, 53, advisor201.get_staffId())
+        student203 = generateRandomStudent(biology, 2024, 34, advisor201.get_staffId())
+        student204 = generateRandomStudent(biology, 2021, 3, advisor201.get_staffId())
+        student205 = generateRandomStudent(biology, 2023, 27, advisor201.get_staffId())
+        student206 = generateRandomStudent(biology, 2024, 11, advisor201.get_staffId())
+
+        student211 = generateRandomStudent(chemistry, 2021, 37, advisor211.get_staffId())
+        student212 = generateRandomStudent(chemistry, 2022, 29, advisor211.get_staffId())
+        student213 = generateRandomStudent(chemistry, 2024, 1, advisor211.get_staffId())
+        student214 = generateRandomStudent(chemistry, 2024, 25, advisor211.get_staffId())
+        student215 = generateRandomStudent(chemistry, 2024, 45, advisor211.get_staffId())
+        student216 = generateRandomStudent(chemistry, 2023, 8, advisor211.get_staffId())
+
+        #Add students taken courses to the system
+        student301.getTranscript().addTakemCourse(course301.getCourseInformation(), 90, 54)
+        student301.getTranscript().addTakemCourse(course301.getCourseInformation(), 80, 65)
+        student301.getTranscript().addTakemCourse(course301.getCourseInformation(), 70, 75)
+
+        student303.getTranscript().addTakemCourse(course301.getCourseInformation(), 90, 64)
+
+        student304.getTranscript().addTakemCourse(course301.getCourseInformation(), 93, 74)
+        student304.getTranscript().addTakemCourse(course301.getCourseInformation(), 85, 65)
+
+        student305.getTranscript().addTakemCourse(course301.getCourseInformation(), 75, 70)
+        student305.getTranscript().addTakemCourse(course301.getCourseInformation(), 65, 85)
+        student305.getTranscript().addTakemCourse(course301.getCourseInformation(), 75, 75)
+
+        student306.getTranscript().addTakemCourse(course301.getCourseInformation(), 85, 75)
+
+        student306.getTranscript().addTakenCourse(course301.getCourseInformation(), 85, 75)
+
+        student201.getTranscript().addTakenCourse(course201.getCourseInformation(), 85, 75)
+        student201.getTranscript().addTakenCourse(course202.getCourseInformation(), 90, 85)
+
+        student202.getTranscript().addTakenCourse(course201.getCourseInformation(), 68, 75)
+        student202.getTranscript().addTakenCourse(course202.getCourseInformation(), 88, 72)
+
+        student204.getTranscript().addTakenCourse(course201.getCourseInformation(), 65, 85)
+        student204.getTranscript().addTakenCourse(course202.getCourseInformation(), 75, 850)
+        student204.getTranscript().addTakenCourse(course203.getCourseInformation(), 55, 10)
+
+        student205.getTranscript().addTakenCourse(course201.getCourseInformation(), 75, 85)
+
+        student211.getTranscript().addTakenCourse(course211.getCourseInformation(), 38, 90)
+        student211.getTranscript().addTakenCourse(course212.getCourseInformation(), 45, 85)
+        student211.getTranscript().addTakenCourse(course213.getCourseInformation(), 85, 75)
+
+        student212.getTranscript().addTakenCourse(course211.getCourseInformation(), 75, 85)
+        student212.getTranscript().addTakenCourse(course212.getCourseInformation(), 55, 80)
+
+        student216.getTranscript().addTakenCourse(course211.getCourseInformation(), 70, 85)
+
+        #Add students to the system
+        self.createOrChangeStudent(student301)
+        self.createOrChangeStudent(student302)
+        self.createOrChangeStudent(student303)
+        self.createOrChangeStudent(student304)
+        self.createOrChangeStudent(student305)
+        self.createOrChangeStudent(student306)
+
+        self.createOrChangeStudent(student201)
+        self.createOrChangeStudent(student202)
+        self.createOrChangeStudent(student203)
+        self.createOrChangeStudent(student204)
+        self.createOrChangeStudent(student205)
+        self.createOrChangeStudent(student206)
+
+        self.createOrChangeStudent(student211)
+        self.createOrChangeStudent(student212)
+        self.createOrChangeStudent(student213)
+        self.createOrChangeStudent(student214)
+        self.createOrChangeStudent(student215)
+        self.createOrChangeStudent(student216)
+
+        #********************************************************* DepartmentSchedulers and Student Affairs******************************************************
+        departmentScheduler301 = generateRandomDepartmentScheduler(businessDepartment)
+        departmentScheduler201 = generateRandomDepartmentScheduler(biology)
+        departmentScheduler211 = generateRandomDepartmentScheduler(chemistry)
+
+        self.createOrChangeDepartmentScheduler(departmentScheduler301)
+        self.createOrChangeDepartmentScheduler(departmentScheduler201)
+        self.createOrChangeDepartmentScheduler(departmentScheduler211)
+
+        studentAffairs301 = generateRandomStudentsAffairs(businessDepartment)
+        studentAffairs201 = generateRandomStudentsAffairs(biology)
+        studentAffairs211 = generateRandomStudentsAffairs(chemistry)
+
+        self.createOrChangeStudentsAffairs(studentAffairs301)
+        self.createOrChangeStudentsAffairs(studentAffairs201)
+        self.createOrChangeStudentsAffairs(studentAffairs211)
 
 
 
-
-
-
+        #berkan
 
 
 
@@ -1006,7 +1340,7 @@ class customEncoder(JSONEncoder):
     def default(self, o):
         return o.__dict__
 
-# dm = DataManagement()
+dm = DataManagement()
 # fac = generateFaculty(15,"eng")
 # dm.createOrChangeFaculty(fac)
 #
@@ -1040,3 +1374,29 @@ class customEncoder(JSONEncoder):
 #
 # course1 = generateCourse([lec], [Day.Friday], [SectionTime.Fifth], [cr], "test2", "TT102", list(), 1, dep.get_facultyID(), dep.getDepartmentID())
 # dm.createOrChangeCourse(course1)
+
+# Yusuf
+# **************************************************** Faculties ****************************************************
+# new Faculty "Business"
+Business = generateFaculty(3, "Business")
+dm.createOrChangeFaculty(Business)
+# new Faculty "Science"
+Science = generateFaculty(2, "Science")
+dm.createOrChangeFaculty(Science)
+
+#**************************************************** Departments ****************************************************
+# new Department "Business" in Faculty "Business"
+BusinessDepartment = generateDepartment(301, "Business", Business)
+dm.createOrChangeDepartment(BusinessDepartment)
+# New Department "Biology" in Faculty "Science"
+Biology = generateDepartment(201, "Biology", Science)
+dm.createOrChangeDepartment(Biology)
+# New Department "Chemistry" in Faculty "Science"
+Chemistry = generateDepartment(202, "Chemistry", Science)
+dm.createOrChangeDepartment(Chemistry)
+
+#**************************************************** Advisors and Lecturers ****************************************************
+# new Advisors and Lecturers for Business Department
+advisor301 = generateRandomAdvisor(BusinessDepartment)
+
+
