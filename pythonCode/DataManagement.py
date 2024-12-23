@@ -6,6 +6,7 @@ from json import JSONEncoder
 
 
 from Course import CourseInformation, CourseRequirements, CourseSection, Course
+from Day import Day, SectionTime
 
 from Department import DepartmentID, Department
 from Faculty import FacultyID, Faculty
@@ -489,34 +490,37 @@ class customEncoder(JSONEncoder):
     def default(self, o):
         return o.__dict__
 
-# dm = DataManagement()
-# fac = generateFaculty(15,"eng")
-# dm.createOrChangeFaculty(fac)
-#
-# dep = generateDepartment(150, "comp eng",fac )
-# dm.createOrChangeDepartment(dep)
-#
-# ad = generateRandomAdvisor(dep)
-#
-# dm.createOrChangeAdvisor(ad)
-#
-# stu = generateRandomStudent(dep,2022,1,ad.get_staffId())
-# dm.createOrChangeStudent(stu)
-#
-# lec = generateRandomLecturer(dep)
-# dm.createOrChangeLecturer(lec)
-#
-# sa = generateRandomStudentsAffairs(dep)
-# dm.createOrChangeStudentsAffairs(sa)
-#
-# dsch = generateRandomDepartmentScheduler(dep)
-# dm.createOrChangeDepartmentScheduler(dsch)
-#
-# dh = generateRandomDepartmentHead(dep)
-# dm.createOrChangeDepartmentHead(dh)
-#
-# course = generateCourse([lec], [Day.Friday], [SectionTime.Fifth], [Classroom("aa",20), Classroom("bb", 15)], "test", "TT101", list(), 1, dep.get_facultyID(), dep.getDepartmentID())
-# dm.createOrChangeCourse(course)
-#
-# course1 = generateCourse([lec], [Day.Friday], [SectionTime.Fifth], [Classroom("aa",20), Classroom("bb", 15)], "test2", "TT102", list(), 1, dep.get_facultyID(), dep.getDepartmentID())
-# dm.createOrChangeCourse(course1)
+dm = DataManagement()
+fac = generateFaculty(15,"eng")
+dm.createOrChangeFaculty(fac)
+
+dep = generateDepartment(150, "comp eng",fac )
+dm.createOrChangeDepartment(dep)
+
+ad = generateRandomAdvisor(dep)
+
+dm.createOrChangeAdvisor(ad)
+
+stu = generateRandomStudent(dep,2022,1,ad.get_staffId())
+dm.createOrChangeStudent(stu)
+
+lec = generateRandomLecturer(dep)
+dm.createOrChangeLecturer(lec)
+
+sa = generateRandomStudentsAffairs(dep)
+dm.createOrChangeStudentsAffairs(sa)
+
+dsch = generateRandomDepartmentScheduler(dep)
+dm.createOrChangeDepartmentScheduler(dsch)
+
+dh = generateRandomDepartmentHead(dep)
+dm.createOrChangeDepartmentHead(dh)
+
+cr = generateClassroom("aa",20)
+dm.createOrChangeClassroom(cr)
+
+course = generateCourse([lec], [Day.Friday], [SectionTime.Fifth], [cr], "test", "TT101", list(), 1, dep.get_facultyID(), dep.getDepartmentID())
+dm.createOrChangeCourse(course)
+
+course1 = generateCourse([lec], [Day.Friday], [SectionTime.Fifth], [cr], "test2", "TT102", list(), 1, dep.get_facultyID(), dep.getDepartmentID())
+dm.createOrChangeCourse(course1)
