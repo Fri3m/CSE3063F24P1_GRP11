@@ -5,7 +5,7 @@ from random import choice
 from Classroom import Classroom
 from CourseRegistrationService import CourseRegistrationService
 from LoginAuthService import LoginAuthService
-
+from pythonCode.Transcript import Transcript
 from pythonCode.DataManagement import DataManagement
 from pythonCode.Day import Day, SectionTime
 from pythonCode.Department import Department, DepartmentID
@@ -174,7 +174,7 @@ class Main:
                 print("Please choose a course to register:")
                 courseList = []
                 for course in self._courses:
-                    if course.courseInformation not in self.user.get_current_courses():
+                    if course.courseInformation not in self.user.get_current_courses() or course not in (x.getCourseInformation() for x in self.user.getTranscript().getTakenCourses()):
                         courseList.append(course)
                 print("Courses available to register: ")
                 for course in courseList:
@@ -187,6 +187,10 @@ class Main:
                         break
                     for course in courseList:
                         if course.getCourseName() == courseName:
+                            if course.getCourseName() in (x.getCourseInformation().getCourseName() for x in self.user.getTranscript().getTakenCourses()):
+                                print("You have already taken this course.")
+                                courseTaken = True
+                                break
                             self.user.takeCourse(course, self._course_registration_service)
                             courseTaken = True
                             break
@@ -1037,6 +1041,7 @@ class Main:
 
             current_section += 1
 
+        #self.checkSectionConflict(course.getCourseSections(), self._courses)
         course = DataManagement.generateCourse(lecturerArrayList, dayArrayList, sectionTimeArrayList,
                                                classroomArrayList,
                                                course_name,
