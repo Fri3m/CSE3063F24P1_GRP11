@@ -8,17 +8,21 @@ from pythonCode.Logger import setup_logger
 logger = setup_logger("Course")
 
 class Course:
-    def __init__(self, courseInformation, courseRequirements, courseSections):
+    def __init__(self, courseInformation, courseRequirements, courseSections, courseCapacity = int(1e9)):
         logging.getLogger().handlers.clear()
         logger.info(f"{self.__class__.__name__} classes created.")
         self.courseInformation = courseInformation
         self.courseRequirements = courseRequirements
         self.courseSections = courseSections
         self._currentStudentCount = 0
-        self._courseCapacity = int(1e9)
-        for courseSection in courseSections:
-            if courseSection._classRoom.get_capacity() < self._courseCapacity:
-                self._courseCapacity = courseSection._classRoom.get_capacity()
+        self._courseCapacity = courseCapacity
+        if courseCapacity == int(1e9):
+            for courseSection in courseSections:
+                if courseSection._classRoom.get_capacity() < self._courseCapacity:
+                    self._courseCapacity = courseSection._classRoom.get_capacity()
+
+
+
 
     @staticmethod
     def from_dict(data):
@@ -27,8 +31,8 @@ class Course:
         css = list()
         for data_cs in data["courseSections"]:
             css.append(CourseSection.from_dict(data_cs))
-
-        return Course(ci, cr, css)
+        cc = int(data["_courseCapacity"])
+        return Course(ci, cr, css, cc)
 
     def getCourseName(self):
         logger.info(f"The getCourseName method in the {self.__class__.__name__} class is called.")

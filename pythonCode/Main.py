@@ -23,6 +23,8 @@ day_dict = {0: "Monday", 1: "Tuesday", 2: "Wednesday", 3: "Thursday", 4: "Friday
 sectionTime_dict = {0: "First", 1: "Second", 2: "Third", 3: "Fourth", 4: "Fifth", 5: "Sixth", 6: "Seventh", 7: "Eighth",
                     8: "Ninth"}
 
+score_dict = {4.0: "AA", 3.5: "BA", 3.0: "BB", 2.5: "CB", 2.0: "CC", 1.5: "DC", 1.0: "DD", 0.0: "FF"}
+
 
 class Main:
     user_type = str()
@@ -205,7 +207,7 @@ class Main:
                 print("GPA:", self.user.getTranscript().get_GPA())
                 for takenCourse in self.user.getTranscript().getTakenCourses():
                     print(
-                        takenCourse.getCourseInformation().getCourseCode() + ": " + takenCourse.getCourseInformation().getCourseName() + ": " + takenCourse.getCourseScore().name())
+                        takenCourse.getCourseInformation().getCourseCode() , ": " , takenCourse.getCourseInformation().getCourseName() ,": " , score_dict[takenCourse.getCourseScore()])
                 logger.info("Transcript shown")
             elif choice == "4":
                 self.updateUserInfo()

@@ -18,6 +18,31 @@
     "courseSections": [
         {
             "_day": 0,
+            "_sectionTime": 0,
+            "_lecturer": {
+                "_user_information": {
+                    "_FIRST_NAME": "Tayfun",
+                    "_LAST_NAME": "Koroglu",
+                    "_encoded_password": "1234",
+                    "_UNIVERSITY_EMAIL": "tayfunkoroglu@marun.edu.tr",
+                    "_email": "tayfunkoroglu19@gmail.com",
+                    "_address": "Artvin",
+                    "_phone_number": "+90 597 159 95 75"
+                },
+                "_staffId": {
+                    "_staffId": 10
+                },
+                "_departmentId": "",
+                "_facultyId": ""
+            },
+            "_classRoom": {
+                "_classroom_name": "CS15",
+                "_capacity": 70
+            },
+            "_quota": 50
+        },
+        {
+            "_day": 0,
             "_sectionTime": 1,
             "_lecturer": {
                 "_user_information": {
@@ -36,33 +61,8 @@
                 "_facultyId": ""
             },
             "_classRoom": {
-                "_classroom_name": "CS13",
-                "_capacity": 50
-            },
-            "_quota": 50
-        },
-        {
-            "_day": 0,
-            "_sectionTime": 2,
-            "_lecturer": {
-                "_user_information": {
-                    "_FIRST_NAME": "Tayfun",
-                    "_LAST_NAME": "Koroglu",
-                    "_encoded_password": "1234",
-                    "_UNIVERSITY_EMAIL": "tayfunkoroglu@marun.edu.tr",
-                    "_email": "tayfunkoroglu19@gmail.com",
-                    "_address": "Artvin",
-                    "_phone_number": "+90 597 159 95 75"
-                },
-                "_staffId": {
-                    "_staffId": 10
-                },
-                "_departmentId": "",
-                "_facultyId": ""
-            },
-            "_classRoom": {
-                "_classroom_name": "CS13",
-                "_capacity": 50
+                "_classroom_name": "CS16",
+                "_capacity": 75
             },
             "_quota": 50
         }

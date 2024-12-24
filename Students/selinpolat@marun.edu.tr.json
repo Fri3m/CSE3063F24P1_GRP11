@@ -2,7 +2,7 @@
     "_user_information": {
         "_FIRST_NAME": "Selin",
         "_LAST_NAME": "Polat",
-        "_encoded_password": "1234",
+        "_encoded_password": "12345",
         "_UNIVERSITY_EMAIL": "selinpolat@marun.edu.tr",
         "_email": "selinpolat8@gmail.com",
         "_address": "Giresun",
@@ -83,5 +83,14 @@
         "_staffId": 1
     },
     "_current_class": 3,
-    "_current_courses": []
+    "_current_courses": [
+        {
+            "courseName": "Probability",
+            "courseCode": "IE2151"
+        },
+        {
+            "courseName": "Introduction to Algorithms",
+            "courseCode": "CS1201"
+        }
+    ]
 }
