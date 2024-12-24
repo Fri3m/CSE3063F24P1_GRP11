@@ -580,7 +580,7 @@ class Main:
         first_name = input()
         print("Enter last name: ")
         last_name = input()
-        university_email = DataManagement.__generateUniversityEmail(first_name, last_name)
+        university_email = DataManagement.generateUniversityEmail(first_name, last_name)
         print("Created university email: " + university_email)
         print("Enter email: ")
         email = input()
