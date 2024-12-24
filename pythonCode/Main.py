@@ -594,7 +594,7 @@ class Main:
         phone_number = input()
         print("Enter password: ")
         password = input()
-        return UserInformation(first_name, last_name, university_email, email, address, phone_number, password)
+        return UserInformation(first_name, last_name, password, university_email, email, address, phone_number)
 
     def departmentSchedulerMainMenu(self):
         logger.info("Department scheduler main menu opened")
