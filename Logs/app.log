@@ -10711,3 +10711,315 @@
 2024-12-24 12:00:17,637 - Faculty - INFO - The getFacultyName method in the FacultyID class is called.
 2024-12-24 12:00:17,637 - Student - INFO - StudentID get_entrance_date method called.
 2024-12-24 12:00:17,637 - Student - INFO - StudentID get_entrance_rank method called.
+2024-12-24 12:04:28,297 - DataManagement - INFO - DataManagement classes created.
+2024-12-24 12:04:28,297 - DataManagement - ERROR - File doesn't exist: ../Advisors/selinpolat@marun.edu.tr.json
+2024-12-24 12:04:48,172 - DataManagement - INFO - DataManagement classes created.
+2024-12-24 12:04:48,173 - DataManagement - ERROR - File doesn't exist: ../Advisors/selinpolat@marun.edu.tr.json
+2024-12-24 12:06:22,894 - DataManagement - INFO - DataManagement classes created.
+2024-12-24 12:06:22,895 - DataManagement - INFO - Loaded dict from JSON
+2024-12-24 12:06:22,895 - UserInformation - INFO - UserInformation classes created.
+2024-12-24 12:06:22,895 - User - INFO - Advisor classes created.
+2024-12-24 12:06:22,895 - User - INFO - Advisor classes created.
+2024-12-24 12:06:22,895 - User - INFO - Advisor classes created.
+2024-12-24 12:06:22,895 - User - INFO - Advisor classes created.
+2024-12-24 12:06:22,895 - User - INFO - StaffId classes created.
+2024-12-24 12:06:22,895 - User - INFO - The _generateStaffId method in the StaffId class is called.
+2024-12-24 12:06:22,895 - User - INFO - StaffId classes created.
+2024-12-24 12:06:22,895 - User - INFO - The _generateStaffId method in the StaffId class is called.
+2024-12-24 12:06:22,896 - DataManagement - INFO - Loaded dict from JSON
+2024-12-24 12:06:22,896 - UserInformation - INFO - UserInformation classes created.
+2024-12-24 12:06:22,896 - Department - INFO - DepartmentID classes created.
+2024-12-24 12:06:22,896 - Faculty - INFO - FacultyID classes created.
+2024-12-24 12:06:22,896 - Student - INFO - StudentID classes created.
+2024-12-24 12:06:22,896 - Student - INFO - Creating student ID in StudentID class.
+2024-12-24 12:06:22,896 - Department - INFO - The getDepartmentID method in the DepartmentID class is called.
+2024-12-24 12:06:22,896 - Department - INFO - DepartmentID classes created.
+2024-12-24 12:06:22,896 - Faculty - INFO - FacultyID classes created.
+2024-12-24 12:06:22,897 - Student - INFO - StudentID classes created.
+2024-12-24 12:06:22,897 - Student - INFO - Creating student ID in StudentID class.
+2024-12-24 12:06:22,897 - Department - INFO - The getDepartmentID method in the DepartmentID class is called.
+2024-12-24 12:06:22,897 - Course - INFO - CourseInformation classes created.
+2024-12-24 12:06:22,897 - Course - INFO - TakenCourse classes created.
+2024-12-24 12:06:22,897 - Course - INFO - CourseInformation classes created.
+2024-12-24 12:06:22,897 - Course - INFO - TakenCourse classes created.
+2024-12-24 12:06:22,897 - Course - INFO - CourseInformation classes created.
+2024-12-24 12:06:22,897 - Course - INFO - TakenCourse classes created.
+2024-12-24 12:06:22,897 - Course - INFO - CourseInformation classes created.
+2024-12-24 12:06:22,897 - Course - INFO - TakenCourse classes created.
+2024-12-24 12:06:22,897 - Course - INFO - CourseInformation classes created.
+2024-12-24 12:06:22,897 - Course - INFO - TakenCourse classes created.
+2024-12-24 12:06:22,897 - Transcript - INFO - Transcript classes created.
+2024-12-24 12:06:22,897 - Transcript - INFO - Adding taken courses to the transcript.
+2024-12-24 12:06:22,897 - Transcript - INFO - Calculating GPA.
+2024-12-24 12:06:22,897 - Course - INFO - Calculating the course score.
+2024-12-24 12:06:22,897 - Course - INFO - Calculating the course score.
+2024-12-24 12:06:22,897 - Course - INFO - Calculating the course score.
+2024-12-24 12:06:22,897 - Course - INFO - Calculating the course score.
+2024-12-24 12:06:22,897 - Course - INFO - Calculating the course score.
+2024-12-24 12:06:22,898 - Transcript - INFO - Calculating GPA.
+2024-12-24 12:06:22,898 - Course - INFO - Calculating the course score.
+2024-12-24 12:06:22,898 - Course - INFO - Calculating the course score.
+2024-12-24 12:06:22,898 - Course - INFO - Calculating the course score.
+2024-12-24 12:06:22,898 - Course - INFO - Calculating the course score.
+2024-12-24 12:06:22,898 - Course - INFO - Calculating the course score.
+2024-12-24 12:06:22,898 - User - INFO - StaffId classes created.
+2024-12-24 12:06:22,898 - User - INFO - The _generateStaffId method in the StaffId class is called.
+2024-12-24 12:06:22,898 - Student - INFO - Student classes created.
+2024-12-24 12:06:22,898 - User - INFO - Student classes created.
+2024-12-24 12:06:22,898 - CourseRegistrationService - INFO - CourseRegistrationService classes created.
+2024-12-24 12:06:22,898 - DataManagement - INFO - Loaded dict from JSON
+2024-12-24 12:06:22,898 - Course - INFO - CourseInformation classes created.
+2024-12-24 12:06:22,898 - Faculty - INFO - FacultyID classes created.
+2024-12-24 12:06:22,898 - Department - INFO - DepartmentID classes created.
+2024-12-24 12:06:22,899 - Course - INFO - CourseRequirements classes created.
+2024-12-24 12:06:22,899 - UserInformation - INFO - UserInformation classes created.
+2024-12-24 12:06:22,899 - User - INFO - Lecturer classes created.
+2024-12-24 12:06:22,899 - User - INFO - Lecturer classes created.
+2024-12-24 12:06:22,899 - User - INFO - Lecturer classes created.
+2024-12-24 12:06:22,899 - User - INFO - StaffId classes created.
+2024-12-24 12:06:22,899 - User - INFO - The _generateStaffId method in the StaffId class is called.
+2024-12-24 12:06:22,899 - User - INFO - StaffId classes created.
+2024-12-24 12:06:22,899 - User - INFO - The _generateStaffId method in the StaffId class is called.
+2024-12-24 12:06:22,899 - Classroom - INFO - Classroom classes created.
+2024-12-24 12:06:22,899 - Course - INFO - CourseSection classes created.
+2024-12-24 12:06:22,899 - Classroom - INFO - The get_capacity method in the Classroom class is called.
+2024-12-24 12:06:22,899 - UserInformation - INFO - UserInformation classes created.
+2024-12-24 12:06:22,899 - User - INFO - Lecturer classes created.
+2024-12-24 12:06:22,899 - User - INFO - Lecturer classes created.
+2024-12-24 12:06:22,899 - User - INFO - Lecturer classes created.
+2024-12-24 12:06:22,899 - User - INFO - StaffId classes created.
+2024-12-24 12:06:22,899 - User - INFO - The _generateStaffId method in the StaffId class is called.
+2024-12-24 12:06:22,899 - User - INFO - StaffId classes created.
+2024-12-24 12:06:22,899 - User - INFO - The _generateStaffId method in the StaffId class is called.
+2024-12-24 12:06:22,899 - Classroom - INFO - Classroom classes created.
+2024-12-24 12:06:22,899 - Course - INFO - CourseSection classes created.
+2024-12-24 12:06:22,899 - Classroom - INFO - The get_capacity method in the Classroom class is called.
+2024-12-24 12:06:22,899 - Course - INFO - Course classes created.
+2024-12-24 12:06:22,900 - Classroom - INFO - The get_capacity method in the Classroom class is called.
+2024-12-24 12:06:22,900 - Classroom - INFO - The get_capacity method in the Classroom class is called.
+2024-12-24 12:06:22,900 - Classroom - INFO - The get_capacity method in the Classroom class is called.
+2024-12-24 12:06:22,900 - CourseRegistrationService - INFO - Creating a course request.
+2024-12-24 12:06:22,900 - Student - INFO - Student get_advisorID method called.
+2024-12-24 12:06:22,900 - CourseRegistrationService - INFO - CourseRequest classes created.
+2024-12-24 12:06:22,900 - DataManagement - INFO - Loaded dict from JSON
+2024-12-24 12:06:22,900 - Course - INFO - CourseInformation classes created.
+2024-12-24 12:06:22,900 - Faculty - INFO - FacultyID classes created.
+2024-12-24 12:06:22,900 - Department - INFO - DepartmentID classes created.
+2024-12-24 12:06:22,900 - Course - INFO - CourseRequirements classes created.
+2024-12-24 12:06:22,900 - UserInformation - INFO - UserInformation classes created.
+2024-12-24 12:06:22,900 - User - INFO - Lecturer classes created.
+2024-12-24 12:06:22,900 - User - INFO - Lecturer classes created.
+2024-12-24 12:06:22,900 - User - INFO - Lecturer classes created.
+2024-12-24 12:06:22,901 - User - INFO - StaffId classes created.
+2024-12-24 12:06:22,901 - User - INFO - The _generateStaffId method in the StaffId class is called.
+2024-12-24 12:06:22,901 - User - INFO - StaffId classes created.
+2024-12-24 12:06:22,901 - User - INFO - The _generateStaffId method in the StaffId class is called.
+2024-12-24 12:06:22,901 - Classroom - INFO - Classroom classes created.
+2024-12-24 12:06:22,901 - Course - INFO - CourseSection classes created.
+2024-12-24 12:06:22,901 - Classroom - INFO - The get_capacity method in the Classroom class is called.
+2024-12-24 12:06:22,901 - UserInformation - INFO - UserInformation classes created.
+2024-12-24 12:06:22,901 - User - INFO - Lecturer classes created.
+2024-12-24 12:06:22,901 - User - INFO - Lecturer classes created.
+2024-12-24 12:06:22,901 - User - INFO - Lecturer classes created.
+2024-12-24 12:06:22,901 - User - INFO - StaffId classes created.
+2024-12-24 12:06:22,901 - User - INFO - The _generateStaffId method in the StaffId class is called.
+2024-12-24 12:06:22,901 - User - INFO - StaffId classes created.
+2024-12-24 12:06:22,901 - User - INFO - The _generateStaffId method in the StaffId class is called.
+2024-12-24 12:06:22,901 - Classroom - INFO - Classroom classes created.
+2024-12-24 12:06:22,901 - Course - INFO - CourseSection classes created.
+2024-12-24 12:06:22,901 - Classroom - INFO - The get_capacity method in the Classroom class is called.
+2024-12-24 12:06:22,901 - UserInformation - INFO - UserInformation classes created.
+2024-12-24 12:06:22,901 - User - INFO - Lecturer classes created.
+2024-12-24 12:06:22,901 - User - INFO - Lecturer classes created.
+2024-12-24 12:06:22,901 - User - INFO - Lecturer classes created.
+2024-12-24 12:06:22,901 - User - INFO - StaffId classes created.
+2024-12-24 12:06:22,901 - User - INFO - The _generateStaffId method in the StaffId class is called.
+2024-12-24 12:06:22,901 - User - INFO - StaffId classes created.
+2024-12-24 12:06:22,902 - User - INFO - The _generateStaffId method in the StaffId class is called.
+2024-12-24 12:06:22,902 - Classroom - INFO - Classroom classes created.
+2024-12-24 12:06:22,902 - Course - INFO - CourseSection classes created.
+2024-12-24 12:06:22,902 - Classroom - INFO - The get_capacity method in the Classroom class is called.
+2024-12-24 12:06:22,902 - Course - INFO - Course classes created.
+2024-12-24 12:06:22,902 - Classroom - INFO - The get_capacity method in the Classroom class is called.
+2024-12-24 12:06:22,902 - Classroom - INFO - The get_capacity method in the Classroom class is called.
+2024-12-24 12:06:22,902 - Classroom - INFO - The get_capacity method in the Classroom class is called.
+2024-12-24 12:06:22,902 - Classroom - INFO - The get_capacity method in the Classroom class is called.
+2024-12-24 12:06:22,902 - CourseRegistrationService - INFO - Creating a course request.
+2024-12-24 12:06:22,902 - Student - INFO - Student get_advisorID method called.
+2024-12-24 12:06:22,902 - CourseRegistrationService - INFO - CourseRequest classes created.
+2024-12-24 12:06:22,902 - DataManagement - INFO - Loaded dict from JSON
+2024-12-24 12:06:22,902 - Course - INFO - CourseInformation classes created.
+2024-12-24 12:06:22,902 - Faculty - INFO - FacultyID classes created.
+2024-12-24 12:06:22,902 - Department - INFO - DepartmentID classes created.
+2024-12-24 12:06:22,903 - Course - INFO - CourseRequirements classes created.
+2024-12-24 12:06:22,903 - UserInformation - INFO - UserInformation classes created.
+2024-12-24 12:06:22,903 - User - INFO - Lecturer classes created.
+2024-12-24 12:06:22,903 - User - INFO - Lecturer classes created.
+2024-12-24 12:06:22,903 - User - INFO - Lecturer classes created.
+2024-12-24 12:06:22,903 - User - INFO - StaffId classes created.
+2024-12-24 12:06:22,903 - User - INFO - The _generateStaffId method in the StaffId class is called.
+2024-12-24 12:06:22,903 - User - INFO - StaffId classes created.
+2024-12-24 12:06:22,903 - User - INFO - The _generateStaffId method in the StaffId class is called.
+2024-12-24 12:06:22,903 - Classroom - INFO - Classroom classes created.
+2024-12-24 12:06:22,903 - Course - INFO - CourseSection classes created.
+2024-12-24 12:06:22,903 - Classroom - INFO - The get_capacity method in the Classroom class is called.
+2024-12-24 12:06:22,903 - UserInformation - INFO - UserInformation classes created.
+2024-12-24 12:06:22,903 - User - INFO - Lecturer classes created.
+2024-12-24 12:06:22,903 - User - INFO - Lecturer classes created.
+2024-12-24 12:06:22,903 - User - INFO - Lecturer classes created.
+2024-12-24 12:06:22,903 - User - INFO - StaffId classes created.
+2024-12-24 12:06:22,903 - User - INFO - The _generateStaffId method in the StaffId class is called.
+2024-12-24 12:06:22,903 - User - INFO - StaffId classes created.
+2024-12-24 12:06:22,903 - User - INFO - The _generateStaffId method in the StaffId class is called.
+2024-12-24 12:06:22,903 - Classroom - INFO - Classroom classes created.
+2024-12-24 12:06:22,903 - Course - INFO - CourseSection classes created.
+2024-12-24 12:06:22,903 - Classroom - INFO - The get_capacity method in the Classroom class is called.
+2024-12-24 12:06:22,903 - Course - INFO - Course classes created.
+2024-12-24 12:06:22,903 - Classroom - INFO - The get_capacity method in the Classroom class is called.
+2024-12-24 12:06:22,903 - Classroom - INFO - The get_capacity method in the Classroom class is called.
+2024-12-24 12:06:22,904 - Classroom - INFO - The get_capacity method in the Classroom class is called.
+2024-12-24 12:06:22,904 - CourseRegistrationService - INFO - Creating a course request.
+2024-12-24 12:06:22,904 - Student - INFO - Student get_advisorID method called.
+2024-12-24 12:06:22,904 - CourseRegistrationService - INFO - CourseRequest classes created.
+2024-12-24 12:06:22,904 - DataManagement - INFO - Loaded dict from JSON
+2024-12-24 12:06:22,904 - Course - INFO - CourseInformation classes created.
+2024-12-24 12:06:22,904 - Faculty - INFO - FacultyID classes created.
+2024-12-24 12:06:22,904 - Department - INFO - DepartmentID classes created.
+2024-12-24 12:06:22,904 - Course - INFO - CourseRequirements classes created.
+2024-12-24 12:06:22,904 - UserInformation - INFO - UserInformation classes created.
+2024-12-24 12:06:22,904 - User - INFO - Lecturer classes created.
+2024-12-24 12:06:22,904 - User - INFO - Lecturer classes created.
+2024-12-24 12:06:22,904 - User - INFO - Lecturer classes created.
+2024-12-24 12:06:22,904 - User - INFO - StaffId classes created.
+2024-12-24 12:06:22,904 - User - INFO - The _generateStaffId method in the StaffId class is called.
+2024-12-24 12:06:22,904 - User - INFO - StaffId classes created.
+2024-12-24 12:06:22,904 - User - INFO - The _generateStaffId method in the StaffId class is called.
+2024-12-24 12:06:22,905 - Classroom - INFO - Classroom classes created.
+2024-12-24 12:06:22,905 - Course - INFO - CourseSection classes created.
+2024-12-24 12:06:22,905 - Classroom - INFO - The get_capacity method in the Classroom class is called.
+2024-12-24 12:06:22,905 - UserInformation - INFO - UserInformation classes created.
+2024-12-24 12:06:22,905 - User - INFO - Lecturer classes created.
+2024-12-24 12:06:22,905 - User - INFO - Lecturer classes created.
+2024-12-24 12:06:22,905 - User - INFO - Lecturer classes created.
+2024-12-24 12:06:22,905 - User - INFO - StaffId classes created.
+2024-12-24 12:06:22,905 - User - INFO - The _generateStaffId method in the StaffId class is called.
+2024-12-24 12:06:22,905 - User - INFO - StaffId classes created.
+2024-12-24 12:06:22,905 - User - INFO - The _generateStaffId method in the StaffId class is called.
+2024-12-24 12:06:22,905 - Classroom - INFO - Classroom classes created.
+2024-12-24 12:06:22,905 - Course - INFO - CourseSection classes created.
+2024-12-24 12:06:22,905 - Classroom - INFO - The get_capacity method in the Classroom class is called.
+2024-12-24 12:06:22,905 - Course - INFO - Course classes created.
+2024-12-24 12:06:22,905 - Classroom - INFO - The get_capacity method in the Classroom class is called.
+2024-12-24 12:06:22,905 - Classroom - INFO - The get_capacity method in the Classroom class is called.
+2024-12-24 12:06:22,905 - Classroom - INFO - The get_capacity method in the Classroom class is called.
+2024-12-24 12:06:22,905 - Student - INFO - Student get_advisorID method called.
+2024-12-24 12:06:22,905 - CourseRegistrationService - INFO - CourseRequest classes created.
+2024-12-24 12:06:22,906 - DataManagement - INFO - Loaded dict from JSON
+2024-12-24 12:06:22,906 - Course - INFO - CourseInformation classes created.
+2024-12-24 12:06:22,906 - Faculty - INFO - FacultyID classes created.
+2024-12-24 12:06:22,906 - Department - INFO - DepartmentID classes created.
+2024-12-24 12:06:22,906 - Course - INFO - CourseRequirements classes created.
+2024-12-24 12:06:22,906 - UserInformation - INFO - UserInformation classes created.
+2024-12-24 12:06:22,906 - User - INFO - Lecturer classes created.
+2024-12-24 12:06:22,906 - User - INFO - Lecturer classes created.
+2024-12-24 12:06:22,906 - User - INFO - Lecturer classes created.
+2024-12-24 12:06:22,906 - User - INFO - StaffId classes created.
+2024-12-24 12:06:22,906 - User - INFO - The _generateStaffId method in the StaffId class is called.
+2024-12-24 12:06:22,906 - User - INFO - StaffId classes created.
+2024-12-24 12:06:22,906 - User - INFO - The _generateStaffId method in the StaffId class is called.
+2024-12-24 12:06:22,906 - Classroom - INFO - Classroom classes created.
+2024-12-24 12:06:22,906 - Course - INFO - CourseSection classes created.
+2024-12-24 12:06:22,906 - Classroom - INFO - The get_capacity method in the Classroom class is called.
+2024-12-24 12:06:22,906 - UserInformation - INFO - UserInformation classes created.
+2024-12-24 12:06:22,906 - User - INFO - Lecturer classes created.
+2024-12-24 12:06:22,906 - User - INFO - Lecturer classes created.
+2024-12-24 12:06:22,906 - User - INFO - Lecturer classes created.
+2024-12-24 12:06:22,906 - User - INFO - StaffId classes created.
+2024-12-24 12:06:22,906 - User - INFO - The _generateStaffId method in the StaffId class is called.
+2024-12-24 12:06:22,906 - User - INFO - StaffId classes created.
+2024-12-24 12:06:22,906 - User - INFO - The _generateStaffId method in the StaffId class is called.
+2024-12-24 12:06:22,907 - Classroom - INFO - Classroom classes created.
+2024-12-24 12:06:22,907 - Course - INFO - CourseSection classes created.
+2024-12-24 12:06:22,907 - Classroom - INFO - The get_capacity method in the Classroom class is called.
+2024-12-24 12:06:22,907 - UserInformation - INFO - UserInformation classes created.
+2024-12-24 12:06:22,907 - User - INFO - Lecturer classes created.
+2024-12-24 12:06:22,907 - User - INFO - Lecturer classes created.
+2024-12-24 12:06:22,907 - User - INFO - Lecturer classes created.
+2024-12-24 12:06:22,907 - User - INFO - StaffId classes created.
+2024-12-24 12:06:22,907 - User - INFO - The _generateStaffId method in the StaffId class is called.
+2024-12-24 12:06:22,907 - User - INFO - StaffId classes created.
+2024-12-24 12:06:22,907 - User - INFO - The _generateStaffId method in the StaffId class is called.
+2024-12-24 12:06:22,907 - Classroom - INFO - Classroom classes created.
+2024-12-24 12:06:22,907 - Course - INFO - CourseSection classes created.
+2024-12-24 12:06:22,907 - Classroom - INFO - The get_capacity method in the Classroom class is called.
+2024-12-24 12:06:22,907 - Course - INFO - Course classes created.
+2024-12-24 12:06:22,907 - Classroom - INFO - The get_capacity method in the Classroom class is called.
+2024-12-24 12:06:22,907 - Classroom - INFO - The get_capacity method in the Classroom class is called.
+2024-12-24 12:06:22,907 - Classroom - INFO - The get_capacity method in the Classroom class is called.
+2024-12-24 12:06:22,907 - Classroom - INFO - The get_capacity method in the Classroom class is called.
+2024-12-24 12:06:22,907 - Student - INFO - Student get_advisorID method called.
+2024-12-24 12:06:22,907 - CourseRegistrationService - INFO - CourseRequest classes created.
+2024-12-24 12:06:22,908 - DataManagement - INFO - Loaded dict from JSON
+2024-12-24 12:06:22,908 - Course - INFO - CourseInformation classes created.
+2024-12-24 12:06:22,908 - Faculty - INFO - FacultyID classes created.
+2024-12-24 12:06:22,908 - Department - INFO - DepartmentID classes created.
+2024-12-24 12:06:22,908 - Course - INFO - CourseRequirements classes created.
+2024-12-24 12:06:22,908 - UserInformation - INFO - UserInformation classes created.
+2024-12-24 12:06:22,908 - User - INFO - Lecturer classes created.
+2024-12-24 12:06:22,908 - User - INFO - Lecturer classes created.
+2024-12-24 12:06:22,908 - User - INFO - Lecturer classes created.
+2024-12-24 12:06:22,908 - User - INFO - StaffId classes created.
+2024-12-24 12:06:22,908 - User - INFO - The _generateStaffId method in the StaffId class is called.
+2024-12-24 12:06:22,908 - User - INFO - StaffId classes created.
+2024-12-24 12:06:22,908 - User - INFO - The _generateStaffId method in the StaffId class is called.
+2024-12-24 12:06:22,908 - Classroom - INFO - Classroom classes created.
+2024-12-24 12:06:22,908 - Course - INFO - CourseSection classes created.
+2024-12-24 12:06:22,908 - Classroom - INFO - The get_capacity method in the Classroom class is called.
+2024-12-24 12:06:22,908 - UserInformation - INFO - UserInformation classes created.
+2024-12-24 12:06:22,908 - User - INFO - Lecturer classes created.
+2024-12-24 12:06:22,908 - User - INFO - Lecturer classes created.
+2024-12-24 12:06:22,908 - User - INFO - Lecturer classes created.
+2024-12-24 12:06:22,909 - User - INFO - StaffId classes created.
+2024-12-24 12:06:22,909 - User - INFO - The _generateStaffId method in the StaffId class is called.
+2024-12-24 12:06:22,909 - User - INFO - StaffId classes created.
+2024-12-24 12:06:22,909 - User - INFO - The _generateStaffId method in the StaffId class is called.
+2024-12-24 12:06:22,909 - Classroom - INFO - Classroom classes created.
+2024-12-24 12:06:22,909 - Course - INFO - CourseSection classes created.
+2024-12-24 12:06:22,909 - Classroom - INFO - The get_capacity method in the Classroom class is called.
+2024-12-24 12:06:22,909 - Course - INFO - Course classes created.
+2024-12-24 12:06:22,909 - Classroom - INFO - The get_capacity method in the Classroom class is called.
+2024-12-24 12:06:22,909 - Classroom - INFO - The get_capacity method in the Classroom class is called.
+2024-12-24 12:06:22,909 - Classroom - INFO - The get_capacity method in the Classroom class is called.
+2024-12-24 12:06:22,909 - Student - INFO - Student get_advisorID method called.
+2024-12-24 12:06:22,909 - CourseRegistrationService - INFO - CourseRequest classes created.
+2024-12-24 12:06:22,909 - CourseRegistrationService - INFO - Checking accessible requests.
+2024-12-24 12:06:22,909 - User - INFO - The get_staffId method in the Advisor class is called.
+2024-12-24 12:06:22,909 - User - INFO - The get_staff_id method in the StaffId class is called.
+2024-12-24 12:06:22,909 - CourseRegistrationService - INFO - The get_advisorID method in the CourseRequest class is called.
+2024-12-24 12:06:22,909 - User - INFO - The get_staff_id method in the StaffId class is called.
+2024-12-24 12:06:22,909 - User - INFO - The get_staffId method in the Advisor class is called.
+2024-12-24 12:06:22,909 - User - INFO - The get_staff_id method in the StaffId class is called.
+2024-12-24 12:06:22,909 - CourseRegistrationService - INFO - The get_advisorID method in the CourseRequest class is called.
+2024-12-24 12:06:22,909 - User - INFO - The get_staff_id method in the StaffId class is called.
+2024-12-24 12:06:22,909 - User - INFO - The get_staffId method in the Advisor class is called.
+2024-12-24 12:06:22,909 - User - INFO - The get_staff_id method in the StaffId class is called.
+2024-12-24 12:06:22,909 - CourseRegistrationService - INFO - The get_advisorID method in the CourseRequest class is called.
+2024-12-24 12:06:22,909 - User - INFO - The get_staff_id method in the StaffId class is called.
+2024-12-24 12:06:22,910 - CourseRegistrationService - INFO - The get_course method in the CourseRequest class is called.
+2024-12-24 12:06:22,910 - Course - INFO - The getCourseName method in the Course class is called.
+2024-12-24 12:06:22,910 - Course - INFO - The getCourseName method in the CourseInformation class is called.
+2024-12-24 12:06:22,910 - CourseRegistrationService - INFO - The get_course method in the CourseRequest class is called.
+2024-12-24 12:06:22,910 - Course - INFO - The getCourseName method in the Course class is called.
+2024-12-24 12:06:22,910 - Course - INFO - The getCourseName method in the CourseInformation class is called.
+2024-12-24 12:06:22,910 - CourseRegistrationService - INFO - The get_course method in the CourseRequest class is called.
+2024-12-24 12:06:22,910 - Course - INFO - The getCourseName method in the Course class is called.
+2024-12-24 12:06:22,910 - Course - INFO - The getCourseName method in the CourseInformation class is called.
+2024-12-24 12:06:22,910 - CourseRegistrationService - INFO - The get_course method in the CourseRequest class is called.
+2024-12-24 12:06:22,910 - Course - INFO - The getCourseName method in the Course class is called.
+2024-12-24 12:06:22,910 - Course - INFO - The getCourseName method in the CourseInformation class is called.
+2024-12-24 12:06:22,910 - CourseRegistrationService - INFO - The get_course method in the CourseRequest class is called.
+2024-12-24 12:06:22,910 - Course - INFO - The getCourseName method in the Course class is called.
+2024-12-24 12:06:22,910 - Course - INFO - The getCourseName method in the CourseInformation class is called.
+2024-12-24 12:06:22,910 - CourseRegistrationService - INFO - The get_course method in the CourseRequest class is called.
+2024-12-24 12:06:22,910 - Course - INFO - The getCourseName method in the Course class is called.
+2024-12-24 12:06:22,910 - Course - INFO - The getCourseName method in the CourseInformation class is called.
