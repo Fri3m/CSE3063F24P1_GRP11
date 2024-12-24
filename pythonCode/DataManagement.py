@@ -7,6 +7,7 @@ from Classroom import Classroom
 from Course import CourseInformation, CourseRequirements, CourseSection, Course, TakenCourse
 from Day import Day, SectionTime
 
+
 from Department import DepartmentID, Department
 from Faculty import FacultyID, Faculty
 from User import Lecturer, Advisor, DepartmentScheduler, StudentsAffairs, DepartmentHead
@@ -2068,6 +2069,7 @@ class DataManagement:
         self.deleteJsonFile(f"../Classrooms/{classroom_name}.json")
 
 
+
 names = ["Ali", "Fatma", "Zeynep", "Ahmet", "Ayse", "Mehmet", "Emine", "Hasan", "Huseyin", "Elif", "Mustafa",
          "Sibel", "Burak", "Busra", "Omer", "Halime", "Murat", "Gizem", "Eren", "Esra", "Yusuf", "Melis", "Can",
          "Hatice", "Oguz", "Rabia", "Kerem", "Derya", "Furkan", "Sevgi", "Kadir", "Selin", "Ibrahim", "Tugce",
@@ -2121,7 +2123,7 @@ def __generateEmail(name, surname):
     return ___email
 
 
-def __generateUniversityEmail(name, surname):
+def generateUniversityEmail(name, surname):
     ___unimail = f"{str(name).lower()}{str(surname).lower()}@marun.edu.tr"
     logger.info(f"Generated university email: {___unimail}")
     return ___unimail
@@ -2146,7 +2148,7 @@ def __generateRandomUserInformation():
     city = __getRandomCity()
     phoneNumber = __generatePhoneNumber()
     email = __generateEmail(firstName, lastName)
-    universityEmail = __generateUniversityEmail(firstName, lastName)
+    universityEmail = generateUniversityEmail(firstName, lastName)
     password = __generatePassword(firstName, city, phoneNumber)
     ui = UserInformation(firstName, lastName, password, universityEmail, email, city, phoneNumber)
     logger.info(
