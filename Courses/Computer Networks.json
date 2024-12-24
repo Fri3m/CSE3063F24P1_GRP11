@@ -18,7 +18,7 @@
     "courseSections": [
         {
             "_day": 0,
-            "_sectionTime": 0,
+            "_sectionTime": 4,
             "_lecturer": {
                 "_user_information": {
                     "_FIRST_NAME": "Okan",
@@ -36,8 +36,8 @@
                 "_facultyId": ""
             },
             "_classRoom": {
-                "_classroom_name": "CS17",
-                "_capacity": 60
+                "_classroom_name": "CS10",
+                "_capacity": 70
             },
             "_quota": 60
         },
