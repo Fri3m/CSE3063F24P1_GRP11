@@ -419,7 +419,7 @@ class Main:
                             break
                     if advisorID is not None:
                         break
-                print("Invalid advisor name. Please try again.")
+                    print("Invalid advisor name. Please try again.")
 
                 student = DataManagement.generateNonRandomStudent(userInformation, department, entrance_date,
                                                                   entrance_rank,
