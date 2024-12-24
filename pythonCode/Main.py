@@ -1,5 +1,6 @@
 import random
 import sys
+from random import choice
 
 from Classroom import Classroom
 from CourseRegistrationService import CourseRegistrationService
@@ -165,9 +166,10 @@ class Main:
         print("1. Register for a course")
         print("2. Show current courses")
         print("3. Show transcript")
-        print("4. Update user information")
-        print("5. Show user information")
-        print("6. Logout")
+        print("4. Show notifications")
+        print("5. Update user information")
+        print("6. Show user information")
+        print("7. Logout")
         choice = input()
         try:
             if choice == "1":
@@ -212,11 +214,16 @@ class Main:
                         takenCourse.getCourseInformation().getCourseCode() , ": " , takenCourse.getCourseInformation().getCourseName() ,": " , score_dict[takenCourse.getCourseScore()])
                 logger.info("Transcript shown")
             elif choice == "4":
-                self.updateUserInfo()
+                print("Notifications:")
+                for notification in self.user.getNotifications():
+                    print(notification)
+                logger.info("Notifications shown")
             elif choice == "5":
+                self.updateUserInfo()
+            elif choice == "6":
                 self.showStudentInfo()
                 self.showUserInformation()
-            elif choice == "6":
+            elif choice == "7":
                 self.startMenu()
                 return
             else:
@@ -752,9 +759,10 @@ class Main:
         print("Please choose an option:")
         print("1. Add new course")
         print("2. Remove course")
-        print("3. Show user information")
-        print("4. Update user information")
-        print("5. Logout")
+        print("3. Send notification")
+        print("4. Show user information")
+        print("5. Update user information")
+        print("6. Logout")
         choice = input()
         try:
             if choice == "1":
@@ -772,21 +780,83 @@ class Main:
                         x = True
                 if not x:
                     print("Course not found.")
-
             elif choice == "3":
-                self.showUserInformation()
+                self.studentsAffairSendNotification()
             elif choice == "4":
-                self.updateUserInfo()
+                self.showUserInformation()
             elif choice == "5":
+                self.updateUserInfo()
+            elif choice == "6":
                 self.startMenu()
                 return
             else:
-                raise ValueError("User can only choose 1, 2, 3, 4 or 5")
+                raise ValueError("User can only choose 1, 2, 3, 4, 5 or 6")
         except Exception as e:
             handle_exception(type(e), e, sys.exc_info()[2])
             logger.error("Invalid choice")
             # self.studentsAffairsMainMenu()
         self.studentsAffairsMainMenu()
+
+    def studentsAffairSendNotification(self):
+        print("Who do you want to send notification to? (Enter a integer value) \nSingle student:1  \nAll students:2\nAll students in a department:3\nAll Students in a faculty:4")
+        choice = 0
+        while True:
+            try:
+                choice = int(input())
+                if choice not in [1, 2, 3, 4]:
+                    raise ValueError
+                break
+            except ValueError:
+                print("Invalid choice. Please try again.")
+
+        print("Enter the message you want to send: ")
+        while True:
+            try:
+                message = str(input())
+                break
+            except:
+                print("Invalid message. Please try again.")
+
+        if choice == 1:
+            for student in self._students:
+                print(student.getUserInformation().get_UNIVERSITY_EMAIL())
+            print("Enter the student email to send the message: ")
+            student_email = input()
+            for student in self._students:
+                if student.getUserInformation().get_UNIVERSITY_EMAIL() == student_email:
+                    self.user.sendNotification(student, message)
+                    print("Notification sent successfully.")
+                    return
+            print("Student not found.")
+        elif choice == 2:
+            self.user.sendNotificationToAllStudents(message)
+            print("Notification sent to all students successfully.")
+        elif choice == 3:
+            for dp in self._departments:
+                print(dp.getDepartmentID().getDepartmentName())
+            print("Enter the department name to send the message: ")
+            department_name = input()
+            for dp in self._departments:
+                if dp.getDepartmentID().getDepartmentName() == department_name:
+                    self.user.sentNotificationToDepartment(dp,self._students, message)
+                    print("Notification sent to all students in department successfully.")
+                    return
+            print("Department not found.")
+        elif choice == 4:
+            for faculty in self._faculties:
+                print(faculty.getFacultyName())
+            print("Enter the faculty name to send the message: ")
+            faculty_name = input()
+            for faculty in self._faculties:
+                if faculty.getFacultyName() == faculty_name:
+                    self.user.sendNotificationToFaculty(faculty,self._students, message)
+                    print("Notification sent to all students in faculty successfully.")
+                    return
+            print("Faculty not found.")
+
+
+
+
 
     def studentsAffairsAddCourseMenu(self):
         print("Enter course name: ")

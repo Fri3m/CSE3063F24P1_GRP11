@@ -172,6 +172,31 @@ class StudentsAffairs(Staff):
         courses.remove(course)
         return True
 
+    def sendNotification(self, student, message):
+        logger.info("Sending notification in StudentsAffairs class")
+        student.getNotifications().append(message)
+        return True
+
+    def sentNotificationToDepartment(self, department, students, message):
+        logger.info("Sending notification to department in StudentsAffairs class")
+        for student in students:
+            if student.getDepartment().getDepartmentID().getDepartmentName().equalsIgnoreCase(department.getDepartmentID().getDepartmentName()):
+                student.getNotifications().append(message)
+        return True
+
+    def sendNotificationToFaculty(self, faculty, students, message):
+        logger.info("Sending notification to faculty in StudentsAffairs class")
+        for student in students:
+            if student.getDepartment().getDepartmentID().getFacultyName().equalsIgnoreCase(faculty.getFacultyName()):
+                student.getNotifications().append(message)
+        return True
+
+    def sendNotificationToAllStudents(self, students, message):
+        logger.info("Sending notification to all students in StudentsAffairs class")
+        for student in students:
+            student.getNotifications().append(message)
+        return True
+
 
 class DepartmentHead(Staff):
     def __init__(self, user_information):
