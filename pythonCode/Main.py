@@ -5,6 +5,7 @@ from random import choice
 from Classroom import Classroom
 from CourseRegistrationService import CourseRegistrationService
 from LoginAuthService import LoginAuthService
+from pythonCode.Course import CourseSection
 from pythonCode.Transcript import Transcript
 from pythonCode.DataManagement import DataManagement
 import DataManagement
@@ -303,7 +304,7 @@ class Main:
             for courseInformation in coursesInformations:
                 for courseSection1 in self.coursesNameDict[courseInformation.getCourseName()].getCourseSections():
                     try:
-                        if courseSection._day == courseSection1._day and courseSection._sectionTime == courseSection1._sectionTime:
+                        if courseSection._day == courseSection1._day and courseSection._sectionTime == courseSection1._sectionTime and courseSection._classRoom == courseSection1._classRoom:
                             raise ValueError("Student is already taking a course at this time. ")
                     except Exception as e:
                         handle_exception(type(e), e, sys.exc_info()[2])
@@ -1041,15 +1042,20 @@ class Main:
                 current_section -= 1
 
             current_section += 1
+        courseSections = []
+        for i in range(lecturerArrayList.__len__()):
+            courseSections.append(CourseSection(dayArrayList[i], sectionTimeArrayList[i], lecturerArrayList[i], classroomArrayList[i]))
 
-        #self.checkSectionConflict(course.getCourseSections(), self._courses)
-        course = DataManagement.generateCourse(lecturerArrayList, dayArrayList, sectionTimeArrayList,
+        if self.checkSectionConflict(courseSections, self._courses):
+            course = DataManagement.generateCourse(lecturerArrayList, dayArrayList, sectionTimeArrayList,
                                                classroomArrayList,
                                                course_name,
                                                course_code, prerequisites, min_current_class,
                                                department.get_facultyID(), department.getDepartmentID())
-        self._data_management.createOrChangeCourse(course)
-        self._courses.append(course)
+            self._data_management.createOrChangeCourse(course)
+            self._courses.append(course)
+        else:
+            print("Course section conflict. Course not added.")
 
     def login(self):
         logger.info("Login started")
