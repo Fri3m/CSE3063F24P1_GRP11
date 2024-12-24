@@ -7,8 +7,8 @@ from pythonCode.DataManagement import DataManagement
 class CourseRegistrationService_test(unittest.TestCase):
     def test_checkAccesiableRequests_test(self):
         data_management = DataManagement()
-        advisor = data_management.getAdvisor("selinpolat@marun.edu.tr")
-        student = data_management.getStudent("sevdaucar@marun.edu.tr")
+        advisor = data_management.getAdvisor("sevdaucar@marun.edu.tr")
+        student = data_management.getStudent("selinpolat@marun.edu.tr")
 
         courseRegistrationService = CourseRegistrationService()
         courseRegistrationService.createCourseRequest(student,data_management.getCourse("Fluid Mechanics"))
