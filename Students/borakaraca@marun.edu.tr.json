@@ -1,0 +1,79 @@
+{
+    "_user_information": {
+        "_FIRST_NAME": "Bora",
+        "_LAST_NAME": "Karaca",
+        "_encoded_password": "1234",
+        "_UNIVERSITY_EMAIL": "borakaraca@marun.edu.tr",
+        "_email": "borakaraca90@gmail.com",
+        "_address": "Corum",
+        "_phone_number": "+90 550 597 27 54"
+    },
+    "_student_id": {
+        "_department_id": {
+            "_departmentID": 101,
+            "_departmentName": "Industrial Engineering"
+        },
+        "_entrance_date": 2021,
+        "_entrance_rank": 101,
+        "_faculty_id": {
+            "_FacultyID": 1,
+            "_FacultyName": "Engineering"
+        },
+        "_id": "101021101"
+    },
+    "_transcript": {
+        "_student_id": {
+            "_department_id": {
+                "_departmentID": 101,
+                "_departmentName": "Industrial Engineering"
+            },
+            "_entrance_date": 2021,
+            "_entrance_rank": 101,
+            "_faculty_id": {
+                "_FacultyID": 1,
+                "_FacultyName": "Engineering"
+            },
+            "_id": "101021101"
+        },
+        "_taken_courses": [
+            {
+                "_courseInformation": {
+                    "courseName": "Operations Research",
+                    "courseCode": "IE3003"
+                },
+                "_midterm_score": 90,
+                "_final_score": 85
+            },
+            {
+                "_courseInformation": {
+                    "courseName": "Probability",
+                    "courseCode": "IE2151"
+                },
+                "_midterm_score": 88,
+                "_final_score": 72
+            },
+            {
+                "_courseInformation": {
+                    "courseName": "Simulation",
+                    "courseCode": "IE3064"
+                },
+                "_midterm_score": 75,
+                "_final_score": 85
+            },
+            {
+                "_courseInformation": {
+                    "courseName": "Turkish Language",
+                    "courseCode": "TRD121"
+                },
+                "_midterm_score": 55,
+                "_final_score": 100
+            }
+        ],
+        "_gpa": 2.75
+    },
+    "_advisor_id": {
+        "_staffId": 52
+    },
+    "_current_class": 4,
+    "_current_courses": []
+}

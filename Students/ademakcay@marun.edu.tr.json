@@ -1,0 +1,63 @@
+{
+    "_user_information": {
+        "_FIRST_NAME": "Adem",
+        "_LAST_NAME": "Akcay",
+        "_encoded_password": "1234",
+        "_UNIVERSITY_EMAIL": "ademakcay@marun.edu.tr",
+        "_email": "ademakcay37@gmail.com",
+        "_address": "Cankiri",
+        "_phone_number": "+90 529 176 28 82"
+    },
+    "_student_id": {
+        "_department_id": {
+            "_departmentID": 101,
+            "_departmentName": "Electrical Engineering"
+        },
+        "_entrance_date": 2022,
+        "_entrance_rank": 3,
+        "_faculty_id": {
+            "_FacultyID": 1,
+            "_FacultyName": "Engineering"
+        },
+        "_id": "101022003"
+    },
+    "_transcript": {
+        "_student_id": {
+            "_department_id": {
+                "_departmentID": 101,
+                "_departmentName": "Electrical Engineering"
+            },
+            "_entrance_date": 2022,
+            "_entrance_rank": 3,
+            "_faculty_id": {
+                "_FacultyID": 1,
+                "_FacultyName": "Engineering"
+            },
+            "_id": "101022003"
+        },
+        "_taken_courses": [
+            {
+                "_courseInformation": {
+                    "courseName": "Physics I",
+                    "courseCode": "PHYS1101"
+                },
+                "_midterm_score": 67,
+                "_final_score": 80
+            },
+            {
+                "_courseInformation": {
+                    "courseName": "Digital Design",
+                    "courseCode": "EE2003"
+                },
+                "_midterm_score": 74,
+                "_final_score": 69
+            }
+        ],
+        "_gpa": 2.0
+    },
+    "_advisor_id": {
+        "_staffId": 55
+    },
+    "_current_class": 3,
+    "_current_courses": []
+}

@@ -1,0 +1,63 @@
+{
+    "_user_information": {
+        "_FIRST_NAME": "Burcu",
+        "_LAST_NAME": "Altay",
+        "_encoded_password": "1234",
+        "_UNIVERSITY_EMAIL": "burcualtay@marun.edu.tr",
+        "_email": "burcualtay26@gmail.com",
+        "_address": "Samsun",
+        "_phone_number": "+90 542 700 54 90"
+    },
+    "_student_id": {
+        "_department_id": {
+            "_departmentID": 301,
+            "_departmentName": "Business"
+        },
+        "_entrance_date": 2023,
+        "_entrance_rank": 13,
+        "_faculty_id": {
+            "_FacultyID": 3,
+            "_FacultyName": "Business"
+        },
+        "_id": "301023013"
+    },
+    "_transcript": {
+        "_student_id": {
+            "_department_id": {
+                "_departmentID": 301,
+                "_departmentName": "Business"
+            },
+            "_entrance_date": 2023,
+            "_entrance_rank": 13,
+            "_faculty_id": {
+                "_FacultyID": 3,
+                "_FacultyName": "Business"
+            },
+            "_id": "301023013"
+        },
+        "_taken_courses": [
+            {
+                "_courseInformation": {
+                    "courseName": "Principles of Microeconomics",
+                    "courseCode": "EC101"
+                },
+                "_midterm_score": 85,
+                "_final_score": 75
+            },
+            {
+                "_courseInformation": {
+                    "courseName": "Principles of Microeconomics",
+                    "courseCode": "EC101"
+                },
+                "_midterm_score": 85,
+                "_final_score": 75
+            }
+        ],
+        "_gpa": 3.0
+    },
+    "_advisor_id": {
+        "_staffId": 16
+    },
+    "_current_class": 2,
+    "_current_courses": []
+}

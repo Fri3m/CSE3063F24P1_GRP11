@@ -1,0 +1,119 @@
+{
+    "_user_information": {
+        "_FIRST_NAME": "Furkan",
+        "_LAST_NAME": "Balci",
+        "_encoded_password": "1234",
+        "_UNIVERSITY_EMAIL": "furkanbalci@marun.edu.tr",
+        "_email": "furkanbalci63@gmail.com",
+        "_address": "Corum",
+        "_phone_number": "+90 520 025 53 55"
+    },
+    "_student_id": {
+        "_department_id": {
+            "_departmentID": 150,
+            "_departmentName": "Computer Engineering"
+        },
+        "_entrance_date": 2021,
+        "_entrance_rank": 3,
+        "_faculty_id": {
+            "_FacultyID": 1,
+            "_FacultyName": "Engineering"
+        },
+        "_id": "150021003"
+    },
+    "_transcript": {
+        "_student_id": {
+            "_department_id": {
+                "_departmentID": 150,
+                "_departmentName": "Computer Engineering"
+            },
+            "_entrance_date": 2021,
+            "_entrance_rank": 3,
+            "_faculty_id": {
+                "_FacultyID": 1,
+                "_FacultyName": "Engineering"
+            },
+            "_id": "150021003"
+        },
+        "_taken_courses": [
+            {
+                "_courseInformation": {
+                    "courseName": "Introduction to Computer Engineering",
+                    "courseCode": "CS1200"
+                },
+                "_midterm_score": 90,
+                "_final_score": 54
+            },
+            {
+                "_courseInformation": {
+                    "courseName": "Introduction to Algorithms",
+                    "courseCode": "CS1201"
+                },
+                "_midterm_score": 70,
+                "_final_score": 35
+            },
+            {
+                "_courseInformation": {
+                    "courseName": "Linear Algebra for Computer Engineering",
+                    "courseCode": "MATH256"
+                },
+                "_midterm_score": 20,
+                "_final_score": 100
+            },
+            {
+                "_courseInformation": {
+                    "courseName": "Data Structures",
+                    "courseCode": "CS2225"
+                },
+                "_midterm_score": 85,
+                "_final_score": 50
+            },
+            {
+                "_courseInformation": {
+                    "courseName": "Differential Equations",
+                    "courseCode": "MATH205"
+                },
+                "_midterm_score": 75,
+                "_final_score": 40
+            },
+            {
+                "_courseInformation": {
+                    "courseName": "Systems Programming",
+                    "courseCode": "CS2138"
+                },
+                "_midterm_score": 95,
+                "_final_score": 55
+            },
+            {
+                "_courseInformation": {
+                    "courseName": "Database Systems",
+                    "courseCode": "CS3125"
+                },
+                "_midterm_score": 90,
+                "_final_score": 50
+            },
+            {
+                "_courseInformation": {
+                    "courseName": "Software Engineering",
+                    "courseCode": "CS3044"
+                },
+                "_midterm_score": 85,
+                "_final_score": 45
+            },
+            {
+                "_courseInformation": {
+                    "courseName": "Digital Logic Design",
+                    "courseCode": "CS3215"
+                },
+                "_midterm_score": 30,
+                "_final_score": 90
+            }
+        ],
+        "_gpa": 1.7222222222222223
+    },
+    "_advisor_id": {
+        "_staffId": 1
+    },
+    "_current_class": 4,
+    "_current_courses": []
+}

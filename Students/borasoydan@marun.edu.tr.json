@@ -1,0 +1,71 @@
+{
+    "_user_information": {
+        "_FIRST_NAME": "Bora",
+        "_LAST_NAME": "Soydan",
+        "_encoded_password": "1234",
+        "_UNIVERSITY_EMAIL": "borasoydan@marun.edu.tr",
+        "_email": "borasoydan67@gmail.com",
+        "_address": "Kocaeli",
+        "_phone_number": "+90 528 047 06 58"
+    },
+    "_student_id": {
+        "_department_id": {
+            "_departmentID": 301,
+            "_departmentName": "Business"
+        },
+        "_entrance_date": 2021,
+        "_entrance_rank": 24,
+        "_faculty_id": {
+            "_FacultyID": 3,
+            "_FacultyName": "Business"
+        },
+        "_id": "301021024"
+    },
+    "_transcript": {
+        "_student_id": {
+            "_department_id": {
+                "_departmentID": 301,
+                "_departmentName": "Business"
+            },
+            "_entrance_date": 2021,
+            "_entrance_rank": 24,
+            "_faculty_id": {
+                "_FacultyID": 3,
+                "_FacultyName": "Business"
+            },
+            "_id": "301021024"
+        },
+        "_taken_courses": [
+            {
+                "_courseInformation": {
+                    "courseName": "Principles of Microeconomics",
+                    "courseCode": "EC101"
+                },
+                "_midterm_score": 75,
+                "_final_score": 70
+            },
+            {
+                "_courseInformation": {
+                    "courseName": "Principles of Microeconomics",
+                    "courseCode": "EC101"
+                },
+                "_midterm_score": 65,
+                "_final_score": 85
+            },
+            {
+                "_courseInformation": {
+                    "courseName": "Principles of Microeconomics",
+                    "courseCode": "EC101"
+                },
+                "_midterm_score": 75,
+                "_final_score": 75
+            }
+        ],
+        "_gpa": 2.1666666666666665
+    },
+    "_advisor_id": {
+        "_staffId": 16
+    },
+    "_current_class": 4,
+    "_current_courses": []
+}

@@ -1,0 +1,46 @@
+{
+    "_user_information": {
+        "_FIRST_NAME": "Baris",
+        "_LAST_NAME": "Soylu",
+        "_encoded_password": "1234",
+        "_UNIVERSITY_EMAIL": "barissoylu@marun.edu.tr",
+        "_email": "barissoylu11@gmail.com",
+        "_address": "Elazig",
+        "_phone_number": "+90 558 645 33 82"
+    },
+    "_student_id": {
+        "_department_id": {
+            "_departmentID": 150,
+            "_departmentName": "Computer Engineering"
+        },
+        "_entrance_date": 2024,
+        "_entrance_rank": 60,
+        "_faculty_id": {
+            "_FacultyID": 1,
+            "_FacultyName": "Engineering"
+        },
+        "_id": "150024060"
+    },
+    "_transcript": {
+        "_student_id": {
+            "_department_id": {
+                "_departmentID": 150,
+                "_departmentName": "Computer Engineering"
+            },
+            "_entrance_date": 2024,
+            "_entrance_rank": 60,
+            "_faculty_id": {
+                "_FacultyID": 1,
+                "_FacultyName": "Engineering"
+            },
+            "_id": "150024060"
+        },
+        "_taken_courses": [],
+        "_gpa": 0.0
+    },
+    "_advisor_id": {
+        "_staffId": 1
+    },
+    "_current_class": 1,
+    "_current_courses": []
+}

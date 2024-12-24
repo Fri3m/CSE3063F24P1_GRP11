@@ -1,0 +1,46 @@
+{
+    "_user_information": {
+        "_FIRST_NAME": "Ayse",
+        "_LAST_NAME": "Ucar",
+        "_encoded_password": "1234",
+        "_UNIVERSITY_EMAIL": "ayseucar@marun.edu.tr",
+        "_email": "ayseucar99@gmail.com",
+        "_address": "Tekirdag",
+        "_phone_number": "+90 567 918 21 65"
+    },
+    "_student_id": {
+        "_department_id": {
+            "_departmentID": 101,
+            "_departmentName": "Industrial Engineering"
+        },
+        "_entrance_date": 2024,
+        "_entrance_rank": 26,
+        "_faculty_id": {
+            "_FacultyID": 1,
+            "_FacultyName": "Engineering"
+        },
+        "_id": "101024026"
+    },
+    "_transcript": {
+        "_student_id": {
+            "_department_id": {
+                "_departmentID": 101,
+                "_departmentName": "Industrial Engineering"
+            },
+            "_entrance_date": 2024,
+            "_entrance_rank": 26,
+            "_faculty_id": {
+                "_FacultyID": 1,
+                "_FacultyName": "Engineering"
+            },
+            "_id": "101024026"
+        },
+        "_taken_courses": [],
+        "_gpa": 0.0
+    },
+    "_advisor_id": {
+        "_staffId": 52
+    },
+    "_current_class": 1,
+    "_current_courses": []
+}

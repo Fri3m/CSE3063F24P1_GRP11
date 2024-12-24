@@ -1,0 +1,46 @@
+{
+    "_user_information": {
+        "_FIRST_NAME": "Tuna",
+        "_LAST_NAME": "Aslan",
+        "_encoded_password": "1234",
+        "_UNIVERSITY_EMAIL": "tunaaslan@marun.edu.tr",
+        "_email": "tunaaslan68@gmail.com",
+        "_address": "Antalya",
+        "_phone_number": "+90 552 583 54 85"
+    },
+    "_student_id": {
+        "_department_id": {
+            "_departmentID": 301,
+            "_departmentName": "Business"
+        },
+        "_entrance_date": 2024,
+        "_entrance_rank": 15,
+        "_faculty_id": {
+            "_FacultyID": 3,
+            "_FacultyName": "Business"
+        },
+        "_id": "301024015"
+    },
+    "_transcript": {
+        "_student_id": {
+            "_department_id": {
+                "_departmentID": 301,
+                "_departmentName": "Business"
+            },
+            "_entrance_date": 2024,
+            "_entrance_rank": 15,
+            "_faculty_id": {
+                "_FacultyID": 3,
+                "_FacultyName": "Business"
+            },
+            "_id": "301024015"
+        },
+        "_taken_courses": [],
+        "_gpa": 0.0
+    },
+    "_advisor_id": {
+        "_staffId": 16
+    },
+    "_current_class": 1,
+    "_current_courses": []
+}

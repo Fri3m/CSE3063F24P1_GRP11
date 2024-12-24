@@ -1,0 +1,55 @@
+{
+    "_user_information": {
+        "_FIRST_NAME": "Derya",
+        "_LAST_NAME": "Ozdemir",
+        "_encoded_password": "1234",
+        "_UNIVERSITY_EMAIL": "deryaozdemir@marun.edu.tr",
+        "_email": "deryaozdemir55@gmail.com",
+        "_address": "Giresun",
+        "_phone_number": "+90 542 938 21 20"
+    },
+    "_student_id": {
+        "_department_id": {
+            "_departmentID": 301,
+            "_departmentName": "Business"
+        },
+        "_entrance_date": 2023,
+        "_entrance_rank": 66,
+        "_faculty_id": {
+            "_FacultyID": 3,
+            "_FacultyName": "Business"
+        },
+        "_id": "301023066"
+    },
+    "_transcript": {
+        "_student_id": {
+            "_department_id": {
+                "_departmentID": 301,
+                "_departmentName": "Business"
+            },
+            "_entrance_date": 2023,
+            "_entrance_rank": 66,
+            "_faculty_id": {
+                "_FacultyID": 3,
+                "_FacultyName": "Business"
+            },
+            "_id": "301023066"
+        },
+        "_taken_courses": [
+            {
+                "_courseInformation": {
+                    "courseName": "Principles of Microeconomics",
+                    "courseCode": "EC101"
+                },
+                "_midterm_score": 90,
+                "_final_score": 64
+            }
+        ],
+        "_gpa": 2.5
+    },
+    "_advisor_id": {
+        "_staffId": 16
+    },
+    "_current_class": 2,
+    "_current_courses": []
+}

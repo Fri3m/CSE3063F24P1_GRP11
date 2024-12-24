@@ -422,6 +422,204 @@ Traceback (most recent call last):
     choice = input()
   File "<frozen codecs>", line 322, in decode
 KeyboardInterrupt
+2024-12-23 18:00:40,962 - exception - ERROR - An error occurred!
+Traceback (most recent call last):
+  File "C:\Users\omery\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 209, in studentMainMenu
+    takenCourse.getCourseInformation().getCourseCode() + ": " + takenCourse.getCourseInformation().getCourseName() + ": " + takenCourse.getCourseScore().name())
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'getCourseCode'
+2024-12-23 18:01:33,119 - exception - ERROR - An error occurred!
+Traceback (most recent call last):
+  File "C:\Users\omery\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 209, in studentMainMenu
+    takenCourse.getCourseInformation().getCourseCode() + ": " + takenCourse.getCourseInformation().getCourseName() + ": " + takenCourse.getCourseScore().name())
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'getCourseCode'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\omery\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 209, in studentMainMenu
+    takenCourse.getCourseInformation().getCourseCode() + ": " + takenCourse.getCourseInformation().getCourseName() + ": " + takenCourse.getCourseScore().name())
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'getCourseCode'
+2024-12-23 18:03:33,443 - exception - ERROR - An error occurred!
+Traceback (most recent call last):
+  File "C:\Users\omery\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 209, in studentMainMenu
+    takenCourse.getCourseInformation().getCourseCode() + ": " + takenCourse.getCourseInformation().getCourseName() + ": " + takenCourse.getCourseScore().name())
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'getCourseCode'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\omery\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 209, in studentMainMenu
+    takenCourse.getCourseInformation().getCourseCode() + ": " + takenCourse.getCourseInformation().getCourseName() + ": " + takenCourse.getCourseScore().name())
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'getCourseCode'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\omery\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 197, in studentMainMenu
+    for courseInfo in self.user.get_current_courses():
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Advisor' object has no attribute 'get_current_courses'
+2024-12-23 18:04:43,783 - exception - ERROR - An error occurred!
+Traceback (most recent call last):
+  File "C:\Users\omery\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 209, in studentMainMenu
+    takenCourse.getCourseInformation().getCourseCode() + ": " + takenCourse.getCourseInformation().getCourseName() + ": " + takenCourse.getCourseScore().name())
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'getCourseCode'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\omery\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 209, in studentMainMenu
+    takenCourse.getCourseInformation().getCourseCode() + ": " + takenCourse.getCourseInformation().getCourseName() + ": " + takenCourse.getCourseScore().name())
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'getCourseCode'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\omery\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 197, in studentMainMenu
+    for courseInfo in self.user.get_current_courses():
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Advisor' object has no attribute 'get_current_courses'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\omery\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 206, in studentMainMenu
+    print("GPA:", self.user.getTranscript().get_GPA())
+                  ^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Advisor' object has no attribute 'getTranscript'
+2024-12-23 18:06:26,117 - exception - ERROR - An error occurred!
+Traceback (most recent call last):
+  File "C:\Users\omery\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 209, in studentMainMenu
+    takenCourse.getCourseInformation().getCourseCode() + ": " + takenCourse.getCourseInformation().getCourseName() + ": " + takenCourse.getCourseScore().name())
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'getCourseCode'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\omery\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 209, in studentMainMenu
+    takenCourse.getCourseInformation().getCourseCode() + ": " + takenCourse.getCourseInformation().getCourseName() + ": " + takenCourse.getCourseScore().name())
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'getCourseCode'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\omery\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 197, in studentMainMenu
+    for courseInfo in self.user.get_current_courses():
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Advisor' object has no attribute 'get_current_courses'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\omery\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 206, in studentMainMenu
+    print("GPA:", self.user.getTranscript().get_GPA())
+                  ^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Advisor' object has no attribute 'getTranscript'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\omery\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 1076, in <module>
+    main.main()
+  File "C:\Users\omery\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 35, in main
+    self.startMenu()
+  File "C:\Users\omery\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 109, in startMenu
+    self.login()
+  File "C:\Users\omery\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 991, in login
+    self.studentMainMenu()
+  File "C:\Users\omery\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 225, in studentMainMenu
+    self.studentMainMenu()
+  File "C:\Users\omery\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 226, in studentMainMenu
+    self.studentMainMenu()
+  File "C:\Users\omery\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 226, in studentMainMenu
+    self.studentMainMenu()
+  File "C:\Users\omery\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 226, in studentMainMenu
+    self.studentMainMenu()
+  File "C:\Users\omery\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 225, in studentMainMenu
+    self.studentMainMenu()
+  File "C:\Users\omery\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 226, in studentMainMenu
+    self.studentMainMenu()
+  File "C:\Users\omery\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 217, in studentMainMenu
+    self.startMenu()
+  File "C:\Users\omery\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 109, in startMenu
+    self.login()
+  File "C:\Users\omery\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 993, in login
+    self.advisorMainMenu()
+  File "C:\Users\omery\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 285, in advisorMainMenu
+    self.advisorMainMenu()
+  File "C:\Users\omery\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 276, in advisorMainMenu
+    self.startMenu()
+  File "C:\Users\omery\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 109, in startMenu
+    self.login()
+  File "C:\Users\omery\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 1008, in login
+    self.login()
+  File "C:\Users\omery\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 991, in login
+    self.studentMainMenu()
+  File "C:\Users\omery\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 225, in studentMainMenu
+    self.studentMainMenu()
+  File "C:\Users\omery\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 225, in studentMainMenu
+    self.studentMainMenu()
+  File "C:\Users\omery\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 212, in studentMainMenu
+    self.updateUserInfo()
+  File "C:\Users\omery\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 150, in updateUserInfo
+    self.startMenu()
+  File "C:\Users\omery\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 106, in startMenu
+    choice = input()
+             ^^^^^^^
+  File "<frozen codecs>", line 319, in decode
+KeyboardInterrupt
+2024-12-23 18:09:21,225 - exception - ERROR - An error occurred!
+Traceback (most recent call last):
+  File "C:\Users\omery\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 115, in startMenu
+    raise ValueError("User can only choose 1 or 2")
+ValueError: User can only choose 1 or 2
+2024-12-23 18:09:23,402 - exception - ERROR - An error occurred!
+Traceback (most recent call last):
+  File "C:\Users\omery\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 115, in startMenu
+    raise ValueError("User can only choose 1 or 2")
+ValueError: User can only choose 1 or 2
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\omery\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 115, in startMenu
+    raise ValueError("User can only choose 1 or 2")
+ValueError: User can only choose 1 or 2
+2024-12-23 18:23:50,399 - exception - ERROR - An error occurred!
+Traceback (most recent call last):
+  File "C:\Users\omery\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 115, in startMenu
+    raise ValueError("User can only choose 1 or 2")
+ValueError: User can only choose 1 or 2
+2024-12-23 18:24:46,938 - exception - ERROR - An error occurred!
+Traceback (most recent call last):
+  File "C:\Users\omery\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 115, in startMenu
+    raise ValueError("User can only choose 1 or 2")
+ValueError: User can only choose 1 or 2
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\omery\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 1075, in <module>
+    main.main()
+  File "C:\Users\omery\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 35, in main
+    self.startMenu()
+  File "C:\Users\omery\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 120, in startMenu
+    self.startMenu()  # Tekrar ba�lang�� men�s�n� �a��r
+    ^^^^^^^^^^^^^^^^
+  File "C:\Users\omery\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 106, in startMenu
+    choice = input()
+             ^^^^^^^
+  File "<frozen codecs>", line 319, in decode
+KeyboardInterrupt
 2024-12-24 09:29:30,452 - exception - ERROR - An error occurred!
 Traceback (most recent call last):
   File "C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 1075, in <module>
@@ -437,4 +635,48 @@ Traceback (most recent call last):
     self.user_type = input()
                      ~~~~~^^
   File "<frozen codecs>", line 322, in decode
+KeyboardInterrupt
+2024-12-24 11:51:40,446 - exception - ERROR - An error occurred!
+Traceback (most recent call last):
+  File "C:\Users\omery\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 1075, in <module>
+    main.main()
+  File "C:\Users\omery\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 35, in main
+    self.startMenu()
+  File "C:\Users\omery\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 109, in startMenu
+    self.login()
+  File "C:\Users\omery\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 990, in login
+    self.studentMainMenu()
+  File "C:\Users\omery\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 225, in studentMainMenu
+    self.studentMainMenu()
+  File "C:\Users\omery\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 225, in studentMainMenu
+    self.studentMainMenu()
+  File "C:\Users\omery\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 225, in studentMainMenu
+    self.studentMainMenu()
+  [Previous line repeated 3 more times]
+  File "C:\Users\omery\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 216, in studentMainMenu
+    self.startMenu()
+  File "C:\Users\omery\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 109, in startMenu
+    self.login()
+  File "C:\Users\omery\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 992, in login
+    self.advisorMainMenu()
+  File "C:\Users\omery\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 284, in advisorMainMenu
+    self.advisorMainMenu()
+  File "C:\Users\omery\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 284, in advisorMainMenu
+    self.advisorMainMenu()
+  File "C:\Users\omery\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 275, in advisorMainMenu
+    self.startMenu()
+  File "C:\Users\omery\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 109, in startMenu
+    self.login()
+  File "C:\Users\omery\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 990, in login
+    self.studentMainMenu()
+  File "C:\Users\omery\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 225, in studentMainMenu
+    self.studentMainMenu()
+  File "C:\Users\omery\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 216, in studentMainMenu
+    self.startMenu()
+  File "C:\Users\omery\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 109, in startMenu
+    self.login()
+  File "C:\Users\omery\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 980, in login
+    self.user_type = input()
+                     ^^^^^^^
+  File "<frozen codecs>", line 319, in decode
 KeyboardInterrupt

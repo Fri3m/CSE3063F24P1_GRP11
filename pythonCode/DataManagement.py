@@ -2268,7 +2268,6 @@ class customEncoder(JSONEncoder):
     def default(self, o):
         return o.__dict__
 
-# if __name__ == "__main__":
-#     dm = DataManagement()
-#     dm.__main__()
-#     # dm.saveToJson(dm.getStudent("
+#if __name__ == "__main__":
+#    dm = DataManagement()
+#    dm.__main__()

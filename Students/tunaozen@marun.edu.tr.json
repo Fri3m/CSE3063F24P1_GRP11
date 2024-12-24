@@ -1,0 +1,55 @@
+{
+    "_user_information": {
+        "_FIRST_NAME": "Tuna",
+        "_LAST_NAME": "Ozen",
+        "_encoded_password": "1234",
+        "_UNIVERSITY_EMAIL": "tunaozen@marun.edu.tr",
+        "_email": "tunaozen41@gmail.com",
+        "_address": "Bartin",
+        "_phone_number": "+90 571 080 89 14"
+    },
+    "_student_id": {
+        "_department_id": {
+            "_departmentID": 153,
+            "_departmentName": "Biology"
+        },
+        "_entrance_date": 2023,
+        "_entrance_rank": 27,
+        "_faculty_id": {
+            "_FacultyID": 2,
+            "_FacultyName": "Science"
+        },
+        "_id": "153023027"
+    },
+    "_transcript": {
+        "_student_id": {
+            "_department_id": {
+                "_departmentID": 153,
+                "_departmentName": "Biology"
+            },
+            "_entrance_date": 2023,
+            "_entrance_rank": 27,
+            "_faculty_id": {
+                "_FacultyID": 2,
+                "_FacultyName": "Science"
+            },
+            "_id": "153023027"
+        },
+        "_taken_courses": [
+            {
+                "_courseInformation": {
+                    "courseName": "General Biology",
+                    "courseCode": "BYL1011"
+                },
+                "_midterm_score": 75,
+                "_final_score": 85
+            }
+        ],
+        "_gpa": 2.5
+    },
+    "_advisor_id": {
+        "_staffId": 20
+    },
+    "_current_class": 2,
+    "_current_courses": []
+}

@@ -1,0 +1,63 @@
+{
+    "_user_information": {
+        "_FIRST_NAME": "Bora",
+        "_LAST_NAME": "Isik",
+        "_encoded_password": "1234",
+        "_UNIVERSITY_EMAIL": "boraisik@marun.edu.tr",
+        "_email": "boraisik56@gmail.com",
+        "_address": "Mardin",
+        "_phone_number": "+90 503 378 68 11"
+    },
+    "_student_id": {
+        "_department_id": {
+            "_departmentID": 154,
+            "_departmentName": "Chemistry"
+        },
+        "_entrance_date": 2022,
+        "_entrance_rank": 29,
+        "_faculty_id": {
+            "_FacultyID": 2,
+            "_FacultyName": "Science"
+        },
+        "_id": "154022029"
+    },
+    "_transcript": {
+        "_student_id": {
+            "_department_id": {
+                "_departmentID": 154,
+                "_departmentName": "Chemistry"
+            },
+            "_entrance_date": 2022,
+            "_entrance_rank": 29,
+            "_faculty_id": {
+                "_FacultyID": 2,
+                "_FacultyName": "Science"
+            },
+            "_id": "154022029"
+        },
+        "_taken_courses": [
+            {
+                "_courseInformation": {
+                    "courseName": "General Chemistry",
+                    "courseCode": "CHM1135"
+                },
+                "_midterm_score": 75,
+                "_final_score": 85
+            },
+            {
+                "_courseInformation": {
+                    "courseName": "Analytical Chemistry",
+                    "courseCode": "CHM2023"
+                },
+                "_midterm_score": 55,
+                "_final_score": 80
+            }
+        ],
+        "_gpa": 2.25
+    },
+    "_advisor_id": {
+        "_staffId": 25
+    },
+    "_current_class": 3,
+    "_current_courses": []
+}

@@ -1,0 +1,55 @@
+{
+    "_user_information": {
+        "_FIRST_NAME": "Arda",
+        "_LAST_NAME": "Kaplan",
+        "_encoded_password": "1234",
+        "_UNIVERSITY_EMAIL": "ardakaplan@marun.edu.tr",
+        "_email": "ardakaplan32@gmail.com",
+        "_address": "Mersin",
+        "_phone_number": "+90 575 562 54 51"
+    },
+    "_student_id": {
+        "_department_id": {
+            "_departmentID": 101,
+            "_departmentName": "Electrical Engineering"
+        },
+        "_entrance_date": 2023,
+        "_entrance_rank": 2,
+        "_faculty_id": {
+            "_FacultyID": 1,
+            "_FacultyName": "Engineering"
+        },
+        "_id": "101023002"
+    },
+    "_transcript": {
+        "_student_id": {
+            "_department_id": {
+                "_departmentID": 101,
+                "_departmentName": "Electrical Engineering"
+            },
+            "_entrance_date": 2023,
+            "_entrance_rank": 2,
+            "_faculty_id": {
+                "_FacultyID": 1,
+                "_FacultyName": "Engineering"
+            },
+            "_id": "101023002"
+        },
+        "_taken_courses": [
+            {
+                "_courseInformation": {
+                    "courseName": "Physics I",
+                    "courseCode": "PHYS1101"
+                },
+                "_midterm_score": 31,
+                "_final_score": 90
+            }
+        ],
+        "_gpa": 1.0
+    },
+    "_advisor_id": {
+        "_staffId": 55
+    },
+    "_current_class": 2,
+    "_current_courses": []
+}

@@ -1,0 +1,46 @@
+{
+    "_user_information": {
+        "_FIRST_NAME": "Yasemin",
+        "_LAST_NAME": "Sahin",
+        "_encoded_password": "1234",
+        "_UNIVERSITY_EMAIL": "yaseminsahin@marun.edu.tr",
+        "_email": "yaseminsahin17@gmail.com",
+        "_address": "Kocaeli",
+        "_phone_number": "+90 540 435 91 47"
+    },
+    "_student_id": {
+        "_department_id": {
+            "_departmentID": 101,
+            "_departmentName": "Mechanical Engineering"
+        },
+        "_entrance_date": 2023,
+        "_entrance_rank": 2,
+        "_faculty_id": {
+            "_FacultyID": 1,
+            "_FacultyName": "Engineering"
+        },
+        "_id": "101023002"
+    },
+    "_transcript": {
+        "_student_id": {
+            "_department_id": {
+                "_departmentID": 101,
+                "_departmentName": "Mechanical Engineering"
+            },
+            "_entrance_date": 2023,
+            "_entrance_rank": 2,
+            "_faculty_id": {
+                "_FacultyID": 1,
+                "_FacultyName": "Engineering"
+            },
+            "_id": "101023002"
+        },
+        "_taken_courses": [],
+        "_gpa": 0.0
+    },
+    "_advisor_id": {
+        "_staffId": 42
+    },
+    "_current_class": 2,
+    "_current_courses": []
+}

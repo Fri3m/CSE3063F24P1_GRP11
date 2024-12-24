@@ -1,0 +1,55 @@
+{
+    "_user_information": {
+        "_FIRST_NAME": "Rabia",
+        "_LAST_NAME": "Keser",
+        "_encoded_password": "1234",
+        "_UNIVERSITY_EMAIL": "rabiakeser@marun.edu.tr",
+        "_email": "rabiakeser100@gmail.com",
+        "_address": "Bartin",
+        "_phone_number": "+90 519 077 43 75"
+    },
+    "_student_id": {
+        "_department_id": {
+            "_departmentID": 154,
+            "_departmentName": "Chemistry"
+        },
+        "_entrance_date": 2023,
+        "_entrance_rank": 8,
+        "_faculty_id": {
+            "_FacultyID": 2,
+            "_FacultyName": "Science"
+        },
+        "_id": "154023008"
+    },
+    "_transcript": {
+        "_student_id": {
+            "_department_id": {
+                "_departmentID": 154,
+                "_departmentName": "Chemistry"
+            },
+            "_entrance_date": 2023,
+            "_entrance_rank": 8,
+            "_faculty_id": {
+                "_FacultyID": 2,
+                "_FacultyName": "Science"
+            },
+            "_id": "154023008"
+        },
+        "_taken_courses": [
+            {
+                "_courseInformation": {
+                    "courseName": "General Chemistry",
+                    "courseCode": "CHM1135"
+                },
+                "_midterm_score": 70,
+                "_final_score": 85
+            }
+        ],
+        "_gpa": 2.5
+    },
+    "_advisor_id": {
+        "_staffId": 25
+    },
+    "_current_class": 2,
+    "_current_courses": []
+}

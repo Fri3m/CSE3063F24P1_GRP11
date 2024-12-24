@@ -1,0 +1,71 @@
+{
+    "_user_information": {
+        "_FIRST_NAME": "Zeynep",
+        "_LAST_NAME": "Soydan",
+        "_encoded_password": "1234",
+        "_UNIVERSITY_EMAIL": "zeynepsoydan@marun.edu.tr",
+        "_email": "zeynepsoydan27@gmail.com",
+        "_address": "Rize",
+        "_phone_number": "+90 502 562 07 43"
+    },
+    "_student_id": {
+        "_department_id": {
+            "_departmentID": 153,
+            "_departmentName": "Biology"
+        },
+        "_entrance_date": 2021,
+        "_entrance_rank": 3,
+        "_faculty_id": {
+            "_FacultyID": 2,
+            "_FacultyName": "Science"
+        },
+        "_id": "153021003"
+    },
+    "_transcript": {
+        "_student_id": {
+            "_department_id": {
+                "_departmentID": 153,
+                "_departmentName": "Biology"
+            },
+            "_entrance_date": 2021,
+            "_entrance_rank": 3,
+            "_faculty_id": {
+                "_FacultyID": 2,
+                "_FacultyName": "Science"
+            },
+            "_id": "153021003"
+        },
+        "_taken_courses": [
+            {
+                "_courseInformation": {
+                    "courseName": "General Biology",
+                    "courseCode": "BYL1011"
+                },
+                "_midterm_score": 65,
+                "_final_score": 85
+            },
+            {
+                "_courseInformation": {
+                    "courseName": "History of Biology",
+                    "courseCode": "BYL2031"
+                },
+                "_midterm_score": 75,
+                "_final_score": 850
+            },
+            {
+                "_courseInformation": {
+                    "courseName": "Micro Biology",
+                    "courseCode": "BYL3042"
+                },
+                "_midterm_score": 55,
+                "_final_score": 10
+            }
+        ],
+        "_gpa": 2.0
+    },
+    "_advisor_id": {
+        "_staffId": 20
+    },
+    "_current_class": 4,
+    "_current_courses": []
+}

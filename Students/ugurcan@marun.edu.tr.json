@@ -1,0 +1,71 @@
+{
+    "_user_information": {
+        "_FIRST_NAME": "Ugur",
+        "_LAST_NAME": "Can",
+        "_encoded_password": "1234",
+        "_UNIVERSITY_EMAIL": "ugurcan@marun.edu.tr",
+        "_email": "ugurcan25@gmail.com",
+        "_address": "Mus",
+        "_phone_number": "+90 551 906 08 24"
+    },
+    "_student_id": {
+        "_department_id": {
+            "_departmentID": 154,
+            "_departmentName": "Chemistry"
+        },
+        "_entrance_date": 2021,
+        "_entrance_rank": 37,
+        "_faculty_id": {
+            "_FacultyID": 2,
+            "_FacultyName": "Science"
+        },
+        "_id": "154021037"
+    },
+    "_transcript": {
+        "_student_id": {
+            "_department_id": {
+                "_departmentID": 154,
+                "_departmentName": "Chemistry"
+            },
+            "_entrance_date": 2021,
+            "_entrance_rank": 37,
+            "_faculty_id": {
+                "_FacultyID": 2,
+                "_FacultyName": "Science"
+            },
+            "_id": "154021037"
+        },
+        "_taken_courses": [
+            {
+                "_courseInformation": {
+                    "courseName": "General Chemistry",
+                    "courseCode": "CHM1135"
+                },
+                "_midterm_score": 38,
+                "_final_score": 90
+            },
+            {
+                "_courseInformation": {
+                    "courseName": "Analytical Chemistry",
+                    "courseCode": "CHM2023"
+                },
+                "_midterm_score": 45,
+                "_final_score": 85
+            },
+            {
+                "_courseInformation": {
+                    "courseName": "Industrial Analysis",
+                    "courseCode": "CHM3042"
+                },
+                "_midterm_score": 85,
+                "_final_score": 75
+            }
+        ],
+        "_gpa": 2.0
+    },
+    "_advisor_id": {
+        "_staffId": 25
+    },
+    "_current_class": 4,
+    "_current_courses": []
+}

@@ -1,0 +1,63 @@
+{
+    "_user_information": {
+        "_FIRST_NAME": "Burcu",
+        "_LAST_NAME": "Kara",
+        "_encoded_password": "1234",
+        "_UNIVERSITY_EMAIL": "burcukara@marun.edu.tr",
+        "_email": "burcukara11@gmail.com",
+        "_address": "Bayburt",
+        "_phone_number": "+90 568 397 79 94"
+    },
+    "_student_id": {
+        "_department_id": {
+            "_departmentID": 153,
+            "_departmentName": "Biology"
+        },
+        "_entrance_date": 2022,
+        "_entrance_rank": 75,
+        "_faculty_id": {
+            "_FacultyID": 2,
+            "_FacultyName": "Science"
+        },
+        "_id": "153022075"
+    },
+    "_transcript": {
+        "_student_id": {
+            "_department_id": {
+                "_departmentID": 153,
+                "_departmentName": "Biology"
+            },
+            "_entrance_date": 2022,
+            "_entrance_rank": 75,
+            "_faculty_id": {
+                "_FacultyID": 2,
+                "_FacultyName": "Science"
+            },
+            "_id": "153022075"
+        },
+        "_taken_courses": [
+            {
+                "_courseInformation": {
+                    "courseName": "General Biology",
+                    "courseCode": "BYL1011"
+                },
+                "_midterm_score": 85,
+                "_final_score": 75
+            },
+            {
+                "_courseInformation": {
+                    "courseName": "History of Biology",
+                    "courseCode": "BYL2031"
+                },
+                "_midterm_score": 90,
+                "_final_score": 85
+            }
+        ],
+        "_gpa": 3.25
+    },
+    "_advisor_id": {
+        "_staffId": 20
+    },
+    "_current_class": 3,
+    "_current_courses": []
+}
