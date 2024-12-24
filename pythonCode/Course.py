@@ -93,7 +93,7 @@ class TakenCourse:
 
     @staticmethod
     def from_dict(data):
-        ci = data["_courseInformation"]
+        ci = CourseInformation.from_dict(data["_courseInformation"])
         ms = int(data["_midterm_score"])
         fs = int(data["_final_score"])
         return TakenCourse(ci, ms, fs)
@@ -174,8 +174,8 @@ class CourseRequirements:
         ans = [False, False, False, False]
         ans[0] = student.getCurrentClass() >= self._minimum_current_class
         ans[
-            1] = self._departmentID is None or self._departmentID == student.get_studentID().get_departmentID().getDepartmentID()
-        ans[2] = self._facultyID is None or self._facultyID == student.get_studentID().get_facultyID().getFacultyID()
+            1] = self._departmentID is None or self._departmentID.getDepartmentID() == student.get_studentID().get_departmentID().getDepartmentID()
+        ans[2] = self._facultyID is None or self._facultyID.getFacultyID() == student.get_studentID().get_facultyID().getFacultyID()
         ans[3] = self.checkPrerequisiteCourse(student)
         return ans
 
@@ -187,7 +187,7 @@ class CourseRequirements:
         for courseInformation in self._prerequisite_courses:
             check = False
             for takenCourse in student.getTranscript().getTakenCourses():
-                if takenCourse.get_courseInformation().equals(courseInformation):
+                if takenCourse.getCourseInformation().getCourseName()==courseInformation.getCourseName():
                     check = True
                     break
 

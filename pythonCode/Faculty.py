@@ -32,7 +32,7 @@ class Faculty:
 
     @staticmethod
     def from_dict(data):
-        return Faculty(FacultyID.from_dict(data["_facultyID"]))
+        return Faculty(FacultyID.from_dict(data["_faculty_id"]))
 
     def addDepartment(self, department):
         logger.info("Adding department to faculty")

@@ -422,3 +422,19 @@ Traceback (most recent call last):
     choice = input()
   File "<frozen codecs>", line 322, in decode
 KeyboardInterrupt
+2024-12-24 09:29:30,452 - exception - ERROR - An error occurred!
+Traceback (most recent call last):
+  File "C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 1075, in <module>
+    main.main()
+    ~~~~~~~~~^^
+  File "C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 35, in main
+    self.startMenu()
+    ~~~~~~~~~~~~~~^^
+  File "C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 109, in startMenu
+    self.login()
+    ~~~~~~~~~~^^
+  File "C:\Users\omeri\PycharmProjects\CSE3063F24P1_GRP11\pythonCode\Main.py", line 980, in login
+    self.user_type = input()
+                     ~~~~~^^
+  File "<frozen codecs>", line 322, in decode
+KeyboardInterrupt

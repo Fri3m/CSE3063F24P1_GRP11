@@ -1970,7 +1970,8 @@ class DataManagement:
         self.saveToJson(faculty)
 
     def getFaculty(self, faculty_name):
-        data = self.loadFromJson(f"../Faculties/{faculty_name}.json")
+        data = self.loadFromJson(f"../Facultys/{faculty_name}.json")
+        print(faculty_name)
         return Faculty.from_dict(data)
 
     def removeFaculty(self, faculty_name):
