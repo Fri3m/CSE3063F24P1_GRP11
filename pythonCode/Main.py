@@ -6,13 +6,15 @@ from CourseRegistrationService import CourseRegistrationService
 from LoginAuthService import LoginAuthService
 
 from pythonCode.DataManagement import DataManagement
+import DataManagement
+
 from pythonCode.Day import Day, SectionTime
 from pythonCode.Department import Department, DepartmentID
 from pythonCode.Faculty import FacultyID
 from pythonCode.Logger import setup_logger
 from pythonCode.User import StaffId, Admin, Advisor
 from pythonCode.UserInformation import UserInformation
-import DataManagement
+
 from pythonCode.ExceptionHandler import handle_exception
 import logging
 
@@ -455,7 +457,7 @@ class Main:
                     if student1.getUserInformation().get_UNIVERSITY_EMAIL() == student_email:
                         self._students.remove(student1)
                         self._login_auth_service._users.remove(student1)
-                        self._data_management.removeStudent(student1)
+                        self._data_management.removeStudent(student1.getUserInformation().get_UNIVERSITY_EMAIL())
                         print(
                             "Student " + student1.getUserInformation().get_FIRST_NAME() + " " + student1.getUserInformation().get_LAST_NAME() + " removed successfully.")
                         studentExists = True
@@ -764,7 +766,7 @@ class Main:
                 x = False
                 for c in self._courses:
                     if c.getCourseName() == cName:
-                        self._data_management.removeCourse(c)
+                        self._data_management.removeCourse(c.getCourseName())
                         self._courses.remove(c)
                         print("Course " + cName + " removed successfully.")
                         x = True
