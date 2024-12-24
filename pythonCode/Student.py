@@ -67,6 +67,12 @@ class Student(User):
     def getNotifications(self):
         logger.info(f"{self._user_information.get_UNIVERSITY_EMAIL} getNotifications method called.")
         return self._notifications
+    def getNotificationsText(self):
+        logger.info(f"{self._user_information.get_UNIVERSITY_EMAIL} getNotificationsText method called.")
+        ntf = ""
+        for n in self._notifications:
+            ntf += n + "\n"
+        return ntf
 
 
 class StudentID:

@@ -219,8 +219,7 @@ class Main:
                 logger.info("Transcript shown")
             elif choice == "4":
                 print("Notifications:")
-                for notification in self.user.getNotifications():
-                    print(notification)
+                print(self.user.getNotificationsText())
                 logger.info("Notifications shown")
             elif choice == "5":
                 self.updateUserInfo()
@@ -833,7 +832,7 @@ class Main:
                     return
             print("Student not found.")
         elif choice == 2:
-            self.user.sendNotificationToAllStudents(message)
+            self.user.sendNotificationToAllStudents(self._students,message)
             print("Notification sent to all students successfully.")
         elif choice == 3:
             for dp in self._departments:
@@ -841,18 +840,18 @@ class Main:
             print("Enter the department name to send the message: ")
             department_name = input()
             for dp in self._departments:
-                if dp.getDepartmentID().getDepartmentName() == department_name:
+                if dp.getDepartmentID().getDepartmentName().lower() == department_name.lower():
                     self.user.sentNotificationToDepartment(dp,self._students, message)
                     print("Notification sent to all students in department successfully.")
                     return
             print("Department not found.")
         elif choice == 4:
             for faculty in self._faculties:
-                print(faculty.getFacultyName())
+                print(faculty.getFacultyID().getFacultyName())
             print("Enter the faculty name to send the message: ")
             faculty_name = input()
             for faculty in self._faculties:
-                if faculty.getFacultyName() == faculty_name:
+                if faculty.getFacultyID().getFacultyName() == faculty_name:
                     self.user.sendNotificationToFaculty(faculty,self._students, message)
                     print("Notification sent to all students in faculty successfully.")
                     return

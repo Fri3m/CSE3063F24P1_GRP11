@@ -1964,7 +1964,8 @@ class DataManagement:
         f_list = list()
 
         for data in datas:
-            f_list.append(data)
+            # print(data)
+            f_list.append(Faculty.from_dict(data))
         return f_list
 
     def createOrChangeFaculty(self, faculty):

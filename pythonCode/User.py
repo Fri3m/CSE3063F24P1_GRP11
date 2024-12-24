@@ -180,14 +180,14 @@ class StudentsAffairs(Staff):
     def sentNotificationToDepartment(self, department, students, message):
         logger.info("Sending notification to department in StudentsAffairs class")
         for student in students:
-            if student.getDepartment().getDepartmentID().getDepartmentName().equalsIgnoreCase(department.getDepartmentID().getDepartmentName()):
+            if student.get_studentID().get_departmentID().getDepartmentName().lower()  == department.getDepartmentID().getDepartmentName().lower():
                 student.getNotifications().append(message)
         return True
 
     def sendNotificationToFaculty(self, faculty, students, message):
         logger.info("Sending notification to faculty in StudentsAffairs class")
         for student in students:
-            if student.getDepartment().getDepartmentID().getFacultyName().equalsIgnoreCase(faculty.getFacultyName()):
+            if student.get_studentID().get_facultyID().getFacultyName().lower() == faculty.getFacultyID().getFacultyName().lower():
                 student.getNotifications().append(message)
         return True
 
