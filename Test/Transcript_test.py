@@ -8,6 +8,6 @@ class Transcript_test(unittest.TestCase):
         data_management = DataManagement()
         student = data_management.getStudent("caneraksu@marun.edu.tr")
         transcript = student.getTranscript()
-        trueGPA = 1.8125
+        trueGPA = 2.0
         calculatedGPA = transcript.get_GPA()
         self.assertEqual(trueGPA, calculatedGPA, "GPA should be the same!")

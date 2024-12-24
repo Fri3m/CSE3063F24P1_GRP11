@@ -49,20 +49,10 @@ class Transcript:
         logger.info("Calculating GPA.")
         self._gpa = 0.0
         if not self._taken_courses:
-
             return
 
         for course in self._taken_courses:
-            score = {
-                "AA": 4.0,
-                "BA": 3.5,
-                "BB": 3.0,
-                "CB": 2.5,
-                "CC": 2.0,
-                "DC": 1.5,
-                "DD": 1.0
-            }.get(course.getCourseScore(), 0.0)
-
+            score = course.getCourseScore()
 
             self._gpa += score
 
